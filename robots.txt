@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://growth-tracker-preview.netlify.app/sitemap.xml

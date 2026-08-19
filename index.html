@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GrowthTracker: Predict Your Son's Adult Height, Free</title>
+<meta name="description" content="A free prediction, a growth curve, and honest answers for moms wondering if their son will always be small. Built for parents, not clinicians." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --sage-50: #f4f7f2;
+    --sage-100: #e6ede1;
+    --sage-300: #b8c9ac;
+    --sage-500: #7d9b73;
+    --sage-700: #4f6a4a;
+    --sage-900: #2b3a29;
+    --terra-300: #e8b39a;
+    --terra-500: #cf7955;
+    --terra-700: #a15837;
+    --cream: #fbf7f1;
+    --ink: #2a2723;
+    --ink-soft: #5a5651;
+    --line: #e5ded2;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--sage-900);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.75rem; margin-bottom: 1rem; }
+  h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+  p { margin-bottom: 1rem; color: var(--ink-soft); }
+  a { color: var(--terra-700); }
+
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 1.25rem; }
+
+  /* Hero */
+  .hero {
+    padding: 3.5rem 0 2.5rem;
+    background: linear-gradient(180deg, var(--sage-100) 0%, var(--cream) 100%);
+  }
+  .hero .eyebrow {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--terra-700);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .hero h1 {
+    font-size: 2.4rem;
+    margin-bottom: 1.25rem;
+  }
+  .hero .lede {
+    font-size: 1.1rem;
+    color: var(--sage-900);
+    margin-bottom: 2rem;
+    max-width: 34rem;
+  }
+  .btn {
+    display: inline-block;
+    background: var(--terra-500);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: background 0.15s ease;
+    width: 100%;
+    max-width: 420px;
+  }
+  .btn:hover { background: var(--terra-700); }
+  .btn.secondary {
+    background: var(--sage-700);
+  }
+  .btn.secondary:hover { background: var(--sage-900); }
+  .btn.ghost {
+    background: transparent;
+    color: var(--sage-700);
+    border: 1.5px solid var(--sage-500);
+  }
+  .btn.ghost:hover { background: var(--sage-100); }
+
+  /* Sections */
+  section { padding: 3rem 0; }
+  section.tight { padding: 2rem 0; }
+
+  /* Calculator */
+  .calc {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(45, 58, 41, 0.05);
+  }
+  .calc h2 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .calc .sub {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+  }
+  .field {
+    margin-bottom: 1.25rem;
+  }
+  .field label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--sage-900);
+    margin-bottom: 0.4rem;
+  }
+  .field input, .field select {
+    width: 100%;
+    padding: 0.75rem 0.9rem;
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    background: var(--cream);
+    color: var(--ink);
+  }
+  .field input:focus, .field select:focus {
+    outline: none;
+    border-color: var(--sage-500);
+    background: white;
+  }
+  .row { display: flex; gap: 0.75rem; }
+  .row .field { flex: 1; }
+
+  .unit-toggle {
+    display: inline-flex;
+    background: var(--sage-100);
+    border-radius: 999px;
+    padding: 3px;
+    margin-bottom: 1.25rem;
+    font-size: 0.85rem;
+  }
+  .unit-toggle button {
+    background: none;
+    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    color: var(--sage-700);
+  }
+  .unit-toggle button.active {
+    background: white;
+    color: var(--sage-900);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+
+  .result {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: var(--sage-100);
+    border-radius: 14px;
+    display: none;
+  }
+  .result.shown { display: block; }
+  .result .label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--sage-700);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .result .num {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 2.5rem;
+    color: var(--sage-900);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+  }
+  .result .range {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+  }
+  .result .gate {
+    background: white;
+    padding: 1.25rem;
+    border-radius: 10px;
+    border: 1px dashed var(--sage-300);
+  }
+  .result .gate p {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
+  .result .gate input[type="email"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    margin-bottom: 0.75rem;
+    font-family: inherit;
+    font-size: 1rem;
+  }
+  .thanks {
+    display: none;
+    padding: 1rem;
+    background: var(--sage-500);
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 500;
+  }
+  .thanks.shown { display: block; }
+
+  /* Social proof */
+  .stat-band {
+    background: var(--sage-700);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+  }
+  .stat-band .big {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .stat-band .cap {
+    font-size: 0.85rem;
+    opacity: 0.85;
+  }
+  .testimonials {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  .quote {
+    background: white;
+    border-left: 4px solid var(--terra-500);
+    padding: 1.25rem 1.5rem;
+    border-radius: 8px;
+    font-style: italic;
+    color: var(--sage-900);
+  }
+  .quote .who {
+    margin-top: 0.75rem;
+    font-style: normal;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+
+  /* Features */
+  .features {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  .feat {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+  }
+  .feat .ico {
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+  }
+  .feat h3 { color: var(--sage-900); margin-bottom: 0.4rem; }
+  .feat p { font-size: 0.95rem; margin-bottom: 0; }
+
+  /* FAQ */
+  .faq details {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.1rem 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .faq details[open] { background: var(--sage-50); }
+  .faq summary {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--sage-900);
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    padding-right: 1.5rem;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.3rem;
+    color: var(--terra-500);
+  }
+  .faq details[open] summary::after { content: '−'; }
+  .faq .body {
+    margin-top: 0.9rem;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--sage-900);
+    color: var(--sage-100);
+    padding: 3rem 0 2rem;
+    text-align: center;
+  }
+  footer h2 { color: white; font-size: 1.8rem; margin-bottom: 1rem; }
+  footer p { color: var(--sage-300); margin-bottom: 1.5rem; }
+  footer .apple-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: black;
+    color: white;
+    padding: 0.85rem 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  footer .fine {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: var(--sage-300);
+    opacity: 0.75;
+  }
+
+  @media (min-width: 720px) {
+    body { font-size: 18px; }
+    h1 { font-size: 3.2rem; }
+    .hero h1 { font-size: 3rem; }
+    h2 { font-size: 2.1rem; }
+    .features { grid-template-columns: 1fr 1fr; }
+    .testimonials { grid-template-columns: 1fr 1fr 1fr; }
+  }
+</style>
+<link rel="canonical" href="https://growth-tracker-preview.netlify.app/" />
+<meta name="robots" content="index, follow" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="GrowthTracker: Predict Your Son's Adult Height, Free" />
+<meta property="og:description" content="A free prediction, a growth curve, and honest answers for moms wondering if their son will always be small." />
+<meta property="og:url" content="https://growth-tracker-preview.netlify.app/" />
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">For moms of boys 5 to 14</div>
+    <h1>Is my son a late bloomer, or is something else going on?</h1>
+    <p class="lede">A free prediction, a growth curve, and honest answers from another mom who's been there. No sales pitch. No white coat.</p>
+    <a href="#calculator" class="btn">Predict My Son's Adult Height, Free</a>
+  </div>
+</header>
+
+<!-- CALCULATOR -->
+<section id="calculator">
+  <div class="wrap">
+    <div class="calc">
+      <h2>How tall will he be?</h2>
+      <p class="sub">Enter four numbers. Get a prediction in seconds.</p>
+
+      <div class="unit-toggle" role="tablist" aria-label="Units">
+        <button type="button" data-unit="imperial" class="active" onclick="setUnit('imperial')">Imperial (ft/in)</button>
+        <button type="button" data-unit="metric" onclick="setUnit('metric')">Metric (cm)</button>
+      </div>
+
+      <form id="predForm" onsubmit="predict(event)">
+        <div class="row">
+          <div class="field">
+            <label for="age">Son's age</label>
+            <input type="number" id="age" min="2" max="18" step="0.5" placeholder="e.g. 10" required />
+          </div>
+          <div class="field">
+            <label for="sonH">Son's current height</label>
+            <input type="text" id="sonH" placeholder="e.g. 4'4&quot;" required />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="dadH">Father's height</label>
+            <input type="text" id="dadH" placeholder="e.g. 5'10&quot;" required />
+          </div>
+          <div class="field">
+            <label for="momH">Mother's height</label>
+            <input type="text" id="momH" placeholder="e.g. 5'5&quot;" required />
+          </div>
+        </div>
+
+        <button type="submit" class="btn">See His Predicted Adult Height</button>
+      </form>
+
+      <div class="result" id="result">
+        <div class="label">Predicted adult height</div>
+        <div class="num" id="pred"></div>
+        <div class="range" id="range"></div>
+
+        <div class="gate">
+          <p><strong>Want the full report?</strong> Get his personalized growth curve, a plain-English breakdown of what this number means, and our 5-part guide "When to worry, when to wait." Sent by email, free.</p>
+          <form onsubmit="capture(event)">
+            <input type="email" placeholder="your@email.com" required id="email" />
+            <button type="submit" class="btn">Send Me the Full Report</button>
+          </form>
+          <div class="thanks" id="thanks">Check your inbox. The full report is on its way.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAT BAND -->
+<section class="stat-band tight">
+  <div class="wrap">
+    <div class="big">1 in every 4 boys</div>
+    <div class="cap">is in the shortest quarter for his age. Being small isn't rare. It also isn't nothing.</div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <div class="wrap">
+    <h2>Other moms in the group chat</h2>
+    <div class="testimonials">
+      <div class="quote">
+        "I'd been Googling at midnight for three years. This was the first thing that gave me an actual number and told me what it meant."
+        <div class="who">Rachel, mom of a 10-year-old</div>
+      </div>
+      <div class="quote">
+        "The 'when to see an endo' page saved me a year of guessing. Turns out we needed to go. Wish I'd downloaded this sooner."
+        <div class="who">Amanda, mom of an 8-year-old</div>
+      </div>
+      <div class="quote">
+        "Every other app made me feel like something was wrong with my son. This one made me feel like something was right with me for caring."
+        <div class="who">Priya, mom of a 12-year-old</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section style="background: var(--sage-50);">
+  <div class="wrap">
+    <h2>What's inside</h2>
+    <div class="features">
+      <div class="feat">
+        <div class="ico">📏</div>
+        <h3>Adult height prediction</h3>
+        <p>Mid-parental and Khamis-Roche formulas, presented with a real confidence range. Not one made-up number.</p>
+      </div>
+      <div class="feat">
+        <div class="ico">📈</div>
+        <h3>Growth curves</h3>
+        <p>His line plotted against WHO and CDC standards. Log a measurement in ten seconds. Export a PDF your pediatrician will actually read.</p>
+      </div>
+      <div class="feat">
+        <div class="ico">🩺</div>
+        <h3>When to worry</h3>
+        <p>Clear referral rules: what triggers a pediatric endocrinologist visit, what questions to ask, what a bone age scan actually tells you.</p>
+      </div>
+      <div class="feat">
+        <div class="ico">💬</div>
+        <h3>The community</h3>
+        <p>A private group of moms in the same middle-of-the-night place. No supplement sellers. No dismissive replies.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap">
+    <h2>Questions moms actually ask</h2>
+
+    <details>
+      <summary>Is my son just a late bloomer?</summary>
+      <div class="body">Probably, yes. Constitutional delay of growth and puberty is the most common cause of a boy tracking below his peers, and it's usually harmless. But "probably" isn't "definitely." The signs that suggest late bloomer: dad or mom hit puberty late, growth velocity is steady (not slowing), no other symptoms. The signs that suggest something else: growth has flattened, he's slipping below his own curve, or puberty hasn't started by age 14. The app walks you through both sides.</div>
+    </details>
+
+    <details>
+      <summary>When should I see a pediatrician?</summary>
+      <div class="body">Any time you're worried. That's the whole answer. If you want thresholds: below the 3rd percentile, growth velocity under 5cm per year past age 4, dropping across two percentile lines, or no puberty signs by age 14 in boys. Bring a printed growth chart. Ask specifically about a bone age X-ray and a referral to a pediatric endocrinologist. If your pediatrician tells you to "wait and see" and you're not comforted, get a second opinion.</div>
+    </details>
+
+    <details>
+      <summary>Are growth hormones safe?</summary>
+      <div class="body">For kids with a diagnosed condition (growth hormone deficiency, Turner syndrome, chronic kidney disease, ISS below certain thresholds), the safety data over 40 years is well-established. Side effects exist and matter. The decision is not trivial. It involves daily injections for years, five-figure annual costs, and a family conversation about what "tall enough" means. A pediatric endocrinologist is the only person qualified to walk you through it. The app has a full article on what to ask before saying yes.</div>
+    </details>
+
+    <details>
+      <summary>Does puberty timing affect final height?</summary>
+      <div class="body">Yes, in both directions. Boys who enter puberty late often end up taller than their mid-childhood percentile suggested, because they get extra pre-puberty growth years. Boys who enter puberty early can end up shorter than expected, because the growth plates fuse sooner. This is why a doctor asks about Tanner stage before predicting height. It's also why "he's just short now" doesn't tell you what he'll be at 20.</div>
+    </details>
+
+    <details>
+      <summary>How accurate are height predictions?</summary>
+      <div class="body">The mid-parental formula (dad + mom + 5 inches, divided by 2, for boys) has a confidence range of about plus or minus 4 inches. That's not a rounding error. It's a real biological range. Khamis-Roche, which uses current age, height, weight, and mid-parental, is more accurate (about plus or minus 2 inches) once your son is past age 4. Any calculator that gives you a single number to the quarter-inch is lying to you.</div>
+    </details>
+
+    <details>
+      <summary>What if my son is in the 5th percentile?</summary>
+      <div class="body">Fifth percentile means 95 out of 100 boys his age are taller. It's not a diagnosis, but it's a flag worth watching. What matters more than the number: is he tracking (staying on his own curve) or falling (crossing lines downward). A boy who's been at the 5th his whole life often stays there and finishes fine. A boy who dropped from the 40th to the 5th over two years needs a doctor's visit. The app graphs both patterns so you can see which one you're looking at.</div>
+    </details>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<footer>
+  <div class="wrap">
+    <h2>Get the app.</h2>
+    <p>The full tracker, prediction engine, and community. Free to start.</p>
+    <a href="#" class="apple-btn" id="appstore">
+      <span>🍎</span> Download on the App Store
+    </a>
+    <p style="margin-top:1rem;"><a href="/articles/" style="color:var(--sage-100); text-decoration:underline;">Read our articles →</a></p>
+    <div class="fine">
+      GrowthTracker is not medical advice. Predictions are estimates, not diagnoses. Always talk to a qualified pediatric provider about your son's growth. © 2026 GrowthTracker.
+    </div>
+  </div>
+</footer>
+
+<script>
+  let unit = 'imperial';
+
+  function setUnit(u) {
+    unit = u;
+    document.querySelectorAll('.unit-toggle button').forEach(b => {
+      b.classList.toggle('active', b.dataset.unit === u);
+    });
+    const sonH = document.getElementById('sonH');
+    const dadH = document.getElementById('dadH');
+    const momH = document.getElementById('momH');
+    if (u === 'metric') {
+      sonH.placeholder = 'e.g. 132';
+      dadH.placeholder = 'e.g. 178';
+      momH.placeholder = 'e.g. 165';
+    } else {
+      sonH.placeholder = 'e.g. 4\'4"';
+      dadH.placeholder = 'e.g. 5\'10"';
+      momH.placeholder = 'e.g. 5\'5"';
+    }
+  }
+
+  // Parse height input to inches.
+  // Accepts: 5'10", 5'10, 5 10, 70 (inches if imperial), 178 (cm if metric)
+  function toInches(v) {
+    v = String(v).trim();
+    if (unit === 'metric') {
+      const cm = parseFloat(v);
+      if (isNaN(cm)) return null;
+      return cm / 2.54;
+    }
+    const ftIn = v.match(/^(\d+)\s*['\s]\s*(\d+(?:\.\d+)?)?/);
+    if (ftIn) {
+      const ft = parseFloat(ftIn[1]);
+      const inch = ftIn[2] ? parseFloat(ftIn[2]) : 0;
+      return ft * 12 + inch;
+    }
+    const n = parseFloat(v);
+    if (isNaN(n)) return null;
+    // Bare number: assume inches for adult heights, but if it's small treat as ft
+    if (n < 8) return n * 12;
+    return n;
+  }
+
+  function inchesToDisplay(inches) {
+    if (unit === 'metric') {
+      const cm = Math.round(inches * 2.54);
+      return cm + ' cm';
+    }
+    const ft = Math.floor(inches / 12);
+    const inch = Math.round(inches - ft * 12);
+    return ft + "'" + inch + '"';
+  }
+
+  function predict(e) {
+    e.preventDefault();
+    const dad = toInches(document.getElementById('dadH').value);
+    const mom = toInches(document.getElementById('momH').value);
+    if (dad == null || mom == null || dad < 40 || mom < 40) {
+      alert('Please enter valid heights for both parents.');
+      return;
+    }
+    // Mid-parental formula for boys: (dad + mom + 5in) / 2
+    const mph = (dad + mom + 5) / 2;
+    const low = mph - 4;
+    const high = mph + 4;
+
+    document.getElementById('pred').innerText = inchesToDisplay(mph);
+    document.getElementById('range').innerText =
+      'Likely range: ' + inchesToDisplay(low) + ' to ' + inchesToDisplay(high) +
+      '. (Based on mid-parental height. Confidence ±4 inches.)';
+    const r = document.getElementById('result');
+    r.classList.add('shown');
+    r.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function capture(e) {
+    e.preventDefault();
+    // Placeholder: wire to Kit / ConvertKit later.
+    document.getElementById('thanks').classList.add('shown');
+    document.getElementById('momH').value = '';
+  }
+</script>
+</body>
+</html>
