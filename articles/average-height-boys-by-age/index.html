@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Average Height for Boys by Age (US CDC Charts, 2 to 18) | GrowthTracker</title>
+<meta name="description" content="CDC-based average heights for boys ages 2 to 18, with 5th-to-95th percentile ranges and what those numbers actually mean for your son." />
+<link rel="canonical" href="https://growth-tracker-preview.netlify.app/articles/average-height-boys-by-age/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Average Height for Boys by Age (US CDC Charts, 2 to 18)" />
+<meta property="og:description" content="CDC-based average heights for boys ages 2 to 18, with 5th-to-95th percentile ranges and what those numbers actually mean for your son." />
+<meta property="og:url" content="https://growth-tracker-preview.netlify.app/articles/average-height-boys-by-age/" />
+<meta property="og:site_name" content="GrowthTracker" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Average Height for Boys by Age (US CDC Charts, 2 to 18)" />
+<meta name="twitter:description" content="CDC-based average heights for boys ages 2 to 18, with 5th-to-95th percentile ranges and what those numbers actually mean for your son." />
+<meta name="robots" content="index, follow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --sage-50: #f4f7f2;
+  --sage-100: #e6ede1;
+  --sage-300: #b8c9ac;
+  --sage-500: #7d9b73;
+  --sage-700: #4f6a4a;
+  --sage-900: #2b3a29;
+  --terra-300: #e8b39a;
+  --terra-500: #cf7955;
+  --terra-700: #a15837;
+  --cream: #fbf7f1;
+  --ink: #2a2723;
+  --ink-soft: #5a5651;
+  --line: #e5ded2;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 {
+  font-family: 'Fraunces', Georgia, serif;
+  color: var(--sage-900);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+h1 { font-size: 2.2rem; margin-bottom: 1.25rem; }
+h2 { font-size: 1.55rem; margin: 2rem 0 0.9rem; }
+h3 { font-size: 1.2rem; margin: 1.5rem 0 0.6rem; }
+p { margin-bottom: 1.1rem; color: var(--ink-soft); }
+p strong { color: var(--sage-900); }
+a { color: var(--terra-700); }
+ul, ol { margin: 0 0 1.1rem 1.25rem; color: var(--ink-soft); }
+li { margin-bottom: 0.35rem; }
+hr { border: none; border-top: 1px solid var(--line); margin: 2.5rem 0; }
+
+blockquote {
+  background: var(--sage-100);
+  border-left: 4px solid var(--terra-500);
+  padding: 1.1rem 1.35rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  color: var(--sage-900);
+  font-size: 0.98rem;
+}
+blockquote p { color: var(--sage-900); margin-bottom: 0.4rem; }
+blockquote p:last-child { margin-bottom: 0; }
+
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 1.25rem; }
+
+/* Nav */
+.nav {
+  background: var(--cream);
+  border-bottom: 1px solid var(--line);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.nav .wrap { display: flex; justify-content: space-between; align-items: center; }
+.nav a.brand {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.25rem;
+  color: var(--sage-900);
+  text-decoration: none;
+  font-weight: 500;
+}
+.nav a.hub {
+  color: var(--sage-700);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.nav a.hub:hover { color: var(--terra-700); }
+
+/* Article */
+article {
+  padding: 2.5rem 0 3rem;
+}
+article .eyebrow {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--terra-700);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0 1.5rem;
+  font-size: 0.92rem;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+article th, article td {
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+}
+article th {
+  background: var(--sage-100);
+  color: var(--sage-900);
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+}
+article tr:last-child td { border-bottom: none; }
+
+.cta-box {
+  margin-top: 2.5rem;
+  padding: 1.75rem;
+  background: var(--sage-100);
+  border-radius: 14px;
+}
+.cta-box h3 {
+  color: var(--sage-900);
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+}
+.cta-box p { margin-bottom: 1rem; color: var(--sage-900); font-size: 0.98rem; }
+.btn {
+  display: inline-block;
+  background: var(--terra-500);
+  color: white;
+  padding: 0.85rem 1.4rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.15s ease;
+}
+.btn:hover { background: var(--terra-700); color: white; }
+
+/* Hub */
+.hub-hero {
+  padding: 3rem 0 2rem;
+  background: linear-gradient(180deg, var(--sage-100) 0%, var(--cream) 100%);
+}
+.hub-hero .eyebrow {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--terra-700);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+.hub-hero h1 { font-size: 2.4rem; margin-bottom: 0.75rem; }
+.hub-hero p.lede { color: var(--sage-900); font-size: 1.05rem; max-width: 34rem; }
+
+.post-list {
+  padding: 2.5rem 0 3rem;
+  display: grid;
+  gap: 1.25rem;
+}
+.post-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.5rem 1.5rem 1.35rem;
+  text-decoration: none;
+  color: var(--ink);
+  display: block;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.post-card:hover {
+  box-shadow: 0 4px 20px rgba(45, 58, 41, 0.08);
+  transform: translateY(-2px);
+}
+.post-card h2 {
+  font-size: 1.3rem;
+  color: var(--sage-900);
+  margin: 0 0 0.5rem;
+}
+.post-card p {
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  margin: 0;
+}
+.post-card .more {
+  display: inline-block;
+  margin-top: 0.9rem;
+  color: var(--terra-700);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+  background: var(--sage-900);
+  color: var(--sage-100);
+  padding: 2.5rem 0 2rem;
+  text-align: center;
+}
+footer p { color: var(--sage-300); font-size: 0.9rem; margin-bottom: 0.5rem; }
+footer a { color: var(--sage-100); text-decoration: none; margin: 0 0.5rem; }
+footer .fine {
+  margin-top: 1.25rem;
+  font-size: 0.78rem;
+  color: var(--sage-300);
+  opacity: 0.75;
+}
+
+@media (min-width: 720px) {
+  body { font-size: 18px; }
+  h1 { font-size: 2.8rem; }
+  .hub-hero h1 { font-size: 3rem; }
+  h2 { font-size: 1.8rem; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": 'Average Height for Boys by Age (US CDC Charts, 2 to 18)',
+  "description": 'CDC-based average heights for boys ages 2 to 18, with 5th-to-95th percentile ranges and what those numbers actually mean for your son.',
+  "author": {"@type": "Organization", "name": "GrowthTracker"},
+  "publisher": {"@type": "Organization", "name": "GrowthTracker"},
+  "mainEntityOfPage": "https://growth-tracker-preview.netlify.app/articles/average-height-boys-by-age/"
+}
+</script>
+</head>
+<body>
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="/">GrowthTracker</a>
+    <a class="hub" href="/articles/">All articles</a>
+  </div>
+</nav>
+<article>
+  <div class="wrap">
+    <div class="eyebrow">For moms of boys 5 to 14</div>
+    <h1>Average Height for Boys by Age (US CDC Charts, 2 to 18)</h1>
+    <p>If you have ever compared your son to the boy sitting next to him at a birthday party and felt your stomach flip, welcome to a very large club. Height feels like it should be simple. A number, a chart, a percentile. But when it is your own child, those numbers get loud. This guide gives you the actual averages, what they mean, and what they do not mean.</p>
+<p>The averages below come from the CDC growth charts used in most US pediatricians' offices. Keep in mind that "average" is just the 50th percentile. Half of all healthy boys are taller than these numbers, and half are shorter. Being under average does not mean being unhealthy or short as an adult. It means being under average.</p>
+<h2>Average Height for Boys by Age (US)</h2>
+<table><thead><tr><th>Age</th><th>Average Height (in)</th><th>Average Height (cm)</th><th>Typical Range (5th to 95th percentile)</th></tr></thead><tbody><tr><td>2</td><td>2'11"</td><td>88 cm</td><td>2'10" to 3'1" (85 to 94 cm)</td></tr><tr><td>3</td><td>3'2"</td><td>96 cm</td><td>3'0" to 3'4" (91 to 102 cm)</td></tr><tr><td>4</td><td>3'5"</td><td>103 cm</td><td>3'3" to 3'7" (99 to 110 cm)</td></tr><tr><td>5</td><td>3'7"</td><td>109 cm</td><td>3'5" to 3'10" (105 to 117 cm)</td></tr><tr><td>6</td><td>3'10"</td><td>115 cm</td><td>3'7" to 4'0" (110 to 123 cm)</td></tr><tr><td>7</td><td>4'0"</td><td>122 cm</td><td>3'9" to 4'3" (116 to 130 cm)</td></tr><tr><td>8</td><td>4'2"</td><td>128 cm</td><td>3'11" to 4'5" (121 to 137 cm)</td></tr><tr><td>9</td><td>4'4"</td><td>133 cm</td><td>4'1" to 4'8" (126 to 143 cm)</td></tr><tr><td>10</td><td>4'6"</td><td>138 cm</td><td>4'3" to 4'10" (131 to 149 cm)</td></tr><tr><td>11</td><td>4'8"</td><td>143 cm</td><td>4'4" to 5'1" (135 to 156 cm)</td></tr><tr><td>12</td><td>4'11"</td><td>149 cm</td><td>4'6" to 5'4" (139 to 163 cm)</td></tr><tr><td>13</td><td>5'1"</td><td>156 cm</td><td>4'9" to 5'8" (144 to 172 cm)</td></tr><tr><td>14</td><td>5'4"</td><td>163 cm</td><td>4'11" to 5'11" (150 to 180 cm)</td></tr><tr><td>15</td><td>5'7"</td><td>170 cm</td><td>5'2" to 6'0" (157 to 184 cm)</td></tr><tr><td>16</td><td>5'8"</td><td>173 cm</td><td>5'4" to 6'1" (161 to 186 cm)</td></tr><tr><td>17</td><td>5'8.5"</td><td>175 cm</td><td>5'5" to 6'2" (163 to 187 cm)</td></tr><tr><td>18</td><td>5'9"</td><td>176 cm</td><td>5'5" to 6'2" (164 to 188 cm)</td></tr></tbody></table>
+<p>A quick note on where these numbers come from: the CDC charts pull from population data collected across the US, so they represent the mix of ethnicities and body types in the country. Some pediatricians will also plot boys against the WHO growth curves, especially before age two. The two charts differ slightly but tell the same overall story.</p>
+<h2>What the Percentiles Actually Mean</h2>
+<p>Percentiles are the piece most people misunderstand. If your son is at the 25th percentile for height at age 10, it means that out of 100 boys his age, about 75 are taller than him and about 24 are shorter. It does not mean he is unhealthy, undernourished, or destined to be short as an adult. It just describes where he sits in the crowd today.</p>
+<p>Two things matter more than any single percentile:</p>
+<p><strong>His trajectory.</strong> A boy who has tracked at the 25th percentile since age two and is still at the 25th percentile at age 10 is growing exactly as expected. His body is following its own curve, and that is usually a good sign. A boy who was at the 50th percentile a year ago and is now at the 20th is the one worth asking about.</p>
+<p><strong>His growth velocity.</strong> After age 4 and before puberty, boys typically grow about 2 to 2.5 inches (5 to 6 cm) per year. During the puberty growth spurt, that jumps to 3 to 5 inches (8 to 12 cm) per year for two or three years. A boy growing less than 2 inches (5 cm) per year past age 4 is worth a closer look, regardless of what percentile he is on.</p>
+<h2>Why the Middle-Grade Years Look So Chaotic</h2>
+<p>If you have a boy between the ages of 11 and 15, you have probably noticed that class photos look like a zoo. There is a kid who is 4'8" standing next to a kid who is 5'10", and they are the same age. This is not a mistake. It is just what puberty timing does.</p>
+<p>Some boys start puberty around age 9 and are mostly done growing by 15. Others do not start until 14 and keep growing into their late teens. Both timelines are normal. The chart above shows the average, but the range at these ages is huge on purpose. A boy at the 5th percentile at age 12 who has not started puberty yet may end up taller than the boy at the 90th percentile who started early. Early-bloomer height often stops feeling special once everyone else catches up.</p>
+<h2>Growth Milestones Worth Knowing</h2>
+<p><strong>Ages 2 to 4:</strong> Growth slows down after the wild toddler stretch. About 2.5 to 3 inches (6 to 8 cm) per year is typical.</p>
+<p><strong>Ages 4 to 8:</strong> The steady middle. Boys grow around 2 to 2.5 inches (5 to 6 cm) per year. This is the age where growth velocity really starts to matter. Anything under 2 inches per year for two years running is worth mentioning to your pediatrician.</p>
+<p><strong>Ages 9 to 14:</strong> Puberty timing takes over. Some boys start their spurt, others sit on the sidelines. Height differences between friends can be dramatic and mostly do not predict adult height.</p>
+<p><strong>Ages 15 to 18:</strong> Boys finish their puberty spurt and slow down. Most reach roughly their adult height by 17 or 18, though some (especially late bloomers) keep adding fractions of an inch into their early 20s.</p>
+<h2>When Being Under Average Matters</h2>
+<p>Being short is not a diagnosis. Most short kids come from short families and are perfectly healthy. That said, a few patterns are worth flagging:</p>
+<ul>
+<li>Height below the 3rd percentile</li>
+<li>Dropping across two or more percentile lines</li>
+<li>Growth velocity under 5 cm per year past age 4</li>
+<li>A predicted adult height under about 5'5"</li>
+<li>No signs of puberty by age 14 in boys</li>
+<li>A big gap between his current trajectory and what you would expect based on your and his father's heights</li>
+</ul>
+<p>Any of these deserves a real conversation, not a panic.</p>
+<blockquote><p><strong>When to talk to a pediatric endocrinologist:</strong> If your son is below the 3rd percentile for height, if his growth has slowed to under 5 cm per year past age 4, if he has crossed two or more percentile lines going down, or if he has no signs of puberty by 14, ask your pediatrician for a referral. The visit usually involves a bone age X-ray and some bloodwork, and often ends with reassurance rather than treatment. But when treatment does help, catching it earlier means more options.</p></blockquote>
+<h2>How to Read the Chart Without Losing Your Mind</h2>
+<p>Here is the honest truth about growth charts: they are more useful over time than in a single snapshot. One data point tells you almost nothing. Six data points across three years tells you a story. That is why pediatricians measure height at every well visit and why the shape of the line matters more than any individual dot.</p>
+<p>If you want to be helpful at your next appointment, bring a running list of his heights with dates. Bring your height and his father's height. Bring notes on when older siblings hit puberty. That context turns a two-minute measurement into an actual assessment.</p>
+<h2>A Word on the Emotional Piece</h2>
+<p>If you are on this page, you are probably not just curious about numbers. You are probably a little worried, and the worry might be running ahead of the facts. That is normal. Height matters to boys in a way that can feel unfair, and it matters to the moms who love them. Getting real data (his percentile, his growth velocity, an actual prediction of his adult height) tends to settle the noise better than reassurance does. Facts are calming when the alternative is imagining.</p>
+<hr />
+<p>If you want to plot your son's growth against the CDC and WHO curves, get a free prediction of his adult height, and see whether his trajectory is where it should be, GrowthTracker does all of that in one place. You enter his measurements, and the app shows you the percentile, the velocity, and how the numbers stack up against boys the same age. It is free to try on the App Store. Sometimes the most reassuring thing is just seeing the chart with his line on it.</p>
+    <div class="cta-box">
+      <h3>Get a free adult height prediction</h3>
+      <p>Enter four numbers, get a real prediction with a confidence range — plus a growth curve plotted against CDC and WHO standards.</p>
+      <a class="btn" href="/#calculator">Predict my son's adult height</a>
+    </div>
+  </div>
+</article>
+<footer>
+  <div class="wrap">
+    <p><a href="/">Home</a> · <a href="/articles/">Articles</a></p>
+    <div class="fine">
+      GrowthTracker is not medical advice. Predictions are estimates, not diagnoses. Always talk to a qualified pediatric provider about your son's growth. © 2026 GrowthTracker.
+    </div>
+  </div>
+</footer>
+</body>
+</html>
