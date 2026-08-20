@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Predicting Adult Height: Every Formula Compared (Mid-Parental, Khamis-Roche, Bone Age) | GrowthTracker</title>
+<meta name="description" content="Four different formulas are used to predict adult height. Here is how each one works, how accurate they actually are, and which one your pediatrician is probably using." />
+<link rel="canonical" href="https://biminiv-alt.github.io/growth-tracker-site/articles/predicting-height-formulas-explained/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Predicting Adult Height: Every Formula Compared (Mid-Parental, Khamis-Roche, Bone Age)" />
+<meta property="og:description" content="Four different formulas are used to predict adult height. Here is how each one works, how accurate they actually are, and which one your pediatrician is probably using." />
+<meta property="og:url" content="https://biminiv-alt.github.io/growth-tracker-site/articles/predicting-height-formulas-explained/" />
+<meta property="og:site_name" content="GrowthTracker" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Predicting Adult Height: Every Formula Compared (Mid-Parental, Khamis-Roche, Bone Age)" />
+<meta name="twitter:description" content="Four different formulas are used to predict adult height. Here is how each one works, how accurate they actually are, and which one your pediatrician is probably using." />
+<meta name="robots" content="index, follow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --sage-50: #f4f7f2;
+  --sage-100: #e6ede1;
+  --sage-300: #b8c9ac;
+  --sage-500: #7d9b73;
+  --sage-700: #4f6a4a;
+  --sage-900: #2b3a29;
+  --terra-300: #e8b39a;
+  --terra-500: #cf7955;
+  --terra-700: #a15837;
+  --cream: #fbf7f1;
+  --ink: #2a2723;
+  --ink-soft: #5a5651;
+  --line: #e5ded2;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', system-ui, sans-serif; background: var(--cream); color: var(--ink); line-height: 1.65; font-size: 17px; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4 { font-family: 'Fraunces', Georgia, serif; color: var(--sage-900); font-weight: 500; line-height: 1.2; letter-spacing: -0.01em; }
+h1 { font-size: 2.2rem; margin-bottom: 1.25rem; }
+h2 { font-size: 1.55rem; margin: 2rem 0 0.9rem; }
+h3 { font-size: 1.2rem; margin: 1.5rem 0 0.6rem; }
+p { margin-bottom: 1.1rem; color: var(--ink-soft); }
+p strong { color: var(--sage-900); }
+a { color: var(--terra-700); }
+ul, ol { margin: 0 0 1.1rem 1.25rem; color: var(--ink-soft); }
+li { margin-bottom: 0.35rem; }
+hr { border: none; border-top: 1px solid var(--line); margin: 2.5rem 0; }
+blockquote { background: var(--sage-100); border-left: 4px solid var(--terra-500); padding: 1.1rem 1.35rem; border-radius: 8px; margin: 1.5rem 0; color: var(--sage-900); font-size: 0.98rem; }
+blockquote p { color: var(--sage-900); margin-bottom: 0.4rem; }
+blockquote p:last-child { margin-bottom: 0; }
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 1.25rem; }
+.nav { background: var(--cream); border-bottom: 1px solid var(--line); padding: 1rem 0; position: sticky; top: 0; z-index: 10; }
+.nav .wrap { display: flex; justify-content: space-between; align-items: center; }
+.nav a.brand { font-family: 'Fraunces', Georgia, serif; font-size: 1.25rem; color: var(--sage-900); text-decoration: none; font-weight: 500; }
+.nav a.hub { color: var(--sage-700); text-decoration: none; font-size: 0.95rem; font-weight: 500; }
+.nav a.hub:hover { color: var(--terra-700); }
+article { padding: 2.5rem 0 3rem; }
+article .eyebrow { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--terra-700); font-weight: 600; margin-bottom: 0.75rem; }
+article table { width: 100%; border-collapse: collapse; margin: 1.25rem 0 1.5rem; font-size: 0.92rem; background: white; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); }
+article th, article td { padding: 0.6rem 0.8rem; text-align: left; border-bottom: 1px solid var(--line); color: var(--ink); }
+article th { background: var(--sage-100); color: var(--sage-900); font-weight: 600; font-family: 'Inter', sans-serif; }
+article tr:last-child td { border-bottom: none; }
+.cta-box { margin-top: 2.5rem; padding: 1.75rem; background: var(--sage-100); border-radius: 14px; }
+.cta-box h3 { color: var(--sage-900); margin: 0 0 0.5rem; font-size: 1.2rem; }
+.cta-box p { margin-bottom: 1rem; color: var(--sage-900); font-size: 0.98rem; }
+.btn { display: inline-block; background: var(--terra-500); color: white; padding: 0.85rem 1.4rem; border-radius: 12px; font-weight: 600; text-decoration: none; font-size: 1rem; transition: background 0.15s ease; }
+.btn:hover { background: var(--terra-700); color: white; }
+footer { background: var(--sage-900); color: var(--sage-100); padding: 2.5rem 0 2rem; text-align: center; }
+footer p { color: var(--sage-300); font-size: 0.9rem; margin-bottom: 0.5rem; }
+footer a { color: var(--sage-100); text-decoration: none; margin: 0 0.5rem; }
+footer .fine { margin-top: 1.25rem; font-size: 0.78rem; color: var(--sage-300); opacity: 0.75; }
+@media (min-width: 720px) { body { font-size: 18px; } h1 { font-size: 2.8rem; } h2 { font-size: 1.8rem; } }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="/growth-tracker-site/">GrowthTracker</a>
+    <a class="hub" href="/growth-tracker-site/articles/">All articles</a>
+  </div>
+</nav>
+<article>
+  <div class="wrap">
+    <div class="eyebrow">For moms who want the numbers</div>
+    <h1>Predicting Adult Height: Every Formula Compared (Mid-Parental, Khamis-Roche, Bone Age)</h1>
+    <p>If you have ever plugged your son's numbers into a "predict his adult height" calculator online and gotten a different answer from every site, you have stumbled into a real problem. There are several height prediction methods in wide use, they do not all agree, and some are more accurate than others. Here is what each one actually does, how well it works, and which one your pediatrician is most likely using.</p>
+
+    <h2>Why We Predict at All</h2>
+
+    <p>Adult height matters for two reasons in a pediatric context. First, it is a useful check on whether a boy's current growth is on track or off. If a 12-year-old is predicted to end up at 5'10" and he is already tracking below the 3rd percentile, something is inconsistent and worth looking at. Second, families genuinely want to know. Height affects a lot of practical decisions, and a real prediction beats guessing.</p>
+
+    <p>Predictions are estimates, not promises. All of them come with a confidence range, and the range is usually a few inches on either side. That is the honest answer. But a range of a few inches is a lot more useful than nothing.</p>
+
+    <h2>Method 1: Mid-Parental Height (The Quick One)</h2>
+
+    <p>This is the formula every pediatrician has memorized. It uses only two numbers: mom's height and dad's height.</p>
+
+    <p><strong>For a boy:</strong></p>
+
+    <p>(Dad's height in inches + Mom's height in inches + 5) / 2</p>
+
+    <p><strong>Example:</strong> Dad is 5'10" (70 in), mom is 5'5" (65 in).</p>
+
+    <p>(70 + 65 + 5) / 2 = 70 inches, or 5'10"</p>
+
+    <p>The 5 inches is added because on average, boys end up about 5 inches taller than their mothers. Mid-parental height gives you a target adult height, plus or minus about 4 inches on either side to account for the fact that genetics do not hand out identical outcomes.</p>
+
+    <p><strong>Accuracy:</strong> The prediction is roughly in the right neighborhood for most boys, but the plus-or-minus 4 inch range is wide. It does not use anything about the child himself, so it cannot distinguish a fast grower from a slow one within the same family.</p>
+
+    <p><strong>Best for:</strong> A quick sanity check. If your son is tracking way above or way below his mid-parental target, that is worth noticing.</p>
+
+    <h2>Method 2: Khamis-Roche (The Best Non-X-ray Method)</h2>
+
+    <p>Khamis-Roche is the method most pediatric height calculators actually run under the hood. It was developed in the 1990s from a longitudinal study of children whose heights were tracked from infancy to adulthood. It uses four inputs:</p>
+
+    <ul>
+      <li>The child's current age</li>
+      <li>The child's current height</li>
+      <li>The child's current weight</li>
+      <li>Mid-parental height</li>
+    </ul>
+
+    <p>The formula applies age-specific and sex-specific coefficients to each input, weights them, and returns a predicted adult height. It is a lot of arithmetic, which is why calculators exist.</p>
+
+    <p><strong>Accuracy:</strong> For most healthy boys aged 4 and up, Khamis-Roche predictions land within about 2 inches of the actual adult height. That is roughly twice as accurate as mid-parental height alone.</p>
+
+    <p><strong>Limitations:</strong> It assumes normal growth and average puberty timing. For a boy with unusually early or late puberty, or a medical condition affecting growth, the prediction can be off. It also gets more accurate as the child gets older, because there is less time left for surprises.</p>
+
+    <p><strong>Best for:</strong> The go-to prediction for a healthy child. It is what most online calculators use.</p>
+
+    <h2>Method 3: Bone Age (Bayley-Pinneau and Tanner-Whitehouse)</h2>
+
+    <p>Bone age prediction requires an X-ray of the non-dominant hand. A radiologist compares the image to a standard atlas and estimates the bone age (how mature the skeleton looks, in years). That bone age is then plugged into one of two formulas:</p>
+
+    <ul>
+      <li><strong>Bayley-Pinneau</strong> is the older, simpler method. It uses current height and bone age to predict how much growth is left based on standardized tables.</li>
+      <li><strong>Tanner-Whitehouse (TW3)</strong> is more modern and uses a scoring system for individual bones. It tends to be more accurate but requires trained interpretation.</li>
+    </ul>
+
+    <p><strong>Accuracy:</strong> For most healthy children, bone-age-based predictions land within about 1.5 to 2 inches of adult height. They are the most accurate for kids whose puberty timing is unusual, because the bone age captures how far along the actual maturation is, independent of the calendar.</p>
+
+    <p><strong>Limitations:</strong> Requires an X-ray, which is why pediatricians order it only when there is a clinical reason (unusually short stature, delayed puberty, or a workup for growth hormone deficiency). Reading bone age has some inter-radiologist variability.</p>
+
+    <p><strong>Best for:</strong> Kids being evaluated by a pediatric endocrinologist. If your son has had a bone age X-ray, the resulting prediction is likely the most accurate one available for him.</p>
+
+    <h2>Method 4: The Multiplier Method</h2>
+
+    <p>The multiplier method is a simpler technique used mainly in orthopedic contexts, especially for planning surgeries in kids with leg length differences. It multiplies the child's current height by a sex- and age-specific multiplier to estimate adult height.</p>
+
+    <p><strong>Accuracy:</strong> Similar in accuracy to Khamis-Roche for typical growth patterns. Less commonly used for general prediction.</p>
+
+    <p><strong>Best for:</strong> Orthopedic planning. Not usually the method a pediatrician quotes.</p>
+
+    <h2>How the Methods Compare</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Method</th>
+          <th>Inputs</th>
+          <th>Typical Accuracy</th>
+          <th>Requires X-ray?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Mid-parental height</td>
+          <td>Parents' heights</td>
+          <td>Within ~4 inches</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Khamis-Roche</td>
+          <td>Age, height, weight, mid-parental</td>
+          <td>Within ~2 inches</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Bayley-Pinneau (bone age)</td>
+          <td>Height, bone age</td>
+          <td>Within ~1.5 to 2 inches</td>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <td>Tanner-Whitehouse (bone age)</td>
+          <td>Height, bone age scoring</td>
+          <td>Within ~1.5 to 2 inches</td>
+          <td>Yes</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Why Predictions Miss</h2>
+
+    <p>Even the best method has honest sources of error:</p>
+
+    <ul>
+      <li><strong>Puberty timing surprises.</strong> A boy who ends up being a very late bloomer may exceed his early prediction. An unusually early puberty may cause him to fall short of it.</li>
+      <li><strong>Undiagnosed medical issues.</strong> Untreated celiac, low thyroid, or growth hormone deficiency can pull growth off track.</li>
+      <li><strong>Measurement noise.</strong> If the current height going into the formula is off by an inch, the prediction is off by roughly the same.</li>
+      <li><strong>Bone age estimation.</strong> Reading bone age has some subjective element.</li>
+      <li><strong>Genetic variability.</strong> Even mid-parental targets have wide natural spread. A boy with two 5'8" parents can end up 5'6" or 6'0" without anything being unusual.</li>
+    </ul>
+
+    <blockquote>
+      <p><strong>When a prediction should prompt a pediatric endocrinologist visit:</strong> If your son's Khamis-Roche or bone age prediction is under about 5'5" and there is no clear family reason for it, or if his current height is below the 3rd percentile, or if his growth velocity has been under 5 cm per year past age 4, or if he has no signs of puberty by age 14, ask your pediatrician for a referral. A workup can catch treatable causes before the growth plates fuse.</p>
+    </blockquote>
+
+    <h2>What Your Pediatrician Is Probably Using</h2>
+
+    <p>Most general pediatricians quote mid-parental height because it is the fastest calculation and they have the parents' heights in the chart. When they want a real prediction, they either use a Khamis-Roche calculator or refer to a pediatric endocrinologist who can order a bone age X-ray and use that. If your pediatrician has quoted a specific number, ask which method they used. It is a fair question, and the answer changes how much weight to put on the estimate.</p>
+
+    <h2>How to Use a Prediction</h2>
+
+    <p>A prediction is a planning tool, not a diagnosis. Use it to:</p>
+
+    <ul>
+      <li>Sanity-check whether current growth is on track.</li>
+      <li>Set expectations without pretending you know the exact answer.</li>
+      <li>Decide whether concerns are worth raising with a pediatrician.</li>
+      <li>Track how the prediction changes over time (a stable prediction that keeps landing in the same range is a reassuring signal).</li>
+    </ul>
+
+    <p>Do not use it to make hard promises to your son. Genetics have a wide standard deviation. What you are really giving him is a range, and the range is often what matters most.</p>
+
+    <hr />
+
+    <p>GrowthTracker uses the Khamis-Roche formula (the same one pediatricians use behind the scenes) to give you an evidence-based adult height prediction with a confidence range. You can plot his growth against CDC and WHO curves over time and see how the prediction updates as he grows, so you can make informed decisions about whether to talk to a pediatrician.</p>
+
+    <div class="cta-box">
+      <h3>Get a free adult height prediction</h3>
+      <p>Enter four numbers, get a real prediction with a confidence range, plus a growth curve plotted against CDC and WHO standards.</p>
+      <a class="btn" href="/growth-tracker-site/#calculator">Predict my son's adult height</a>
+    </div>
+  </div>
+</article>
+<footer>
+  <div class="wrap">
+    <p><a href="/growth-tracker-site/">Home</a> · <a href="/growth-tracker-site/articles/">Articles</a></p>
+    <div class="fine">
+      GrowthTracker is not medical advice. Predictions are estimates, not diagnoses. Always talk to a qualified pediatric provider about your son's growth. © 2026 GrowthTracker.
+    </div>
+  </div>
+</footer>
+</body>
+</html>
