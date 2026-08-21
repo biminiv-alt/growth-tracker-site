@@ -52,7 +52,7 @@
 
   /* Hero */
   .hero {
-    padding: 3.5rem 0 2.5rem;
+    padding: 1.75rem 0 1.25rem;
     background: linear-gradient(180deg, var(--sage-100) 0%, var(--cream) 100%);
   }
   .hero .eyebrow {
@@ -370,9 +370,9 @@
 <header class="hero">
   <div class="wrap">
     <div class="eyebrow">For moms of boys 5 to 14</div>
-    <h1>Is my son a late bloomer, or is something else going on?</h1>
-    <p class="lede">A free prediction, a growth curve, and honest answers from another mom who's been there. No sales pitch. No white coat.</p>
-    <a href="#calculator" class="btn">Predict My Son's Adult Height, Free</a>
+    <h1>Should you see a pediatric endocrinologist about your son's growth? Get a real answer in 60 seconds.</h1>
+    <p class="lede">Enter four numbers. Get a predicted adult height with a real confidence range, a growth curve against CDC/WHO standards, and clear rules for when to escalate. Free. From another mom who's been there.</p>
+    <a href="#calculator" class="btn">See His Prediction + Referral Check</a>
   </div>
 </header>
 
@@ -381,7 +381,7 @@
   <div class="wrap">
     <div class="calc">
       <h2>How tall will he be?</h2>
-      <p class="sub">Enter four numbers. Get a prediction in seconds.</p>
+      <p class="sub">You'll leave this page knowing (a) his predicted adult height with a real range, and (b) whether it's time to book a specialist.</p>
 
       <div class="unit-toggle" role="tablist" aria-label="Units">
         <button type="button" data-unit="imperial" class="active" onclick="setUnit('imperial')">Imperial (ft/in)</button>
@@ -419,6 +419,16 @@
         <div class="num" id="pred"></div>
         <div class="range" id="range"></div>
 
+        <div class="escalate" id="escalate" style="margin-top:1.25rem;padding:1rem 1.1rem;border-left:3px solid var(--terra-700);background:var(--sage-50);border-radius:6px;">
+          <div class="label" style="font-weight:600;color:var(--sage-900);margin-bottom:0.35rem;">When to escalate to a pediatric endocrinologist</div>
+          <ul style="margin:0.25rem 0 0 1.1rem;padding:0;color:var(--ink-soft);">
+            <li>He is below the 3rd percentile for height</li>
+            <li>Growth velocity is under 5 cm per year after age 4</li>
+            <li>No signs of puberty by age 14</li>
+          </ul>
+          <p style="margin:0.6rem 0 0 0;font-size:0.95rem;color:var(--ink-soft);">Any one of these is a reason to book a specialist visit. Two or more, do not wait.</p>
+        </div>
+
         <div class="gate">
           <p><strong>Want the full report?</strong> Get his personalized growth curve, a plain-English breakdown of what this number means, and our 5-part guide "When to worry, when to wait." Sent by email, free.</p>
           <form onsubmit="capture(event)">
@@ -437,6 +447,7 @@
   <div class="wrap">
     <div class="big">1 in every 4 boys</div>
     <div class="cap">is in the shortest quarter for his age. Being small isn't rare. It also isn't nothing.</div>
+    <div class="cap" style="margin-top:0.75rem;font-weight:500;color:var(--sage-900);">The question isn't whether he's short. It's whether it's worth a specialist visit.</div>
   </div>
 </section>
 
@@ -446,12 +457,12 @@
     <h2>Other moms in the group chat</h2>
     <div class="testimonials">
       <div class="quote">
-        "I'd been Googling at midnight for three years. This was the first thing that gave me an actual number and told me what it meant."
-        <div class="who">Rachel, mom of a 10-year-old</div>
-      </div>
-      <div class="quote">
         "The 'when to see an endo' page saved me a year of guessing. Turns out we needed to go. Wish I'd downloaded this sooner."
         <div class="who">Amanda, mom of an 8-year-old</div>
+      </div>
+      <div class="quote">
+        "I'd been Googling at midnight for three years. This was the first thing that gave me an actual number and told me what it meant."
+        <div class="who">Rachel, mom of a 10-year-old</div>
       </div>
       <div class="quote">
         "Every other app made me feel like something was wrong with my son. This one made me feel like something was right with me for caring."
@@ -467,6 +478,11 @@
     <h2>What's inside</h2>
     <div class="features">
       <div class="feat">
+        <div class="ico">🩺</div>
+        <h3>When to escalate</h3>
+        <p>Clear referral rules: what triggers a pediatric endocrinologist visit, what questions to ask, what a bone age scan actually tells you.</p>
+      </div>
+      <div class="feat">
         <div class="ico">📏</div>
         <h3>Adult height prediction</h3>
         <p>Mid-parental and Khamis-Roche formulas, presented with a real confidence range. Not one made-up number.</p>
@@ -475,11 +491,6 @@
         <div class="ico">📈</div>
         <h3>Growth curves</h3>
         <p>His line plotted against WHO and CDC standards. Log a measurement in ten seconds. Export a PDF your pediatrician will actually read.</p>
-      </div>
-      <div class="feat">
-        <div class="ico">🩺</div>
-        <h3>When to worry</h3>
-        <p>Clear referral rules: what triggers a pediatric endocrinologist visit, what questions to ask, what a bone age scan actually tells you.</p>
       </div>
       <div class="feat">
         <div class="ico">💬</div>
@@ -532,10 +543,15 @@
   <div class="wrap">
     <h2>Get the app.</h2>
     <p>The full tracker, prediction engine, and community. Free to start.</p>
-    <a href="#" class="apple-btn" id="appstore">
-      <span>🍎</span> Download on the App Store
-    </a>
-    <p style="margin-top:1rem;"><a href="/articles/" style="color:var(--sage-100); text-decoration:underline;">Read our articles →</a></p>
+    <div class="apple-btn-wrap" id="appstore" style="margin: 0 auto 0.5rem;">
+      <p style="margin:0 0 0.5rem 0;color:var(--sage-100);"><strong>Get notified when the app launches.</strong></p>
+      <form onsubmit="captureLaunch(event)" class="launch-notify" style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;">
+        <input type="email" id="launchEmail" placeholder="your@email.com" required style="padding:0.6rem 0.75rem;border-radius:6px;border:1px solid var(--sage-100);min-width:220px;" />
+        <button type="submit" class="btn">Notify Me</button>
+      </form>
+      <div class="thanks" id="launchThanks" style="display:none;color:var(--sage-100);margin-top:0.5rem;">Thanks. We'll email you the day it goes live.</div>
+    </div>
+    <p style="margin-top:1rem;"><a href="/growth-tracker-site/articles/" style="color:var(--sage-100); text-decoration:underline;">Read our articles →</a></p>
     <div class="fine">
       GrowthTracker is not medical advice. Predictions are estimates, not diagnoses. Always talk to a qualified pediatric provider about your son's growth. © 2026 GrowthTracker.
     </div>
@@ -623,6 +639,13 @@
     // Placeholder: wire to Kit / ConvertKit later.
     document.getElementById('thanks').classList.add('shown');
     document.getElementById('momH').value = '';
+  }
+
+  function captureLaunch(e) {
+    e.preventDefault();
+    document.querySelector('#appstore form').style.display = 'none';
+    document.getElementById('launchThanks').style.display = 'block';
+    return false;
   }
 </script>
 </body>
