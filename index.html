@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>GrowthTracker: Predict Your Son's Adult Height, Free</title>
-<meta name="description" content="A free prediction, a growth curve, and honest answers for moms wondering if their son will always be small. Built for parents, not clinicians." />
+<meta name="description" content="A free predictor, a growth curve you can track over time, and honest guidance for parents of boys on the shorter side. Built for parents, not clinicians." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -52,7 +52,7 @@
 
   /* Hero */
   .hero {
-    padding: 1.75rem 0 1.25rem;
+    padding: 3.5rem 0 2.5rem;
     background: linear-gradient(180deg, var(--sage-100) 0%, var(--cream) 100%);
   }
   .hero .eyebrow {
@@ -200,25 +200,30 @@
     font-size: 0.95rem;
     margin-bottom: 1.25rem;
   }
-  .result .gate {
+  .next-tiles {
+    display: grid;
+    gap: 0.9rem;
+    margin-top: 1.25rem;
+  }
+  .next-tile {
     background: white;
-    padding: 1.25rem;
+    border: 1px solid var(--sage-300);
     border-radius: 10px;
-    border: 1px dashed var(--sage-300);
+    padding: 1rem 1.1rem;
   }
-  .result .gate p {
-    font-size: 0.95rem;
-    margin-bottom: 0.75rem;
+  .next-tile h4 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.05rem;
+    color: var(--sage-900);
+    margin-bottom: 0.35rem;
+    font-weight: 600;
   }
-  .result .gate input[type="email"] {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1.5px solid var(--line);
-    border-radius: 10px;
-    margin-bottom: 0.75rem;
-    font-family: inherit;
-    font-size: 1rem;
+  .next-tile p {
+    font-size: 0.93rem;
+    margin-bottom: 0;
+    color: var(--ink-soft);
   }
+  .next-tile a { font-weight: 600; }
   .thanks {
     display: none;
     padding: 1rem;
@@ -229,6 +234,22 @@
     font-weight: 500;
   }
   .thanks.shown { display: block; }
+
+  /* Secondary CTA band under hero */
+  .sub-cta {
+    background: var(--cream);
+    padding: 1.25rem 0 0.5rem;
+    text-align: center;
+  }
+  .sub-cta a {
+    display: inline-block;
+    color: var(--sage-700);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: var(--sage-300);
+    text-underline-offset: 4px;
+    font-size: 1rem;
+  }
 
   /* Social proof */
   .stat-band {
@@ -314,7 +335,7 @@
     font-size: 1.3rem;
     color: var(--terra-500);
   }
-  .faq details[open] summary::after { content: '−'; }
+  .faq details[open] summary::after { content: '\2212'; }
   .faq .body {
     margin-top: 0.9rem;
     color: var(--ink-soft);
@@ -330,16 +351,23 @@
   }
   footer h2 { color: white; font-size: 1.8rem; margin-bottom: 1rem; }
   footer p { color: var(--sage-300); margin-bottom: 1.5rem; }
-  footer .apple-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    background: black;
-    color: white;
-    padding: 0.85rem 1.5rem;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 600;
+  footer .apple-btn-wrap {
+    margin: 0 auto 0.5rem;
+    max-width: 420px;
+  }
+  footer .launch-notify {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  footer .launch-notify input {
+    padding: 0.6rem 0.75rem;
+    border-radius: 6px;
+    border: 1px solid var(--sage-100);
+    min-width: 220px;
+    font-family: inherit;
+    font-size: 1rem;
   }
   footer .fine {
     margin-top: 2rem;
@@ -355,13 +383,14 @@
     h2 { font-size: 2.1rem; }
     .features { grid-template-columns: 1fr 1fr; }
     .testimonials { grid-template-columns: 1fr 1fr 1fr; }
+    .next-tiles { grid-template-columns: 1fr 1fr 1fr; }
   }
 </style>
 <link rel="canonical" href="https://growth-tracker-preview.netlify.app/" />
 <meta name="robots" content="index, follow" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="GrowthTracker: Predict Your Son's Adult Height, Free" />
-<meta property="og:description" content="A free prediction, a growth curve, and honest answers for moms wondering if their son will always be small." />
+<meta property="og:description" content="A free predictor, a growth curve you can track over time, and honest guidance for parents of boys on the shorter side." />
 <meta property="og:url" content="https://growth-tracker-preview.netlify.app/" />
 </head>
 <body>
@@ -370,18 +399,25 @@
 <header class="hero">
   <div class="wrap">
     <div class="eyebrow">For moms of boys 5 to 14</div>
-    <h1>Should you see a pediatric endocrinologist about your son's growth? Get a real answer in 60 seconds.</h1>
-    <p class="lede">Enter four numbers. Get a predicted adult height with a real confidence range, a growth curve against CDC/WHO standards, and clear rules for when to escalate. Free. From another mom who's been there.</p>
-    <a href="#calculator" class="btn">See His Prediction + Referral Check</a>
+    <h1>Predict your son's adult height. Then help him thrive at whatever that number turns out to be.</h1>
+    <p class="lede">Free predictor. Track his growth over time. Honest guidance for parents of boys on the shorter side, from another mom who's been there.</p>
+    <a href="#calculator" class="btn">See His Prediction (Free)</a>
   </div>
 </header>
+
+<!-- SECONDARY CTA (below the fold) -->
+<div class="sub-cta">
+  <div class="wrap">
+    <a href="#getapp">Track his growth over time. Get the app ($10/mo).</a>
+  </div>
+</div>
 
 <!-- CALCULATOR -->
 <section id="calculator">
   <div class="wrap">
     <div class="calc">
       <h2>How tall will he be?</h2>
-      <p class="sub">You'll leave this page knowing (a) his predicted adult height with a real range, and (b) whether it's time to book a specialist.</p>
+      <p class="sub">Enter four numbers. Get a prediction in seconds.</p>
 
       <div class="unit-toggle" role="tablist" aria-label="Units">
         <button type="button" data-unit="imperial" class="active" onclick="setUnit('imperial')">Imperial (ft/in)</button>
@@ -419,23 +455,22 @@
         <div class="num" id="pred"></div>
         <div class="range" id="range"></div>
 
-        <div class="escalate" id="escalate" style="margin-top:1.25rem;padding:1rem 1.1rem;border-left:3px solid var(--terra-700);background:var(--sage-50);border-radius:6px;">
-          <div class="label" style="font-weight:600;color:var(--sage-900);margin-bottom:0.35rem;">When to escalate to a pediatric endocrinologist</div>
-          <ul style="margin:0.25rem 0 0 1.1rem;padding:0;color:var(--ink-soft);">
-            <li>He is below the 3rd percentile for height</li>
-            <li>Growth velocity is under 5 cm per year after age 4</li>
-            <li>No signs of puberty by age 14</li>
-          </ul>
-          <p style="margin:0.6rem 0 0 0;font-size:0.95rem;color:var(--ink-soft);">Any one of these is a reason to book a specialist visit. Two or more, do not wait.</p>
-        </div>
-
-        <div class="gate">
-          <p><strong>Want the full report?</strong> Get his personalized growth curve, a plain-English breakdown of what this number means, and our 5-part guide "When to worry, when to wait." Sent by email, free.</p>
-          <form onsubmit="capture(event)">
-            <input type="email" placeholder="your@email.com" required id="email" />
-            <button type="submit" class="btn">Send Me the Full Report</button>
-          </form>
-          <div class="thanks" id="thanks">Check your inbox. The full report is on its way.</div>
+        <div class="next-tiles">
+          <div class="next-tile">
+            <h4>Track it</h4>
+            <p>Log his height every 3 months in the app and watch the curve unfold. $10/mo.</p>
+            <p style="margin-top:0.5rem;"><a href="#getapp">Get the app</a></p>
+          </div>
+          <div class="next-tile">
+            <h4>Live with it well</h4>
+            <p>Honest emotional prep for parents of boys on the shorter side. Written by another mom.</p>
+            <p style="margin-top:0.5rem;"><a href="/growth-tracker-site/articles/">Open the library</a></p>
+          </div>
+          <div class="next-tile">
+            <h4>When it IS medical</h4>
+            <p>Most short boys are just short. A small share have something a doctor can help with. Here is how to tell.</p>
+            <p style="margin-top:0.5rem;"><a href="/growth-tracker-site/articles/is-my-son-a-late-bloomer/">Read the health signals</a></p>
+          </div>
         </div>
       </div>
     </div>
@@ -446,8 +481,7 @@
 <section class="stat-band tight">
   <div class="wrap">
     <div class="big">1 in every 4 boys</div>
-    <div class="cap">is in the shortest quarter for his age. Being small isn't rare. It also isn't nothing.</div>
-    <div class="cap" style="margin-top:0.75rem;font-weight:500;color:var(--sage-900);">The question isn't whether he's short. It's whether it's worth a specialist visit.</div>
+    <div class="cap">is in the shortest quarter for his age. Being on the shorter side is common. It also is not nothing.</div>
   </div>
 </section>
 
@@ -456,9 +490,10 @@
   <div class="wrap">
     <h2>Other moms in the group chat</h2>
     <div class="testimonials">
+      <!-- TK: Spencer to replace with real testimonial -->
       <div class="quote">
-        "The 'when to see an endo' page saved me a year of guessing. Turns out we needed to go. Wish I'd downloaded this sooner."
-        <div class="who">Amanda, mom of an 8-year-old</div>
+        "The app helped us stop refreshing his height in my head every night. Logging a number once a quarter and then closing the phone changed my life."
+        <div class="who">Placeholder, mom of a 9-year-old</div>
       </div>
       <div class="quote">
         "I'd been Googling at midnight for three years. This was the first thing that gave me an actual number and told me what it meant."
@@ -467,6 +502,10 @@
       <div class="quote">
         "Every other app made me feel like something was wrong with my son. This one made me feel like something was right with me for caring."
         <div class="who">Priya, mom of a 12-year-old</div>
+      </div>
+      <div class="quote">
+        "The 'when it's medical' page saved me a year of guessing. Turns out we needed to go. Wish I'd downloaded this sooner."
+        <div class="who">Amanda, mom of an 8-year-old</div>
       </div>
     </div>
   </div>
@@ -478,22 +517,32 @@
     <h2>What's inside</h2>
     <div class="features">
       <div class="feat">
-        <div class="ico">🩺</div>
-        <h3>When to escalate</h3>
-        <p>Clear referral rules: what triggers a pediatric endocrinologist visit, what questions to ask, what a bone age scan actually tells you.</p>
-      </div>
-      <div class="feat">
-        <div class="ico">📏</div>
+        <div class="ico">ð</div>
         <h3>Adult height prediction</h3>
         <p>Mid-parental and Khamis-Roche formulas, presented with a real confidence range. Not one made-up number.</p>
       </div>
       <div class="feat">
-        <div class="ico">📈</div>
+        <div class="ico">ð</div>
         <h3>Growth curves</h3>
         <p>His line plotted against WHO and CDC standards. Log a measurement in ten seconds. Export a PDF your pediatrician will actually read.</p>
       </div>
       <div class="feat">
-        <div class="ico">💬</div>
+        <div class="ico">ð</div>
+        <h3>Live with it well</h3>
+        <p>Honest emotional prep for parents of boys on the shorter side. Short essays, coping scripts, and the stuff nobody says out loud, written by another mom.</p>
+      </div>
+      <div class="feat">
+        <div class="ico">ð±</div>
+        <h3>The app ($10/mo)</h3>
+        <p>The paid tracker: log his height every 3 months, watch the curve build over years, and get new coping-library articles as they land.</p>
+      </div>
+      <div class="feat">
+        <div class="ico">ð©º</div>
+        <h3>Health signals</h3>
+        <p>What actually warrants a pediatrician conversation and what does not. Written to de-escalate, not to alarm.</p>
+      </div>
+      <div class="feat">
+        <div class="ico">ð¬</div>
         <h3>The community</h3>
         <p>A private group of moms in the same middle-of-the-night place. No supplement sellers. No dismissive replies.</p>
       </div>
@@ -508,52 +557,52 @@
 
     <details>
       <summary>Is my son just a late bloomer?</summary>
-      <div class="body">Probably, yes. Constitutional delay of growth and puberty is the most common cause of a boy tracking below his peers, and it's usually harmless. But "probably" isn't "definitely." The signs that suggest late bloomer: dad or mom hit puberty late, growth velocity is steady (not slowing), no other symptoms. The signs that suggest something else: growth has flattened, he's slipping below his own curve, or puberty hasn't started by age 14. The app walks you through both sides.</div>
+      <div class="body">Probably, yes. Constitutional delay of growth and puberty is the most common cause of a boy tracking below his peers, and it is usually harmless. But "probably" is not "definitely." The signs that suggest late bloomer: dad or mom hit puberty late, growth velocity is steady (not slowing), no other symptoms. The signs that suggest something else: growth has flattened, he is slipping below his own curve, or puberty has not started by age 14. The app walks you through both sides.</div>
     </details>
 
     <details>
       <summary>When should I see a pediatrician?</summary>
-      <div class="body">Any time you're worried. That's the whole answer. If you want thresholds: below the 3rd percentile, growth velocity under 5cm per year past age 4, dropping across two percentile lines, or no puberty signs by age 14 in boys. Bring a printed growth chart. Ask specifically about a bone age X-ray and a referral to a pediatric endocrinologist. If your pediatrician tells you to "wait and see" and you're not comforted, get a second opinion.</div>
+      <div class="body">Any time you are worried. That is the whole answer. If you want thresholds: below the 3rd percentile, growth velocity under 5cm per year past age 4, dropping across two percentile lines, or no puberty signs by age 14 in boys. Bring a printed growth chart. Ask specifically about a bone age X-ray and a referral to a pediatric endocrinologist. If your pediatrician tells you to "wait and see" and you are not comforted, get a second opinion.</div>
     </details>
 
     <details>
       <summary>Are growth hormones safe?</summary>
-      <div class="body">For kids with a diagnosed condition (growth hormone deficiency, Turner syndrome, chronic kidney disease, ISS below certain thresholds), the safety data over 40 years is well-established. Side effects exist and matter. The decision is not trivial. It involves daily injections for years, five-figure annual costs, and a family conversation about what "tall enough" means. A pediatric endocrinologist is the only person qualified to walk you through it. The app has a full article on what to ask before saying yes.</div>
+      <div class="body">For kids with a diagnosed condition (growth hormone deficiency, Turner syndrome, chronic kidney disease, ISS below certain thresholds), the safety data over 40 years is well established. Side effects exist and matter. The decision is not trivial. It involves daily injections for years, five-figure annual costs, and a family conversation about what "tall enough" means. A pediatric endocrinologist is the only person qualified to walk you through it. The app has a full article on what to ask before saying yes.</div>
     </details>
 
     <details>
       <summary>Does puberty timing affect final height?</summary>
-      <div class="body">Yes, in both directions. Boys who enter puberty late often end up taller than their mid-childhood percentile suggested, because they get extra pre-puberty growth years. Boys who enter puberty early can end up shorter than expected, because the growth plates fuse sooner. This is why a doctor asks about Tanner stage before predicting height. It's also why "he's just short now" doesn't tell you what he'll be at 20.</div>
+      <div class="body">Yes, in both directions. Boys who enter puberty late often end up taller than their mid-childhood percentile suggested, because they get extra pre-puberty growth years. Boys who enter puberty early can end up shorter than expected, because the growth plates fuse sooner. This is why a doctor asks about Tanner stage before predicting height. It is also why "he is just short now" does not tell you what he will be at 20.</div>
     </details>
 
     <details>
       <summary>How accurate are height predictions?</summary>
-      <div class="body">The mid-parental formula (dad + mom + 5 inches, divided by 2, for boys) has a confidence range of about plus or minus 4 inches. That's not a rounding error. It's a real biological range. Khamis-Roche, which uses current age, height, weight, and mid-parental, is more accurate (about plus or minus 2 inches) once your son is past age 4. Any calculator that gives you a single number to the quarter-inch is lying to you.</div>
+      <div class="body">The mid-parental formula (dad + mom + 5 inches, divided by 2, for boys) has a confidence range of about plus or minus 4 inches. That is not a rounding error. It is a real biological range. Khamis-Roche, which uses current age, height, weight, and mid-parental, is more accurate (about plus or minus 2 inches) once your son is past age 4. Any calculator that gives you a single number to the quarter-inch is lying to you.</div>
     </details>
 
     <details>
       <summary>What if my son is in the 5th percentile?</summary>
-      <div class="body">Fifth percentile means 95 out of 100 boys his age are taller. It's not a diagnosis, but it's a flag worth watching. What matters more than the number: is he tracking (staying on his own curve) or falling (crossing lines downward). A boy who's been at the 5th his whole life often stays there and finishes fine. A boy who dropped from the 40th to the 5th over two years needs a doctor's visit. The app graphs both patterns so you can see which one you're looking at.</div>
+      <div class="body">Fifth percentile means 95 out of 100 boys his age are taller. It is not a diagnosis, but it is a flag worth watching. What matters more than the number: is he tracking (staying on his own curve) or falling (crossing lines downward). A boy who has been at the 5th his whole life often stays there and finishes fine. A boy who dropped from the 40th to the 5th over two years needs a doctor's visit. The app graphs both patterns so you can see which one you are looking at.</div>
     </details>
   </div>
 </section>
 
 <!-- FOOTER CTA -->
-<footer>
+<footer id="getapp">
   <div class="wrap">
     <h2>Get the app.</h2>
-    <p>The full tracker, prediction engine, and community. Free to start.</p>
-    <div class="apple-btn-wrap" id="appstore" style="margin: 0 auto 0.5rem;">
+    <p>The paid tracker plus the full coping library and community. $10/mo. Notify me when it launches.</p>
+    <div class="apple-btn-wrap" id="appstore">
       <p style="margin:0 0 0.5rem 0;color:var(--sage-100);"><strong>Get notified when the app launches.</strong></p>
-      <form onsubmit="captureLaunch(event)" class="launch-notify" style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;">
-        <input type="email" id="launchEmail" placeholder="your@email.com" required style="padding:0.6rem 0.75rem;border-radius:6px;border:1px solid var(--sage-100);min-width:220px;" />
+      <form onsubmit="captureLaunch(event)" class="launch-notify">
+        <input type="email" id="launchEmail" placeholder="your@email.com" required />
         <button type="submit" class="btn">Notify Me</button>
       </form>
-      <div class="thanks" id="launchThanks" style="display:none;color:var(--sage-100);margin-top:0.5rem;">Thanks. We'll email you the day it goes live.</div>
+      <div class="thanks" id="launchThanks" style="color:var(--sage-100);margin-top:0.5rem;">Thanks. We will email you the day it goes live.</div>
     </div>
-    <p style="margin-top:1rem;"><a href="/growth-tracker-site/articles/" style="color:var(--sage-100); text-decoration:underline;">Read our articles →</a></p>
+    <p style="margin-top:1rem;"><a href="/growth-tracker-site/articles/" style="color:var(--sage-100); text-decoration:underline;">Read our articles</a></p>
     <div class="fine">
-      GrowthTracker is not medical advice. Predictions are estimates, not diagnoses. Always talk to a qualified pediatric provider about your son's growth. © 2026 GrowthTracker.
+      GrowthTracker is not medical advice. Predictions are estimates, not diagnoses. Always talk to a qualified pediatric provider about your son's growth. &copy; 2026 GrowthTracker.
     </div>
   </div>
 </footer>
@@ -580,8 +629,6 @@
     }
   }
 
-  // Parse height input to inches.
-  // Accepts: 5'10", 5'10, 5 10, 70 (inches if imperial), 178 (cm if metric)
   function toInches(v) {
     v = String(v).trim();
     if (unit === 'metric') {
@@ -597,7 +644,6 @@
     }
     const n = parseFloat(v);
     if (isNaN(n)) return null;
-    // Bare number: assume inches for adult heights, but if it's small treat as ft
     if (n < 8) return n * 12;
     return n;
   }
@@ -620,7 +666,6 @@
       alert('Please enter valid heights for both parents.');
       return;
     }
-    // Mid-parental formula for boys: (dad + mom + 5in) / 2
     const mph = (dad + mom + 5) / 2;
     const low = mph - 4;
     const high = mph + 4;
@@ -628,17 +673,10 @@
     document.getElementById('pred').innerText = inchesToDisplay(mph);
     document.getElementById('range').innerText =
       'Likely range: ' + inchesToDisplay(low) + ' to ' + inchesToDisplay(high) +
-      '. (Based on mid-parental height. Confidence ±4 inches.)';
+      '. (Based on mid-parental height. Confidence plus or minus 4 inches.)';
     const r = document.getElementById('result');
     r.classList.add('shown');
     r.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  function capture(e) {
-    e.preventDefault();
-    // Placeholder: wire to Kit / ConvertKit later.
-    document.getElementById('thanks').classList.add('shown');
-    document.getElementById('momH').value = '';
   }
 
   function captureLaunch(e) {
