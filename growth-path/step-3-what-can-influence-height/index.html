@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Step 3: Understand What Can Influence Height. The Growth Path.</title>
+<meta name="description" content="Step 3 of The Growth Path. What science actually knows about influencing adult height: genetics, medical interventions when indicated, sleep, nutrition, and what to stop wasting money on." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root {
+--sage-50: #f4f7f2;
+--sage-100: #e6ede1;
+--sage-300: #b8c9ac;
+--sage-500: #7d9b73;
+--sage-700: #4f6a4a;
+--sage-900: #2b3a29;
+--terra-300: #e8b39a;
+--terra-500: #cf7955;
+--terra-700: #a15837;
+--cream: #fbf7f1;
+--ink: #2a2723;
+--ink-soft: #5a5651;
+--line: #e5ded2;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+font-family: 'Inter', system-ui, sans-serif;
+background: var(--cream);
+color: var(--ink);
+line-height: 1.7;
+font-size: 17px;
+-webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 {
+font-family: 'Fraunces', Georgia, serif;
+color: var(--sage-900);
+font-weight: 500;
+line-height: 1.2;
+letter-spacing: -0.01em;
+}
+h1 { font-size: 2.2rem; margin-bottom: 1rem; }
+h2 { font-size: 1.55rem; margin: 2rem 0 0.75rem; }
+h3 { font-size: 1.15rem; margin: 1.5rem 0 0.5rem; }
+p { margin-bottom: 1.1rem; color: var(--ink); }
+a { color: var(--terra-700); }
+.wrap { max-width: 680px; margin: 0 auto; padding: 0 1.25rem; }
+.nav { background: var(--cream); border-bottom: 1px solid var(--line); padding: 0.9rem 0; position: sticky; top: 0; z-index: 20; }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.nav .brand { font-family: 'Fraunces', Georgia, serif; font-weight: 600; color: var(--sage-900); text-decoration: none; font-size: 1.15rem; }
+.nav .links a { color: var(--sage-700); text-decoration: none; font-weight: 600; font-size: 0.95rem; margin-left: 1rem; }
+.nav .links a:hover { color: var(--terra-700); }
+.crumbs { padding: 1.25rem 0 0; font-size: 0.85rem; color: var(--ink-soft); }
+.crumbs a { color: var(--sage-700); text-decoration: none; font-weight: 600; }
+.crumbs a:hover { text-decoration: underline; }
+.hero { padding: 1.25rem 0 2rem; }
+.hero .eyebrow { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.09em; color: var(--terra-700); font-weight: 600; margin-bottom: 0.75rem; }
+.hero h1 { font-size: 2.4rem; }
+section { padding: 1.5rem 0; }
+.callout { background: white; border-left: 4px solid var(--terra-500); border-radius: 8px; padding: 1.25rem 1.4rem; margin: 1.5rem 0; color: var(--sage-900); }
+.callout strong { display: block; font-family: 'Fraunces', Georgia, serif; font-weight: 600; margin-bottom: 0.35rem; font-size: 1.05rem; }
+.numbers { background: var(--sage-100); border-radius: 16px; padding: 1.75rem 1.5rem; margin: 2rem 0; }
+.numbers h2 { margin-top: 0; }
+.numbers ul { list-style: none; padding: 0; margin: 1rem 0 0; }
+.numbers li { padding: 0.75rem 0; border-bottom: 1px solid var(--sage-300); color: var(--sage-900); }
+.numbers li:last-child { border-bottom: none; }
+.numbers li strong { font-family: 'Fraunces', Georgia, serif; font-weight: 600; color: var(--terra-700); display: block; font-size: 1.35rem; margin-bottom: 0.15rem; }
+.story { background: white; border: 1px solid var(--line); border-radius: 14px; padding: 1.5rem; margin-bottom: 1.1rem; display: flex; gap: 1rem; align-items: flex-start; }
+.story img { width: 54px; height: 54px; border-radius: 50%; object-fit: cover; flex-shrink: 0; margin-top: 0.15rem; }
+.story .body { flex: 1; }
+.story h3 { font-family: 'Fraunces', Georgia, serif; font-size: 1.1rem; color: var(--sage-900); margin: 0 0 0.4rem; line-height: 1.3; }
+.story .who { font-size: 0.85rem; color: var(--ink-soft); font-weight: 600; margin-bottom: 0.55rem; }
+.story p { color: var(--ink-soft); font-size: 0.97rem; font-style: italic; margin-bottom: 0; }
+.next { background: var(--sage-700); color: white; border-radius: 16px; padding: 2rem 1.75rem; margin: 2.5rem 0 1rem; text-align: center; }
+.next h2 { color: white; margin-top: 0; font-size: 1.5rem; }
+.next p { color: var(--sage-100); max-width: 30rem; margin: 0 auto 1.5rem; }
+.next .btns { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+.btn { display: inline-block; background: var(--terra-500); color: white; padding: 0.85rem 1.35rem; border-radius: 10px; font-weight: 600; text-decoration: none; font-size: 0.95rem; transition: background 0.15s ease; }
+.btn:hover { background: var(--terra-700); }
+.btn.ghost { background: transparent; color: white; border: 1.5px solid var(--sage-100); }
+.btn.ghost:hover { background: var(--sage-900); }
+.free-preview { background: var(--sage-50); border: 1px dashed var(--sage-300); border-radius: 14px; padding: 1.4rem 1.5rem; margin: 1.25rem 0 0; }
+.free-preview h3 { margin-top: 0; font-size: 1.05rem; color: var(--sage-900); }
+.free-preview ul { padding-left: 1.25rem; margin: 0.5rem 0 0; }
+.free-preview li { margin-bottom: 0.65rem; color: var(--ink-soft); font-size: 0.95rem; }
+.pager { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin: 2rem 0 2.5rem; padding: 1.25rem 0 0; border-top: 1px solid var(--line); font-size: 0.95rem; }
+.pager a { color: var(--sage-700); text-decoration: none; font-weight: 600; }
+.pager a:hover { color: var(--terra-700); }
+.pager .next-link { text-align: right; margin-left: auto; }
+footer { background: var(--sage-900); color: var(--sage-100); padding: 2rem 0 1.5rem; text-align: center; }
+footer p { color: var(--sage-300); margin-bottom: 0.5rem; }
+footer a { color: var(--sage-100); text-decoration: underline; }
+footer .fine { margin-top: 1.25rem; font-size: 0.8rem; color: var(--sage-300); opacity: 0.75; }
+@media (min-width: 720px) {
+body { font-size: 18px; }
+h1 { font-size: 3rem; }
+.hero h1 { font-size: 3rem; }
+h2 { font-size: 1.9rem; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+<div class="wrap">
+<a class="brand" href="/growth-tracker-site/">Short Boys</a>
+<div class="links">
+<a href="/growth-tracker-site/growth-path/">The Growth Path</a>
+<a href="/growth-tracker-site/articles/">Articles</a>
+</div>
+</div>
+</nav>
+
+<div class="wrap">
+<div class="crumbs">
+<a href="/growth-tracker-site/">Home</a> &nbsp;/&nbsp; <a href="/growth-tracker-site/growth-path/">The Growth Path</a> &nbsp;/&nbsp; Step 3
+</div>
+</div>
+
+<header class="hero">
+<div class="wrap">
+<div class="eyebrow">Step 3 of 7</div>
+<h1>Understand what can influence height.</h1>
+</div>
+</header>
+
+<section>
+<div class="wrap">
+<p>You have heard supplement companies promise inches. You have heard doctors say "his height is his height." Both are wrong.</p>
+<p>Here is what science actually knows, said in plain English, with nothing to sell you.</p>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<h2>The genetics floor. Be honest.</h2>
+<p>Roughly 60 to 80 percent of your son's adult height is heritable. His DNA sets the range. Nothing on the internet is going to change the range itself.</p>
+<p>This sounds like a downer. It is not. Setting the expectation honestly is part of hope. When you know the range is real and finite, you can stop searching for a miracle and start focusing on what actually moves him toward the top of that range instead of the bottom.</p>
+<div class="callout">
+<strong>The goal is not "outrun genetics."</strong>
+The goal is "reach the top of his genetic range instead of the bottom." That is where the real inches live, and that is not nothing.
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<h2>Real medical interventions. The biggest single factor, when indicated.</h2>
+<p>This is the piece with the largest evidence base, and it is the piece most parents get the least honest information about. Growth hormone therapy is not a cosmetic drug. For boys with a documented indication, it works.</p>
+
+<div class="numbers">
+<ul>
+<li>
+<strong>GH for CDGP</strong>
+Constitutional delay of growth and puberty. Documented 2 to 4 inches added to adult height when properly indicated. Requires a diagnosis, a bone age X-ray, and a pediatric endocrinologist making the call.
+</li>
+<li>
+<strong>GH for ISS</strong>
+Idiopathic short stature. FDA approved. Real. Requires a workup that rules out other causes and confirms he is below the treatment threshold.
+</li>
+<li>
+<strong>GH for growth hormone deficiency</strong>
+Restores the growth trajectory his body was supposed to have. Diagnosed with stimulation testing, treated with daily injections, tracked over years.
+</li>
+</ul>
+</div>
+
+<p>This is not for every boy on the shorter side. It is for boys whose workup indicates it. Step 4 covers the workup itself: when to ask for a referral, what tests actually happen, and what a diagnosis looks like on paper.</p>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<h2>Sleep. The underrated lever.</h2>
+<p>Growth hormone releases in pulses, and the biggest pulses happen during deep sleep. A boy who is chronically sleep-deprived, especially through puberty, may not reach his genetic potential. This is not a wellness slogan. It is endocrinology.</p>
+<p>The intervention is free. Consistent bedtime. Cool, dark room. Phones out of the bedroom. Enough hours that he is not dragging himself out of bed every morning. If he is getting six hours on school nights, this is your first move, not a supplement.</p>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<h2>Nutrition timing during growth spurts.</h2>
+<p>Adequate protein and adequate calories during puberty matter. That is the sentence. Not "eat this superfood." Not "here is a shake to buy." Enough of the right things at the right time.</p>
+<p>The kid who under-eats through his peak growth years does not get those inches back. The kid who eats protein at every meal, keeps calories up, and does not skip breakfast is giving his body the raw material to finish the job his DNA set out to do.</p>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<h2>What does NOT work. Be direct.</h2>
+<p>The internet is a graveyard of expensive nothing. Save your money.</p>
+<div class="callout">
+<strong>None of the following add adult height:</strong>
+Height-increase supplements. Height-increase exercises. Stretching routines. Hanging upside down. Special insoles. "Grow taller" powders, teas, or so-called peptides sold to parents. Every one of these is a whole category, not a specific brand. All of them.
+</div>
+<p>If a product's marketing implies it will make your son taller, and it is not a prescription medication from a pediatric endocrinologist, it will not make your son taller. That includes the well-packaged, well-reviewed ones.</p>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<h2>What this actually means for your son.</h2>
+<p>Genetics sets the range. Medical intervention when warranted, plus sleep, plus nutrition, can help him reach the top of that range instead of the bottom. In real terms, that is often 2 to 4 inches. That is meaningful. That is the whole game.</p>
+<p>Not a miracle. Not a scam. A real, evidence-based path.</p>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<h2>Two moms who found the real levers.</h2>
+<p style="color: var(--ink-soft);">Names and identifying details changed. Real stories in the paid community; placeholders below while we finalize.</p>
+
+<div class="story">
+<img src="https://randomuser.me/api/portraits/women/33.jpg" alt="" />
+<div class="body">
+<h3>"GH therapy for our son's CDGP added 3 inches."</h3>
+<div class="who">Rachel TK, mom of a now 17-year-old</div>
+<p>"TK placeholder. Real story about the bone age X-ray at 12, the CDGP diagnosis, the daily injections, the follow-up visits, and the day at 16 they measured him at 5'9'' instead of the 5'6'' the original predictions had assumed."</p>
+</div>
+</div>
+
+<div class="story">
+<img src="https://randomuser.me/api/portraits/women/66.jpg" alt="" />
+<div class="body">
+<h3>"Sleep tracking showed he was chronically short on sleep. We fixed it. We saw improvement."</h3>
+<div class="who">Danielle TK, mom of a 13-year-old</div>
+<p>"TK placeholder. Real story about a boy in early puberty getting 5.5 hours a night, a family-wide phone rule, an earlier bedtime that felt impossible for two weeks, and the growth curve that stopped flattening within a year."</p>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="next">
+<h2>Ready for Step 4?</h2>
+<p>The full medical workup guide. When to ask for the endo referral, what every test actually measures, how to read the results, and how to advocate if your pediatrician tells you to wait and see.</p>
+<div class="btns">
+<a class="btn" href="/growth-tracker-site/#getapp">Continue to Step 4: Rule Out the Medical Stuff (paid, full workup guide)</a>
+</div>
+</div>
+
+<div class="free-preview">
+<h3>Free preview of what Step 4 covers:</h3>
+<ul>
+<li><strong>When to ask for a pediatric endocrinologist referral.</strong> The specific growth-curve triggers, the specific percentile thresholds, and the exact language to use with your pediatrician when they push back on the referral.</li>
+<li><strong>Bone age X-ray, explained.</strong> What it is, what the reading actually tells you, and why "advanced" versus "delayed" bone age is one of the most important early data points nobody explains to parents.</li>
+<li><strong>What labs the workup includes.</strong> IGF-1, thyroid panel, celiac screen, karyotype in specific cases, and how to read the results without spiraling.</li>
+</ul>
+</div>
+
+<div class="pager">
+<a href="/growth-tracker-site/growth-path/step-2-get-the-facts/">&larr; Step 2: Get the Facts</a>
+<a class="next-link" href="/growth-tracker-site/#getapp">Step 4: Rule Out the Medical Stuff &rarr;</a>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="wrap">
+<p><a href="/growth-tracker-site/">Home</a> &nbsp;&middot;&nbsp; <a href="/growth-tracker-site/growth-path/">The Growth Path</a> &nbsp;&middot;&nbsp; <a href="/growth-tracker-site/articles/">Articles</a></p>
+<div class="fine">
+Short Boys is parent education, not medical advice. Always talk to a qualified pediatric provider about your son's growth. &copy; 2026 Short Boys.
+</div>
+</div>
+</footer>
+
+</body>
+</html>
