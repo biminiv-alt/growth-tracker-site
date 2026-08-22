@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Growth Path: A 7-Step Program for Moms of Short Boys</title>
+<meta name="description" content="Seven honest steps for moms of boys on the shorter side. Start where you are: worried, already evaluated, or ready to help him thrive." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --sage-50: #f4f7f2;
+    --sage-100: #e6ede1;
+    --sage-300: #b8c9ac;
+    --sage-500: #7d9b73;
+    --sage-700: #4f6a4a;
+    --sage-900: #2b3a29;
+    --terra-300: #e8b39a;
+    --terra-500: #cf7955;
+    --terra-700: #a15837;
+    --cream: #fbf7f1;
+    --ink: #2a2723;
+    --ink-soft: #5a5651;
+    --line: #e5ded2;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--sage-900);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.6rem; margin-bottom: 1rem; }
+  h3 { font-size: 1.15rem; margin-bottom: 0.4rem; }
+  p { margin-bottom: 1rem; color: var(--ink-soft); }
+  a { color: var(--terra-700); }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 1.25rem; }
+
+  .nav {
+    background: var(--cream);
+    border-bottom: 1px solid var(--line);
+    padding: 0.9rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+  .nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .nav .brand {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    color: var(--sage-900);
+    text-decoration: none;
+    font-size: 1.15rem;
+  }
+  .nav .links a {
+    color: var(--sage-700);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-left: 1rem;
+  }
+  .nav .links a:hover { color: var(--terra-700); }
+
+  .hero {
+    padding: 3rem 0 2rem;
+    background: linear-gradient(180deg, var(--sage-100) 0%, var(--cream) 100%);
+  }
+  .hero .eyebrow {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--terra-700);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  .hero h1 { font-size: 2.4rem; margin-bottom: 1rem; }
+  .hero .lede {
+    font-size: 1.1rem;
+    color: var(--sage-900);
+    max-width: 34rem;
+  }
+
+  .btn {
+    display: inline-block;
+    background: var(--terra-500);
+    color: white;
+    padding: 0.9rem 1.25rem;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: background 0.15s ease;
+  }
+  .btn:hover { background: var(--terra-700); }
+  .btn.ghost {
+    background: transparent;
+    color: var(--sage-700);
+    border: 1.5px solid var(--sage-500);
+  }
+  .btn.ghost:hover { background: var(--sage-100); }
+  .btn.block { display: block; width: 100%; text-align: center; }
+
+  section { padding: 2.5rem 0; }
+
+  .picker {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(45, 58, 41, 0.05);
+  }
+  .picker h2 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+  .picker p { font-size: 0.95rem; margin-bottom: 1.25rem; }
+  .picker .options {
+    display: grid;
+    gap: 0.75rem;
+  }
+  .picker .options a {
+    display: block;
+    background: var(--sage-50);
+    border: 1.5px solid var(--sage-300);
+    border-radius: 12px;
+    padding: 1rem 1.15rem;
+    color: var(--sage-900);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.12s ease, border-color 0.12s ease;
+  }
+  .picker .options a:hover {
+    background: var(--sage-100);
+    border-color: var(--sage-500);
+  }
+  .picker .options a .small {
+    display: block;
+    font-weight: 400;
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    margin-top: 0.2rem;
+  }
+
+  .steps {
+    display: grid;
+    gap: 1.1rem;
+    counter-reset: step;
+  }
+  .step-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.4rem 1.4rem;
+    scroll-margin-top: 90px;
+  }
+  .step-card .top {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.4rem;
+    flex-wrap: wrap;
+  }
+  .step-card .stepnum {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    color: var(--terra-500);
+    font-size: 1.35rem;
+  }
+  .step-card h3 {
+    font-size: 1.25rem;
+    margin: 0;
+    color: var(--sage-900);
+  }
+  .step-card .badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--sage-100);
+    color: var(--sage-700);
+    font-weight: 600;
+  }
+  .step-card .badge.paid {
+    background: var(--terra-300);
+    color: var(--terra-700);
+  }
+  .step-card p { font-size: 0.97rem; margin-bottom: 1rem; }
+  .step-card .cta-row {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .stat-band {
+    background: var(--sage-700);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+  }
+  .stat-band .big {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.75rem;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+  .stat-band .cap {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    max-width: 32rem;
+    margin: 0 auto;
+  }
+
+  .tcards {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .tcard {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.1rem 1.15rem;
+    display: flex;
+    gap: 0.9rem;
+    align-items: flex-start;
+  }
+  .tcard img {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  .tcard .qtext {
+    font-style: italic;
+    color: var(--sage-900);
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+    line-height: 1.45;
+  }
+  .tcard .qwho {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+
+  .paid-cta {
+    background: var(--sage-100);
+    border-radius: 20px;
+    padding: 2.25rem 1.75rem;
+    text-align: center;
+  }
+  .paid-cta h2 { font-size: 1.55rem; margin-bottom: 0.75rem; }
+  .paid-cta p {
+    max-width: 30rem;
+    margin: 0 auto 1.5rem;
+    color: var(--sage-900);
+  }
+
+  footer {
+    background: var(--sage-900);
+    color: var(--sage-100);
+    padding: 2.25rem 0 1.75rem;
+    text-align: center;
+  }
+  footer p { color: var(--sage-300); margin-bottom: 0.5rem; }
+  footer a { color: var(--sage-100); text-decoration: underline; }
+  footer .fine {
+    margin-top: 1.25rem;
+    font-size: 0.8rem;
+    color: var(--sage-300);
+    opacity: 0.75;
+  }
+
+  @media (min-width: 720px) {
+    body { font-size: 18px; }
+    h1 { font-size: 3rem; }
+    .hero h1 { font-size: 3rem; }
+    h2 { font-size: 2rem; }
+    .picker .options { grid-template-columns: 1fr 1fr 1fr; }
+    .tcards { grid-template-columns: 1fr 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="/growth-tracker-site/">Short Boys</a>
+    <div class="links">
+      <a href="/growth-tracker-site/growth-path/">The Growth Path</a>
+      <a href="/growth-tracker-site/articles/">Articles</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">A 7-step program</div>
+    <h1>The Growth Path</h1>
+    <p class="lede">Seven honest steps for moms of boys on the shorter side: real information, real medical pathways, and real tools to cope while you figure it out.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="picker">
+      <h2>Start where you are.</h2>
+      <p>Not every mom lands here in the same place. Pick the door that fits.</p>
+      <div class="options">
+        <a href="#step-1">
+          I'm just worried
+          <span class="small">Start at Step 1.</span>
+        </a>
+        <a href="#step-5">
+          He's already been evaluated
+          <span class="small">Jump to Step 5.</span>
+        </a>
+        <a href="#step-6">
+          I want to help him thrive
+          <span class="small">Jump to Step 6.</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="steps">
+
+      <div class="step-card" id="step-1">
+        <div class="top">
+          <span class="stepnum">1</span>
+          <h3>You're not alone.</h3>
+          <span class="badge">Free</span>
+        </div>
+        <p>The 2am spiral is real. So is the moment you cried in the car after his game. Real stories from moms who have been where you are, plus the numbers that show how common your fear is.</p>
+        <div class="cta-row">
+          <a class="btn" href="/growth-tracker-site/growth-path/step-1-youre-not-alone/">Start this step</a>
+        </div>
+      </div>
+
+      <div class="step-card" id="step-2">
+        <div class="top">
+          <span class="stepnum">2</span>
+          <h3>Get the facts.</h3>
+          <span class="badge">Free</span>
+        </div>
+        <p>Free adult height predictor plus growth curve basics. Trade catastrophic thinking for a real number with a real confidence range.</p>
+        <div class="cta-row">
+          <a class="btn" href="/growth-tracker-site/#calculator">Open the free predictor</a>
+        </div>
+      </div>
+
+      <div class="step-card" id="step-3">
+        <div class="top">
+          <span class="stepnum">3</span>
+          <h3>Understand what can influence height.</h3>
+          <span class="badge">Free</span>
+        </div>
+        <p>Sleep during growth spurts, protein and calorie timing, bone age, and where growth hormone therapy fits (only for kids with a diagnosed indication). Honest, non-scammy education.</p>
+        <div class="cta-row">
+          <a class="btn ghost" href="/growth-tracker-site/articles/">Read the articles</a>
+        </div>
+      </div>
+
+      <div class="step-card" id="step-4">
+        <div class="top">
+          <span class="stepnum">4</span>
+          <h3>Rule out the medical stuff.</h3>
+          <span class="badge paid">Paid</span>
+        </div>
+        <p>When to see a pediatric endocrinologist, what the workup looks like (bone age X-ray, labs), and how to read a diagnosis of constitutional delay of growth and puberty (CDGP) or idiopathic short stature (ISS). Questions to ask, red flags to name.</p>
+        <div class="cta-row">
+          <a class="btn" href="#getapp">Get the full program</a>
+        </div>
+      </div>
+
+      <div class="step-card" id="step-5">
+        <div class="top">
+          <span class="stepnum">5</span>
+          <h3>Manage your anxiety.</h3>
+          <span class="badge paid">Paid</span>
+        </div>
+        <p>Parent coping tools that actually work. The comparison trap. The 2am spiral. How to talk to your partner when he keeps saying "he'll be fine." Guided audio for the nights it hits hardest.</p>
+        <div class="cta-row">
+          <a class="btn" href="#getapp">Get the full program</a>
+        </div>
+      </div>
+
+      <div class="step-card" id="step-6">
+        <div class="top">
+          <span class="stepnum">6</span>
+          <h3>Build his confidence.</h3>
+          <span class="badge paid">Paid</span>
+        </div>
+        <p>Son-facing tools you apply. What to say at 8, at 12, at 16. What to do the week he sits the bench. How to not project. How to build a kid who is okay in his body regardless of what the number turns out to be.</p>
+        <div class="cta-row">
+          <a class="btn" href="#getapp">Get the full program</a>
+        </div>
+      </div>
+
+      <div class="step-card" id="step-7">
+        <div class="top">
+          <span class="stepnum">7</span>
+          <h3>Track and thrive.</h3>
+          <span class="badge paid">Paid</span>
+        </div>
+        <p>Measure every 3 months. Watch the curve build over years. Private community of moms in the same place. Monthly live Q&amp;A with pediatric growth experts. Long-arc stories from moms whose boys are now grown.</p>
+        <div class="cta-row">
+          <a class="btn" href="#getapp">Get the full program</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="stat-band">
+  <div class="wrap">
+    <div class="big">You are not overreacting.</div>
+    <div class="cap">1 in 4 boys are below the 25th percentile. If you are worried, you are not alone.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 style="text-align:center;">Moms on the path</h2>
+    <div class="tcards">
+      <div class="tcard">
+        <img src="https://randomuser.me/api/portraits/women/54.jpg" alt="" />
+        <div>
+          <div class="qtext">"TK: quote about Step 1 changing the 2am story she was telling herself."</div>
+          <div class="qwho">Lauren, mom of an 8-year-old</div>
+        </div>
+      </div>
+      <div class="tcard">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="" />
+        <div>
+          <div class="qtext">"TK: quote about finally understanding CDGP and what to ask the endo."</div>
+          <div class="qwho">Priya, mom of a 12-year-old</div>
+        </div>
+      </div>
+      <div class="tcard">
+        <img src="https://randomuser.me/api/portraits/women/76.jpg" alt="" />
+        <div>
+          <div class="qtext">"TK: quote about her son sitting the bench and what she said in the car after."</div>
+          <div class="qwho">Amanda, mom of a 14-year-old</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="paid-cta" id="getapp">
+      <h2>Get the full program for $10/mo.</h2>
+      <p>All 7 steps of The Growth Path, the tracking app, coping audio, the private community, and monthly live Q&amp;A with pediatric growth experts.</p>
+      <a href="/growth-tracker-site/#getapp" class="btn">Get the app</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><a href="/growth-tracker-site/">Home</a> &nbsp;&middot;&nbsp; <a href="/growth-tracker-site/growth-path/">The Growth Path</a> &nbsp;&middot;&nbsp; <a href="/growth-tracker-site/articles/">Articles</a></p>
+    <div class="fine">
+      Short Boys is parent education, not medical advice. Always talk to a qualified pediatric provider about your son's growth. &copy; 2026 Short Boys.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
