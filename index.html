@@ -17,7 +17,7 @@
     --sage-700: #4f6a4a;
     --sage-900: #2b3a29;
     --terra-300: #e8b39a;
-    --terra-500: #cf7955;  
+    --terra-500: #cf7955; 
     --terra-700: #a15837;
     --cream: #fbf7f1;
     --ink: #2a2723;
@@ -453,6 +453,10 @@
     .tcards { grid-template-columns: 1fr 1fr 1fr; }
     .next-tiles { grid-template-columns: 1fr 1fr 1fr; }
   }
+
+  .field .h-ftin { display: flex; gap: 0.5rem; }
+  .field .h-inonly input { width: 100%; }
+  .field .h-ftin input { width: 100%; flex: 1; min-width: 0; }
 </style>
 <link rel="canonical" href="https://thegrowthpath.app/" />
 <meta name="robots" content="index, follow" />
@@ -515,7 +519,10 @@
 
       <div class="unit-toggle" role="tablist" aria-label="Units">
         <button type="button" data-unit="imperial" class="active" onclick="setUnit('imperial')">Imperial (ft/in)</button>
+        <button type="button" data-unit="inches" onclick="setUnit('inches')">Imperial (in)</button>
+        <!-- Metric tab kept in code for future international support:
         <button type="button" data-unit="metric" onclick="setUnit('metric')">Metric (cm)</button>
+        -->
       </div>
 
       <form id="predForm" onsubmit="predict(event)">
@@ -525,19 +532,37 @@
             <input type="number" id="age" min="2" max="18" step="0.5" placeholder="e.g. 10" required />
           </div>
           <div class="field">
-            <label for="sonH">Son's current height</label>
-            <input type="text" id="sonH" placeholder="e.g. 4'4&quot;" required />
+            <label>Son's current height</label>
+            <div class="h-ftin" data-h="son">
+              <input type="number" inputmode="numeric" min="0" max="9" step="1" placeholder="ft" id="sonFt" aria-label="Son's current height feet" required />
+              <input type="number" inputmode="numeric" min="0" max="11" step="0.5" placeholder="in" id="sonIn" aria-label="Son's current height inches" />
+            </div>
+            <div class="h-inonly" data-h="son" style="display:none">
+              <input type="number" inputmode="numeric" min="20" max="90" step="0.5" placeholder="inches" id="sonInOnly" aria-label="Son's current height in inches" />
+            </div>
           </div>
         </div>
 
         <div class="row">
           <div class="field">
-            <label for="dadH">Father's height</label>
-            <input type="text" id="dadH" placeholder="e.g. 5'10&quot;" required />
+            <label>Father's height</label>
+            <div class="h-ftin" data-h="dad">
+              <input type="number" inputmode="numeric" min="0" max="9" step="1" placeholder="ft" id="dadFt" aria-label="Father's height feet" required />
+              <input type="number" inputmode="numeric" min="0" max="11" step="0.5" placeholder="in" id="dadIn" aria-label="Father's height inches" />
+            </div>
+            <div class="h-inonly" data-h="dad" style="display:none">
+              <input type="number" inputmode="numeric" min="20" max="90" step="0.5" placeholder="inches" id="dadInOnly" aria-label="Father's height in inches" />
+            </div>
           </div>
           <div class="field">
-            <label for="momH">Mother's height</label>
-            <input type="text" id="momH" placeholder="e.g. 5'5&quot;" required />
+            <label>Mother's height</label>
+            <div class="h-ftin" data-h="mom">
+              <input type="number" inputmode="numeric" min="0" max="9" step="1" placeholder="ft" id="momFt" aria-label="Mother's height feet" required />
+              <input type="number" inputmode="numeric" min="0" max="11" step="0.5" placeholder="in" id="momIn" aria-label="Mother's height inches" />
+            </div>
+            <div class="h-inonly" data-h="mom" style="display:none">
+              <input type="number" inputmode="numeric" min="20" max="90" step="0.5" placeholder="inches" id="momInOnly" aria-label="Mother's height in inches" />
+            </div>
           </div>
         </div>
 
@@ -706,60 +731,54 @@
 </footer>
 
 <script>
-  let unit = 'imperial';
+  let unit = 'imperial'; // 'imperial' (ft + in) or 'inches' (in only). 'metric' kept in comments for future international support.
 
   function setUnit(u) {
     unit = u;
     document.querySelectorAll('.unit-toggle button').forEach(b => {
       b.classList.toggle('active', b.dataset.unit === u);
     });
-    const sonH = document.getElementById('sonH');
-    const dadH = document.getElementById('dadH');
-    const momH = document.getElementById('momH');
-    if (u === 'metric') {
-      sonH.placeholder = 'e.g. 132';
-      dadH.placeholder = 'e.g. 178';
-      momH.placeholder = 'e.g. 165';
-    } else {
-      sonH.placeholder = 'e.g. 4\'4"';
-      dadH.placeholder = 'e.g. 5\'10"';
-      momH.placeholder = 'e.g. 5\'5"';
-    }
+    const showFtIn = (u === 'imperial');
+    document.querySelectorAll('.h-ftin').forEach(el => { el.style.display = showFtIn ? 'flex' : 'none'; });
+    document.querySelectorAll('.h-inonly').forEach(el => { el.style.display = showFtIn ? 'none' : 'block'; });
+    document.querySelectorAll('.h-ftin input').forEach(el => {
+      if (el.id.endsWith('Ft')) { el.required = showFtIn; } else { el.required = false; }
+    });
+    document.querySelectorAll('.h-inonly input').forEach(el => { el.required = !showFtIn; });
+    /* metric mode:
+    if (u === 'metric') { ...swap inputs to cm... }
+    */
   }
 
-  function toInches(v) {
-    v = String(v).trim();
-    if (unit === 'metric') {
-      const cm = parseFloat(v);
-      if (isNaN(cm)) return null;
-      return cm / 2.54;
+  function readHeight(key) {
+    if (unit === 'imperial') {
+      const ft = parseFloat(document.getElementById(key + 'Ft').value);
+      const inch = parseFloat(document.getElementById(key + 'In').value);
+      if (isNaN(ft) && isNaN(inch)) return null;
+      return (isNaN(ft) ? 0 : ft) * 12 + (isNaN(inch) ? 0 : inch);
     }
-    const ftIn = v.match(/^(\d+)\s*['\s]\s*(\d+(?:\.\d+)?)?/);
-    if (ftIn) {
-      const ft = parseFloat(ftIn[1]);
-      const inch = ftIn[2] ? parseFloat(ftIn[2]) : 0;
-      return ft * 12 + inch;
-    }
-    const n = parseFloat(v);
+    const n = parseFloat(document.getElementById(key + 'InOnly').value);
     if (isNaN(n)) return null;
-    if (n < 8) return n * 12;
     return n;
+    /* metric:
+    const cm = parseFloat(document.getElementById(key + 'Cm').value);
+    if (isNaN(cm)) return null;
+    return cm / 2.54;
+    */
   }
 
   function inchesToDisplay(inches) {
-    if (unit === 'metric') {
-      const cm = Math.round(inches * 2.54);
-      return cm + ' cm';
-    }
     const ft = Math.floor(inches / 12);
     const inch = Math.round(inches - ft * 12);
     return ft + "'" + inch + '"';
+    // metric: return Math.round(inches * 2.54) + ' cm';
   }
 
   function predict(e) {
     e.preventDefault();
-    const dad = toInches(document.getElementById('dadH').value);
-    const mom = toInches(document.getElementById('momH').value);
+    // Mid-parental (Tanner) formula for boys: (dad_in + mom_in + 5) / 2 in inches. Confidence +/- 4 in.
+    const dad = readHeight('dad');
+    const mom = readHeight('mom');
     if (dad == null || mom == null || dad < 40 || mom < 40) {
       alert('Please enter valid heights for both parents.');
       return;
