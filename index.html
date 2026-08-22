@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>GrowthTracker: Predict Your Son's Adult Height, Free</title>
-<meta name="description" content="A free predictor, a growth curve you can track over time, and honest guidance for parents of boys on the shorter side. Built for parents, not clinicians." />
+<title>Short Boys: Worried Your Son Will Be Short? Start Here.</title>
+<meta name="description" content="The Growth Path is a 7-step program for moms who need real answers and real hope. Free predictor plus optional $10/mo app for tracking and the full program." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -50,9 +50,40 @@
 
   .wrap { max-width: 720px; margin: 0 auto; padding: 0 1.25rem; }
 
+  /* Nav */
+  .nav {
+    background: var(--cream);
+    border-bottom: 1px solid var(--line);
+    padding: 0.9rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+  .nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .nav .brand {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    color: var(--sage-900);
+    text-decoration: none;
+    font-size: 1.15rem;
+  }
+  .nav .links a {
+    color: var(--sage-700);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-left: 1rem;
+  }
+  .nav .links a:hover { color: var(--terra-700); }
+
   /* Hero */
   .hero {
-    padding: 3.5rem 0 2.5rem;
+    padding: 3rem 0 2rem;
     background: linear-gradient(180deg, var(--sage-100) 0%, var(--cream) 100%);
   }
   .hero .eyebrow {
@@ -90,9 +121,7 @@
     max-width: 420px;
   }
   .btn:hover { background: var(--terra-700); }
-  .btn.secondary {
-    background: var(--sage-700);
-  }
+  .btn.secondary { background: var(--sage-700); }
   .btn.secondary:hover { background: var(--sage-900); }
   .btn.ghost {
     background: transparent;
@@ -101,9 +130,44 @@
   }
   .btn.ghost:hover { background: var(--sage-100); }
 
-  /* Sections */
   section { padding: 3rem 0; }
   section.tight { padding: 2rem 0; }
+
+  /* Testimonial cards (above the fold) */
+  .tcards {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .tcard {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.1rem 1.15rem;
+    display: flex;
+    gap: 0.9rem;
+    align-items: flex-start;
+    box-shadow: 0 2px 10px rgba(45, 58, 41, 0.04);
+  }
+  .tcard img {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  .tcard .qtext {
+    font-style: italic;
+    color: var(--sage-900);
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+    line-height: 1.45;
+  }
+  .tcard .qwho {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
 
   /* Calculator */
   .calc {
@@ -119,9 +183,7 @@
     font-size: 0.95rem;
     margin-bottom: 1.75rem;
   }
-  .field {
-    margin-bottom: 1.25rem;
-  }
+  .field { margin-bottom: 1.25rem; }
   .field label {
     display: block;
     font-size: 0.9rem;
@@ -235,77 +297,103 @@
   }
   .thanks.shown { display: block; }
 
-  /* Secondary CTA band under hero */
-  .sub-cta {
-    background: var(--cream);
-    padding: 1.25rem 0 0.5rem;
-    text-align: center;
-  }
-  .sub-cta a {
-    display: inline-block;
-    color: var(--sage-700);
-    font-weight: 600;
-    text-decoration: underline;
-    text-decoration-color: var(--sage-300);
-    text-underline-offset: 4px;
-    font-size: 1rem;
-  }
-
-  /* Social proof */
+  /* Not overreacting band */
   .stat-band {
     background: var(--sage-700);
     color: white;
-    padding: 2rem 0;
+    padding: 2.25rem 0;
     text-align: center;
   }
   .stat-band .big {
     font-family: 'Fraunces', Georgia, serif;
-    font-size: 2rem;
+    font-size: 1.85rem;
     margin-bottom: 0.5rem;
+    color: white;
   }
   .stat-band .cap {
-    font-size: 0.85rem;
-    opacity: 0.85;
-  }
-  .testimonials {
-    display: grid;
-    gap: 1.25rem;
-    margin-top: 1.5rem;
-  }
-  .quote {
-    background: white;
-    border-left: 4px solid var(--terra-500);
-    padding: 1.25rem 1.5rem;
-    border-radius: 8px;
-    font-style: italic;
-    color: var(--sage-900);
-  }
-  .quote .who {
-    margin-top: 0.75rem;
-    font-style: normal;
-    font-size: 0.85rem;
-    color: var(--ink-soft);
-    font-weight: 500;
+    font-size: 0.95rem;
+    opacity: 0.9;
+    max-width: 32rem;
+    margin: 0 auto;
   }
 
-  /* Features */
-  .features {
+  /* Roadmap */
+  .roadmap-intro {
+    text-align: center;
+    max-width: 34rem;
+    margin: 0 auto 2rem;
+  }
+  .steps {
     display: grid;
-    gap: 1.25rem;
-    margin-top: 1.5rem;
+    gap: 0.9rem;
   }
-  .feat {
-    padding: 1.5rem;
+  .step {
     background: white;
-    border-radius: 14px;
     border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.15rem 1.25rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s ease, transform 0.1s ease;
   }
-  .feat .ico {
+  .step:hover {
+    border-color: var(--sage-500);
+    transform: translateY(-1px);
+  }
+  .step .num {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--terra-500);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 2.2rem;
+  }
+  .step .body h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+  .step .body p {
+    font-size: 0.92rem;
+    margin: 0;
+    color: var(--ink-soft);
+  }
+  .step .body .badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--sage-100);
+    color: var(--sage-700);
+    font-weight: 600;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+  .step .body .badge.paid {
+    background: var(--terra-300);
+    color: var(--terra-700);
+  }
+
+  /* Paid CTA */
+  .paid-cta {
+    background: var(--sage-100);
+    border-radius: 20px;
+    padding: 2.25rem 1.75rem;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .paid-cta h2 {
     font-size: 1.6rem;
     margin-bottom: 0.75rem;
   }
-  .feat h3 { color: var(--sage-900); margin-bottom: 0.4rem; }
-  .feat p { font-size: 0.95rem; margin-bottom: 0; }
+  .paid-cta p {
+    max-width: 30rem;
+    margin: 0 auto 1.5rem;
+    color: var(--sage-900);
+  }
 
   /* FAQ */
   .faq details {
@@ -342,35 +430,16 @@
     font-size: 0.95rem;
   }
 
-  /* Footer */
   footer {
     background: var(--sage-900);
     color: var(--sage-100);
-    padding: 3rem 0 2rem;
+    padding: 2.5rem 0 2rem;
     text-align: center;
   }
-  footer h2 { color: white; font-size: 1.8rem; margin-bottom: 1rem; }
-  footer p { color: var(--sage-300); margin-bottom: 1.5rem; }
-  footer .apple-btn-wrap {
-    margin: 0 auto 0.5rem;
-    max-width: 420px;
-  }
-  footer .launch-notify {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  footer .launch-notify input {
-    padding: 0.6rem 0.75rem;
-    border-radius: 6px;
-    border: 1px solid var(--sage-100);
-    min-width: 220px;
-    font-family: inherit;
-    font-size: 1rem;
-  }
+  footer p { color: var(--sage-300); margin-bottom: 0.5rem; }
+  footer a { color: var(--sage-100); text-decoration: underline; }
   footer .fine {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     font-size: 0.8rem;
     color: var(--sage-300);
     opacity: 0.75;
@@ -381,43 +450,68 @@
     h1 { font-size: 3.2rem; }
     .hero h1 { font-size: 3rem; }
     h2 { font-size: 2.1rem; }
-    .features { grid-template-columns: 1fr 1fr; }
-    .testimonials { grid-template-columns: 1fr 1fr 1fr; }
+    .tcards { grid-template-columns: 1fr 1fr 1fr; }
     .next-tiles { grid-template-columns: 1fr 1fr 1fr; }
   }
 </style>
-<link rel="canonical" href="https://growth-tracker-preview.netlify.app/" />
+<link rel="canonical" href="https://biminiv-alt.github.io/growth-tracker-site/" />
 <meta name="robots" content="index, follow" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="GrowthTracker: Predict Your Son's Adult Height, Free" />
-<meta property="og:description" content="A free predictor, a growth curve you can track over time, and honest guidance for parents of boys on the shorter side." />
-<meta property="og:url" content="https://growth-tracker-preview.netlify.app/" />
+<meta property="og:title" content="Short Boys: Worried Your Son Will Be Short? Start Here." />
+<meta property="og:description" content="The Growth Path is a 7-step program for moms who need real answers and real hope." />
 </head>
 <body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="/growth-tracker-site/">Short Boys</a>
+    <div class="links">
+      <a href="/growth-tracker-site/growth-path/">The Growth Path</a>
+      <a href="/growth-tracker-site/articles/">Articles</a>
+    </div>
+  </div>
+</nav>
 
 <!-- HERO -->
 <header class="hero">
   <div class="wrap">
-    <div class="eyebrow">For moms of boys 5 to 14</div>
-    <h1>Predict your son's adult height. Then help him thrive at whatever that number turns out to be.</h1>
-    <p class="lede">Free predictor. Track his growth over time. Honest guidance for parents of boys on the shorter side, from another mom who's been there.</p>
-    <a href="#calculator" class="btn">See His Prediction (Free)</a>
+    <div class="eyebrow">For moms of boys 5 to 18</div>
+    <h1>Worried your son will be short? Start here.</h1>
+    <p class="lede">The Growth Path is a 7-step program for moms who need real answers and real hope. Free predictor plus optional $10/mo app for tracking and the full program.</p>
+    <a href="#calculator" class="btn">Start with the free predictor</a>
+
+    <div class="tcards">
+      <div class="tcard">
+        <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="" />
+        <div>
+          <div class="qtext">"TK: 2am spiral quote, mom finding language for the fear she could not name."</div>
+          <div class="qwho">Sarah, mom of a 9-year-old</div>
+        </div>
+      </div>
+      <div class="tcard">
+        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="" />
+        <div>
+          <div class="qtext">"TK: bench-sitting quote, cried in the car, first place that took it seriously."</div>
+          <div class="qwho">Maria, mom of an 11-year-old</div>
+        </div>
+      </div>
+      <div class="tcard">
+        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="" />
+        <div>
+          <div class="qtext">"TK: hope quote, actual data plus a plan, stopped feeling alone."</div>
+          <div class="qwho">Jennifer, mom of a 13-year-old</div>
+        </div>
+      </div>
+    </div>
   </div>
 </header>
-
-<!-- SECONDARY CTA (below the fold) -->
-<div class="sub-cta">
-  <div class="wrap">
-    <a href="#getapp">Track his growth over time. Get the app ($10/mo).</a>
-  </div>
-</div>
 
 <!-- CALCULATOR -->
 <section id="calculator">
   <div class="wrap">
     <div class="calc">
-      <h2>How tall will he be?</h2>
-      <p class="sub">Enter four numbers. Get a prediction in seconds.</p>
+      <h2>Get a real prediction, right now.</h2>
+      <p class="sub">Four numbers. A predicted adult height with a confidence range, not a made-up single number.</p>
 
       <div class="unit-toggle" role="tablist" aria-label="Units">
         <button type="button" data-unit="imperial" class="active" onclick="setUnit('imperial')">Imperial (ft/in)</button>
@@ -447,7 +541,7 @@
           </div>
         </div>
 
-        <button type="submit" class="btn">See His Predicted Adult Height</button>
+        <button type="submit" class="btn">See his predicted adult height</button>
       </form>
 
       <div class="result" id="result">
@@ -457,19 +551,19 @@
 
         <div class="next-tiles">
           <div class="next-tile">
-            <h4>Track it</h4>
-            <p>Log his height every 3 months in the app and watch the curve unfold. $10/mo.</p>
+            <h4>Now walk the path</h4>
+            <p>The Growth Path is a 7-step program to turn worry into a plan.</p>
+            <p style="margin-top:0.5rem;"><a href="/growth-tracker-site/growth-path/">Open The Growth Path</a></p>
+          </div>
+          <div class="next-tile">
+            <h4>Track it over time</h4>
+            <p>Log his height every 3 months in the app and watch the curve build. $10/mo.</p>
             <p style="margin-top:0.5rem;"><a href="#getapp">Get the app</a></p>
           </div>
           <div class="next-tile">
-            <h4>Live with it well</h4>
-            <p>Honest emotional prep for parents of boys on the shorter side. Written by another mom.</p>
+            <h4>Read the articles</h4>
+            <p>Free library on late bloomers, bone age, growth hormone, and more.</p>
             <p style="margin-top:0.5rem;"><a href="/growth-tracker-site/articles/">Open the library</a></p>
-          </div>
-          <div class="next-tile">
-            <h4>When it IS medical</h4>
-            <p>Most short boys are just short. A small share have something a doctor can help with. Here is how to tell.</p>
-            <p style="margin-top:0.5rem;"><a href="/growth-tracker-site/articles/is-my-son-a-late-bloomer/">Read the health signals</a></p>
           </div>
         </div>
       </div>
@@ -477,132 +571,136 @@
   </div>
 </section>
 
-<!-- STAT BAND -->
+<!-- YOU ARE NOT OVERREACTING BAND -->
 <section class="stat-band tight">
   <div class="wrap">
-    <div class="big">1 in every 4 boys</div>
-    <div class="cap">is in the shortest quarter for his age. Being on the shorter side is common. It also is not nothing.</div>
+    <div class="big">You are not overreacting.</div>
+    <div class="cap">1 in 4 boys are below the 25th percentile. If you are worried, you are not alone.</div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- 7-STEP ROADMAP -->
 <section>
   <div class="wrap">
-    <h2>Other moms in the group chat</h2>
-    <div class="testimonials">
-      <!-- TK: Spencer to replace with real testimonial -->
-      <div class="quote">
-        "The app helped us stop refreshing his height in my head every night. Logging a number once a quarter and then closing the phone changed my life."
-        <div class="who">Placeholder, mom of a 9-year-old</div>
-      </div>
-      <div class="quote">
-        "I'd been Googling at midnight for three years. This was the first thing that gave me an actual number and told me what it meant."
-        <div class="who">Rachel, mom of a 10-year-old</div>
-      </div>
-      <div class="quote">
-        "Every other app made me feel like something was wrong with my son. This one made me feel like something was right with me for caring."
-        <div class="who">Priya, mom of a 12-year-old</div>
-      </div>
-      <div class="quote">
-        "The 'when it's medical' page saved me a year of guessing. Turns out we needed to go. Wish I'd downloaded this sooner."
-        <div class="who">Amanda, mom of an 8-year-old</div>
-      </div>
+    <div class="roadmap-intro">
+      <h2>The Growth Path</h2>
+      <p>Seven steps from 2am worry to a plan you can actually follow. Start where you are.</p>
+    </div>
+    <div class="steps">
+      <a class="step" href="/growth-tracker-site/growth-path/#step-1">
+        <div class="num">1</div>
+        <div class="body">
+          <h3>You're not alone. <span class="badge">Free</span></h3>
+          <p>Real stories from moms who Googled at 2am. You are not overreacting.</p>
+        </div>
+      </a>
+      <a class="step" href="/growth-tracker-site/growth-path/#step-2">
+        <div class="num">2</div>
+        <div class="body">
+          <h3>Get the facts. <span class="badge">Free</span></h3>
+          <p>Free predictor plus growth curve basics. Replace catastrophic thinking with data.</p>
+        </div>
+      </a>
+      <a class="step" href="/growth-tracker-site/growth-path/#step-3">
+        <div class="num">3</div>
+        <div class="body">
+          <h3>Understand what can influence height. <span class="badge">Free</span></h3>
+          <p>Sleep, nutrition timing, growth hormone for indicated cases, bone age. Honest.</p>
+        </div>
+      </a>
+      <a class="step" href="/growth-tracker-site/growth-path/#step-4">
+        <div class="num">4</div>
+        <div class="body">
+          <h3>Rule out the medical stuff. <span class="badge paid">Paid</span></h3>
+          <p>When to see a pediatric endocrinologist, what the workup looks like, CDGP, ISS.</p>
+        </div>
+      </a>
+      <a class="step" href="/growth-tracker-site/growth-path/#step-5">
+        <div class="num">5</div>
+        <div class="body">
+          <h3>Manage your anxiety. <span class="badge paid">Paid</span></h3>
+          <p>Parent coping tools. The comparison trap. The 2am spiral. Talking to your partner.</p>
+        </div>
+      </a>
+      <a class="step" href="/growth-tracker-site/growth-path/#step-6">
+        <div class="num">6</div>
+        <div class="body">
+          <h3>Build his confidence. <span class="badge paid">Paid</span></h3>
+          <p>Talking to him at 8, 12, and 16. What to do the week he sits the bench.</p>
+        </div>
+      </a>
+      <a class="step" href="/growth-tracker-site/growth-path/#step-7">
+        <div class="num">7</div>
+        <div class="body">
+          <h3>Track and thrive. <span class="badge paid">Paid</span></h3>
+          <p>Measure every 3 months. Watch the curve. Monthly Q&amp;A. The long arc.</p>
+        </div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- FEATURES -->
-<section style="background: var(--sage-50);">
+<!-- PAID CTA -->
+<section>
   <div class="wrap">
-    <h2>What's inside</h2>
-    <div class="features">
-      <div class="feat">
-        <div class="ico">ð</div>
-        <h3>Adult height prediction</h3>
-        <p>Mid-parental and Khamis-Roche formulas, presented with a real confidence range. Not one made-up number.</p>
-      </div>
-      <div class="feat">
-        <div class="ico">ð</div>
-        <h3>Growth curves</h3>
-        <p>His line plotted against WHO and CDC standards. Log a measurement in ten seconds. Export a PDF your pediatrician will actually read.</p>
-      </div>
-      <div class="feat">
-        <div class="ico">ð</div>
-        <h3>Live with it well</h3>
-        <p>Honest emotional prep for parents of boys on the shorter side. Short essays, coping scripts, and the stuff nobody says out loud, written by another mom.</p>
-      </div>
-      <div class="feat">
-        <div class="ico">ð±</div>
-        <h3>The app ($10/mo)</h3>
-        <p>The paid tracker: log his height every 3 months, watch the curve build over years, and get new coping-library articles as they land.</p>
-      </div>
-      <div class="feat">
-        <div class="ico">ð©º</div>
-        <h3>Health signals</h3>
-        <p>What actually warrants a pediatrician conversation and what does not. Written to de-escalate, not to alarm.</p>
-      </div>
-      <div class="feat">
-        <div class="ico">ð¬</div>
-        <h3>The community</h3>
-        <p>A private group of moms in the same middle-of-the-night place. No supplement sellers. No dismissive replies.</p>
-      </div>
+    <div class="paid-cta">
+      <h2>Get the full program plus tracker for $10/mo.</h2>
+      <p>All 7 steps of The Growth Path, the tracking app, the coping audio library, the private community, and monthly live Q&amp;A with pediatric growth experts.</p>
+      <a href="#getapp" class="btn">Get the app</a>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="faq">
+<section class="faq" style="background: var(--sage-50);">
   <div class="wrap">
     <h2>Questions moms actually ask</h2>
 
     <details>
-      <summary>Is my son just a late bloomer?</summary>
-      <div class="body">Probably, yes. Constitutional delay of growth and puberty is the most common cause of a boy tracking below his peers, and it is usually harmless. But "probably" is not "definitely." The signs that suggest late bloomer: dad or mom hit puberty late, growth velocity is steady (not slowing), no other symptoms. The signs that suggest something else: growth has flattened, he is slipping below his own curve, or puberty has not started by age 14. The app walks you through both sides.</div>
+      <summary>Am I overreacting?</summary>
+      <div class="body">No. If you are up at 2am reading about height percentiles, something is worth paying attention to. It is usually not what you fear, but the worry itself is real and it deserves a real answer, not a "he'll be fine" from your mother in law. Step 1 of The Growth Path is entirely about this.</div>
     </details>
 
     <details>
-      <summary>When should I see a pediatrician?</summary>
-      <div class="body">Any time you are worried. That is the whole answer. If you want thresholds: below the 3rd percentile, growth velocity under 5cm per year past age 4, dropping across two percentile lines, or no puberty signs by age 14 in boys. Bring a printed growth chart. Ask specifically about a bone age X-ray and a referral to a pediatric endocrinologist. If your pediatrician tells you to "wait and see" and you are not comforted, get a second opinion.</div>
+      <summary>Is there anything I can actually do?</summary>
+      <div class="body">Yes, and it is more than nothing and less than the internet promises. Real levers: consistent sleep during growth spurts, adequate protein and calories, ruling out medical causes with a pediatric endocrinologist, and for kids with a diagnosed indication, growth hormone therapy which is documented to add 2 to 4 inches in indicated cases. Not levers: pills, powders, stretching routines, or anything sold on Instagram.</div>
     </details>
 
     <details>
-      <summary>Are growth hormones safe?</summary>
-      <div class="body">For kids with a diagnosed condition (growth hormone deficiency, Turner syndrome, chronic kidney disease, ISS below certain thresholds), the safety data over 40 years is well established. Side effects exist and matter. The decision is not trivial. It involves daily injections for years, five-figure annual costs, and a family conversation about what "tall enough" means. A pediatric endocrinologist is the only person qualified to walk you through it. The app has a full article on what to ask before saying yes.</div>
+      <summary>Will he catch up?</summary>
+      <div class="body">Most short boys are just short and they finish fine. A meaningful share are late bloomers (constitutional delay of growth and puberty, or CDGP) and catch up in their late teens. A smaller share have something a doctor can help with, and the earlier that gets caught, the better the outcome. Step 2 gives you the data to tell which pattern you are looking at.</div>
     </details>
 
     <details>
-      <summary>Does puberty timing affect final height?</summary>
-      <div class="body">Yes, in both directions. Boys who enter puberty late often end up taller than their mid-childhood percentile suggested, because they get extra pre-puberty growth years. Boys who enter puberty early can end up shorter than expected, because the growth plates fuse sooner. This is why a doctor asks about Tanner stage before predicting height. It is also why "he is just short now" does not tell you what he will be at 20.</div>
+      <summary>Should I see a pediatric endocrinologist?</summary>
+      <div class="body">Any time you are worried. If you want harder thresholds: below the 3rd percentile, growth velocity under 5 cm per year past age 4, dropping across two percentile lines, or no puberty signs by age 14 in boys. Bring a printed growth chart. Ask about a bone age X-ray. Step 4 walks you through exactly what to ask.</div>
     </details>
 
     <details>
-      <summary>How accurate are height predictions?</summary>
-      <div class="body">The mid-parental formula (dad + mom + 5 inches, divided by 2, for boys) has a confidence range of about plus or minus 4 inches. That is not a rounding error. It is a real biological range. Khamis-Roche, which uses current age, height, weight, and mid-parental, is more accurate (about plus or minus 2 inches) once your son is past age 4. Any calculator that gives you a single number to the quarter-inch is lying to you.</div>
+      <summary>What is growth hormone therapy actually like?</summary>
+      <div class="body">For kids with a diagnosed indication (growth hormone deficiency, Turner syndrome, chronic kidney disease, ISS below certain thresholds), the safety data over 40 years is well established. It involves daily injections for years, real annual cost, and a family conversation about what "tall enough" means. A pediatric endocrinologist is the only person who can tell you if it is right for your son.</div>
     </details>
 
     <details>
-      <summary>What if my son is in the 5th percentile?</summary>
-      <div class="body">Fifth percentile means 95 out of 100 boys his age are taller. It is not a diagnosis, but it is a flag worth watching. What matters more than the number: is he tracking (staying on his own curve) or falling (crossing lines downward). A boy who has been at the 5th his whole life often stays there and finishes fine. A boy who dropped from the 40th to the 5th over two years needs a doctor's visit. The app graphs both patterns so you can see which one you are looking at.</div>
+      <summary>Is this medical advice?</summary>
+      <div class="body">No. The Growth Path is parent education, not a substitute for a pediatric endocrinologist. We tell you what questions to ask, what the workup looks like, and how to cope while you wait for answers. We do not diagnose, prescribe, or sell supplements.</div>
     </details>
   </div>
 </section>
 
-<!-- FOOTER CTA -->
+<!-- FOOTER -->
 <footer id="getapp">
   <div class="wrap">
-    <h2>Get the app.</h2>
-    <p>The paid tracker plus the full coping library and community. $10/mo. Notify me when it launches.</p>
-    <div class="apple-btn-wrap" id="appstore">
-      <p style="margin:0 0 0.5rem 0;color:var(--sage-100);"><strong>Get notified when the app launches.</strong></p>
-      <form onsubmit="captureLaunch(event)" class="launch-notify">
-        <input type="email" id="launchEmail" placeholder="your@email.com" required />
-        <button type="submit" class="btn">Notify Me</button>
-      </form>
-      <div class="thanks" id="launchThanks" style="color:var(--sage-100);margin-top:0.5rem;">Thanks. We will email you the day it goes live.</div>
-    </div>
-    <p style="margin-top:1rem;"><a href="/growth-tracker-site/articles/" style="color:var(--sage-100); text-decoration:underline;">Read our articles</a></p>
+    <h2 style="color:white;">Get the app.</h2>
+    <p>The paid tracker plus the full 7-step Growth Path, coping audio, community, and monthly Q&amp;A. $10/mo. Notify me when it launches.</p>
+    <form onsubmit="captureLaunch(event)" style="display:flex; gap:0.5rem; justify-content:center; flex-wrap:wrap; margin-bottom:0.5rem;">
+      <input type="email" id="launchEmail" placeholder="your@email.com" required style="padding:0.6rem 0.75rem; border-radius:6px; border:1px solid var(--sage-100); min-width:220px; font-family:inherit; font-size:1rem;" />
+      <button type="submit" class="btn" style="width:auto;">Notify me</button>
+    </form>
+    <div class="thanks" id="launchThanks" style="color:var(--sage-100);margin-top:0.5rem;">Thanks. We will email you the day it goes live.</div>
+    <p style="margin-top:1.25rem;"><a href="/growth-tracker-site/growth-path/">Open The Growth Path</a> &nbsp;&middot;&nbsp; <a href="/growth-tracker-site/articles/">Articles</a></p>
     <div class="fine">
-      GrowthTracker is not medical advice. Predictions are estimates, not diagnoses. Always talk to a qualified pediatric provider about your son's growth. &copy; 2026 GrowthTracker.
+      Short Boys is parent education, not medical advice. Predictions are estimates. Always talk to a qualified pediatric provider about your son's growth. &copy; 2026 Short Boys.
     </div>
   </div>
 </footer>
@@ -681,7 +779,7 @@
 
   function captureLaunch(e) {
     e.preventDefault();
-    document.querySelector('#appstore form').style.display = 'none';
+    e.target.style.display = 'none';
     document.getElementById('launchThanks').style.display = 'block';
     return false;
   }
