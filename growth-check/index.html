@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Growth Check: A 10-Question Snapshot | The Growth Path</title>
+<meta name="description" content="A quick 10-question snapshot to help you understand where your son sits, what to monitor, and what to do next. Free." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --sage-50: #f4f7f2;
+    --sage-100: #e6ede1;
+    --sage-300: #b8c9ac;
+    --sage-500: #7d9b73;
+    --sage-700: #4f6a4a;
+    --sage-900: #2b3a29;
+    --terra-300: #e8b39a;
+    --terra-500: #cf7955;
+    --terra-700: #a15837;
+    --cream: #fbf7f1;
+    --ink: #2a2723;
+    --ink-soft: #5a5651;
+    --line: #e5ded2;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--sage-900);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  h1 { font-size: 2rem; margin-bottom: 0.75rem; }
+  h2 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+  p { margin-bottom: 1rem; color: var(--ink-soft); }
+  a { color: var(--terra-700); }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 0 1.25rem; }
+
+  .nav {
+    background: var(--cream);
+    border-bottom: 1px solid var(--line);
+    padding: 0.9rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+  .nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .nav .brand {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    color: var(--sage-900);
+    text-decoration: none;
+    font-size: 1.15rem;
+  }
+  .nav .links a {
+    color: var(--sage-700);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-left: 1rem;
+  }
+  .nav .links a:hover { color: var(--terra-700); }
+
+  .hero { padding: 2rem 0 1rem; }
+  .hero .eyebrow {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--terra-700);
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+  }
+
+  .progress-wrap {
+    background: var(--sage-100);
+    height: 8px;
+    border-radius: 999px;
+    overflow: hidden;
+    margin: 0.75rem 0 1rem;
+  }
+  .progress-bar {
+    height: 100%;
+    background: var(--terra-500);
+    width: 10%;
+    transition: width 0.25s ease;
+  }
+  .progress-text {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+
+  .card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(45, 58, 41, 0.05);
+    margin-bottom: 2rem;
+  }
+
+  .step { display: none; }
+  .step.active { display: block; }
+  .step h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
+    color: var(--sage-900);
+  }
+  .step .helper {
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    margin-bottom: 1.1rem;
+  }
+
+  label { display: block; font-size: 0.9rem; font-weight: 600; color: var(--sage-900); margin-bottom: 0.4rem; }
+  input[type="number"], input[type="date"], input[type="text"] {
+    width: 100%;
+    padding: 0.75rem 0.9rem;
+    border: 1.5px solid var(--line);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    background: var(--cream);
+    color: var(--ink);
+  }
+  input:focus { outline: none; border-color: var(--sage-500); background: white; }
+
+  .field { margin-bottom: 1.1rem; }
+  .row { display: flex; gap: 0.5rem; }
+  .row .field { flex: 1; }
+  .h-ftin { display: flex; gap: 0.5rem; }
+  .h-ftin input { flex: 1; min-width: 0; }
+
+  .radios { display: grid; gap: 0.6rem; margin-bottom: 1rem; }
+  .radios label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 0.85rem 1rem;
+    background: var(--sage-50);
+    border: 1.5px solid var(--sage-300);
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--sage-900);
+    line-height: 1.4;
+    margin-bottom: 0;
+  }
+  .radios label:hover { background: var(--sage-100); }
+  .radios input[type="radio"], .radios input[type="checkbox"] {
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+  }
+  .radios label.checked {
+    background: var(--sage-100);
+    border-color: var(--sage-500);
+  }
+
+  .actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    align-items: center;
+  }
+  .btn {
+    display: inline-block;
+    background: var(--terra-500);
+    color: white;
+    padding: 0.85rem 1.4rem;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: background 0.15s ease;
+  }
+  .btn:hover { background: var(--terra-700); }
+  .btn.ghost {
+    background: transparent;
+    color: var(--sage-700);
+    border: 1.5px solid var(--sage-500);
+  }
+  .btn.ghost:hover { background: var(--sage-100); }
+  .btn.skip {
+    background: none;
+    color: var(--ink-soft);
+    border: none;
+    padding: 0.6rem 0.75rem;
+    font-weight: 500;
+    text-decoration: underline;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+  }
+
+  .err {
+    color: var(--terra-700);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    min-height: 1.2em;
+  }
+
+  footer {
+    background: var(--sage-900);
+    color: var(--sage-100);
+    padding: 2rem 0 1.5rem;
+    text-align: center;
+  }
+  footer p { color: var(--sage-300); margin-bottom: 0.5rem; }
+  footer a { color: var(--sage-100); text-decoration: underline; }
+  footer .fine { margin-top: 1.25rem; font-size: 0.8rem; color: var(--sage-300); opacity: 0.75; }
+
+  @media (min-width: 720px) {
+    body { font-size: 18px; }
+    h1 { font-size: 2.5rem; }
+  }
+</style>
+<link rel="canonical" href="https://thegrowthpath.app/growth-check/" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="/">The Growth Path</a>
+    <div class="links">
+      <a href="/growth-path/">Library</a>
+      <a href="/growth-check/">Growth Check</a>
+      <a href="/login/">Members</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Growth Check</div>
+    <h1>A 10-question snapshot.</h1>
+    <p>Answer honestly. Nothing is diagnostic. At the end you'll see where he sits, what to monitor, and what to do next.</p>
+    <div class="progress-text" id="progText">Step 1 of 10</div>
+    <div class="progress-wrap"><div class="progress-bar" id="progBar"></div></div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="card">
+      <form id="gcForm" onsubmit="return false;">
+
+        <div class="step active" data-step="1">
+          <h2>1. How old is your son?</h2>
+          <p class="helper">Enter his age in years (decimals okay).</p>
+          <div class="field">
+            <label for="q_age">Age (years)</label>
+            <input type="number" id="q_age" min="1" max="21" step="0.1" placeholder="e.g. 10" />
+          </div>
+        </div>
+
+        <div class="step" data-step="2">
+          <h2>2. What is his current height?</h2>
+          <p class="helper">The last measurement you have.</p>
+          <div class="row">
+            <div class="field">
+              <label>Height</label>
+              <div class="h-ftin">
+                <input type="number" min="0" max="9" step="1" id="q_h_ft" placeholder="ft" aria-label="feet" />
+                <input type="number" min="0" max="11" step="0.5" id="q_h_in" placeholder="in" aria-label="inches" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="q_h_date">Measurement date</label>
+              <input type="date" id="q_h_date" />
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="3">
+          <h2>3. One prior height (optional).</h2>
+          <p class="helper">If you have an earlier measurement, it helps us estimate growth velocity. Skip if unknown.</p>
+          <div class="row">
+            <div class="field">
+              <label>Prior height</label>
+              <div class="h-ftin">
+                <input type="number" min="0" max="9" step="1" id="q_h2_ft" placeholder="ft" aria-label="prior feet" />
+                <input type="number" min="0" max="11" step="0.5" id="q_h2_in" placeholder="in" aria-label="prior inches" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="q_h2_date">Prior measurement date</label>
+              <input type="date" id="q_h2_date" />
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="4">
+          <h2>4. Mother's height.</h2>
+          <p class="helper">This helps us calculate a family-context range.</p>
+          <div class="field">
+            <label>Mother's height</label>
+            <div class="h-ftin">
+              <input type="number" min="0" max="9" step="1" id="q_mom_ft" placeholder="ft" aria-label="mother feet" />
+              <input type="number" min="0" max="11" step="0.5" id="q_mom_in" placeholder="in" aria-label="mother inches" />
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="5">
+          <h2>5. Father's height.</h2>
+          <p class="helper">Second half of the family-context calculation.</p>
+          <div class="field">
+            <label>Father's height</label>
+            <div class="h-ftin">
+              <input type="number" min="0" max="9" step="1" id="q_dad_ft" placeholder="ft" aria-label="father feet" />
+              <input type="number" min="0" max="11" step="0.5" id="q_dad_in" placeholder="in" aria-label="father inches" />
+            </div>
+          </div>
+        </div>
+
+        <div class="step" data-step="6">
+          <h2>6. How is his puberty or development timing compared to peers?</h2>
+          <p class="helper">Your best read. It's fine if you're unsure.</p>
+          <div class="radios" data-q="q_pubTiming">
+            <label><input type="radio" name="q_pubTiming" value="earlier" /> Earlier than peers</label>
+            <label><input type="radio" name="q_pubTiming" value="similar" /> Similar to peers</label>
+            <label><input type="radio" name="q_pubTiming" value="later" /> Later than peers</label>
+            <label><input type="radio" name="q_pubTiming" value="notsure" /> Not sure</label>
+          </div>
+        </div>
+
+        <div class="step" data-step="7">
+          <h2>7. What prompted your concern?</h2>
+          <p class="helper">Choose the one that fits best.</p>
+          <div class="radios" data-q="q_prompted">
+            <label><input type="radio" name="q_prompted" value="peer" /> Peer comparison</label>
+            <label><input type="radio" name="q_prompted" value="sports" /> Sports or athletics</label>
+            <label><input type="radio" name="q_prompted" value="pediatrician" /> Pediatrician commented</label>
+            <label><input type="radio" name="q_prompted" value="family" /> Family history</label>
+            <label><input type="radio" name="q_prompted" value="other" /> Other</label>
+          </div>
+          <div class="field" id="q_prompted_other_wrap" style="display:none">
+            <label for="q_prompted_other">Tell us briefly</label>
+            <input type="text" id="q_prompted_other" placeholder="A few words" />
+          </div>
+        </div>
+
+        <div class="step" data-step="8">
+          <h2>8. Has size affected sports, confidence or social situations?</h2>
+          <p class="helper">Whatever you're noticing.</p>
+          <div class="radios" data-q="q_impact">
+            <label><input type="radio" name="q_impact" value="sports" /> Yes, sports</label>
+            <label><input type="radio" name="q_impact" value="confidence" /> Yes, confidence or social</label>
+            <label><input type="radio" name="q_impact" value="both" /> Yes, both</label>
+            <label><input type="radio" name="q_impact" value="notyet" /> Not yet</label>
+            <label><input type="radio" name="q_impact" value="notsure" /> Not sure</label>
+          </div>
+        </div>
+
+        <div class="step" data-step="9">
+          <h2>9. What are you most uncertain about?</h2>
+          <p class="helper">This shapes the plan we show you.</p>
+          <div class="radios" data-q="q_uncertain">
+            <label><input type="radio" name="q_uncertain" value="monitor" /> Monitoring: knowing what's normal vs. concerning</label>
+            <label><input type="radio" name="q_uncertain" value="act" /> Medical action: whether to see a specialist</label>
+            <label><input type="radio" name="q_uncertain" value="support" /> Supporting him: talking about it, confidence</label>
+          </div>
+        </div>
+
+        <div class="step" data-step="10">
+          <h2>10. What have you already done?</h2>
+          <p class="helper">Check anything that applies.</p>
+          <div class="radios" data-q="q_done">
+            <label><input type="checkbox" name="q_done" value="pediatrician" /> Asked pediatrician</label>
+            <label><input type="checkbox" name="q_done" value="research" /> Researched online</label>
+            <label><input type="checkbox" name="q_done" value="cdc" /> Compared to CDC growth chart</label>
+            <label><input type="checkbox" name="q_done" value="family" /> Talked to family</label>
+            <label><input type="checkbox" name="q_done" value="nothing" /> Nothing yet</label>
+          </div>
+        </div>
+
+        <div class="err" id="errMsg"></div>
+
+        <div class="actions">
+          <button type="button" class="btn ghost" id="prevBtn" style="display:none">Back</button>
+          <button type="button" class="btn" id="nextBtn">Next</button>
+          <button type="button" class="btn skip" id="skipBtn" style="display:none">Skip if unknown</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><a href="/growth-path/">Library</a> &nbsp;&middot;&nbsp; <a href="/join/">Membership</a></p>
+    <div class="fine">
+      The Growth Path is parent education, not medical advice. Always talk to a qualified pediatric provider about your son's growth. &copy; 2026 The Growth Path.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const TOTAL = 10;
+  let current = 1;
+  const answers = {};
+  try {
+    const saved = JSON.parse(localStorage.getItem('gpAnswers') || '{}');
+    Object.assign(answers, saved);
+  } catch(e) {}
+
+  const progText = document.getElementById('progText');
+  const progBar = document.getElementById('progBar');
+  const nextBtn = document.getElementById('nextBtn');
+  const prevBtn = document.getElementById('prevBtn');
+  const skipBtn = document.getElementById('skipBtn');
+  const errMsg = document.getElementById('errMsg');
+
+  function stepEl(n){ return document.querySelector('.step[data-step="'+n+'"]'); }
+
+  function show(n) {
+    current = n;
+    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+    stepEl(n).classList.add('active');
+    progText.textContent = 'Step ' + n + ' of ' + TOTAL;
+    progBar.style.width = (n/TOTAL*100) + '%';
+    prevBtn.style.display = n > 1 ? 'inline-block' : 'none';
+    nextBtn.textContent = n === TOTAL ? 'See Your Growth Path' : 'Next';
+    // Skip button on step 3 (optional prior height)
+    skipBtn.style.display = n === 3 ? 'inline-block' : 'none';
+    errMsg.textContent = '';
+    // Restore checked state visual
+    restoreVisuals();
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  function restoreVisuals() {
+    // Radio visual state
+    document.querySelectorAll('.radios').forEach(g => {
+      const key = g.dataset.q;
+      if (!key) return;
+      g.querySelectorAll('label').forEach(l => l.classList.remove('checked'));
+      const val = answers[key];
+      if (Array.isArray(val)) {
+        g.querySelectorAll('input[type="checkbox"]').forEach(ch => {
+          if (val.indexOf(ch.value) >= 0) { ch.checked = true; ch.closest('label').classList.add('checked'); }
+        });
+      } else if (val) {
+        g.querySelectorAll('input[type="radio"]').forEach(r => {
+          if (r.value === val) { r.checked = true; r.closest('label').classList.add('checked'); }
+        });
+      }
+    });
+    // "Other" text box on q7
+    if (answers.q_prompted === 'other') {
+      document.getElementById('q_prompted_other_wrap').style.display = 'block';
+    }
+    // Restore text inputs
+    ['q_age','q_h_ft','q_h_in','q_h_date','q_h2_ft','q_h2_in','q_h2_date','q_mom_ft','q_mom_in','q_dad_ft','q_dad_in','q_prompted_other'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el && answers[id] != null) el.value = answers[id];
+    });
+  }
+
+  function capture(n) {
+    // Save current step's values into answers
+    if (n === 1) answers.q_age = document.getElementById('q_age').value;
+    if (n === 2) {
+      answers.q_h_ft = document.getElementById('q_h_ft').value;
+      answers.q_h_in = document.getElementById('q_h_in').value;
+      answers.q_h_date = document.getElementById('q_h_date').value;
+    }
+    if (n === 3) {
+      answers.q_h2_ft = document.getElementById('q_h2_ft').value;
+      answers.q_h2_in = document.getElementById('q_h2_in').value;
+      answers.q_h2_date = document.getElementById('q_h2_date').value;
+    }
+    if (n === 4) {
+      answers.q_mom_ft = document.getElementById('q_mom_ft').value;
+      answers.q_mom_in = document.getElementById('q_mom_in').value;
+    }
+    if (n === 5) {
+      answers.q_dad_ft = document.getElementById('q_dad_ft').value;
+      answers.q_dad_in = document.getElementById('q_dad_in').value;
+    }
+    if (n === 6) {
+      const r = document.querySelector('input[name="q_pubTiming"]:checked');
+      answers.q_pubTiming = r ? r.value : null;
+    }
+    if (n === 7) {
+      const r = document.querySelector('input[name="q_prompted"]:checked');
+      answers.q_prompted = r ? r.value : null;
+      answers.q_prompted_other = document.getElementById('q_prompted_other').value || '';
+    }
+    if (n === 8) {
+      const r = document.querySelector('input[name="q_impact"]:checked');
+      answers.q_impact = r ? r.value : null;
+    }
+    if (n === 9) {
+      const r = document.querySelector('input[name="q_uncertain"]:checked');
+      answers.q_uncertain = r ? r.value : null;
+    }
+    if (n === 10) {
+      const arr = [];
+      document.querySelectorAll('input[name="q_done"]:checked').forEach(c => arr.push(c.value));
+      answers.q_done = arr;
+    }
+    localStorage.setItem('gpAnswers', JSON.stringify(answers));
+  }
+
+  function validate(n) {
+    if (n === 1) {
+      const v = parseFloat(document.getElementById('q_age').value);
+      if (isNaN(v) || v < 1 || v > 21) return 'Please enter an age between 1 and 21.';
+    }
+    if (n === 2) {
+      const ft = parseFloat(document.getElementById('q_h_ft').value);
+      const inch = parseFloat(document.getElementById('q_h_in').value);
+      if (isNaN(ft) && isNaN(inch)) return 'Please enter his current height.';
+    }
+    if (n === 4) {
+      const ft = parseFloat(document.getElementById('q_mom_ft').value);
+      if (isNaN(ft)) return "Please enter mother's height.";
+    }
+    if (n === 5) {
+      const ft = parseFloat(document.getElementById('q_dad_ft').value);
+      if (isNaN(ft)) return "Please enter father's height.";
+    }
+    if (n === 6) {
+      if (!document.querySelector('input[name="q_pubTiming"]:checked')) return 'Please pick one.';
+    }
+    if (n === 7) {
+      if (!document.querySelector('input[name="q_prompted"]:checked')) return 'Please pick one.';
+    }
+    if (n === 8) {
+      if (!document.querySelector('input[name="q_impact"]:checked')) return 'Please pick one.';
+    }
+    if (n === 9) {
+      if (!document.querySelector('input[name="q_uncertain"]:checked')) return 'Please pick one.';
+    }
+    return null;
+  }
+
+  nextBtn.addEventListener('click', function(){
+    const err = validate(current);
+    if (err) { errMsg.textContent = err; return; }
+    capture(current);
+    if (current === TOTAL) {
+      location.href = '/results/';
+      return;
+    }
+    show(current + 1);
+  });
+
+  prevBtn.addEventListener('click', function(){
+    capture(current);
+    if (current > 1) show(current - 1);
+  });
+
+  skipBtn.addEventListener('click', function(){
+    // Clear step-3 fields and advance
+    ['q_h2_ft','q_h2_in','q_h2_date'].forEach(id => { document.getElementById(id).value = ''; answers[id] = ''; });
+    localStorage.setItem('gpAnswers', JSON.stringify(answers));
+    show(current + 1);
+  });
+
+  // Radio/checkbox visual toggling
+  document.querySelectorAll('.radios').forEach(g => {
+    g.addEventListener('change', function(e){
+      const grp = e.target.closest('.radios');
+      if (e.target.type === 'radio') {
+        grp.querySelectorAll('label').forEach(l => l.classList.remove('checked'));
+        e.target.closest('label').classList.add('checked');
+      } else if (e.target.type === 'checkbox') {
+        e.target.closest('label').classList.toggle('checked', e.target.checked);
+      }
+      // Show "other" text box on q7 if applicable
+      if (e.target.name === 'q_prompted') {
+        document.getElementById('q_prompted_other_wrap').style.display = e.target.value === 'other' ? 'block' : 'none';
+      }
+    });
+  });
+
+  // Initial render
+  show(1);
+})();
+</script>
+</body>
+</html>
