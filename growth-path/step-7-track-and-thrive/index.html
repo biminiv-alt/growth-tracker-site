@@ -3,27 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Step 7: Track and Thrive. The Growth Path.</title>
-<meta name="description" content="Step 7 of The Growth Path. Quarterly growth tracking, curve visualization, and a private community of moms of shorter boys." />
+<title>Track and thrive. | The Growth Path Library</title>
+<meta name="description" content="Measure every 3 months. Watch the curve build over years. The long arc." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
-:root {
---sage-50: #f4f7f2;
---sage-100: #e6ede1;
---sage-300: #b8c9ac;
---sage-500: #7d9b73;
---sage-700: #4f6a4a;
---sage-900: #2b3a29;
---terra-300: #e8b39a;
---terra-500: #cf7955;
---terra-700: #a15837;
---cream: #fbf7f1;
---ink: #2a2723;
---ink-soft: #5a5651;
---line: #e5ded2;
-}
+:root { --sage-50:#f4f7f2; --sage-100:#e6ede1; --sage-300:#b8c9ac; --sage-500:#7d9b73; --sage-700:#4f6a4a; --sage-900:#2b3a29; --terra-300:#e8b39a; --terra-500:#cf7955; --terra-700:#a15837; --cream:#fbf7f1; --ink:#2a2723; --ink-soft:#5a5651; --line:#e5ded2; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body { font-family: 'Inter', system-ui, sans-serif; background: var(--cream); color: var(--ink); line-height: 1.7; font-size: 17px; -webkit-font-smoothing: antialiased; }
@@ -53,23 +39,27 @@ section { padding: 1.5rem 0; }
 .numbers ul { list-style: none; padding: 0; margin: 1rem 0 0; }
 .numbers li { padding: 0.75rem 0; border-bottom: 1px solid var(--sage-300); color: var(--sage-900); }
 .numbers li:last-child { border-bottom: none; }
-.numbers li strong { font-family: 'Fraunces', Georgia, serif; font-weight: 600; color: var(--terra-700); display: block; font-size: 1.15rem; margin-bottom: 0.15rem; }
-.story { background: white; border: 1px solid var(--line); border-radius: 14px; padding: 1.5rem; margin-bottom: 1.1rem; display: flex; gap: 1rem; align-items: flex-start; }
-.story img { width: 54px; height: 54px; border-radius: 50%; object-fit: cover; flex-shrink: 0; margin-top: 0.15rem; }
-.story .body { flex: 1; }
-.story h3 { font-family: 'Fraunces', Georgia, serif; font-size: 1.1rem; color: var(--sage-900); margin: 0 0 0.4rem; line-height: 1.3; }
-.story .who { font-size: 0.85rem; color: var(--ink-soft); font-weight: 600; margin-bottom: 0.55rem; }
+.numbers li strong { font-family: 'Fraunces', Georgia, serif; font-weight: 600; color: var(--terra-700); display: block; font-size: 1.35rem; margin-bottom: 0.15rem; }
+.story { background: white; border: 1px solid var(--line); border-radius: 14px; padding: 1.5rem; margin-bottom: 1.1rem; }
+.story h3 { font-family: 'Fraunces', Georgia, serif; font-size: 1.15rem; color: var(--sage-900); margin: 0 0 0.5rem; }
+.story .who { font-size: 0.85rem; color: var(--ink-soft); font-weight: 600; margin-bottom: 0.75rem; }
 .story p { color: var(--ink-soft); font-size: 0.97rem; font-style: italic; margin-bottom: 0; }
 .free-preview { background: var(--sage-50); border: 1px dashed var(--sage-300); border-radius: 14px; padding: 1.4rem 1.5rem; margin: 1.25rem 0 0; }
 .free-preview h3 { margin-top: 0; font-size: 1.05rem; color: var(--sage-900); }
 .free-preview ul { padding-left: 1.25rem; margin: 0.5rem 0 0; }
 .free-preview li { margin-bottom: 0.65rem; color: var(--ink-soft); font-size: 0.95rem; }
-.paywall { background: linear-gradient(180deg, var(--sage-50) 0%, var(--sage-100) 100%); border: 2px solid var(--sage-300); border-radius: 18px; padding: 2rem 1.75rem; margin: 2rem 0 1rem; text-align: center; }
-.paywall .lock { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: var(--sage-700); color: white; border-radius: 50%; margin-bottom: 0.9rem; }
-.paywall .lock svg { width: 20px; height: 20px; }
-.paywall p { color: var(--sage-900); font-size: 1rem; max-width: 32rem; margin: 0 auto 1.25rem; }
-.paywall .btn { display: inline-block; background: var(--terra-500); color: white; padding: 0.85rem 1.35rem; border-radius: 10px; font-weight: 600; text-decoration: none; font-size: 0.95rem; transition: background 0.15s ease; }
-.paywall .btn:hover { background: var(--terra-700); }
+.next { background: var(--sage-700); color: white; border-radius: 16px; padding: 2rem 1.75rem; margin: 2.5rem 0 1rem; text-align: center; }
+.next h2 { color: white; margin-top: 0; font-size: 1.5rem; }
+.next p { color: var(--sage-100); max-width: 30rem; margin: 0 auto 1.5rem; }
+.next .btns { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+.btn { display: inline-block; background: var(--terra-500); color: white; padding: 0.85rem 1.35rem; border-radius: 10px; font-weight: 600; text-decoration: none; font-size: 0.95rem; transition: background 0.15s ease; }
+.btn:hover { background: var(--terra-700); }
+.btn.ghost { background: transparent; color: white; border: 1.5px solid var(--sage-100); }
+.btn.ghost:hover { background: var(--sage-900); }
+.predict-cta { background: white; border: 2px solid var(--terra-500); border-radius: 16px; padding: 1.75rem 1.5rem; margin: 1.5rem 0; text-align: center; }
+.predict-cta .free-tag { display: inline-block; background: var(--terra-500); color: white; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; font-weight: 600; margin-bottom: 0.75rem; }
+.predict-cta h3 { margin: 0 0 0.5rem; font-size: 1.35rem; }
+.predict-cta p { margin-bottom: 1.1rem; color: var(--ink-soft); }
 .pager { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin: 2rem 0 2.5rem; padding: 1.25rem 0 0; border-top: 1px solid var(--line); font-size: 0.95rem; }
 .pager a { color: var(--sage-700); text-decoration: none; font-weight: 600; }
 .pager a:hover { color: var(--terra-700); }
@@ -78,119 +68,53 @@ footer { background: var(--sage-900); color: var(--sage-100); padding: 2rem 0 1.
 footer p { color: var(--sage-300); margin-bottom: 0.5rem; }
 footer a { color: var(--sage-100); text-decoration: underline; }
 footer .fine { margin-top: 1.25rem; font-size: 0.8rem; color: var(--sage-300); opacity: 0.75; }
-@media (min-width: 720px) {
-body { font-size: 18px; }
-h1 { font-size: 3rem; }
-.hero h1 { font-size: 3rem; }
-h2 { font-size: 1.9rem; }
-}
+@media (min-width: 720px) { body { font-size: 18px; } h1 { font-size: 3rem; } .hero h1 { font-size: 3rem; } h2 { font-size: 1.9rem; } }
 </style>
+<link rel="canonical" href="https://thegrowthpath.app/growth-path/step-7-track-and-thrive/" />
 </head>
 <body>
-
-<nav class="nav">
-<div class="wrap">
-<a class="brand" href="/">The Growth Path</a>
-<div class="links">
-<a href="/growth-path/">The Growth Path</a>
-<a href="/articles/">Articles</a>
-</div>
-</div>
-</nav>
-
-<div class="wrap">
-<div class="crumbs">
-<a href="/">Home</a> &nbsp;/&nbsp; <a href="/growth-path/">The Growth Path</a> &nbsp;/&nbsp; Step 7
-</div>
-</div>
-
-<header class="hero">
-<div class="wrap">
-<div class="eyebrow">Step 7 of 7</div>
-<h1>Track and thrive.</h1>
-</div>
-</header>
-
-<section>
-<div class="wrap">
-<p>The other 6 steps are one-time. This one is ongoing. Track his growth every 3 months. See the curve unfold. Connect with other moms in the same boat.</p>
-</div>
-</section>
-
-<section>
-<div class="wrap">
-<h2>What is included.</h2>
-<div class="numbers">
-<ul>
-<li><strong>Quarterly growth tracking</strong>Height, weight, and growth velocity logged on the schedule that actually catches changes.</li>
-<li><strong>Curve visualization</strong>His trajectory against the pediatric growth chart, updated each quarter.</li>
-<li><strong>Milestone alerts</strong>Nudges when he crosses percentile bands or when velocity shifts.</li>
-<li><strong>Private community of about 1,000 moms</strong>Moms whose sons are 6, 10, 14, and 18. Every stage. Every fear. Every good day.</li>
-<li><strong>Long-arc stories</strong>Moms who came out the other side. What they wish they knew at year one.</li>
-</ul>
-</div>
-</div>
-</section>
-
-<section>
-<div class="wrap">
-<div class="free-preview">
-<h3>Inside this step:</h3>
-<ul>
-<li>The tracking cadence that matters (not weekly, not yearly)</li>
-<li>The private mom community</li>
-<li>Long-arc stories: 5 boys followed for 8 years</li>
-</ul>
-</div>
-</div>
-</section>
-
-<section>
-<div class="wrap">
-<div class="callout">
-<strong>Height moves slowly. Anxiety does not have to.</strong>
-</div>
-</div>
-</section>
-
-<section>
-<div class="wrap">
+<nav class="nav"><div class="wrap"><a class="brand" href="/">The Growth Path</a><div class="links"><a href="/growth-path/">Library</a><a href="/growth-check/">Growth Check</a><a href="/login/">Members</a></div></div></nav>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/growth-path/">Library</a> / Track and thrive.</div></div>
+<header class="hero"><div class="wrap"><div class="eyebrow">The Growth Path Library</div><h1>Track and thrive.</h1></div></header>
+<section><div class="wrap">
+<p>The other articles are one-time reads. This one is a habit. Track his growth over time. See the curve unfold. Watch the shape, not just the number.</p>
+</div></section>
+<section><div class="wrap">
+<h2>The cadence that catches changes.</h2>
+<div class="numbers"><ul>
+<li><strong>Every 3 months</strong>Frequent enough to catch a slowdown or a spurt. Not so frequent it becomes an anxious ritual.</li>
+<li><strong>Same time of day</strong>People are taller in the morning than in the evening. Consistency reduces measurement noise.</li>
+<li><strong>Same wall, no shoes</strong>Pick a wall, pencil the mark, log the number. Boring is good.</li>
+<li><strong>Chart it</strong>Plotting shows the shape. A steady line and a falling line are two different conversations.</li>
+</ul></div>
+</div></section>
+<section><div class="wrap">
+<h2>What to watch for.</h2>
+<p>Not a single low number. The slope. If his line is tracking his line, that is one story. If his line is bending downward, that is another. The bend is the flag.</p>
+<div class="callout"><strong>Height moves slowly. Anxiety does not have to.</strong>The point of tracking is not to worry more often. It is to worry less between measurements, because you know when the next data point is coming.</div>
+</div></section>
+<section><div class="wrap">
+<h2>Long arc.</h2>
+<p>The parents who come out the other side describe it the same way: the years feel long and the arc feels short. The 2am spiral is worst at the beginning. It gets quieter as the data comes in, as the pediatrician appointments happen, as he grows into who he is regardless of the number.</p>
+</div></section>
+<section><div class="wrap">
 <div class="story">
-<img src="https://randomuser.me/api/portraits/women/17.jpg" alt="" />
-<div class="body">
-<h3>"The community is the reason I stayed. The tracking is the reason I stopped spiraling."</h3>
+<h3>"The tracking is the reason I stopped spiraling."</h3>
 <div class="who">TK, mom of a 12-year-old</div>
-<p>"TK placeholder. Real story about a mom who joined at year one thinking she needed the tracker, and who realized after six months that the community of moms three years ahead of her was the thing that kept her sane."</p>
+<p>"TK placeholder. Real story about a mom who started measuring quarterly at year one, watched the slope stay steady for two years, and let her shoulders drop for the first time in a decade."</p>
 </div>
+</div></section>
+<section><div class="wrap">
+<div class="next">
+<h2>Ready for the Growth Check?</h2>
+<p>Start the living record with a snapshot. Members get the ongoing plan.</p>
+<div class="btns"><a class="btn" href="/growth-check/">See the full Growth Check</a></div>
 </div>
-</div>
-</section>
-
-<section>
-<div class="wrap">
-<div class="paywall">
-<div class="lock" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-</div>
-<p>The rest of Step 7 is available in the full program. Quarterly tracking and the mom community are the recurring value.</p>
-<a class="btn" href="/#getapp"><strong>Continue with the full program &rarr;</strong></a>
-</div>
-
-<div class="pager">
-<a href="/growth-path/step-6-build-his-confidence/">&larr; Step 6: Build HIS Confidence</a>
-<a class="next-link" href="/growth-path/">Back to The Growth Path &rarr;</a>
-</div>
-</div>
-</section>
-
-<footer>
-<div class="wrap">
-<p><a href="/">Home</a> &nbsp;&middot;&nbsp; <a href="/growth-path/">The Growth Path</a> &nbsp;&middot;&nbsp; <a href="/articles/">Articles</a></p>
-<div class="fine">
-The Growth Path is parent education, not medical advice. Always talk to a qualified pediatric provider about your son's growth. &copy; 2026 The Growth Path.
-</div>
-</div>
-</footer>
-
+</div></section>
+<section><div class="wrap"><div class="pager">
+<a href="/growth-path/step-6-build-his-confidence/">Related reading: Build his confidence.</a>
+<span></span>
+</div></div></section>
+<footer><div class="wrap"><p><a href="/">Home</a> &middot; <a href="/growth-path/">Library</a> &middot; <a href="/growth-check/">Growth Check</a> &middot; <a href="/join/">Membership</a></p><div class="fine">The Growth Path is parent education, not medical advice. Always talk to a qualified pediatric provider about your son's growth. &copy; 2026 The Growth Path.</div></div></footer>
 </body>
 </html>
