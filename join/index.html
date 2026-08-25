@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Founding Membership | The Growth Path</title>
+<meta name="description" content="The Growth Path Founding Membership. $19/month, cancel anytime, keep your founding rate as long as your membership stays active." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --sage-50: #f4f7f2;
+    --sage-100: #e6ede1;
+    --sage-300: #b8c9ac;
+    --sage-500: #7d9b73;
+    --sage-700: #4f6a4a;
+    --sage-900: #2b3a29;
+    --terra-300: #e8b39a;
+    --terra-500: #cf7955;
+    --terra-700: #a15837;
+    --cream: #fbf7f1;
+    --ink: #2a2723;
+    --ink-soft: #5a5651;
+    --line: #e5ded2;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--sage-900);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  h1 { font-size: 2.2rem; margin-bottom: 0.75rem; }
+  h2 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+  h3 { font-size: 1.15rem; margin-bottom: 0.4rem; }
+  p { margin-bottom: 1rem; color: var(--ink-soft); }
+  a { color: var(--terra-700); }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 1.25rem; }
+
+  .nav {
+    background: var(--cream);
+    border-bottom: 1px solid var(--line);
+    padding: 0.9rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+  .nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .nav .brand {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    color: var(--sage-900);
+    text-decoration: none;
+    font-size: 1.15rem;
+  }
+  .nav .links a {
+    color: var(--sage-700);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-left: 1rem;
+  }
+  .nav .links a:hover { color: var(--terra-700); }
+
+  .hero {
+    padding: 2.5rem 0 1.5rem;
+    background: linear-gradient(180deg, var(--sage-100) 0%, var(--cream) 100%);
+  }
+  .hero .eyebrow {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--terra-700);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  .hero h1 { font-size: 2.4rem; margin-bottom: 0.75rem; }
+  .hero .lede {
+    color: var(--sage-900);
+    font-size: 1.1rem;
+    max-width: 34rem;
+  }
+
+  section { padding: 2rem 0; }
+
+  .offer-panel {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 2rem 1.75rem;
+    box-shadow: 0 4px 20px rgba(45, 58, 41, 0.06);
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .offer-panel .price {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 2.6rem;
+    color: var(--sage-900);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .offer-panel .price small {
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+  }
+  .offer-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem 0 1.5rem;
+    text-align: left;
+    max-width: 26rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .offer-panel li {
+    padding: 0.6rem 0;
+    color: var(--sage-900);
+    font-size: 0.98rem;
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+  }
+  .offer-panel li::before {
+    content: "\2713";
+    color: var(--sage-500);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .tiles {
+    display: grid;
+    gap: 0.85rem;
+    margin-top: 1rem;
+  }
+  .tile {
+    background: white;
+    border: 1px solid var(--sage-300);
+    border-radius: 12px;
+    padding: 1.1rem 1.2rem;
+  }
+  .tile h4 {
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--sage-900);
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+    font-size: 1.05rem;
+  }
+  .tile p { font-size: 0.93rem; color: var(--ink-soft); margin: 0; }
+
+  .cta-final {
+    background: var(--sage-100);
+    border-radius: 18px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+  .btn {
+    display: inline-block;
+    background: var(--terra-500);
+    color: white;
+    padding: 1.1rem 1.75rem;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.05rem;
+    font-family: inherit;
+    transition: background 0.15s ease;
+  }
+  .btn:hover { background: var(--terra-700); }
+
+  .legal-links {
+    margin-top: 1.25rem;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+  .legal-links a { color: var(--sage-700); }
+
+  footer {
+    background: var(--sage-900);
+    color: var(--sage-100);
+    padding: 2rem 0 1.5rem;
+    text-align: center;
+  }
+  footer p { color: var(--sage-300); margin-bottom: 0.5rem; }
+  footer a { color: var(--sage-100); text-decoration: underline; }
+  footer .fine { margin-top: 1.25rem; font-size: 0.8rem; color: var(--sage-300); opacity: 0.75; }
+
+  @media (min-width: 720px) {
+    body { font-size: 18px; }
+    h1 { font-size: 2.8rem; }
+    .tiles { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+<link rel="canonical" href="https://thegrowthpath.app/join/" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="/">The Growth Path</a>
+    <div class="links">
+      <a href="/growth-path/">Library</a>
+      <a href="/growth-check/">Growth Check</a>
+      <a href="/login/">Members</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Founding Membership</div>
+    <h1>Real support for the long arc.</h1>
+    <p class="lede">Everything you need to know what to monitor, when to act and how to support him. Reviewed for accuracy. Written for parents.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="offer-panel">
+      <div class="price">$19<small>/month</small></div>
+      <ul>
+        <li>Founding Membership rate</li>
+        <li>Keep your founding rate as long as your membership stays active</li>
+        <li>Charged today, renews monthly</li>
+        <li>Cancel anytime</li>
+      </ul>
+      <!-- STRIPE_CHECKOUT_URL_HERE -->
+      <a href="https://thegrowthpath.app/checkout-placeholder/" class="btn">Start Founding Membership for $19</a>
+    </div>
+
+    <h2 style="text-align:center;">What's included</h2>
+    <div class="tiles">
+      <div class="tile"><h4>Living growth record</h4><p>Log measurements over time and see the shape of his curve.</p></div>
+      <div class="tile"><h4>Personalized what-to-monitor plan</h4><p>Clear signals to watch for, matched to his age and stage.</p></div>
+      <div class="tile"><h4>Pediatrician appointment prep</h4><p>Printable growth chart, questions to ask, red flags to name.</p></div>
+      <div class="tile"><h4>Confidence and communication guides</h4><p>What to say at 8, 12, 16. The week he sits the bench.</p></div>
+      <div class="tile"><h4>Evidence-based resource library</h4><p>Reviewed reading on late bloomers, bone age, and more.</p></div>
+      <div class="tile"><h4>Weekly guidance emails</h4><p>Short, useful, and never a supplement pitch.</p></div>
+    </div>
+
+    <div class="cta-final">
+      <p style="color:var(--sage-900); font-family:'Fraunces', Georgia, serif; font-size:1.1rem; margin-bottom:1.25rem;">Every claim reviewed. No supplements. No fake diagnoses.</p>
+      <!-- STRIPE_CHECKOUT_URL_HERE -->
+      <a href="https://thegrowthpath.app/checkout-placeholder/" class="btn">Start Founding Membership for $19</a>
+      <div class="legal-links">
+        By subscribing you agree to our <a href="/terms/">Terms</a> and <a href="/privacy/">Privacy</a> policy.
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><a href="/growth-path/">Library</a> &nbsp;&middot;&nbsp; <a href="/growth-check/">Growth Check</a></p>
+    <p><a href="/terms/">Terms</a> &nbsp;&middot;&nbsp; <a href="/privacy/">Privacy</a></p>
+    <div class="fine">
+      The Growth Path is parent education, not medical advice. Always talk to a qualified pediatric provider about your son's growth. &copy; 2026 The Growth Path.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
