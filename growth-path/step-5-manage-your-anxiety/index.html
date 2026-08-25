@@ -3,27 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Step 5: Manage YOUR Anxiety. The Growth Path.</title>
-<meta name="description" content="Step 5 of The Growth Path. The mom-facing step. Why anxiety compounds, how to interrupt the comparison trap, and the daily practice moms of shorter boys swear by." />
+<title>Manage your anxiety. | The Growth Path Library</title>
+<meta name="description" content="Parent coping tools that actually work. The comparison trap. How to talk to your partner about it." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
-:root {
---sage-50: #f4f7f2;
---sage-100: #e6ede1;
---sage-300: #b8c9ac;
---sage-500: #7d9b73;
---sage-700: #4f6a4a;
---sage-900: #2b3a29;
---terra-300: #e8b39a;
---terra-500: #cf7955;
---terra-700: #a15837;
---cream: #fbf7f1;
---ink: #2a2723;
---ink-soft: #5a5651;
---line: #e5ded2;
-}
+:root { --sage-50:#f4f7f2; --sage-100:#e6ede1; --sage-300:#b8c9ac; --sage-500:#7d9b73; --sage-700:#4f6a4a; --sage-900:#2b3a29; --terra-300:#e8b39a; --terra-500:#cf7955; --terra-700:#a15837; --cream:#fbf7f1; --ink:#2a2723; --ink-soft:#5a5651; --line:#e5ded2; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body { font-family: 'Inter', system-ui, sans-serif; background: var(--cream); color: var(--ink); line-height: 1.7; font-size: 17px; -webkit-font-smoothing: antialiased; }
@@ -48,22 +34,32 @@ a { color: var(--terra-700); }
 section { padding: 1.5rem 0; }
 .callout { background: white; border-left: 4px solid var(--terra-500); border-radius: 8px; padding: 1.25rem 1.4rem; margin: 1.5rem 0; color: var(--sage-900); }
 .callout strong { display: block; font-family: 'Fraunces', Georgia, serif; font-weight: 600; margin-bottom: 0.35rem; font-size: 1.05rem; }
-.story { background: white; border: 1px solid var(--line); border-radius: 14px; padding: 1.5rem; margin-bottom: 1.1rem; display: flex; gap: 1rem; align-items: flex-start; }
-.story img { width: 54px; height: 54px; border-radius: 50%; object-fit: cover; flex-shrink: 0; margin-top: 0.15rem; }
-.story .body { flex: 1; }
-.story h3 { font-family: 'Fraunces', Georgia, serif; font-size: 1.1rem; color: var(--sage-900); margin: 0 0 0.4rem; line-height: 1.3; }
-.story .who { font-size: 0.85rem; color: var(--ink-soft); font-weight: 600; margin-bottom: 0.55rem; }
+.numbers { background: var(--sage-100); border-radius: 16px; padding: 1.75rem 1.5rem; margin: 2rem 0; }
+.numbers h2 { margin-top: 0; }
+.numbers ul { list-style: none; padding: 0; margin: 1rem 0 0; }
+.numbers li { padding: 0.75rem 0; border-bottom: 1px solid var(--sage-300); color: var(--sage-900); }
+.numbers li:last-child { border-bottom: none; }
+.numbers li strong { font-family: 'Fraunces', Georgia, serif; font-weight: 600; color: var(--terra-700); display: block; font-size: 1.35rem; margin-bottom: 0.15rem; }
+.story { background: white; border: 1px solid var(--line); border-radius: 14px; padding: 1.5rem; margin-bottom: 1.1rem; }
+.story h3 { font-family: 'Fraunces', Georgia, serif; font-size: 1.15rem; color: var(--sage-900); margin: 0 0 0.5rem; }
+.story .who { font-size: 0.85rem; color: var(--ink-soft); font-weight: 600; margin-bottom: 0.75rem; }
 .story p { color: var(--ink-soft); font-size: 0.97rem; font-style: italic; margin-bottom: 0; }
 .free-preview { background: var(--sage-50); border: 1px dashed var(--sage-300); border-radius: 14px; padding: 1.4rem 1.5rem; margin: 1.25rem 0 0; }
 .free-preview h3 { margin-top: 0; font-size: 1.05rem; color: var(--sage-900); }
 .free-preview ul { padding-left: 1.25rem; margin: 0.5rem 0 0; }
 .free-preview li { margin-bottom: 0.65rem; color: var(--ink-soft); font-size: 0.95rem; }
-.paywall { background: linear-gradient(180deg, var(--sage-50) 0%, var(--sage-100) 100%); border: 2px solid var(--sage-300); border-radius: 18px; padding: 2rem 1.75rem; margin: 2rem 0 1rem; text-align: center; }
-.paywall .lock { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: var(--sage-700); color: white; border-radius: 50%; margin-bottom: 0.9rem; }
-.paywall .lock svg { width: 20px; height: 20px; }
-.paywall p { color: var(--sage-900); font-size: 1rem; max-width: 32rem; margin: 0 auto 1.25rem; }
-.paywall .btn { display: inline-block; background: var(--terra-500); color: white; padding: 0.85rem 1.35rem; border-radius: 10px; font-weight: 600; text-decoration: none; font-size: 0.95rem; transition: background 0.15s ease; }
-.paywall .btn:hover { background: var(--terra-700); }
+.next { background: var(--sage-700); color: white; border-radius: 16px; padding: 2rem 1.75rem; margin: 2.5rem 0 1rem; text-align: center; }
+.next h2 { color: white; margin-top: 0; font-size: 1.5rem; }
+.next p { color: var(--sage-100); max-width: 30rem; margin: 0 auto 1.5rem; }
+.next .btns { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+.btn { display: inline-block; background: var(--terra-500); color: white; padding: 0.85rem 1.35rem; border-radius: 10px; font-weight: 600; text-decoration: none; font-size: 0.95rem; transition: background 0.15s ease; }
+.btn:hover { background: var(--terra-700); }
+.btn.ghost { background: transparent; color: white; border: 1.5px solid var(--sage-100); }
+.btn.ghost:hover { background: var(--sage-900); }
+.predict-cta { background: white; border: 2px solid var(--terra-500); border-radius: 16px; padding: 1.75rem 1.5rem; margin: 1.5rem 0; text-align: center; }
+.predict-cta .free-tag { display: inline-block; background: var(--terra-500); color: white; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; font-weight: 600; margin-bottom: 0.75rem; }
+.predict-cta h3 { margin: 0 0 0.5rem; font-size: 1.35rem; }
+.predict-cta p { margin-bottom: 1.1rem; color: var(--ink-soft); }
 .pager { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin: 2rem 0 2.5rem; padding: 1.25rem 0 0; border-top: 1px solid var(--line); font-size: 0.95rem; }
 .pager a { color: var(--sage-700); text-decoration: none; font-weight: 600; }
 .pager a:hover { color: var(--terra-700); }
@@ -72,112 +68,53 @@ footer { background: var(--sage-900); color: var(--sage-100); padding: 2rem 0 1.
 footer p { color: var(--sage-300); margin-bottom: 0.5rem; }
 footer a { color: var(--sage-100); text-decoration: underline; }
 footer .fine { margin-top: 1.25rem; font-size: 0.8rem; color: var(--sage-300); opacity: 0.75; }
-@media (min-width: 720px) {
-body { font-size: 18px; }
-h1 { font-size: 3rem; }
-.hero h1 { font-size: 3rem; }
-h2 { font-size: 1.9rem; }
-}
+@media (min-width: 720px) { body { font-size: 18px; } h1 { font-size: 3rem; } .hero h1 { font-size: 3rem; } h2 { font-size: 1.9rem; } }
 </style>
+<link rel="canonical" href="https://thegrowthpath.app/growth-path/step-5-manage-your-anxiety/" />
 </head>
 <body>
-
-<nav class="nav">
-<div class="wrap">
-<a class="brand" href="/">The Growth Path</a>
-<div class="links">
-<a href="/growth-path/">The Growth Path</a>
-<a href="/articles/">Articles</a>
-</div>
-</div>
-</nav>
-
-<div class="wrap">
-<div class="crumbs">
-<a href="/">Home</a> &nbsp;/&nbsp; <a href="/growth-path/">The Growth Path</a> &nbsp;/&nbsp; Step 5
-</div>
-</div>
-
-<header class="hero">
-<div class="wrap">
-<div class="eyebrow">Step 5 of 7</div>
-<h1>Manage YOUR anxiety.</h1>
-</div>
-</header>
-
-<section>
-<div class="wrap">
-<p>The 2am spiral. The comparison at the school pickup. The tightness when he asks "am I ever going to be tall?" This is the mom-facing step.</p>
-</div>
-</section>
-
-<section>
-<div class="wrap">
-<h2>Why anxiety compounds.</h2>
-<p>The loop is predictable. You watch him at practice. You compare him to the taller kid. You catastrophize the next ten years in about forty seconds. Then you project that fear back onto him, in your tone, in the questions you ask, in the way your hand tightens on his shoulder.</p>
+<nav class="nav"><div class="wrap"><a class="brand" href="/">The Growth Path</a><div class="links"><a href="/growth-path/">Library</a><a href="/growth-check/">Growth Check</a><a href="/login/">Members</a></div></div></nav>
+<div class="wrap"><div class="crumbs"><a href="/">Home</a> / <a href="/growth-path/">Library</a> / Manage your anxiety.</div></div>
+<header class="hero"><div class="wrap"><div class="eyebrow">The Growth Path Library</div><h1>Manage your anxiety.</h1></div></header>
+<section><div class="wrap">
+<p>The 2am spiral. The comparison at the school pickup. The tightness when he asks "am I ever going to be tall?" This is the parent-facing part.</p>
+</div></section>
+<section><div class="wrap">
+<h2>Why the anxiety compounds.</h2>
+<p>The loop is predictable. You watch him at practice. You compare him to the taller kid. You picture the next ten years in about forty seconds. Then you project that fear back onto him, in your tone, in the questions you ask, in the way your hand tightens on his shoulder.</p>
 <p>He feels it. He does not need to know what you were thinking. Kids read the room, and the room is you.</p>
-</div>
-</section>
-
-<section>
-<div class="wrap">
-<div class="free-preview">
-<h3>Inside this step:</h3>
-<ul>
-<li>The comparison-trap script (how to interrupt it in the moment)</li>
-<li>What to say when your partner minimizes it</li>
-<li>The 10-minute daily practice that anxious moms of shorter boys swear by</li>
-</ul>
-</div>
-</div>
-</section>
-
-<section>
-<div class="wrap">
-<div class="callout">
-<strong>You cannot help him thrive if you are the most anxious person in the room.</strong>
-</div>
-</div>
-</section>
-
-<section>
-<div class="wrap">
+</div></section>
+<section><div class="wrap">
+<h2>Three tools that actually help.</h2>
+<div class="numbers"><ul>
+<li><strong>Name the trigger, not the child</strong>When you catch yourself comparing him to the taller kid, name the comparison silently. "I am doing the comparison thing again." That short pause is often enough to interrupt the loop.</li>
+<li><strong>Separate his data from your fear</strong>His growth chart is a data question. Your fear is a separate problem. Handle them separately.</li>
+<li><strong>Get the visit on the calendar</strong>Concrete action is the best antidote to swirling worry. Book the pediatrician appointment. The waiting is worse than the appointment.</li>
+</ul></div>
+</div></section>
+<section><div class="wrap">
+<h2>What to say when your partner minimizes it.</h2>
+<p>The most common version: "he'll be fine, my brother was short and turned out great." It is not dismissive on purpose. It is a different processing style. Try: "I hear you. What I need from you right now is not reassurance. I need help thinking through the pediatrician question, so I stop carrying this alone."</p>
+<div class="callout"><strong>You cannot help him thrive if you are the most anxious person in the room.</strong></div>
+</div></section>
+<section><div class="wrap">
 <div class="story">
-<img src="https://randomuser.me/api/portraits/women/83.jpg" alt="" />
-<div class="body">
-<h3>"I was the problem I kept trying to fix in him. Once I named that, everything else got easier."</h3>
+<h3>"I was the problem I kept trying to fix in him."</h3>
 <div class="who">TK, mom of a 10-year-old</div>
-<p>"TK placeholder. Real story about a mom who realized her son was picking up her fear at every pediatrician visit, who did the 10-minute daily practice for six weeks, and whose son started answering questions about his height without shrinking."</p>
+<p>"TK placeholder. Real story about a mom who realized her son was picking up her fear at every pediatrician visit, who used the name-the-trigger tool for six weeks, and whose son started answering questions about his height without shrinking."</p>
 </div>
+</div></section>
+<section><div class="wrap">
+<div class="next">
+<h2>Ready for the Growth Check?</h2>
+<p>Get your worry a plan. Ten questions. A snapshot for your situation.</p>
+<div class="btns"><a class="btn" href="/growth-check/">See the full Growth Check</a></div>
 </div>
-</div>
-</section>
-
-<section>
-<div class="wrap">
-<div class="paywall">
-<div class="lock" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-</div>
-<p>The rest of Step 5 is available in the full program.</p>
-<a class="btn" href="/#getapp"><strong>Continue with the full program &rarr;</strong></a>
-</div>
-
-<div class="pager">
-<a href="/growth-path/step-4-rule-out-medical/">&larr; Step 4: Rule Out the Medical Stuff</a>
-<a class="next-link" href="/growth-path/step-6-build-his-confidence/">Step 6: Build HIS Confidence &rarr;</a>
-</div>
-</div>
-</section>
-
-<footer>
-<div class="wrap">
-<p><a href="/">Home</a> &nbsp;&middot;&nbsp; <a href="/growth-path/">The Growth Path</a> &nbsp;&middot;&nbsp; <a href="/articles/">Articles</a></p>
-<div class="fine">
-The Growth Path is parent education, not medical advice. Always talk to a qualified pediatric provider about your son's growth. &copy; 2026 The Growth Path.
-</div>
-</div>
-</footer>
-
+</div></section>
+<section><div class="wrap"><div class="pager">
+<a href="/growth-path/step-4-rule-out-medical/">Related reading: Rule out the medical stuff.</a>
+<a class="next-link" href="/growth-path/step-6-build-his-confidence/">Related reading: Build his confidence. &rarr;</a>
+</div></div></section>
+<footer><div class="wrap"><p><a href="/">Home</a> &middot; <a href="/growth-path/">Library</a> &middot; <a href="/growth-check/">Growth Check</a> &middot; <a href="/join/">Membership</a></p><div class="fine">The Growth Path is parent education, not medical advice. Always talk to a qualified pediatric provider about your son's growth. &copy; 2026 The Growth Path.</div></div></footer>
 </body>
 </html>
