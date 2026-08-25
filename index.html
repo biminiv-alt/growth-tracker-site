@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The Growth Path: Worried Your Son Will Be Short? Start Here.</title>
-<meta name="description" content="The Growth Path is a 7-step program for moms who need real answers and real hope. See his likely height, then follow the full 7-step program." />
+<title>The Growth Path: Is he a late bloomer, or is there something to track?</title>
+<meta name="description" content="An evidence-based parent membership for navigating growth, puberty and confidence in smaller or later-developing boys. Start with the free Growth Check." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -17,14 +17,13 @@
     --sage-700: #4f6a4a;
     --sage-900: #2b3a29;
     --terra-300: #e8b39a;
-    --terra-500: #cf7955; 
+    --terra-500: #cf7955;
     --terra-700: #a15837;
     --cream: #fbf7f1;
     --ink: #2a2723;
     --ink-soft: #5a5651;
     --line: #e5ded2;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
@@ -47,10 +46,8 @@
   h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
   p { margin-bottom: 1rem; color: var(--ink-soft); }
   a { color: var(--terra-700); }
-
   .wrap { max-width: 720px; margin: 0 auto; padding: 0 1.25rem; }
 
-  /* Nav */
   .nav {
     background: var(--cream);
     border-bottom: 1px solid var(--line);
@@ -81,9 +78,8 @@
   }
   .nav .links a:hover { color: var(--terra-700); }
 
-  /* Hero */
   .hero {
-    padding: 3rem 0 2rem;
+    padding: 3rem 0 2.25rem;
     background: linear-gradient(180deg, var(--sage-100) 0%, var(--cream) 100%);
   }
   .hero .eyebrow {
@@ -94,15 +90,20 @@
     font-weight: 600;
     margin-bottom: 1rem;
   }
-  .hero h1 {
-    font-size: 2.4rem;
-    margin-bottom: 1.25rem;
-  }
+  .hero h1 { font-size: 2.4rem; margin-bottom: 1.25rem; }
   .hero .lede {
     font-size: 1.1rem;
     color: var(--sage-900);
+    margin-bottom: 1.5rem;
+    max-width: 36rem;
+  }
+  .hero .promise {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.15rem;
+    color: var(--sage-900);
     margin-bottom: 2rem;
     max-width: 34rem;
+    line-height: 1.4;
   }
   .btn {
     display: inline-block;
@@ -119,315 +120,94 @@
     transition: background 0.15s ease;
     width: 100%;
     max-width: 420px;
+    text-align: center;
   }
   .btn:hover { background: var(--terra-700); }
-  .btn.secondary { background: var(--sage-700); }
-  .btn.secondary:hover { background: var(--sage-900); }
-  .btn.ghost {
+  .btn.secondary {
     background: transparent;
     color: var(--sage-700);
     border: 1.5px solid var(--sage-500);
   }
-  .btn.ghost:hover { background: var(--sage-100); }
+  .btn.secondary:hover { background: var(--sage-100); }
 
   section { padding: 3rem 0; }
   section.tight { padding: 2rem 0; }
 
-  /* Testimonial cards (above the fold) */
-  .tcards {
-    display: grid;
-    gap: 1rem;
-    margin-top: 1.5rem;
-  }
-  .tcard {
+  .knowlist {
     background: white;
     border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 1.1rem 1.15rem;
-    display: flex;
-    gap: 0.9rem;
-    align-items: flex-start;
-    box-shadow: 0 2px 10px rgba(45, 58, 41, 0.04);
+    border-radius: 16px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(45, 58, 41, 0.05);
   }
-  .tcard img {
-    width: 54px;
-    height: 54px;
-    border-radius: 50%;
-    object-fit: cover;
-    flex-shrink: 0;
-  }
-  .tcard .qtext {
-    font-style: italic;
+  .knowlist h2 { font-size: 1.5rem; margin-bottom: 1rem; }
+  .knowlist ul { list-style: none; padding: 0; margin: 0; }
+  .knowlist li {
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--line);
     color: var(--sage-900);
-    font-size: 0.95rem;
-    margin-bottom: 0.4rem;
-    line-height: 1.45;
+    font-size: 1rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
   }
-  .tcard .qwho {
-    font-size: 0.82rem;
-    color: var(--ink-soft);
-    font-weight: 600;
+  .knowlist li:last-child { border-bottom: none; }
+  .knowlist li::before {
+    content: "\2713";
+    color: var(--sage-500);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
   }
 
-  /* Calculator */
-  .calc {
+  .trust {
+    background: var(--sage-100);
+    padding: 1.75rem 0;
+    text-align: center;
+  }
+  .trust p {
+    color: var(--sage-900);
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.1rem;
+    margin: 0;
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .founding {
+    background: var(--sage-50);
+  }
+  .founding .card {
     background: white;
     border: 1px solid var(--line);
     border-radius: 20px;
-    padding: 2rem 1.5rem;
-    box-shadow: 0 4px 20px rgba(45, 58, 41, 0.05);
+    padding: 2rem 1.75rem;
+    text-align: center;
   }
-  .calc h2 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-  .calc .sub {
-    color: var(--ink-soft);
-    font-size: 0.95rem;
-    margin-bottom: 1.75rem;
-  }
-  .field { margin-bottom: 1.25rem; }
-  .field label {
-    display: block;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--sage-900);
-    margin-bottom: 0.4rem;
-  }
-  .field input, .field select {
-    width: 100%;
-    padding: 0.75rem 0.9rem;
-    border: 1.5px solid var(--line);
-    border-radius: 10px;
-    font-family: inherit;
-    font-size: 1rem;
-    background: var(--cream);
-    color: var(--ink);
-  }
-  .field input:focus, .field select:focus {
-    outline: none;
-    border-color: var(--sage-500);
-    background: white;
-  }
-  .row { display: flex; gap: 0.75rem; }
-  .row .field { flex: 1; }
-
-  .unit-toggle {
-    display: inline-flex;
-    background: var(--sage-100);
-    border-radius: 999px;
-    padding: 3px;
-    margin-bottom: 1.25rem;
-    font-size: 0.85rem;
-  }
-  .unit-toggle button {
-    background: none;
-    border: none;
-    padding: 0.4rem 1rem;
-    border-radius: 999px;
-    cursor: pointer;
-    font-family: inherit;
-    font-weight: 600;
-    color: var(--sage-700);
-  }
-  .unit-toggle button.active {
-    background: white;
-    color: var(--sage-900);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-  }
-
-  .result {
-    margin-top: 1.5rem;
-    padding: 1.5rem;
-    background: var(--sage-100);
-    border-radius: 14px;
-    display: none;
-  }
-  .result.shown { display: block; }
-  .result .label {
+  .founding .eyebrow {
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--sage-700);
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-  .result .num {
-    font-family: 'Fraunces', Georgia, serif;
-    font-size: 2.5rem;
-    color: var(--sage-900);
-    line-height: 1;
-    margin-bottom: 0.4rem;
-    font-weight: 500;
-  }
-  .result .range {
-    color: var(--ink-soft);
-    font-size: 0.95rem;
-    margin-bottom: 1.25rem;
-  }
-  .next-tiles {
-    display: grid;
-    gap: 0.9rem;
-    margin-top: 1.25rem;
-  }
-  .next-tile {
-    background: white;
-    border: 1px solid var(--sage-300);
-    border-radius: 10px;
-    padding: 1rem 1.1rem;
-  }
-  .next-tile h4 {
-    font-family: 'Fraunces', Georgia, serif;
-    font-size: 1.05rem;
-    color: var(--sage-900);
-    margin-bottom: 0.35rem;
-    font-weight: 600;
-  }
-  .next-tile p {
-    font-size: 0.93rem;
-    margin-bottom: 0;
-    color: var(--ink-soft);
-  }
-  .next-tile a { font-weight: 600; }
-  .thanks {
-    display: none;
-    padding: 1rem;
-    background: var(--sage-500);
-    color: white;
-    border-radius: 10px;
-    text-align: center;
-    font-weight: 500;
-  }
-  .thanks.shown { display: block; }
-
-  /* Not overreacting band */
-  .stat-band {
-    background: var(--sage-700);
-    color: white;
-    padding: 2.25rem 0;
-    text-align: center;
-  }
-  .stat-band .big {
-    font-family: 'Fraunces', Georgia, serif;
-    font-size: 1.85rem;
-    margin-bottom: 0.5rem;
-    color: white;
-  }
-  .stat-band .cap {
-    font-size: 0.95rem;
-    opacity: 0.9;
-    max-width: 32rem;
-    margin: 0 auto;
-  }
-
-  /* Roadmap */
-  .roadmap-intro {
-    text-align: center;
-    max-width: 34rem;
-    margin: 0 auto 2rem;
-  }
-  .steps {
-    display: grid;
-    gap: 0.9rem;
-  }
-  .step {
-    background: white;
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 1.15rem 1.25rem;
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-    text-decoration: none;
-    color: inherit;
-    transition: border-color 0.15s ease, transform 0.1s ease;
-  }
-  .step:hover {
-    border-color: var(--sage-500);
-    transform: translateY(-1px);
-  }
-  .step .num {
-    font-family: 'Fraunces', Georgia, serif;
-    font-weight: 600;
-    font-size: 1.5rem;
-    color: var(--terra-500);
-    line-height: 1;
-    flex-shrink: 0;
-    width: 2.2rem;
-  }
-  .step .body h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.25rem;
-  }
-  .step .body p {
-    font-size: 0.92rem;
-    margin: 0;
-    color: var(--ink-soft);
-  }
-  .step .body .badge {
-    display: inline-block;
-    font-size: 0.72rem;
-    padding: 2px 8px;
-    border-radius: 999px;
-    background: var(--sage-100);
-    color: var(--sage-700);
-    font-weight: 600;
-    margin-left: 0.5rem;
-    vertical-align: middle;
-  }
-  .step .body .badge.paid {
-    background: var(--terra-300);
     color: var(--terra-700);
+    font-weight: 600;
+    margin-bottom: 0.6rem;
   }
-
-  /* Paid CTA */
-  .paid-cta {
-    background: var(--sage-100);
-    border-radius: 20px;
-    padding: 2.25rem 1.75rem;
-    text-align: center;
-    margin-top: 1rem;
-  }
-  .paid-cta h2 {
-    font-size: 1.6rem;
-    margin-bottom: 0.75rem;
-  }
-  .paid-cta p {
-    max-width: 30rem;
-    margin: 0 auto 1.5rem;
-    color: var(--sage-900);
-  }
-
-  /* FAQ */
-  .faq details {
-    background: white;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 1.1rem 1.25rem;
-    margin-bottom: 0.75rem;
-  }
-  .faq details[open] { background: var(--sage-50); }
-  .faq summary {
+  .founding h2 { font-size: 1.6rem; margin-bottom: 0.75rem; }
+  .founding .price {
     font-family: 'Fraunces', Georgia, serif;
-    font-weight: 500;
-    font-size: 1.1rem;
+    font-size: 2rem;
     color: var(--sage-900);
-    cursor: pointer;
-    list-style: none;
-    position: relative;
-    padding-right: 1.5rem;
+    margin-bottom: 0.4rem;
   }
-  .faq summary::-webkit-details-marker { display: none; }
-  .faq summary::after {
-    content: '+';
-    position: absolute;
-    right: 0;
-    top: 0;
-    font-size: 1.3rem;
-    color: var(--terra-500);
-  }
-  .faq details[open] summary::after { content: '\2212'; }
-  .faq .body {
-    margin-top: 0.9rem;
+  .founding .price small { font-size: 1rem; color: var(--ink-soft); }
+  .founding .fine-terms {
     color: var(--ink-soft);
     font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    max-width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   footer {
@@ -450,19 +230,14 @@
     h1 { font-size: 3.2rem; }
     .hero h1 { font-size: 3rem; }
     h2 { font-size: 2.1rem; }
-    .tcards { grid-template-columns: 1fr 1fr 1fr; }
-    .next-tiles { grid-template-columns: 1fr 1fr 1fr; }
   }
-
-  .field .h-ftin { display: flex; gap: 0.5rem; }
-  .field .h-inonly input { width: 100%; }
-  .field .h-ftin input { width: 100%; flex: 1; min-width: 0; }
 </style>
 <link rel="canonical" href="https://thegrowthpath.app/" />
 <meta name="robots" content="index, follow" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="The Growth Path: Worried Your Son Will Be Short? Start Here." />
-<meta property="og:description" content="The Growth Path is a 7-step program for moms who need real answers and real hope." />
+<meta property="og:title" content="The Growth Path: Is he a late bloomer, or is there something to track?" />
+<meta property="og:description" content="An evidence-based parent membership for navigating growth, puberty and confidence in smaller or later-developing boys." />
+<meta property="og:url" content="https://thegrowthpath.app/" />
 </head>
 <body>
 
@@ -470,338 +245,64 @@
   <div class="wrap">
     <a class="brand" href="/">The Growth Path</a>
     <div class="links">
-      <a href="/growth-path/">The Growth Path</a>
-      <a href="/articles/">Articles</a>
+      <a href="/growth-path/">Library</a>
+      <a href="/growth-check/">Growth Check</a>
+      <a href="/login/">Members</a>
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
 <header class="hero">
   <div class="wrap">
-    <div class="eyebrow">For moms of boys</div>
-    <h1>Worried your son will be short? Start here.</h1>
-    <p class="lede">The Growth Path is a 7-step program for moms who need real answers and real hope. See his likely height, then follow the full 7-step program.</p>
-    <a href="#calculator" class="btn">See his likely height</a>
-
-    <div class="tcards">
-      <div class="tcard">
-        <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="" />
-        <div>
-          <div class="qtext">"TK: 2am spiral quote, mom finding language for the fear she could not name."</div>
-          <div class="qwho">Sarah, mom of a 9-year-old</div>
-        </div>
-      </div>
-      <div class="tcard">
-        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="" />
-        <div>
-          <div class="qtext">"TK: bench-sitting quote, cried in the car, first place that took it seriously."</div>
-          <div class="qwho">Maria, mom of an 11-year-old</div>
-        </div>
-      </div>
-      <div class="tcard">
-        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="" />
-        <div>
-          <div class="qtext">"TK: hope quote, actual data plus a plan, stopped feeling alone."</div>
-          <div class="qwho">Jennifer, mom of a 13-year-old</div>
-        </div>
-      </div>
-    </div>
+    <div class="eyebrow">For parents of smaller or later-developing boys</div>
+    <h1>Is he a late bloomer, or is there something to track?</h1>
+    <p class="lede">The Growth Path is an evidence-based parent membership for navigating growth, puberty and confidence in smaller or later-developing boys.</p>
+    <p class="promise">Know what to monitor, when to act and how to support him.</p>
+    <a href="/growth-check/" class="btn">Start Your Growth Check</a>
   </div>
 </header>
 
-<!-- CALCULATOR -->
-<section id="calculator">
-  <div class="wrap">
-    <div class="calc">
-      <h2>Get a real prediction, right now.</h2>
-      <p class="sub">Four numbers. A predicted adult height with a confidence range, not a made-up single number.</p>
-
-      <div class="unit-toggle" role="tablist" aria-label="Units">
-        <button type="button" data-unit="imperial" class="active" onclick="setUnit('imperial')">Imperial (ft/in)</button>
-        <button type="button" data-unit="inches" onclick="setUnit('inches')">Imperial (in)</button>
-        <!-- Metric tab kept in code for future international support:
-        <button type="button" data-unit="metric" onclick="setUnit('metric')">Metric (cm)</button>
-        -->
-      </div>
-
-      <form id="predForm" onsubmit="predict(event)">
-        <div class="row">
-          <div class="field">
-            <label for="age">Son's age</label>
-            <input type="number" id="age" min="2" max="18" step="0.5" placeholder="e.g. 10" required />
-          </div>
-          <div class="field">
-            <label>Son's current height</label>
-            <div class="h-ftin" data-h="son">
-              <input type="number" inputmode="numeric" min="0" max="9" step="1" placeholder="ft" id="sonFt" aria-label="Son's current height feet" required />
-              <input type="number" inputmode="numeric" min="0" max="11" step="0.5" placeholder="in" id="sonIn" aria-label="Son's current height inches" />
-            </div>
-            <div class="h-inonly" data-h="son" style="display:none">
-              <input type="number" inputmode="numeric" min="20" max="90" step="0.5" placeholder="inches" id="sonInOnly" aria-label="Son's current height in inches" />
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="field">
-            <label>Father's height</label>
-            <div class="h-ftin" data-h="dad">
-              <input type="number" inputmode="numeric" min="0" max="9" step="1" placeholder="ft" id="dadFt" aria-label="Father's height feet" required />
-              <input type="number" inputmode="numeric" min="0" max="11" step="0.5" placeholder="in" id="dadIn" aria-label="Father's height inches" />
-            </div>
-            <div class="h-inonly" data-h="dad" style="display:none">
-              <input type="number" inputmode="numeric" min="20" max="90" step="0.5" placeholder="inches" id="dadInOnly" aria-label="Father's height in inches" />
-            </div>
-          </div>
-          <div class="field">
-            <label>Mother's height</label>
-            <div class="h-ftin" data-h="mom">
-              <input type="number" inputmode="numeric" min="0" max="9" step="1" placeholder="ft" id="momFt" aria-label="Mother's height feet" required />
-              <input type="number" inputmode="numeric" min="0" max="11" step="0.5" placeholder="in" id="momIn" aria-label="Mother's height inches" />
-            </div>
-            <div class="h-inonly" data-h="mom" style="display:none">
-              <input type="number" inputmode="numeric" min="20" max="90" step="0.5" placeholder="inches" id="momInOnly" aria-label="Mother's height in inches" />
-            </div>
-          </div>
-        </div>
-
-        <button type="submit" class="btn">See his predicted adult height</button>
-      </form>
-
-      <div class="result" id="result">
-        <div class="label">Predicted adult height</div>
-        <div class="num" id="pred"></div>
-        <div class="range" id="range"></div>
-
-        <div class="next-tiles">
-          <div class="next-tile">
-            <h4>Now walk the path</h4>
-            <p>The Growth Path is a 7-step program to turn worry into a plan.</p>
-            <p style="margin-top:0.5rem;"><a href="/growth-path/">Open The Growth Path</a></p>
-          </div>
-          <div class="next-tile">
-            <h4>Track it over time</h4>
-            <p>Log his height every 3 months in the app and watch the curve build.</p>
-            <p style="margin-top:0.5rem;"><a href="#getapp">Get the app</a></p>
-          </div>
-          <div class="next-tile">
-            <h4>Read the articles</h4>
-            <p>Free library on late bloomers, bone age, growth hormone, and more.</p>
-            <p style="margin-top:0.5rem;"><a href="/articles/">Open the library</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- YOU ARE NOT OVERREACTING BAND -->
-<section class="stat-band tight">
-  <div class="wrap">
-    <div class="big">You are not overreacting.</div>
-    <div class="cap">1 in 4 boys are below the 25th percentile. If you are worried, you are not alone.</div>
-  </div>
-</section>
-
-<!-- 7-STEP ROADMAP -->
 <section>
   <div class="wrap">
-    <div class="roadmap-intro">
-      <h2>The Growth Path</h2>
-      <p>Seven steps to understand what's happening and what you can do.</p>
-    </div>
-    <div class="steps">
-      <a class="step" href="/growth-path/#step-1">
-        <div class="num">1</div>
-        <div class="body">
-          <h3>You're not alone.</h3>
-          <p>Real stories from moms who Googled at 2am. You are not overreacting.</p>
-        </div>
-      </a>
-      <a class="step" href="/growth-path/#step-2">
-        <div class="num">2</div>
-        <div class="body">
-          <h3>Get the facts.</h3>
-          <p>His height estimate plus growth curve basics. Replace catastrophic thinking with data.</p>
-        </div>
-      </a>
-      <a class="step" href="/growth-path/#step-3">
-        <div class="num">3</div>
-        <div class="body">
-          <h3>Understand what can influence height.</h3>
-          <p>Sleep, nutrition timing, growth hormone for indicated cases, bone age. Honest.</p>
-        </div>
-      </a>
-      <a class="step" href="/growth-path/#step-4">
-        <div class="num">4</div>
-        <div class="body">
-          <h3>Rule out the medical stuff.</h3>
-          <p>When to see a pediatric endocrinologist, what the workup looks like, CDGP, ISS.</p>
-        </div>
-      </a>
-      <a class="step" href="/growth-path/#step-5">
-        <div class="num">5</div>
-        <div class="body">
-          <h3>Manage your anxiety.</h3>
-          <p>Parent coping tools. The comparison trap. The 2am spiral. Talking to your partner.</p>
-        </div>
-      </a>
-      <a class="step" href="/growth-path/#step-6">
-        <div class="num">6</div>
-        <div class="body">
-          <h3>Build his confidence.</h3>
-          <p>Talking to him at 8, 12, and 16. What to do the week he sits the bench.</p>
-        </div>
-      </a>
-      <a class="step" href="/growth-path/#step-7">
-        <div class="num">7</div>
-        <div class="body">
-          <h3>Track and thrive.</h3>
-          <p>Measure every 3 months. Watch the curve. The long arc.</p>
-        </div>
-      </a>
+    <div class="knowlist">
+      <h2>What you'll know after the Growth Check</h2>
+      <ul>
+        <li>Where his height sits in family context, not just a percentile chart.</li>
+        <li>What kind of growth pattern is common at his age and stage.</li>
+        <li>Which of the three things (monitoring, medical action, or support) matters most for your situation right now.</li>
+        <li>A clear next step, whether that's watchful waiting, a pediatrician conversation, or building his confidence.</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- PAID CTA -->
-<section>
+<section class="trust">
   <div class="wrap">
-    <div class="paid-cta">
-      <h2>Get the full program plus tracker.</h2>
-      <p>All 7 steps of The Growth Path, the tracking app, practical exercises, and the private community.</p>
-      <a href="#getapp" class="btn">Get the app</a>
+    <p>Evidence-based. Reviewed for accuracy. No supplement pitches. No fake diagnoses.</p>
+  </div>
+</section>
+
+<section class="founding">
+  <div class="wrap">
+    <div class="card">
+      <div class="eyebrow">Founding Membership</div>
+      <h2>Real support for the long arc.</h2>
+      <div class="price">$19<small>/month</small></div>
+      <p class="fine-terms">Keep your founding rate as long as your membership stays active. Charged today, renews monthly. Cancel anytime.</p>
+      <a href="/join/" class="btn secondary">See what's included</a>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="faq" style="background: var(--sage-50);">
+<footer>
   <div class="wrap">
-    <h2>Questions moms actually ask</h2>
-
-    <details>
-      <summary>Am I overreacting?</summary>
-      <div class="body">No. If you are up at 2am reading about height percentiles, something is worth paying attention to. It is usually not what you fear, but the worry itself is real and it deserves a real answer, not a "he'll be fine" from your mother in law. Step 1 of The Growth Path is entirely about this.</div>
-    </details>
-
-    <details>
-      <summary>Is there anything I can actually do?</summary>
-      <div class="body">Yes, and it is more than nothing and less than the internet promises. Real levers: consistent sleep during growth spurts, adequate protein and calories, ruling out medical causes with a pediatric endocrinologist, and for kids with a diagnosed indication, growth hormone therapy which is documented to add 2 to 4 inches in indicated cases. Not levers: pills, powders, stretching routines, or anything sold on Instagram.</div>
-    </details>
-
-    <details>
-      <summary>Will he catch up?</summary>
-      <div class="body">Most short boys are just short and they finish fine. A meaningful share are late bloomers (constitutional delay of growth and puberty, or CDGP) and catch up in their late teens. A smaller share have something a doctor can help with, and the earlier that gets caught, the better the outcome. Step 2 gives you the data to tell which pattern you are looking at.</div>
-    </details>
-
-    <details>
-      <summary>Should I see a pediatric endocrinologist?</summary>
-      <div class="body">Any time you are worried. If you want harder thresholds: below the 3rd percentile, growth velocity under 5 cm per year past age 4, dropping across two percentile lines, or no puberty signs by age 14 in boys. Bring a printed growth chart. Ask about a bone age X-ray. Step 4 walks you through exactly what to ask.</div>
-    </details>
-
-    <details>
-      <summary>What is growth hormone therapy actually like?</summary>
-      <div class="body">For kids with a diagnosed indication (growth hormone deficiency, Turner syndrome, chronic kidney disease, ISS below certain thresholds), the safety data over 40 years is well established. It involves daily injections for years, real annual cost, and a family conversation about what "tall enough" means. A pediatric endocrinologist is the only person who can tell you if it is right for your son.</div>
-    </details>
-
-    <details>
-      <summary>Is this medical advice?</summary>
-      <div class="body">No. The Growth Path is parent education, not a substitute for a pediatric endocrinologist. We tell you what questions to ask, what the workup looks like, and how to cope while you wait for answers. We do not diagnose, prescribe, or sell supplements.</div>
-    </details>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer id="getapp">
-  <div class="wrap">
-    <h2 style="color:white;">Get the app.</h2>
-    <p>The paid tracker plus the full 7-step Growth Path, practical exercises, and the community. Notify me when it launches.</p>
-    <form onsubmit="captureLaunch(event)" style="display:flex; gap:0.5rem; justify-content:center; flex-wrap:wrap; margin-bottom:0.5rem;">
-      <input type="email" id="launchEmail" placeholder="your@email.com" required style="padding:0.6rem 0.75rem; border-radius:6px; border:1px solid var(--sage-100); min-width:220px; font-family:inherit; font-size:1rem;" />
-      <button type="submit" class="btn" style="width:auto;">Notify me</button>
-    </form>
-    <div class="thanks" id="launchThanks" style="color:var(--sage-100);margin-top:0.5rem;">Thanks. We will email you the day it goes live.</div>
-    <p style="margin-top:1.25rem;"><a href="/growth-path/">Open The Growth Path</a> &nbsp;&middot;&nbsp; <a href="/articles/">Articles</a></p>
+    <p><a href="/growth-path/">Library</a> &nbsp;&middot;&nbsp; <a href="/growth-check/">Growth Check</a> &nbsp;&middot;&nbsp; <a href="/join/">Membership</a></p>
+    <p><a href="/terms/">Terms</a> &nbsp;&middot;&nbsp; <a href="/privacy/">Privacy</a></p>
     <div class="fine">
-      The Growth Path is parent education, not medical advice. Predictions are estimates. Always talk to a qualified pediatric provider about your son's growth. &copy; 2026 The Growth Path.
+      The Growth Path is parent education, not medical advice. Always talk to a qualified pediatric provider about your son's growth. &copy; 2026 The Growth Path.
     </div>
   </div>
 </footer>
 
-<script>
-  let unit = 'imperial'; // 'imperial' (ft + in) or 'inches' (in only). 'metric' kept in comments for future international support.
-
-  function setUnit(u) {
-    unit = u;
-    document.querySelectorAll('.unit-toggle button').forEach(b => {
-      b.classList.toggle('active', b.dataset.unit === u);
-    });
-    const showFtIn = (u === 'imperial');
-    document.querySelectorAll('.h-ftin').forEach(el => { el.style.display = showFtIn ? 'flex' : 'none'; });
-    document.querySelectorAll('.h-inonly').forEach(el => { el.style.display = showFtIn ? 'none' : 'block'; });
-    document.querySelectorAll('.h-ftin input').forEach(el => {
-      if (el.id.endsWith('Ft')) { el.required = showFtIn; } else { el.required = false; }
-    });
-    document.querySelectorAll('.h-inonly input').forEach(el => { el.required = !showFtIn; });
-    /* metric mode:
-    if (u === 'metric') { ...swap inputs to cm... }
-    */
-  }
-
-  function readHeight(key) {
-    if (unit === 'imperial') {
-      const ft = parseFloat(document.getElementById(key + 'Ft').value);
-      const inch = parseFloat(document.getElementById(key + 'In').value);
-      if (isNaN(ft) && isNaN(inch)) return null;
-      return (isNaN(ft) ? 0 : ft) * 12 + (isNaN(inch) ? 0 : inch);
-    }
-    const n = parseFloat(document.getElementById(key + 'InOnly').value);
-    if (isNaN(n)) return null;
-    return n;
-    /* metric:
-    const cm = parseFloat(document.getElementById(key + 'Cm').value);
-    if (isNaN(cm)) return null;
-    return cm / 2.54;
-    */
-  }
-
-  function inchesToDisplay(inches) {
-    const ft = Math.floor(inches / 12);
-    const inch = Math.round(inches - ft * 12);
-    return ft + "'" + inch + '"';
-    // metric: return Math.round(inches * 2.54) + ' cm';
-  }
-
-  function predict(e) {
-    e.preventDefault();
-    // Mid-parental (Tanner) formula for boys: (dad_in + mom_in + 5) / 2 in inches. Confidence +/- 4 in.
-    const dad = readHeight('dad');
-    const mom = readHeight('mom');
-    if (dad == null || mom == null || dad < 40 || mom < 40) {
-      alert('Please enter valid heights for both parents.');
-      return;
-    }
-    const mph = (dad + mom + 5) / 2;
-    const low = mph - 4;
-    const high = mph + 4;
-
-    document.getElementById('pred').innerText = inchesToDisplay(mph);
-    document.getElementById('range').innerText =
-      'Likely range: ' + inchesToDisplay(low) + ' to ' + inchesToDisplay(high) +
-      '. (Based on mid-parental height. Confidence plus or minus 4 inches.)';
-    const r = document.getElementById('result');
-    r.classList.add('shown');
-    r.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  function captureLaunch(e) {
-    e.preventDefault();
-    e.target.style.display = 'none';
-    document.getElementById('launchThanks').style.display = 'block';
-    return false;
-  }
-</script>
 </body>
 </html>
