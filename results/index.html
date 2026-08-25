@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Your Growth Path Results | The Growth Path</title>
+<meta name="description" content="Your Growth Check results: context, priorities, and a preview of the members plan." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --sage-50: #f4f7f2;
+    --sage-100: #e6ede1;
+    --sage-300: #b8c9ac;
+    --sage-500: #7d9b73;
+    --sage-700: #4f6a4a;
+    --sage-900: #2b3a29;
+    --terra-300: #e8b39a;
+    --terra-500: #cf7955;
+    --terra-700: #a15837;
+    --cream: #fbf7f1;
+    --ink: #2a2723;
+    --ink-soft: #5a5651;
+    --line: #e5ded2;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--sage-900);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  h1 { font-size: 2rem; margin-bottom: 0.75rem; }
+  h2 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+  h3 { font-size: 1.15rem; margin-bottom: 0.4rem; }
+  p { margin-bottom: 1rem; color: var(--ink-soft); }
+  a { color: var(--terra-700); }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 1.25rem; }
+
+  .nav {
+    background: var(--cream);
+    border-bottom: 1px solid var(--line);
+    padding: 0.9rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+  .nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .nav .brand {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    color: var(--sage-900);
+    text-decoration: none;
+    font-size: 1.15rem;
+  }
+  .nav .links a {
+    color: var(--sage-700);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-left: 1rem;
+  }
+  .nav .links a:hover { color: var(--terra-700); }
+
+  .hero { padding: 2rem 0 1rem; }
+  .hero .eyebrow {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--terra-700);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  section { padding: 1.5rem 0; }
+
+  .panel {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 1.75rem 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 12px rgba(45, 58, 41, 0.04);
+  }
+
+  .datarow {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--sage-900);
+    font-size: 0.98rem;
+  }
+  .datarow:last-child { border-bottom: none; }
+  .datarow .k { font-weight: 600; color: var(--sage-900); }
+  .datarow .v { color: var(--ink-soft); }
+
+  .band {
+    background: var(--sage-100);
+    padding: 1rem 1.15rem;
+    border-radius: 12px;
+    margin-top: 1rem;
+    color: var(--sage-900);
+  }
+  .band strong { color: var(--sage-900); font-family: 'Fraunces', Georgia, serif; }
+
+  .pillars { display: grid; gap: 1rem; }
+  .pillar {
+    background: var(--sage-50);
+    border-left: 4px solid var(--sage-500);
+    border-radius: 10px;
+    padding: 1.15rem 1.25rem;
+  }
+  .pillar.primary {
+    border-left-color: var(--terra-500);
+    background: white;
+    box-shadow: 0 4px 16px rgba(45, 58, 41, 0.05);
+  }
+  .pillar h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--sage-900);
+    margin-bottom: 0.4rem;
+  }
+  .pillar p { color: var(--ink-soft); margin-bottom: 0; font-size: 0.98rem; }
+  .pillar .tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--terra-300);
+    color: var(--terra-700);
+    font-weight: 600;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+  }
+
+  .tiles {
+    display: grid;
+    gap: 0.85rem;
+    margin-top: 1.25rem;
+  }
+  .tile {
+    background: white;
+    border: 1px solid var(--sage-300);
+    border-radius: 12px;
+    padding: 1rem 1.15rem;
+  }
+  .tile h4 {
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--sage-900);
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+    font-size: 1.02rem;
+  }
+  .tile p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+  .cta-card {
+    background: var(--sage-700);
+    color: white;
+    border-radius: 16px;
+    padding: 2rem 1.75rem;
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+  .cta-card h2 { color: white; margin-bottom: 0.6rem; font-size: 1.5rem; }
+  .cta-card p { color: var(--sage-100); max-width: 30rem; margin: 0 auto 1.25rem; }
+  .cta-card .trust {
+    color: var(--sage-100);
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+    font-style: italic;
+  }
+  .btn {
+    display: inline-block;
+    background: var(--terra-500);
+    color: white;
+    padding: 0.9rem 1.4rem;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.98rem;
+    font-family: inherit;
+    transition: background 0.15s ease;
+  }
+  .btn:hover { background: var(--terra-700); }
+
+  .fallback {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+  .fallback a { font-weight: 600; }
+
+  footer {
+    background: var(--sage-900);
+    color: var(--sage-100);
+    padding: 2rem 0 1.5rem;
+    text-align: center;
+  }
+  footer p { color: var(--sage-300); margin-bottom: 0.5rem; }
+  footer a { color: var(--sage-100); text-decoration: underline; }
+  footer .fine { margin-top: 1.25rem; font-size: 0.8rem; color: var(--sage-300); opacity: 0.75; }
+
+  @media (min-width: 720px) {
+    body { font-size: 18px; }
+    h1 { font-size: 2.6rem; }
+    .tiles { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+<link rel="canonical" href="https://thegrowthpath.app/results/" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="/">The Growth Path</a>
+    <div class="links">
+      <a href="/growth-path/">Library</a>
+      <a href="/growth-check/">Growth Check</a>
+      <a href="/login/">Members</a>
+    </div>
+  </div>
+</nav>
+
+<div id="app"></div>
+
+<footer>
+  <div class="wrap">
+    <p><a href="/growth-path/">Library</a> &nbsp;&middot;&nbsp; <a href="/join/">Membership</a></p>
+    <div class="fine">
+      The Growth Path is parent education, not medical advice. Always talk to a qualified pediatric provider about your son's growth. &copy; 2026 The Growth Path.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const app = document.getElementById('app');
+  let a = {};
+  try { a = JSON.parse(localStorage.getItem('gpAnswers') || '{}'); } catch(e) {}
+
+  const hasAny = a && (a.q_age || a.q_h_ft || a.q_h_in || a.q_uncertain);
+  if (!hasAny) {
+    app.innerHTML = `
+      <header class="hero"><div class="wrap">
+        <div class="eyebrow">Growth Check</div>
+        <h1>No answers found.</h1>
+        <p>Start the Growth Check to see your results here.</p>
+      </div></header>
+      <section><div class="wrap"><div class="fallback">
+        <p><a href="/growth-check/" class="btn">Start Your Growth Check</a></p>
+      </div></div></section>`;
+    return;
+  }
+
+  function ftIn(ft, inch) {
+    const f = parseFloat(ft) || 0;
+    const i = parseFloat(inch) || 0;
+    return f * 12 + i;
+  }
+  function fmtIn(totalIn) {
+    if (totalIn <= 0 || isNaN(totalIn)) return '';
+    const f = Math.floor(totalIn / 12);
+    const i = Math.round(totalIn - f * 12);
+    return f + '&#39;' + i + '&quot;';
+  }
+  function dateDiffYears(d1, d2) {
+    if (!d1 || !d2) return null;
+    const t1 = new Date(d1).getTime();
+    const t2 = new Date(d2).getTime();
+    if (isNaN(t1) || isNaN(t2)) return null;
+    return (t2 - t1) / (1000 * 60 * 60 * 24 * 365.25);
+  }
+
+  const curIn = ftIn(a.q_h_ft, a.q_h_in);
+  const priorIn = ftIn(a.q_h2_ft, a.q_h2_in);
+  const momIn = ftIn(a.q_mom_ft, a.q_mom_in);
+  const dadIn = ftIn(a.q_dad_ft, a.q_dad_in);
+
+  let velocity = null;
+  if (priorIn > 0 && a.q_h_date && a.q_h2_date) {
+    const years = dateDiffYears(a.q_h2_date, a.q_h_date);
+    if (years && years > 0.05) {
+      velocity = ((curIn - priorIn) / years).toFixed(1);
+    }
+  }
+
+  // Mid-parental for a boy: ((mom_in + 5) + dad_in) / 2, +/- 4 in
+  let mpBand = null;
+  if (momIn >= 40 && dadIn >= 40) {
+    const mid = ((momIn + 5) + dadIn) / 2;
+    mpBand = { low: mid - 4, high: mid + 4, mid };
+  }
+
+  // Section 2 pillar order
+  const pillars = {
+    monitor: {
+      title: 'Monitor',
+      body: 'Watch the trend, not the number. Get consistent measurements (every 3 to 6 months, ideally same time of day, no shoes). Note if he tracks along his own curve or crosses lines downward. A single low percentile is context; a sustained downward drift is a signal worth a pediatrician conversation.'
+    },
+    act: {
+      title: 'Act',
+      body: 'A pediatrician visit is reasonable any time you are worried. Bring a printed growth chart and ask about a bone age X-ray. If you want a specialist read, ask about a referral to a pediatric endocrinologist. Come with questions, not conclusions.'
+    },
+    support: {
+      title: 'Support',
+      body: 'How you talk about his body is how he will learn to talk about it. Keep language neutral and matter-of-fact. Focus on what his body can do, not what it measures. Notice when size is affecting confidence and address it directly, not by minimizing it.'
+    }
+  };
+
+  // Tailor pillar text based on answers
+  if (a.q_pubTiming === 'later') {
+    pillars.monitor.body += ' Because you noted his development is tracking later than peers, keep an especially close eye on velocity between measurements.';
+  }
+  if (a.q_prompted === 'sports' || a.q_impact === 'sports' || a.q_impact === 'both') {
+    pillars.support.body += ' Since sports is part of the picture, name the frustration when he brings it up. Do not rush to fix it.';
+  }
+  if (a.q_prompted === 'pediatrician') {
+    pillars.act.body += ' Because a pediatrician already flagged something, request the growth chart in advance and prepare specific questions to bring.';
+  }
+  if (a.q_prompted === 'family') {
+    pillars.act.body += ' Family history is meaningful context. Bring it up explicitly at the visit.';
+  }
+  if (a.q_impact === 'confidence' || a.q_impact === 'both') {
+    pillars.support.body += ' The confidence work is not separate from the medical work. Both matter, and they run in parallel.';
+  }
+
+  const primary = a.q_uncertain || 'monitor';
+  const order = [primary].concat(['monitor','act','support'].filter(k => k !== primary));
+
+  // Constitutional delay note
+  let cdgpNote = '';
+  if (a.q_pubTiming === 'later' && (a.q_impact === 'sports' || a.q_impact === 'confidence' || a.q_impact === 'both' || a.q_prompted === 'sports')) {
+    cdgpNote = `
+      <div class="band">
+        <strong>A note on late development.</strong>
+        <p style="margin-top:0.5rem; margin-bottom: 0; color: var(--sage-900);">
+        Constitutional growth delay is a common, often benign pattern where boys enter puberty later than peers and complete growth on a delayed timeline. It is a pattern a pediatric endocrinologist can help evaluate. See the
+        <a href="https://www.endocrine.org/patient-engagement/endocrine-library/short-stature-in-children" target="_blank" rel="noopener">Endocrine Society patient guide</a> for context.
+        </p>
+      </div>`;
+  }
+
+  // Build display
+  let curDisp = curIn > 0 ? fmtIn(curIn) : '';
+  let priorDisp = priorIn > 0 ? fmtIn(priorIn) : '';
+  let mpDisp = mpBand ? (fmtIn(mpBand.low) + ' to ' + fmtIn(mpBand.high)) : '';
+
+  const html = `
+    <header class="hero">
+      <div class="wrap">
+        <div class="eyebrow">Your Growth Check</div>
+        <h1>Here is what we can see from your answers.</h1>
+        <p>This is context to help you think, not a diagnosis. Save your results and share them with your pediatrician if it is useful.</p>
+      </div>
+    </header>
+
+    <section>
+      <div class="wrap">
+        <div class="panel">
+          <h2>1. Growth context</h2>
+          <div class="datarow"><span class="k">Age</span><span class="v">${a.q_age ? a.q_age + ' yrs' : '-'}</span></div>
+          <div class="datarow"><span class="k">Current height</span><span class="v">${curDisp || '-'}${a.q_h_date ? ' &middot; ' + a.q_h_date : ''}</span></div>
+          ${priorDisp ? `<div class="datarow"><span class="k">Prior height</span><span class="v">${priorDisp}${a.q_h2_date ? ' &middot; ' + a.q_h2_date : ''}</span></div>` : ''}
+          ${velocity !== null ? `<div class="datarow"><span class="k">Growth velocity</span><span class="v">${velocity} in / year</span></div>` : ''}
+          ${mpDisp ? `<div class="datarow"><span class="k">Family-context range</span><span class="v">${mpDisp}</span></div>` : ''}
+          ${mpDisp ? `<div class="band"><strong>What the range means.</strong><p style="margin-top:0.5rem; margin-bottom:0; color: var(--sage-900);">This is context, not a prediction. It is a rough family window based on parent heights (a common rule of thumb: mother's height plus five, plus father's height, divided by two, then plus or minus four inches). His actual adult height depends on many factors and can land anywhere in or near this range.</p></div>` : ''}
+          ${cdgpNote}
+        </div>
+
+        <div class="panel">
+          <h2>2. Your parent priorities</h2>
+          <p>Based on your answers, here is the order that fits your situation right now.</p>
+          <div class="pillars">
+            ${order.map((k, idx) => `
+              <div class="pillar${idx === 0 ? ' primary' : ''}">
+                <h3>${pillars[k].title}${idx === 0 ? '<span class="tag">Start here</span>' : ''}</h3>
+                <p>${pillars[k].body}</p>
+              </div>`).join('')}
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>3. Your Growth Path</h2>
+          <p>Members get the tools that turn a snapshot into a plan you can actually use.</p>
+          <div class="tiles">
+            <div class="tile"><h4>Living growth record</h4><p>Log measurements over time and see the shape of his curve.</p></div>
+            <div class="tile"><h4>Personalized what-to-monitor plan</h4><p>Clear signals to watch for, matched to his age and stage.</p></div>
+            <div class="tile"><h4>Pediatrician appointment prep</h4><p>Printable growth chart, questions to ask, red flags to name.</p></div>
+            <div class="tile"><h4>Confidence and communication guides</h4><p>What to say at 8, 12, 16. The week he sits the bench.</p></div>
+            <div class="tile"><h4>Evidence-based resource library</h4><p>Reviewed reading on late bloomers, bone age, and more.</p></div>
+            <div class="tile"><h4>Weekly guidance emails</h4><p>Short, useful, and never a supplement pitch.</p></div>
+          </div>
+
+          <div class="cta-card">
+            <h2>Become a Founding Member</h2>
+            <p>Keep your founding rate as long as your membership stays active. Cancel anytime.</p>
+            <div class="trust">Every claim reviewed. No supplements. No fake diagnoses.</div>
+            <a href="/join/" class="btn">Become a Founding Member for $19/month</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+
+  app.innerHTML = html;
+})();
+</script>
+</body>
+</html>
