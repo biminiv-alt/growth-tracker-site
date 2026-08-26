@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Sign in &middot; The Growth Path</title>
+<style>:root{--ink:#1a1a1a;--muted:#5a5a5a;--line:#e5e0d5;--accent:#8a5a3a;--bg:#faf7f0;--card:#fff}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Iowan Old Style',serif;color:var(--ink);background:var(--bg);line-height:1.55}
+.wrap{max-width:780px;margin:0 auto;padding:24px}
+h1,h2,h3{font-family:Georgia,serif;line-height:1.25}
+h1{font-size:2rem;margin:0 0 .4em}
+h2{font-size:1.35rem;margin:1.6em 0 .5em;border-bottom:1px solid var(--line);padding-bottom:6px}
+h3{font-size:1.08rem;margin:1.2em 0 .3em}
+p,li{font-size:1rem}
+a{color:var(--accent)}
+.nav{background:#fff;border-bottom:1px solid var(--line);padding:12px 24px}
+.nav-inner{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center}
+.nav a{color:var(--muted);text-decoration:none;font-family:system-ui,sans-serif;font-size:.92rem}
+.nav a:hover{color:var(--ink)}
+.nav .brand{font-family:Georgia,serif;font-weight:600;color:var(--ink);margin-right:auto;font-size:1.05rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:18px;margin-bottom:14px}
+.card h3{margin-top:0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.grid{grid-template-columns:1fr}}
+button,input[type=submit]{background:var(--ink);color:#fff;border:none;padding:10px 16px;border-radius:4px;font-size:1rem;cursor:pointer;font-family:system-ui,sans-serif}
+button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+input,textarea,select{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-size:1rem;font-family:inherit;background:#fff}
+label{display:block;font-size:.9rem;color:var(--muted);margin:12px 0 6px;font-family:system-ui,sans-serif}
+table{width:100%;border-collapse:collapse;margin:12px 0}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);font-size:.95rem}
+th{font-family:system-ui,sans-serif;color:var(--muted);font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:.03em}
+.callout{background:#f4ede0;border-left:3px solid var(--accent);padding:12px 14px;margin:14px 0;border-radius:3px}
+.callout.general{background:#f0f0ee;border-left-color:var(--muted)}
+.callout p:first-child{margin-top:0}
+.callout p:last-child{margin-bottom:0}
+.muted{color:var(--muted);font-size:.9rem}
+.footer{margin:40px 0 20px;color:var(--muted);font-size:.85rem;text-align:center;border-top:1px solid var(--line);padding-top:20px}
+.print-btn{float:right}
+.right{float:right}
+.row{display:flex;gap:12px;align-items:flex-end}
+.row>*{flex:1}
+@media print{.nav,.print-btn,.no-print,button{display:none!important}.wrap{max-width:none}body{background:#fff}.card{border-color:#ccc;page-break-inside:avoid}}
+.login-wrap{max-width:420px;margin:60px auto;padding:0 24px}
+.brand-block{text-align:center;margin-bottom:24px}
+.brand-block .brand{font-family:Georgia,serif;font-size:1.4rem;font-weight:600}
+.brand-block .sub{color:var(--muted);font-size:.95rem;margin-top:4px}
+.err{color:#8a2a2a;font-size:.9rem;margin-top:10px;min-height:1.2em}
+</style>
+</head>
+<body>
+<main class="login-wrap">
+<div class="brand-block">
+<div class="brand">The Growth Path</div>
+<div class="sub">Members-only preview during founding period.</div>
+</div>
+<div class="card">
+<form id="loginForm" autocomplete="off">
+<label for="email">Email</label>
+<input type="email" id="email" name="email" required autocomplete="email">
+<label for="password">Password</label>
+<input type="password" id="password" name="password" required autocomplete="current-password">
+<div class="err" id="err"></div>
+<div style="margin-top:16px"><button type="submit">Sign in</button></div>
+</form>
+</div>
+<p class="muted" style="text-align:center;margin-top:20px">Questions? <a href="mailto:hello@thegrowthpath.app">hello@thegrowthpath.app</a></p>
+</main>
+<script src="/member/config.js"></script>
+<script>
+document.getElementById('loginForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var email = document.getElementById('email').value.trim();
+  var pw = document.getElementById('password').value;
+  var err = document.getElementById('err');
+  if (!email) { err.textContent = 'Please enter your email.'; return; }
+  if (pw === window.TGP_MEMBER_PASSWORD) {
+    sessionStorage.setItem('tgp_member_auth', email);
+    sessionStorage.setItem('tgp_member_version', window.TGP_MEMBER_VERSION);
+    window.location.href = '/member/';
+  } else {
+    err.textContent = 'That password did not match. If you need a new one, email hello@thegrowthpath.app.';
+  }
+});
+</script>
+</body>
+</html>
