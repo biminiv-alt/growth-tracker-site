@@ -1,0 +1,2 @@
+window.TGP_MEMBER_PASSWORD = "TGP-founder-2026-K7M2";
+window.TGP_MEMBER_VERSION = "2026-08-25";
