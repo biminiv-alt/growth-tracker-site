@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Your results &middot; The Growth Path</title>
+<style>:root{--ink:#1a1a1a;--muted:#5a5a5a;--line:#e5e0d5;--accent:#8a5a3a;--bg:#faf7f0;--card:#fff}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Iowan Old Style',serif;color:var(--ink);background:var(--bg);line-height:1.55}
+.wrap{max-width:780px;margin:0 auto;padding:24px}
+h1,h2,h3{font-family:Georgia,serif;line-height:1.25}
+h1{font-size:2rem;margin:0 0 .4em}
+h2{font-size:1.35rem;margin:1.6em 0 .5em;border-bottom:1px solid var(--line);padding-bottom:6px}
+h3{font-size:1.08rem;margin:1.2em 0 .3em}
+p,li{font-size:1rem}
+a{color:var(--accent)}
+.nav{background:#fff;border-bottom:1px solid var(--line);padding:12px 24px}
+.nav-inner{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center}
+.nav a{color:var(--muted);text-decoration:none;font-family:system-ui,sans-serif;font-size:.92rem}
+.nav a:hover{color:var(--ink)}
+.nav .brand{font-family:Georgia,serif;font-weight:600;color:var(--ink);margin-right:auto;font-size:1.05rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:18px;margin-bottom:14px}
+.card h3{margin-top:0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.grid{grid-template-columns:1fr}}
+button,input[type=submit]{background:var(--ink);color:#fff;border:none;padding:10px 16px;border-radius:4px;font-size:1rem;cursor:pointer;font-family:system-ui,sans-serif}
+button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+input,textarea,select{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-size:1rem;font-family:inherit;background:#fff}
+label{display:block;font-size:.9rem;color:var(--muted);margin:12px 0 6px;font-family:system-ui,sans-serif}
+table{width:100%;border-collapse:collapse;margin:12px 0}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);font-size:.95rem}
+th{font-family:system-ui,sans-serif;color:var(--muted);font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:.03em}
+.callout{background:#f4ede0;border-left:3px solid var(--accent);padding:12px 14px;margin:14px 0;border-radius:3px}
+.callout.general{background:#f0f0ee;border-left-color:var(--muted)}
+.callout p:first-child{margin-top:0}
+.callout p:last-child{margin-bottom:0}
+.muted{color:var(--muted);font-size:.9rem}
+.footer{margin:40px 0 20px;color:var(--muted);font-size:.85rem;text-align:center;border-top:1px solid var(--line);padding-top:20px}
+.print-btn{float:right}
+.right{float:right}
+.row{display:flex;gap:12px;align-items:flex-end}
+.row>*{flex:1}
+@media print{.nav,.print-btn,.no-print,button{display:none!important}.wrap{max-width:none}body{background:#fff}.card{border-color:#ccc;page-break-inside:avoid}}</style>
+
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a class="brand" href="/member/">The Growth Path</a>
+<a href="/member/">Dashboard</a>
+<a href="/member/results/">Results</a>
+<a href="/member/record/">Growth Record</a>
+<a href="/member/monitor/">Monitor</a>
+<a href="/member/appointment/">Appointment</a>
+<a href="/member/confidence/">Confidence</a>
+<a href="/member/library/">Library</a>
+<a href="/member/contact/">Contact</a>
+<a href="#" id="tgp-signout">Sign out</a>
+</div></nav>
+<main class="wrap">
+<h1>Your Growth Check results</h1>
+<p class="muted">Signed in as <span id="tgp-email"></span></p>
+
+<div id="results-container">
+<p>Loading your most recent results&hellip;</p>
+</div>
+
+<h2>Your notes</h2>
+<p class="muted">Only you can see these. Saved to this browser.</p>
+<textarea id="notes" rows="6" placeholder="Anything you want to remember about these results, questions to bring to the pediatrician, or things you observed at home."></textarea>
+<div style="margin-top:10px"><button id="save-notes">Save notes</button> <span id="save-status" class="muted" style="margin-left:10px"></span></div>
+
+<h2>Want to update your measurements?</h2>
+<p>Retake the Growth Check with fresh numbers whenever you like. The tool takes about two minutes.</p>
+<p><a href="/growth-check/"><button class="ghost">Update measurements</button></a></p>
+
+<script>
+(function(){
+  var keys = ['tgp_growth_check_results','growth_check_results','tgp_last_result','growth-check-results','tgp_check','tgp_results'];
+  var found = null; var foundKey = null;
+  for (var i=0;i<keys.length;i++){
+    var v = localStorage.getItem(keys[i]);
+    if (v) { try { found = JSON.parse(v); foundKey = keys[i]; break; } catch(e){ found = v; foundKey = keys[i]; break; } }
+  }
+  // also scan for any tgp_ or growth-related keys
+  if (!found) {
+    for (var j=0;j<localStorage.length;j++){
+      var k = localStorage.key(j);
+      if (/growth|tgp|check|result/i.test(k)) {
+        try { found = JSON.parse(localStorage.getItem(k)); foundKey = k; break; } catch(e){}
+      }
+    }
+  }
+  var c = document.getElementById('results-container');
+  function esc(s){ return String(s).replace(/[&<>]/g, function(m){ return {'&':'&amp;','<':'&lt;','>':'&gt;'}[m]; }); }
+  if (!found) {
+    c.innerHTML = '<div class="callout general"><p><strong>No results yet.</strong> When you complete the Growth Check, your most recent result will appear here. <a href="/growth-check/">Take the Growth Check</a>.</p></div>';
+    return;
+  }
+  var date = found.date || found.created_at || found.timestamp || null;
+  var parts = ['<div class="card"><h3>Most recent result</h3>'];
+  if (date) parts.push('<p class="muted">Recorded '+esc(date)+'</p>');
+  if (typeof found === 'object') {
+    parts.push('<dl style="margin:0">');
+    Object.keys(found).forEach(function(k){
+      var v = found[k];
+      if (v && typeof v !== 'object') {
+        parts.push('<div style="margin:8px 0"><strong style="font-family:system-ui,sans-serif;font-size:.85rem;color:#5a5a5a;text-transform:uppercase;letter-spacing:.03em">'+esc(k.replace(/_/g,' '))+'</strong><br>'+esc(v)+'</div>');
+      }
+    });
+    parts.push('</dl>');
+  } else {
+    parts.push('<pre style="white-space:pre-wrap">'+esc(String(found))+'</pre>');
+  }
+  parts.push('</div>');
+  c.innerHTML = parts.join('');
+})();
+
+(function(){
+  var email = sessionStorage.getItem('tgp_member_auth') || 'anon';
+  var key = 'tgp_results_notes:' + email;
+  var ta = document.getElementById('notes');
+  ta.value = localStorage.getItem(key) || '';
+  document.getElementById('save-notes').addEventListener('click', function(){
+    localStorage.setItem(key, ta.value);
+    var s = document.getElementById('save-status');
+    s.textContent = 'Saved.';
+    setTimeout(function(){ s.textContent = ''; }, 2000);
+  });
+})();
+</script>
+<div class="footer">The Growth Path &middot; <a href="mailto:hello@thegrowthpath.app">hello@thegrowthpath.app</a> &middot; Founding member preview</div>
+</main>
+<script src="/member/config.js"></script>
+<script src="/member/gate.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var out = document.getElementById('tgp-signout');
+  if(out) out.addEventListener('click', function(e){ e.preventDefault(); sessionStorage.removeItem('tgp_member_auth'); window.location.href='/member/login/'; });
+  var el = document.getElementById('tgp-email');
+  if(el) el.textContent = sessionStorage.getItem('tgp_member_auth') || '';
+});
+</script>
+</body>
+</html>
