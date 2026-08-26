@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Contact &middot; The Growth Path</title>
+<style>:root{--ink:#1a1a1a;--muted:#5a5a5a;--line:#e5e0d5;--accent:#8a5a3a;--bg:#faf7f0;--card:#fff}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Iowan Old Style',serif;color:var(--ink);background:var(--bg);line-height:1.55}
+.wrap{max-width:780px;margin:0 auto;padding:24px}
+h1,h2,h3{font-family:Georgia,serif;line-height:1.25}
+h1{font-size:2rem;margin:0 0 .4em}
+h2{font-size:1.35rem;margin:1.6em 0 .5em;border-bottom:1px solid var(--line);padding-bottom:6px}
+h3{font-size:1.08rem;margin:1.2em 0 .3em}
+p,li{font-size:1rem}
+a{color:var(--accent)}
+.nav{background:#fff;border-bottom:1px solid var(--line);padding:12px 24px}
+.nav-inner{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center}
+.nav a{color:var(--muted);text-decoration:none;font-family:system-ui,sans-serif;font-size:.92rem}
+.nav a:hover{color:var(--ink)}
+.nav .brand{font-family:Georgia,serif;font-weight:600;color:var(--ink);margin-right:auto;font-size:1.05rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:18px;margin-bottom:14px}
+.card h3{margin-top:0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.grid{grid-template-columns:1fr}}
+button,input[type=submit]{background:var(--ink);color:#fff;border:none;padding:10px 16px;border-radius:4px;font-size:1rem;cursor:pointer;font-family:system-ui,sans-serif}
+button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+input,textarea,select{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-size:1rem;font-family:inherit;background:#fff}
+label{display:block;font-size:.9rem;color:var(--muted);margin:12px 0 6px;font-family:system-ui,sans-serif}
+table{width:100%;border-collapse:collapse;margin:12px 0}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);font-size:.95rem}
+th{font-family:system-ui,sans-serif;color:var(--muted);font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:.03em}
+.callout{background:#f4ede0;border-left:3px solid var(--accent);padding:12px 14px;margin:14px 0;border-radius:3px}
+.callout.general{background:#f0f0ee;border-left-color:var(--muted)}
+.callout p:first-child{margin-top:0}
+.callout p:last-child{margin-bottom:0}
+.muted{color:var(--muted);font-size:.9rem}
+.footer{margin:40px 0 20px;color:var(--muted);font-size:.85rem;text-align:center;border-top:1px solid var(--line);padding-top:20px}
+.print-btn{float:right}
+.right{float:right}
+.row{display:flex;gap:12px;align-items:flex-end}
+.row>*{flex:1}
+@media print{.nav,.print-btn,.no-print,button{display:none!important}.wrap{max-width:none}body{background:#fff}.card{border-color:#ccc;page-break-inside:avoid}}</style>
+
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a class="brand" href="/member/">The Growth Path</a>
+<a href="/member/">Dashboard</a>
+<a href="/member/results/">Results</a>
+<a href="/member/record/">Growth Record</a>
+<a href="/member/monitor/">Monitor</a>
+<a href="/member/appointment/">Appointment</a>
+<a href="/member/confidence/">Confidence</a>
+<a href="/member/library/">Library</a>
+<a href="/member/contact/">Contact</a>
+<a href="#" id="tgp-signout">Sign out</a>
+</div></nav>
+<main class="wrap">
+<h1>Contact us</h1>
+<p class="muted">Signed in as <span id="tgp-email"></span></p>
+<p>Founding members get direct responses. If something is broken, missing, or confusing, we want to hear it. If a specific resource would help you, tell us what and we will look for it.</p>
+
+<p style="margin:20px 0"><a href="mailto:hello@thegrowthpath.app"><button>Email hello@thegrowthpath.app</button></a></p>
+
+<h2>Or send a note from here</h2>
+<div class="card">
+<form id="contactForm">
+<label for="subject">Subject</label>
+<input type="text" id="subject" placeholder="What is this about?">
+<label for="msg">Your message</label>
+<textarea id="msg" rows="7" placeholder="Type what you want to tell us. When you press send, this opens your email app with the message pre-filled so you can review before it goes."></textarea>
+<div style="margin-top:12px"><button type="submit">Open in email</button></div>
+</form>
+</div>
+
+<h2>What we typically respond to same-week</h2>
+<ul>
+<li>Bugs or things that do not work.</li>
+<li>Requests for a specific kind of resource.</li>
+<li>Founding-member feedback interviews (we pay a $20 gift card, 20 minutes).</li>
+</ul>
+
+<h2>What we cannot do</h2>
+<ul>
+<li>Medical advice for your specific child. Your pediatrician is the right person.</li>
+<li>Recommend or endorse supplements or height-increase products.</li>
+<li>Interpret specific lab results or imaging.</li>
+</ul>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var subject = document.getElementById('subject').value.trim() || 'Note from founding member';
+  var msg = document.getElementById('msg').value.trim();
+  var email = sessionStorage.getItem('tgp_member_auth') || '';
+  var body = msg + (email ? ('\n\nFrom: ' + email) : '');
+  var url = 'mailto:hello@thegrowthpath.app?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  window.location.href = url;
+});
+</script>
+<div class="footer">The Growth Path &middot; <a href="mailto:hello@thegrowthpath.app">hello@thegrowthpath.app</a> &middot; Founding member preview</div>
+</main>
+<script src="/member/config.js"></script>
+<script src="/member/gate.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var out = document.getElementById('tgp-signout');
+  if(out) out.addEventListener('click', function(e){ e.preventDefault(); sessionStorage.removeItem('tgp_member_auth'); window.location.href='/member/login/'; });
+  var el = document.getElementById('tgp-email');
+  if(el) el.textContent = sessionStorage.getItem('tgp_member_auth') || '';
+});
+</script>
+</body>
+</html>
