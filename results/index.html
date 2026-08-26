@@ -99,6 +99,49 @@
     box-shadow: 0 2px 12px rgba(45, 58, 41, 0.04);
   }
 
+  .reveal-panel {
+    background: linear-gradient(180deg, #f5dfd2 0%, white 100%);
+    border: 1px solid var(--terra-500);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 6px 24px rgba(207, 121, 85, 0.15);
+  }
+  .reveal-panel .r-eyebrow {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--terra-700);
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+  }
+  .reveal-panel h2 {
+    font-size: 1.55rem;
+    margin-bottom: 0.9rem;
+    color: var(--sage-900);
+  }
+  .reveal-panel .r-insight {
+    color: var(--sage-900);
+    font-size: 1.05rem;
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+  }
+  .reveal-cta {
+    display: inline-block;
+    background: var(--terra-500);
+    color: white;
+    padding: 0.9rem 1.4rem;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.98rem;
+    font-family: inherit;
+    transition: background 0.15s ease;
+  }
+  .reveal-cta:hover { background: var(--terra-700); }
+
   .datarow {
     display: flex;
     justify-content: space-between;
@@ -366,7 +409,42 @@
   let priorDisp = priorIn > 0 ? fmtIn(priorIn) : '';
   let mpDisp = mpBand ? (fmtIn(mpBand.low) + ' to ' + fmtIn(mpBand.high)) : '';
 
-  const html = `
+  function pickReveal(a, velocity, mpBand) {
+      const headline = "Here's what stood out about your son's growth";
+      if (a.q_pubTiming === 'later') {
+        return {
+          headline: headline,
+          body: "His timing sits later than peers, and that pattern is more common than most parents realize (roughly 1 in 5 boys). Doctors have a name for it, constitutional growth delay, and it usually resolves on its own. What you're describing lines up with a story a lot of families end up telling in the rearview."
+        };
+      }
+      if (velocity !== null && parseFloat(velocity) >= 2.0) {
+        return {
+          headline: headline,
+          body: "His growth rate works out to about " + velocity + " inches a year, which is a healthy pace for his age. Combined with the family range you gave, the raw percentile is not telling the whole story. Where he is headed matters more than where he is today."
+        };
+      }
+      const concernMap = {
+        sports: "Sports is one of the top reasons parents book a first growth conversation with a pediatrician. You are not overreacting. Being smaller during the years when teams start to matter is real, and it is worth taking seriously without treating it as a medical problem yet.",
+        family: "Family history is one of the strongest signals in the whole picture, and it is the first thing a pediatric endocrinologist asks about. You are bringing up the exact thing that matters most.",
+        pediatrician: "Your pediatrician already flagged something, which means you are ahead of a lot of parents who are still guessing. That flag is worth following, not fearing.",
+        peer: "Peer comparison is what brings most parents to a growth question in the first place. Noticing early gives you options that families who wait do not have."
+      };
+      return {
+        headline: headline,
+        body: concernMap[a.q_prompted] || "What brought you here is something a lot of parents wrestle with quietly. Naming it matters, and putting the data in one place is the first real move."
+      };
+    }
+
+    const _reveal = pickReveal(a, velocity, mpBand);
+    const revealHtml = `
+      <div class="reveal-panel">
+        <div class="r-eyebrow">Your Growth Check reveal</div>
+        <h2>${_reveal.headline}</h2>
+        <p class="r-insight">${_reveal.body}</p>
+        <a href="#growth-details" class="reveal-cta">See the full Growth Path</a>
+      </div>`;
+
+    const html = `
     <header class="hero">
       <div class="wrap">
         <div class="eyebrow">Your Growth Check</div>
@@ -377,7 +455,8 @@
 
     <section>
       <div class="wrap">
-        <div class="panel">
+        ${revealHtml}
+        <div class="panel" id="growth-details">
           <h2>1. Growth context</h2>
           <div class="datarow"><span class="k">Age</span><span class="v">${a.q_age ? a.q_age + ' yrs' : '-'}</span></div>
           <div class="datarow"><span class="k">Current height</span><span class="v">${curDisp || '-'}${a.q_h_date ? ' &middot; ' + a.q_h_date : ''}</span></div>
