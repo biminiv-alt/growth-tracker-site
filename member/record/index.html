@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Growth Record &middot; The Growth Path</title>
+<style>:root{--ink:#1a1a1a;--muted:#5a5a5a;--line:#e5e0d5;--accent:#8a5a3a;--bg:#faf7f0;--card:#fff}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Iowan Old Style',serif;color:var(--ink);background:var(--bg);line-height:1.55}
+.wrap{max-width:780px;margin:0 auto;padding:24px}
+h1,h2,h3{font-family:Georgia,serif;line-height:1.25}
+h1{font-size:2rem;margin:0 0 .4em}
+h2{font-size:1.35rem;margin:1.6em 0 .5em;border-bottom:1px solid var(--line);padding-bottom:6px}
+h3{font-size:1.08rem;margin:1.2em 0 .3em}
+p,li{font-size:1rem}
+a{color:var(--accent)}
+.nav{background:#fff;border-bottom:1px solid var(--line);padding:12px 24px}
+.nav-inner{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center}
+.nav a{color:var(--muted);text-decoration:none;font-family:system-ui,sans-serif;font-size:.92rem}
+.nav a:hover{color:var(--ink)}
+.nav .brand{font-family:Georgia,serif;font-weight:600;color:var(--ink);margin-right:auto;font-size:1.05rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:18px;margin-bottom:14px}
+.card h3{margin-top:0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.grid{grid-template-columns:1fr}}
+button,input[type=submit]{background:var(--ink);color:#fff;border:none;padding:10px 16px;border-radius:4px;font-size:1rem;cursor:pointer;font-family:system-ui,sans-serif}
+button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+input,textarea,select{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:4px;font-size:1rem;font-family:inherit;background:#fff}
+label{display:block;font-size:.9rem;color:var(--muted);margin:12px 0 6px;font-family:system-ui,sans-serif}
+table{width:100%;border-collapse:collapse;margin:12px 0}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);font-size:.95rem}
+th{font-family:system-ui,sans-serif;color:var(--muted);font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:.03em}
+.callout{background:#f4ede0;border-left:3px solid var(--accent);padding:12px 14px;margin:14px 0;border-radius:3px}
+.callout.general{background:#f0f0ee;border-left-color:var(--muted)}
+.callout p:first-child{margin-top:0}
+.callout p:last-child{margin-bottom:0}
+.muted{color:var(--muted);font-size:.9rem}
+.footer{margin:40px 0 20px;color:var(--muted);font-size:.85rem;text-align:center;border-top:1px solid var(--line);padding-top:20px}
+.print-btn{float:right}
+.right{float:right}
+.row{display:flex;gap:12px;align-items:flex-end}
+.row>*{flex:1}
+@media print{.nav,.print-btn,.no-print,button{display:none!important}.wrap{max-width:none}body{background:#fff}.card{border-color:#ccc;page-break-inside:avoid}}</style>
+
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a class="brand" href="/member/">The Growth Path</a>
+<a href="/member/">Dashboard</a>
+<a href="/member/results/">Results</a>
+<a href="/member/record/">Growth Record</a>
+<a href="/member/monitor/">Monitor</a>
+<a href="/member/appointment/">Appointment</a>
+<a href="/member/confidence/">Confidence</a>
+<a href="/member/library/">Library</a>
+<a href="/member/contact/">Contact</a>
+<a href="#" id="tgp-signout">Sign out</a>
+</div></nav>
+<main class="wrap">
+<h1>Living Growth Record</h1>
+<p class="muted">A private log of your son's height over time. Signed in as <span id="tgp-email"></span>.</p>
+<p>Regular measurements at home, ideally every 3 to 6 months, help you see the trend your pediatrician cares about. Measure in the morning, shoes off, heels and back against a wall, chin level.</p>
+
+<h2>Add an entry</h2>
+<div class="card">
+<form id="entryForm">
+<div class="row">
+<div><label for="height">Height</label><input type="number" step="0.1" id="height" required></div>
+<div><label for="unit">Unit</label><select id="unit"><option value="cm">cm</option><option value="in">in</option></select></div>
+<div><label for="date">Date</label><input type="date" id="date" required></div>
+</div>
+<label for="notes">Notes (optional)</label>
+<textarea id="notes" rows="2" placeholder="Anything about this measurement: time of day, growth spurt, etc."></textarea>
+<div style="margin-top:12px"><button type="submit">Add entry</button></div>
+</form>
+</div>
+
+<h2>Entries</h2>
+<div id="entries-container"><p class="muted">No entries yet.</p></div>
+
+<h2 id="chart-h" style="display:none">Trend</h2>
+<div id="chart-container"></div>
+
+<script>
+(function(){
+  var email = sessionStorage.getItem('tgp_member_auth') || 'anon';
+  var key = 'tgp_growth_record:' + email;
+  function load(){ try { return JSON.parse(localStorage.getItem(key) || '[]'); } catch(e){ return []; } }
+  function save(arr){ localStorage.setItem(key, JSON.stringify(arr)); }
+  function toCm(h, u){ return u === 'in' ? h * 2.54 : h; }
+  function esc(s){ return String(s||'').replace(/[&<>]/g, function(m){ return {'&':'&amp;','<':'&lt;','>':'&gt;'}[m]; }); }
+  function render(){
+    var entries = load().slice().sort(function(a,b){ return a.date.localeCompare(b.date); });
+    var c = document.getElementById('entries-container');
+    if (!entries.length) { c.innerHTML = '<p class="muted">No entries yet. Add one above to start.</p>'; document.getElementById('chart-h').style.display='none'; document.getElementById('chart-container').innerHTML=''; return; }
+    var rows = entries.map(function(e, i){
+      return '<tr><td>'+esc(e.date)+'</td><td>'+esc(e.height)+' '+esc(e.unit)+'</td><td>'+esc(e.notes||'')+'</td><td><button class="ghost" data-i="'+i+'" style="padding:4px 8px;font-size:.85rem">Remove</button></td></tr>';
+    }).join('');
+    c.innerHTML = '<table><thead><tr><th>Date</th><th>Height</th><th>Notes</th><th></th></tr></thead><tbody>'+rows+'</tbody></table>';
+    c.querySelectorAll('button[data-i]').forEach(function(b){ b.addEventListener('click', function(){
+      var arr = load().slice().sort(function(a,b){ return a.date.localeCompare(b.date); });
+      arr.splice(parseInt(b.dataset.i,10), 1);
+      save(arr); render();
+    }); });
+    if (entries.length >= 3) { drawChart(entries); document.getElementById('chart-h').style.display=''; }
+    else { document.getElementById('chart-h').style.display='none'; document.getElementById('chart-container').innerHTML='<p class="muted">Add at least 3 entries to see a trend chart.</p>'; document.getElementById('chart-h').style.display=''; }
+  }
+  function drawChart(entries){
+    var pts = entries.map(function(e){ return { t: new Date(e.date).getTime(), y: toCm(parseFloat(e.height), e.unit), date: e.date }; });
+    var w = 720, h = 260, pad = 40;
+    var minT = pts[0].t, maxT = pts[pts.length-1].t; if (maxT === minT) maxT = minT + 1;
+    var minY = Math.min.apply(null, pts.map(function(p){return p.y;}));
+    var maxY = Math.max.apply(null, pts.map(function(p){return p.y;}));
+    var yPad = (maxY - minY) * 0.15 || 5;
+    minY -= yPad; maxY += yPad;
+    function x(t){ return pad + (t - minT) / (maxT - minT) * (w - 2*pad); }
+    function y(v){ return h - pad - (v - minY) / (maxY - minY) * (h - 2*pad); }
+    var path = pts.map(function(p, i){ return (i===0?'M':'L')+x(p.t).toFixed(1)+','+y(p.y).toFixed(1); }).join(' ');
+    var dots = pts.map(function(p){ return '<circle cx="'+x(p.t).toFixed(1)+'" cy="'+y(p.y).toFixed(1)+'" r="4" fill="#8a5a3a"/>'; }).join('');
+    var yLabels = [minY, (minY+maxY)/2, maxY].map(function(v){ return '<text x="8" y="'+y(v).toFixed(1)+'" font-family="system-ui,sans-serif" font-size="11" fill="#5a5a5a" alignment-baseline="middle">'+v.toFixed(1)+' cm</text>'; }).join('');
+    var xLabels = '<text x="'+pad+'" y="'+(h-10)+'" font-family="system-ui,sans-serif" font-size="11" fill="#5a5a5a">'+pts[0].date+'</text>'+
+                  '<text x="'+(w-pad)+'" y="'+(h-10)+'" font-family="system-ui,sans-serif" font-size="11" fill="#5a5a5a" text-anchor="end">'+pts[pts.length-1].date+'</text>';
+    var svg = '<svg viewBox="0 0 '+w+' '+h+'" style="width:100%;height:auto;background:#fff;border:1px solid #e5e0d5;border-radius:6px"><path d="'+path+'" fill="none" stroke="#8a5a3a" stroke-width="2"/>'+dots+yLabels+xLabels+'</svg>';
+    document.getElementById('chart-container').innerHTML = svg + '<p class="muted">Height plotted in cm regardless of entry unit.</p>';
+  }
+  document.getElementById('date').valueAsDate = new Date();
+  document.getElementById('entryForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var h = parseFloat(document.getElementById('height').value);
+    var u = document.getElementById('unit').value;
+    var d = document.getElementById('date').value;
+    var n = document.getElementById('notes').value;
+    if (!h || !d) return;
+    var arr = load();
+    arr.push({ height: h, unit: u, date: d, notes: n });
+    save(arr);
+    document.getElementById('entryForm').reset();
+    document.getElementById('date').valueAsDate = new Date();
+    render();
+  });
+  render();
+})();
+</script>
+<div class="footer">The Growth Path &middot; <a href="mailto:hello@thegrowthpath.app">hello@thegrowthpath.app</a> &middot; Founding member preview</div>
+</main>
+<script src="/member/config.js"></script>
+<script src="/member/gate.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var out = document.getElementById('tgp-signout');
+  if(out) out.addEventListener('click', function(e){ e.preventDefault(); sessionStorage.removeItem('tgp_member_auth'); window.location.href='/member/login/'; });
+  var el = document.getElementById('tgp-email');
+  if(el) el.textContent = sessionStorage.getItem('tgp_member_auth') || '';
+});
+</script>
+</body>
+</html>
