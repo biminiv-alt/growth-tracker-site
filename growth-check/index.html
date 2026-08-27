@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Growth Check: A 10-Question Snapshot | The Growth Path</title>
-<meta name="description" content="A quick 10-question snapshot to help you understand where your son sits, what to monitor, and what to do next. Free." />
+<title>Growth Check: A Short, Personal Snapshot | The Growth Path</title>
+<meta name="description" content="A short, personal snapshot to help you understand where your son sits, what to monitor, and what to do next. Free." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -295,7 +295,7 @@ h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
     <div class="links">
       <a href="/growth-path/">Library</a>
       <a href="/growth-check/">Growth Check</a>
-      <a href="/login/">Members</a>
+      <a href="/member/login/">Members</a>
     </div>
   </div>
 </nav>
@@ -303,9 +303,9 @@ h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
 <header class="hero">
   <div class="wrap">
     <div class="eyebrow">Growth Check</div>
-    <h1>A 10-question snapshot.</h1>
-    <p>Answer honestly. Nothing is diagnostic. At the end you'll see where he sits, what to monitor, and what to do next.</p>
-    <div class="progress-text" id="progText">Step 1 of 10</div>
+    <h1>A short, personal snapshot.</h1>
+    <p>A few questions about him, a few about you. Nothing is diagnostic. At the end you'll see where he sits, what to monitor, and what to do next.</p>
+    <div class="progress-text" id="progText">Let's start with him.</div>
     <div class="progress-wrap"><div class="progress-bar" id="progBar"></div></div>
   </div>
 </header>
@@ -316,7 +316,16 @@ h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
       <form id="gcForm" onsubmit="return false;">
 
         <div class="step active" data-step="1">
-          <h2>1. How old is your son?</h2>
+<h2>What&#39;s his first name?</h2>
+<p class="helper">Optional. We&#39;ll personalize your Growth Path with his name.</p>
+<div class="field">
+<label for="q_sonName">First name</label>
+<input type="text" id="q_sonName" placeholder="e.g. Sam" />
+</div>
+</div>
+
+<div class="step" data-step="2">
+          <h2>How old is your son?</h2>
           <p class="helper">Enter his age in years (decimals okay).</p>
           <div class="field">
             <label for="q_age">Age (years)</label>
@@ -324,8 +333,8 @@ h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
           </div>
         </div>
 
-        <div class="step" data-step="2">
-          <h2>2. What is his current height?</h2>
+        <div class="step" data-step="3">
+          <h2>What is his current height?</h2>
           <p class="helper">The last measurement you have.</p>
           <div class="row">
             <div class="field">
@@ -342,8 +351,8 @@ h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
           </div>
         </div>
 
-        <div class="step" data-step="3">
-          <h2>3. One prior height (optional).</h2>
+        <div class="step" data-step="4">
+          <h2>One prior height (optional).</h2>
           <p class="helper">If you have an earlier measurement, it helps us estimate growth velocity. Skip if unknown.</p>
           <div class="row">
             <div class="field">
@@ -360,8 +369,8 @@ h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
           </div>
         </div>
 
-        <div class="step" data-step="4">
-          <h2>4. Mother's height.</h2>
+        <div class="step" data-step="5">
+          <h2>Mother's height.</h2>
           <p class="helper">This helps us calculate a family-context range.</p>
           <div class="field">
             <label>Mother's height</label>
@@ -372,8 +381,8 @@ h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
           </div>
         </div>
 
-        <div class="step" data-step="5">
-          <h2>5. Father's height.</h2>
+        <div class="step" data-step="6">
+          <h2>Father's height.</h2>
           <p class="helper">Second half of the family-context calculation.</p>
           <div class="field">
             <label>Father's height</label>
@@ -384,8 +393,8 @@ h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
           </div>
         </div>
 
-        <div class="step" data-step="6">
-          <h2>6. How is his puberty or development timing compared to peers?</h2>
+        <div class="step" data-step="7">
+          <h2>How is his puberty or development timing compared to peers?</h2>
           <p class="helper">Your best read. It's fine if you're unsure.</p>
           <div class="radios" data-q="q_pubTiming">
             <label><input type="radio" name="q_pubTiming" value="earlier" /> Earlier than peers</label>
@@ -395,8 +404,25 @@ h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
           </div>
         </div>
 
-        <div class="step" data-step="7">
-          <h2>7. What prompted your concern?</h2>
+        <div class="step" data-step="8">
+<h2>What do you love most about him?</h2>
+<p class="helper">The trait you think of first.</p>
+<div class="radios" data-q="q_sonLove">
+<label><input type="radio" name="q_sonLove" value="His kindness" /> His kindness</label>
+<label><input type="radio" name="q_sonLove" value="His sense of humor" /> His sense of humor</label>
+<label><input type="radio" name="q_sonLove" value="His determination" /> His determination</label>
+<label><input type="radio" name="q_sonLove" value="His quiet confidence" /> His quiet confidence</label>
+<label><input type="radio" name="q_sonLove" value="The way he takes care of others" /> The way he takes care of others</label>
+<label><input type="radio" name="q_sonLove" value="other" /> Something else</label>
+</div>
+<div class="field" id="q_sonLove_other_wrap" style="display:none">
+<label for="q_sonLove_other">Tell us in his own words</label>
+<input type="text" id="q_sonLove_other" placeholder="What you love about him" />
+</div>
+</div>
+
+<div class="step" data-step="9">
+          <h2>What prompted your concern?</h2>
           <p class="helper">Choose the one that fits best.</p>
           <div class="radios" data-q="q_prompted">
             <label><input type="radio" name="q_prompted" value="peer" /> Peer comparison</label>
@@ -411,8 +437,8 @@ h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
           </div>
         </div>
 
-        <div class="step" data-step="8">
-          <h2>8. Has size affected sports, confidence or social situations?</h2>
+        <div class="step" data-step="10">
+          <h2>Has size affected sports, confidence or social situations?</h2>
           <p class="helper">Whatever you're noticing.</p>
           <div class="radios" data-q="q_impact">
             <label><input type="radio" name="q_impact" value="sports" /> Yes, sports</label>
@@ -423,8 +449,8 @@ h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
           </div>
         </div>
 
-        <div class="step" data-step="9">
-          <h2>9. What are you most uncertain about?</h2>
+        <div class="step" data-step="11">
+          <h2>What are you most uncertain about?</h2>
           <p class="helper">This shapes the plan we show you.</p>
           <div class="radios" data-q="q_uncertain">
             <label><input type="radio" name="q_uncertain" value="monitor" /> Monitoring: knowing what's normal vs. concerning</label>
@@ -433,8 +459,24 @@ h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
           </div>
         </div>
 
-        <div class="step" data-step="10">
-          <h2>10. What have you already done?</h2>
+        <div class="step" data-step="12">
+<h2>What&#39;s your hope for him right now?</h2>
+<p class="helper">Say it however it comes.</p>
+<div class="radios" data-q="q_momHope">
+<label><input type="radio" name="q_momHope" value="That he grows into himself" /> That he grows into himself</label>
+<label><input type="radio" name="q_momHope" value="That he stops comparing himself to peers" /> That he stops comparing himself to peers</label>
+<label><input type="radio" name="q_momHope" value="That he feels confident going into his teen years" /> That he feels confident going into his teen years</label>
+<label><input type="radio" name="q_momHope" value="That we know we did everything we could" /> That we know we did everything we could</label>
+<label><input type="radio" name="q_momHope" value="other" /> Something else</label>
+</div>
+<div class="field" id="q_momHope_other_wrap" style="display:none">
+<label for="q_momHope_other">In your words</label>
+<input type="text" id="q_momHope_other" placeholder="What you hope for him" />
+</div>
+</div>
+
+<div class="step" data-step="13">
+          <h2>What have you already done?</h2>
           <p class="helper">Check anything that applies.</p>
           <div class="radios" data-q="q_done">
             <label><input type="checkbox" name="q_done" value="pediatrician" /> Asked pediatrician</label>
@@ -450,7 +492,7 @@ h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
         <div class="actions">
           <button type="button" class="btn ghost" id="prevBtn" style="display:none">Back</button>
           <button type="button" class="btn" id="nextBtn">Next</button>
-          <button type="button" class="btn skip" id="skipBtn" style="display:none">Skip if unknown</button>
+          <button type="button" class="btn skip" id="skipBtn" style="display:none">Skip</button>
         </div>
       </form>
     </div>
@@ -468,188 +510,257 @@ h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
 
 <script>
 (function(){
-  const TOTAL = 10;
-  let current = 1;
-  const answers = {};
-  try {
-    const saved = JSON.parse(localStorage.getItem('gpAnswers') || '{}');
-    Object.assign(answers, saved);
-  } catch(e) {}
+const TOTAL = 13;
+let current = 1;
+const answers = {};
+try {
+const saved = JSON.parse(localStorage.getItem('gpAnswers') || '{}');
+Object.assign(answers, saved);
+} catch(e) {}
 
-  const progText = document.getElementById('progText');
-  const progBar = document.getElementById('progBar');
-  const nextBtn = document.getElementById('nextBtn');
-  const prevBtn = document.getElementById('prevBtn');
-  const skipBtn = document.getElementById('skipBtn');
-  const errMsg = document.getElementById('errMsg');
+const progText = document.getElementById('progText');
+const progBar = document.getElementById('progBar');
+const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.getElementById('prevBtn');
+const skipBtn = document.getElementById('skipBtn');
+const errMsg = document.getElementById('errMsg');
 
-  function stepEl(n){ return document.querySelector('.step[data-step="'+n+'"]'); }
+// Steps that support Skip: 1 (name), 4 (prior height), 8 (sonLove), 12 (momHope)
+const SKIP_STEPS = [1, 4, 8, 12];
 
-  function show(n) {
-    current = n;
-    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
-    stepEl(n).classList.add('active');
-    progText.textContent = 'Step ' + n + ' of ' + TOTAL;
-    progBar.style.width = (n/TOTAL*100) + '%';
-    prevBtn.style.display = n > 1 ? 'inline-block' : 'none';
-    nextBtn.textContent = n === TOTAL ? 'See Your Growth Path' : 'Next';
-    // Skip button on step 3 (optional prior height)
-    skipBtn.style.display = n === 3 ? 'inline-block' : 'none';
-    errMsg.textContent = '';
-    // Restore checked state visual
-    restoreVisuals();
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  }
+function stepEl(n){ return document.querySelector('.step[data-step="'+n+'"]'); }
 
-  function restoreVisuals() {
-    // Radio visual state
-    document.querySelectorAll('.radios').forEach(g => {
-      const key = g.dataset.q;
-      if (!key) return;
-      g.querySelectorAll('label').forEach(l => l.classList.remove('checked'));
-      const val = answers[key];
-      if (Array.isArray(val)) {
-        g.querySelectorAll('input[type="checkbox"]').forEach(ch => {
-          if (val.indexOf(ch.value) >= 0) { ch.checked = true; ch.closest('label').classList.add('checked'); }
-        });
-      } else if (val) {
-        g.querySelectorAll('input[type="radio"]').forEach(r => {
-          if (r.value === val) { r.checked = true; r.closest('label').classList.add('checked'); }
-        });
-      }
-    });
-    // "Other" text box on q7
-    if (answers.q_prompted === 'other') {
-      document.getElementById('q_prompted_other_wrap').style.display = 'block';
-    }
-    // Restore text inputs
-    ['q_age','q_h_ft','q_h_in','q_h_date','q_h2_ft','q_h2_in','q_h2_date','q_mom_ft','q_mom_in','q_dad_ft','q_dad_in','q_prompted_other'].forEach(id => {
-      const el = document.getElementById(id);
-      if (el && answers[id] != null) el.value = answers[id];
-    });
-  }
+function progressLabel(n) {
+  // Fraction-of-progress: warm progress copy
+  const name = (answers.sonName || '').trim();
+  const who = name ? name + "'s" : "your son's";
+  if (n <= 1) return "Let's start with him.";
+  if (n <= 6) return "Getting the basics on " + who + " growth.";
+  if (n <= 8) return "A little more to unlock " + who + " Growth Path.";
+  if (n <= 12) return "Almost there. This shapes " + who + " plan.";
+  return "Last one. Then you'll see " + who + " Growth Path.";
+}
 
-  function capture(n) {
-    // Save current step's values into answers
-    if (n === 1) answers.q_age = document.getElementById('q_age').value;
-    if (n === 2) {
-      answers.q_h_ft = document.getElementById('q_h_ft').value;
-      answers.q_h_in = document.getElementById('q_h_in').value;
-      answers.q_h_date = document.getElementById('q_h_date').value;
-    }
-    if (n === 3) {
-      answers.q_h2_ft = document.getElementById('q_h2_ft').value;
-      answers.q_h2_in = document.getElementById('q_h2_in').value;
-      answers.q_h2_date = document.getElementById('q_h2_date').value;
-    }
-    if (n === 4) {
-      answers.q_mom_ft = document.getElementById('q_mom_ft').value;
-      answers.q_mom_in = document.getElementById('q_mom_in').value;
-    }
-    if (n === 5) {
-      answers.q_dad_ft = document.getElementById('q_dad_ft').value;
-      answers.q_dad_in = document.getElementById('q_dad_in').value;
-    }
-    if (n === 6) {
-      const r = document.querySelector('input[name="q_pubTiming"]:checked');
-      answers.q_pubTiming = r ? r.value : null;
-    }
-    if (n === 7) {
-      const r = document.querySelector('input[name="q_prompted"]:checked');
-      answers.q_prompted = r ? r.value : null;
-      answers.q_prompted_other = document.getElementById('q_prompted_other').value || '';
-    }
-    if (n === 8) {
-      const r = document.querySelector('input[name="q_impact"]:checked');
-      answers.q_impact = r ? r.value : null;
-    }
-    if (n === 9) {
-      const r = document.querySelector('input[name="q_uncertain"]:checked');
-      answers.q_uncertain = r ? r.value : null;
-    }
-    if (n === 10) {
-      const arr = [];
-      document.querySelectorAll('input[name="q_done"]:checked').forEach(c => arr.push(c.value));
-      answers.q_done = arr;
-    }
-    localStorage.setItem('gpAnswers', JSON.stringify(answers));
-  }
+function show(n) {
+current = n;
+document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+stepEl(n).classList.add('active');
+progText.textContent = progressLabel(n);
+progBar.style.width = (n/TOTAL*100) + '%';
+prevBtn.style.display = n > 1 ? 'inline-block' : 'none';
+nextBtn.textContent = n === TOTAL ? 'See Your Growth Path' : 'Next';
+skipBtn.style.display = SKIP_STEPS.indexOf(n) >= 0 ? 'inline-block' : 'none';
+errMsg.textContent = '';
+restoreVisuals();
+window.scrollTo({top: 0, behavior: 'smooth'});
+}
 
-  function validate(n) {
-    if (n === 1) {
-      const v = parseFloat(document.getElementById('q_age').value);
-      if (isNaN(v) || v < 1 || v > 21) return 'Please enter an age between 1 and 21.';
-    }
-    if (n === 2) {
-      const ft = parseFloat(document.getElementById('q_h_ft').value);
-      const inch = parseFloat(document.getElementById('q_h_in').value);
-      if (isNaN(ft) && isNaN(inch)) return 'Please enter his current height.';
-    }
-    if (n === 4) {
-      const ft = parseFloat(document.getElementById('q_mom_ft').value);
-      if (isNaN(ft)) return "Please enter mother's height.";
-    }
-    if (n === 5) {
-      const ft = parseFloat(document.getElementById('q_dad_ft').value);
-      if (isNaN(ft)) return "Please enter father's height.";
-    }
-    if (n === 6) {
-      if (!document.querySelector('input[name="q_pubTiming"]:checked')) return 'Please pick one.';
-    }
-    if (n === 7) {
-      if (!document.querySelector('input[name="q_prompted"]:checked')) return 'Please pick one.';
-    }
-    if (n === 8) {
-      if (!document.querySelector('input[name="q_impact"]:checked')) return 'Please pick one.';
-    }
-    if (n === 9) {
-      if (!document.querySelector('input[name="q_uncertain"]:checked')) return 'Please pick one.';
-    }
-    return null;
-  }
+function restoreVisuals() {
+document.querySelectorAll('.radios').forEach(g => {
+const key = g.dataset.q;
+if (!key) return;
+g.querySelectorAll('label').forEach(l => l.classList.remove('checked'));
+const val = answers[key];
+if (Array.isArray(val)) {
+g.querySelectorAll('input[type="checkbox"]').forEach(ch => {
+if (val.indexOf(ch.value) >= 0) { ch.checked = true; ch.closest('label').classList.add('checked'); }
+});
+} else if (val) {
+g.querySelectorAll('input[type="radio"]').forEach(r => {
+if (r.value === val) { r.checked = true; r.closest('label').classList.add('checked'); }
+});
+}
+});
+// "Other" text boxes
+if (answers.q_prompted === 'other') { const w = document.getElementById('q_prompted_other_wrap'); if (w) w.style.display = 'block'; }
+if (answers.q_sonLove === 'other') { const w = document.getElementById('q_sonLove_other_wrap'); if (w) w.style.display = 'block'; }
+if (answers.q_momHope === 'other') { const w = document.getElementById('q_momHope_other_wrap'); if (w) w.style.display = 'block'; }
+// Restore text inputs
+['q_sonName','q_age','q_h_ft','q_h_in','q_h_date','q_h2_ft','q_h2_in','q_h2_date','q_mom_ft','q_mom_in','q_dad_ft','q_dad_in','q_prompted_other','q_sonLove_other','q_momHope_other'].forEach(id => {
+const el = document.getElementById(id);
+if (el && answers[id] != null) el.value = answers[id];
+});
+}
 
-  nextBtn.addEventListener('click', function(){
-    const err = validate(current);
-    if (err) { errMsg.textContent = err; return; }
-    capture(current);
-    if (current === TOTAL) {
-      location.href = '/results/';
-      return;
-    }
-    show(current + 1);
-  });
+function capture(n) {
+if (n === 1) {
+  const v = (document.getElementById('q_sonName').value || '').trim();
+  answers.q_sonName = v;
+  answers.sonName = v; // convenience alias
+}
+if (n === 2) answers.q_age = document.getElementById('q_age').value;
+if (n === 3) {
+answers.q_h_ft = document.getElementById('q_h_ft').value;
+answers.q_h_in = document.getElementById('q_h_in').value;
+answers.q_h_date = document.getElementById('q_h_date').value;
+}
+if (n === 4) {
+answers.q_h2_ft = document.getElementById('q_h2_ft').value;
+answers.q_h2_in = document.getElementById('q_h2_in').value;
+answers.q_h2_date = document.getElementById('q_h2_date').value;
+}
+if (n === 5) {
+answers.q_mom_ft = document.getElementById('q_mom_ft').value;
+answers.q_mom_in = document.getElementById('q_mom_in').value;
+}
+if (n === 6) {
+answers.q_dad_ft = document.getElementById('q_dad_ft').value;
+answers.q_dad_in = document.getElementById('q_dad_in').value;
+}
+if (n === 7) {
+const r = document.querySelector('input[name="q_pubTiming"]:checked');
+answers.q_pubTiming = r ? r.value : null;
+}
+if (n === 8) {
+const r = document.querySelector('input[name="q_sonLove"]:checked');
+answers.q_sonLove = r ? r.value : null;
+const other = (document.getElementById('q_sonLove_other').value || '').trim();
+answers.q_sonLove_other = other;
+if (answers.q_sonLove === 'other') {
+  answers.sonLove = other; // if blank, sonLove will be empty and reveal falls back
+} else if (answers.q_sonLove) {
+  answers.sonLove = answers.q_sonLove;
+} else {
+  answers.sonLove = '';
+}
+}
+if (n === 9) {
+const r = document.querySelector('input[name="q_prompted"]:checked');
+answers.q_prompted = r ? r.value : null;
+answers.q_prompted_other = document.getElementById('q_prompted_other').value || '';
+}
+if (n === 10) {
+const r = document.querySelector('input[name="q_impact"]:checked');
+answers.q_impact = r ? r.value : null;
+}
+if (n === 11) {
+const r = document.querySelector('input[name="q_uncertain"]:checked');
+answers.q_uncertain = r ? r.value : null;
+}
+if (n === 12) {
+const r = document.querySelector('input[name="q_momHope"]:checked');
+answers.q_momHope = r ? r.value : null;
+const other = (document.getElementById('q_momHope_other').value || '').trim();
+answers.q_momHope_other = other;
+if (answers.q_momHope === 'other') {
+  answers.momHope = other;
+} else if (answers.q_momHope) {
+  answers.momHope = answers.q_momHope;
+} else {
+  answers.momHope = '';
+}
+}
+if (n === 13) {
+const arr = [];
+document.querySelectorAll('input[name="q_done"]:checked').forEach(c => arr.push(c.value));
+answers.q_done = arr;
+}
+localStorage.setItem('gpAnswers', JSON.stringify(answers));
+}
 
-  prevBtn.addEventListener('click', function(){
-    capture(current);
-    if (current > 1) show(current - 1);
-  });
+function validate(n) {
+// Step 1 (name) is optional
+if (n === 2) {
+const v = parseFloat(document.getElementById('q_age').value);
+if (isNaN(v) || v < 1 || v > 21) return 'Please enter an age between 1 and 21.';
+}
+if (n === 3) {
+const ft = parseFloat(document.getElementById('q_h_ft').value);
+const inch = parseFloat(document.getElementById('q_h_in').value);
+if (isNaN(ft) && isNaN(inch)) return 'Please enter his current height.';
+}
+// Step 4 (prior height) is optional / skippable
+if (n === 5) {
+const ft = parseFloat(document.getElementById('q_mom_ft').value);
+if (isNaN(ft)) return "Please enter mother's height.";
+}
+if (n === 6) {
+const ft = parseFloat(document.getElementById('q_dad_ft').value);
+if (isNaN(ft)) return "Please enter father's height.";
+}
+if (n === 7) {
+if (!document.querySelector('input[name="q_pubTiming"]:checked')) return 'Please pick one.';
+}
+// Step 8 (sonLove) is optional / skippable
+if (n === 9) {
+if (!document.querySelector('input[name="q_prompted"]:checked')) return 'Please pick one.';
+}
+if (n === 10) {
+if (!document.querySelector('input[name="q_impact"]:checked')) return 'Please pick one.';
+}
+if (n === 11) {
+if (!document.querySelector('input[name="q_uncertain"]:checked')) return 'Please pick one.';
+}
+// Step 12 (momHope) is optional / skippable
+return null;
+}
 
-  skipBtn.addEventListener('click', function(){
-    // Clear step-3 fields and advance
-    ['q_h2_ft','q_h2_in','q_h2_date'].forEach(id => { document.getElementById(id).value = ''; answers[id] = ''; });
-    localStorage.setItem('gpAnswers', JSON.stringify(answers));
-    show(current + 1);
-  });
+nextBtn.addEventListener('click', function(){
+const err = validate(current);
+if (err) { errMsg.textContent = err; return; }
+capture(current);
+if (current === TOTAL) {
+location.href = '/results/';
+return;
+}
+show(current + 1);
+});
 
-  // Radio/checkbox visual toggling
-  document.querySelectorAll('.radios').forEach(g => {
-    g.addEventListener('change', function(e){
-      const grp = e.target.closest('.radios');
-      if (e.target.type === 'radio') {
-        grp.querySelectorAll('label').forEach(l => l.classList.remove('checked'));
-        e.target.closest('label').classList.add('checked');
-      } else if (e.target.type === 'checkbox') {
-        e.target.closest('label').classList.toggle('checked', e.target.checked);
-      }
-      // Show "other" text box on q7 if applicable
-      if (e.target.name === 'q_prompted') {
-        document.getElementById('q_prompted_other_wrap').style.display = e.target.value === 'other' ? 'block' : 'none';
-      }
-    });
-  });
+prevBtn.addEventListener('click', function(){
+capture(current);
+if (current > 1) show(current - 1);
+});
 
-  // Initial render
-  show(1);
+skipBtn.addEventListener('click', function(){
+if (current === 1) {
+  document.getElementById('q_sonName').value = '';
+  answers.q_sonName = '';
+  answers.sonName = '';
+}
+if (current === 4) {
+  ['q_h2_ft','q_h2_in','q_h2_date'].forEach(id => { document.getElementById(id).value = ''; answers[id] = ''; });
+}
+if (current === 8) {
+  const r = document.querySelector('input[name="q_sonLove"]:checked');
+  if (r) r.checked = false;
+  answers.q_sonLove = ''; answers.sonLove = ''; answers.q_sonLove_other = '';
+  document.getElementById('q_sonLove_other').value = '';
+  const w = document.getElementById('q_sonLove_other_wrap'); if (w) w.style.display = 'none';
+}
+if (current === 12) {
+  const r = document.querySelector('input[name="q_momHope"]:checked');
+  if (r) r.checked = false;
+  answers.q_momHope = ''; answers.momHope = ''; answers.q_momHope_other = '';
+  document.getElementById('q_momHope_other').value = '';
+  const w = document.getElementById('q_momHope_other_wrap'); if (w) w.style.display = 'none';
+}
+localStorage.setItem('gpAnswers', JSON.stringify(answers));
+if (current < TOTAL) show(current + 1);
+else location.href = '/results/';
+});
+
+document.querySelectorAll('.radios').forEach(g => {
+g.addEventListener('change', function(e){
+const grp = e.target.closest('.radios');
+if (e.target.type === 'radio') {
+grp.querySelectorAll('label').forEach(l => l.classList.remove('checked'));
+e.target.closest('label').classList.add('checked');
+} else if (e.target.type === 'checkbox') {
+e.target.closest('label').classList.toggle('checked', e.target.checked);
+}
+if (e.target.name === 'q_prompted') {
+document.getElementById('q_prompted_other_wrap').style.display = e.target.value === 'other' ? 'block' : 'none';
+}
+if (e.target.name === 'q_sonLove') {
+document.getElementById('q_sonLove_other_wrap').style.display = e.target.value === 'other' ? 'block' : 'none';
+}
+if (e.target.name === 'q_momHope') {
+document.getElementById('q_momHope_other_wrap').style.display = e.target.value === 'other' ? 'block' : 'none';
+}
+});
+});
+
+show(1);
 })();
 </script>
 </body>
