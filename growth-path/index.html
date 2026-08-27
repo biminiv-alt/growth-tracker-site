@@ -7,7 +7,7 @@
 <meta name="description" content="The Growth Path Library: free, evidence-based reading on growth, puberty and confidence for parents of smaller or later-developing boys." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root {
     --sage-50: #f4f7f2;
@@ -153,6 +153,58 @@
   }
 </style>
 <link rel="canonical" href="https://thegrowthpath.app/growth-path/" />
+<style id="site-tokens">
+/* Shared site tokens, CTA polish, and citation styles. */
+:root {
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --cta-accent: #cf7955;
+  --cta-accent-dark: #a15837;
+}
+
+body { font-family: var(--font-body); line-height: 1.6; }
+h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
+.wrap > p, .panel p, .pillar p, .tile p, article p, article li { max-width: 65ch; }
+
+.btn, .cta, .reveal-cta, button[type="submit"], a.cta-primary {
+  border-radius: 999px;
+  padding: 14px 28px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+.btn:hover, .cta:hover, .reveal-cta:hover {
+  transform: scale(1.02);
+  background-color: var(--cta-accent-dark);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+.btn:focus-visible, .cta:focus-visible, .reveal-cta:focus-visible {
+  outline: 2px solid var(--cta-accent);
+  outline-offset: 3px;
+}
+
+.sources {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line, #e5ded2);
+  font-size: 0.85rem;
+  color: var(--ink-soft, #5a5651);
+}
+.sources h3 {
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+  color: var(--sage-900, #2b3a29);
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+.sources ol { padding-left: 1.25rem; margin: 0; }
+.sources li { margin-bottom: 0.5rem; max-width: none; line-height: 1.5; }
+.sources a { color: inherit; text-decoration: underline; }
+.sources sup { font-size: 0.7em; }
+
+</style>
 </head>
 <body>
 
