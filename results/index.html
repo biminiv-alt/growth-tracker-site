@@ -7,7 +7,7 @@
 <meta name="description" content="Your Growth Check results: context, priorities, and a preview of the members plan." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root {
     --sage-50: #f4f7f2;
@@ -271,6 +271,58 @@
   }
 </style>
 <link rel="canonical" href="https://thegrowthpath.app/results/" />
+<style id="site-tokens">
+/* Shared site tokens, CTA polish, and citation styles. */
+:root {
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --cta-accent: #cf7955;
+  --cta-accent-dark: #a15837;
+}
+
+body { font-family: var(--font-body); line-height: 1.6; }
+h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
+.wrap > p, .panel p, .pillar p, .tile p, article p, article li { max-width: 65ch; }
+
+.btn, .cta, .reveal-cta, button[type="submit"], a.cta-primary {
+  border-radius: 999px;
+  padding: 14px 28px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+.btn:hover, .cta:hover, .reveal-cta:hover {
+  transform: scale(1.02);
+  background-color: var(--cta-accent-dark);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+.btn:focus-visible, .cta:focus-visible, .reveal-cta:focus-visible {
+  outline: 2px solid var(--cta-accent);
+  outline-offset: 3px;
+}
+
+.sources {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line, #e5ded2);
+  font-size: 0.85rem;
+  color: var(--ink-soft, #5a5651);
+}
+.sources h3 {
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+  color: var(--sage-900, #2b3a29);
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+.sources ol { padding-left: 1.25rem; margin: 0; }
+.sources li { margin-bottom: 0.5rem; max-width: none; line-height: 1.5; }
+.sources a { color: inherit; text-decoration: underline; }
+.sources sup { font-size: 0.7em; }
+
+</style>
 </head>
 <body>
 
@@ -286,6 +338,19 @@
 </nav>
 
 <div id="app"></div>
+
+
+<section>
+<div class="wrap">
+<div class="sources">
+<h3>Sources</h3>
+<ol>
+<li>Constitutional Growth Delay. StatPearls. National Center for Biotechnology Information (NCBI) Bookshelf. <a href="https://www.ncbi.nlm.nih.gov/books/NBK539780/" target="_blank" rel="noopener">ncbi.nlm.nih.gov/books/NBK539780</a></li>
+<li>Wit JM, Clayton PE, Rogol AD, Savage MO, Saenger PH, Cohen P. Idiopathic short stature: management and growth hormone treatment. Growth Horm IGF Res. 2008;18(2):111-135.</li>
+</ol>
+</div>
+</div>
+</section>
 
 <footer>
   <div class="wrap">
@@ -414,7 +479,7 @@
       if (a.q_pubTiming === 'later') {
         return {
           headline: headline,
-          body: "His timing sits later than peers, and that pattern is more common than most parents realize (roughly 1 in 5 boys). Doctors have a name for it, constitutional growth delay, and it usually resolves on its own. What you're describing lines up with a story a lot of families end up telling in the rearview."
+          body: "His timing sits later than peers, and that pattern is more common than most parents realize (about 1 in 5 to 1 in 6 boys<sup>1</sup>). Doctors have a name for it, constitutional growth delay, and it usually resolves on its own. What you're describing lines up with a story a lot of families end up telling in the rearview."
         };
       }
       if (velocity !== null && parseFloat(velocity) >= 2.0) {
