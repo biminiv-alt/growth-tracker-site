@@ -261,7 +261,7 @@
 <section>
   <div class="wrap">
     <div class="card">
-      <form id="gcForm" onsubmit="return false;">
+      <form id="gcForm" onsubmit="return false;" autocomplete="off">
 
         <div class="step active" data-step="1">
           <h2>What's his first name?</h2>
@@ -388,10 +388,10 @@
   const TOTAL = 8;
   let current = 1;
   const answers = {};
-  try {
-    const saved = JSON.parse(localStorage.getItem('gpAnswers') || '{}');
-    Object.assign(answers, saved);
-  } catch(e) {}
+  // Start fresh on every page load so no stale answer from a prior session
+  // appears pre-selected. Answers are held in memory during the quiz and
+  // written to localStorage on each step so the results page can read them.
+  try { localStorage.removeItem('gpAnswers'); } catch(e) {}
 
   const progText = document.getElementById('progText');
   const progBar = document.getElementById('progBar');
@@ -418,7 +418,11 @@
       : "A little more to unlock " + who + " Growth Path";
     progBar.style.width = (n/TOTAL*100) + '%';
     prevBtn.style.display = n > 1 ? 'inline-block' : 'none';
-    nextBtn.textContent = n === TOTAL ? "See " + (name || "His") + " Growth Path" : 'Next';
+    if (n === TOTAL) {
+      nextBtn.textContent = name ? "See " + name + "'s Growth Path" : "See Your Son's Growth Path";
+    } else {
+      nextBtn.textContent = 'Next';
+    }
     errMsg.textContent = '';
     restoreVisuals();
     window.scrollTo({top: 0, behavior: 'smooth'});
