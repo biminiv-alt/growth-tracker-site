@@ -216,6 +216,21 @@
   footer a { color: var(--sage-100); text-decoration: underline; }
   footer .fine { margin-top: 1.25rem; font-size: 0.8rem; color: var(--sage-300); opacity: 0.75; }
 
+  /* Founding-member ribbon (sticky) */
+  .ribbon { position: sticky; top: 54px; z-index: 15; background: var(--terra-500); color: white; border-radius: 12px; padding: 0.7rem 1rem; margin-bottom: 1.5rem; box-shadow: 0 3px 12px rgba(207,121,85,0.25); }
+  .ribbon-inner { display: flex; align-items: center; justify-content: space-between; gap: 0.85rem; flex-wrap: wrap; }
+  .ribbon-copy { font-weight: 600; font-size: 0.95rem; line-height: 1.35; }
+  .ribbon-cta { display: inline-block; background: white; color: var(--terra-700); padding: 0.55rem 1.1rem; border-radius: 999px; text-decoration: none; font-weight: 700; font-size: 0.9rem; white-space: nowrap; transition: background 0.15s ease; }
+  .ribbon-cta:hover { background: var(--sage-50); }
+  .inline-cta { background: white; border: 2px solid var(--terra-500); border-radius: 16px; padding: 1.85rem 1.6rem; margin-bottom: 1.5rem; box-shadow: 0 6px 22px rgba(207,121,85,0.14); }
+  .inline-cta .eyebrow { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--terra-700); font-weight: 700; margin-bottom: 0.5rem; display: block; }
+  .inline-cta h3 { font-family: 'Fraunces', Georgia, serif; color: var(--sage-900); font-size: 1.4rem; margin-bottom: 0.75rem; line-height: 1.2; }
+  .inline-cta .inline-lead { color: var(--sage-900); margin-bottom: 0.5rem; font-weight: 600; font-size: 0.98rem; }
+  .inline-deliverables { margin: 0.5rem 0 1.1rem 1.2rem; padding: 0; }
+  .inline-deliverables li { color: var(--ink-soft); margin-bottom: 0.35rem; font-size: 0.97rem; }
+  .inline-terms { color: var(--ink-soft); font-size: 0.92rem; margin-bottom: 1.1rem; }
+  .inline-btn { padding: 0.95rem 1.6rem; font-size: 1.02rem; border-radius: 999px; font-weight: 700; }
+
   @media (min-width: 720px) {
     body { font-size: 18px; }
     h1 { font-size: 2.6rem; }
@@ -250,6 +265,13 @@
 
 <script>
 (function(){
+  // Founding-cohort inventory. Update this constant to change ribbon,
+  // inline card, and bottom CTA together. When 0 or less, all three
+  // switch to the closed-cohort waitlist copy.
+  const FOUNDING_SPOTS_LEFT = 8;
+  const FOUNDING_TOTAL = 25;
+  const soldOut = FOUNDING_SPOTS_LEFT <= 0;
+
   const app = document.getElementById('app');
   let a = {};
   try { a = JSON.parse(localStorage.getItem('gpAnswers') || '{}'); } catch(e) {}
@@ -344,6 +366,46 @@
     };
   }
 
+  // Concrete member deliverables mapped to the priority key. Shown in
+  // the inline CTA card so the offer is tied to what she just read.
+  const deliverablesByKey = {
+    monitoring: [
+      'A living height-tracking dashboard for his measurements over time',
+      'Growth-velocity alerts when his rate shifts',
+      'Milestone benchmarks that compare his curve to peers',
+      'A quarterly parent brief that reads the trend for you'
+    ],
+    medical: [
+      'A specialist-question checklist to bring to the next visit',
+      'Pediatric endocrinology referral prep, step by step',
+      'A growth chart interpretation guide in plain language',
+      'A quarterly parent brief that reads the trend for you'
+    ],
+    confidence: [
+      'Age-appropriate scripts for the hard moments',
+      'Coach and teammate talking points you can hand off',
+      'A resilience library built for boys navigating size',
+      'A quarterly parent brief that reads the trend for you'
+    ]
+  };
+  const deliverables = deliverablesByKey[priority.key] || deliverablesByKey.monitoring;
+
+  const nameEsc = name ? esc(name) : "";
+  const claimLabel = name ? 'Claim ' + nameEsc + "'s spot" : 'Claim your spot';
+  const inlineHeading = name ? nameEsc + "'s Growth Path is ready." : "Your son's Growth Path is ready.";
+
+  const ribbonHtml = soldOut
+    ? '<div class="ribbon"><div class="ribbon-inner"><div class="ribbon-copy">Founding cohort closed. Join the standard tier waitlist.</div><a href="/join/#waitlist" class="ribbon-cta">Join waitlist</a></div></div>'
+    : '<div class="ribbon"><div class="ribbon-inner"><div class="ribbon-copy">Founding membership &middot; ' + FOUNDING_SPOTS_LEFT + ' of ' + FOUNDING_TOTAL + ' spots left &middot; $19/mo &middot; Cancel anytime</div><a href="/join/" class="ribbon-cta">' + claimLabel + '</a></div></div>';
+
+  const inlineCardHtml = soldOut
+    ? '<div class="inline-cta"><span class="eyebrow">Founding cohort closed</span><h3>' + inlineHeading + '</h3><p>The founding cohort is closed. Join the waitlist for the standard tier and we will let you know when it opens.</p><a href="/join/#waitlist" class="btn inline-btn">Join the waitlist</a></div>'
+    : '<div class="inline-cta"><span class="eyebrow">Founding membership</span><h3>' + inlineHeading + '</h3><p class="inline-lead">Founding members focused on ' + esc(priority.title.toLowerCase()) + ' get:</p><ul class="inline-deliverables">' + deliverables.map(function(d){return '<li>' + esc(d) + '</li>';}).join('') + '</ul><p class="inline-terms">$19/mo &middot; Cancel anytime &middot; ' + FOUNDING_SPOTS_LEFT + ' of ' + FOUNDING_TOTAL + ' founding spots left</p><a href="/join/" class="btn inline-btn">' + claimLabel + '</a></div>';
+
+  const bottomCtaHtml = soldOut
+    ? '<div class="cta-card"><h2>Founding cohort closed</h2><p>Join the standard tier waitlist and we will reach out when the next window opens.</p><a href="/join/#waitlist" class="btn">Join the waitlist</a></div>'
+    : '<div class="cta-card"><h2>Become a Founding Member</h2><p>Keep your founding rate as long as your membership stays active. Cancel anytime.</p><div class="trust">Every claim reviewed. No supplements. No fake diagnoses.</div><a href="/join/" class="btn">Become a Founding Member for $19/month</a></div>';
+
   // Constitutional delay note
   let cdgpNote = '';
   if (pt === 'later' && (triggers.includes('sports') || triggers.includes('confidence') || triggers.includes('peer'))) {
@@ -418,6 +480,10 @@
           </div>
         </div>
 
+        ${ribbonHtml}
+
+        ${inlineCardHtml}
+
         <div class="panel">
           <h2>${name ? esc(name) + "'s" : 'Your'} Growth Path</h2>
           <p>Members get the tools that turn a snapshot into a plan you can actually use.</p>
@@ -430,12 +496,7 @@
             <div class="tile"><h4>Weekly guidance emails</h4><p>Short, useful, and never a supplement pitch.</p></div>
           </div>
 
-          <div class="cta-card">
-            <h2>Become a Founding Member</h2>
-            <p>Keep your founding rate as long as your membership stays active. Cancel anytime.</p>
-            <div class="trust">Every claim reviewed. No supplements. No fake diagnoses.</div>
-            <a href="/join/" class="btn">Become a Founding Member for $19/month</a>
-          </div>
+          ${bottomCtaHtml}
         </div>
       </div>
     </section>
