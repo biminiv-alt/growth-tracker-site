@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Your Growth Path Results | The Growth Path</title>
-<meta name="description" content="Your Growth Check results: context, priorities, and a preview of the members plan." />
+<meta name="description" content="Your Growth Check results: context, what he needs most from you, and a preview of the members plan." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
   :root {
     --sage-50: #f4f7f2;
@@ -99,49 +99,6 @@
     box-shadow: 0 2px 12px rgba(45, 58, 41, 0.04);
   }
 
-  .reveal-panel {
-    background: linear-gradient(180deg, #f5dfd2 0%, white 100%);
-    border: 1px solid var(--terra-500);
-    border-radius: 16px;
-    padding: 2rem 1.5rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 6px 24px rgba(207, 121, 85, 0.15);
-  }
-  .reveal-panel .r-eyebrow {
-    font-size: 0.82rem;
-    text-transform: uppercase;
-    letter-spacing: 0.09em;
-    color: var(--terra-700);
-    font-weight: 600;
-    margin-bottom: 0.6rem;
-  }
-  .reveal-panel h2 {
-    font-size: 1.55rem;
-    margin-bottom: 0.9rem;
-    color: var(--sage-900);
-  }
-  .reveal-panel .r-insight {
-    color: var(--sage-900);
-    font-size: 1.05rem;
-    line-height: 1.55;
-    margin-bottom: 1.5rem;
-  }
-  .reveal-cta {
-    display: inline-block;
-    background: var(--terra-500);
-    color: white;
-    padding: 0.9rem 1.4rem;
-    border-radius: 10px;
-    font-weight: 600;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    font-size: 0.98rem;
-    font-family: inherit;
-    transition: background 0.15s ease;
-  }
-  .reveal-cta:hover { background: var(--terra-700); }
-
   .datarow {
     display: flex;
     justify-content: space-between;
@@ -163,35 +120,30 @@
   }
   .band strong { color: var(--sage-900); font-family: 'Fraunces', Georgia, serif; }
 
-  .pillars { display: grid; gap: 1rem; }
-  .pillar {
+  .priority {
     background: var(--sage-50);
-    border-left: 4px solid var(--sage-500);
+    border-left: 4px solid var(--terra-500);
     border-radius: 10px;
-    padding: 1.15rem 1.25rem;
+    padding: 1.25rem 1.35rem;
+    margin-top: 0.5rem;
   }
-  .pillar.primary {
-    border-left-color: var(--terra-500);
-    background: white;
-    box-shadow: 0 4px 16px rgba(45, 58, 41, 0.05);
-  }
-  .pillar h3 {
-    font-family: 'Fraunces', Georgia, serif;
-    color: var(--sage-900);
-    margin-bottom: 0.4rem;
-  }
-  .pillar p { color: var(--ink-soft); margin-bottom: 0; font-size: 0.98rem; }
-  .pillar .tag {
-    display: inline-block;
-    font-size: 0.72rem;
-    padding: 2px 8px;
-    border-radius: 999px;
-    background: var(--terra-300);
+  .priority .label {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
     color: var(--terra-700);
     font-weight: 600;
-    margin-left: 0.4rem;
-    vertical-align: middle;
+    margin-bottom: 0.35rem;
+    display: block;
   }
+  .priority h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    color: var(--sage-900);
+    margin-bottom: 0.6rem;
+    font-size: 1.3rem;
+  }
+  .priority p { color: var(--ink-soft); margin-bottom: 0.75rem; font-size: 0.98rem; }
+  .priority p:last-child { margin-bottom: 0; }
 
   .tiles {
     display: grid;
@@ -271,58 +223,6 @@
   }
 </style>
 <link rel="canonical" href="https://thegrowthpath.app/results/" />
-<style id="site-tokens">
-/* Shared site tokens, CTA polish, and citation styles. */
-:root {
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-  --cta-accent: #cf7955;
-  --cta-accent-dark: #a15837;
-}
-
-body { font-family: var(--font-body); line-height: 1.6; }
-h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
-.wrap > p, .panel p, .pillar p, .tile p, article p, article li { max-width: 65ch; }
-
-.btn, .cta, .reveal-cta, button[type="submit"], a.cta-primary {
-  border-radius: 999px;
-  padding: 14px 28px;
-  font-family: var(--font-body);
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  text-transform: none;
-  transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
-}
-.btn:hover, .cta:hover, .reveal-cta:hover {
-  transform: scale(1.02);
-  background-color: var(--cta-accent-dark);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-}
-.btn:focus-visible, .cta:focus-visible, .reveal-cta:focus-visible {
-  outline: 2px solid var(--cta-accent);
-  outline-offset: 3px;
-}
-
-.sources {
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--line, #e5ded2);
-  font-size: 0.85rem;
-  color: var(--ink-soft, #5a5651);
-}
-.sources h3 {
-  font-size: 0.95rem;
-  margin-bottom: 0.6rem;
-  color: var(--sage-900, #2b3a29);
-  font-family: var(--font-display);
-  font-weight: 600;
-}
-.sources ol { padding-left: 1.25rem; margin: 0; }
-.sources li { margin-bottom: 0.5rem; max-width: none; line-height: 1.5; }
-.sources a { color: inherit; text-decoration: underline; }
-.sources sup { font-size: 0.7em; }
-
-</style>
 </head>
 <body>
 
@@ -332,25 +232,12 @@ h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
     <div class="links">
       <a href="/growth-path/">Library</a>
       <a href="/growth-check/">Growth Check</a>
-      <a href="/member/login/">Members</a>
+      <a href="/login/">Members</a>
     </div>
   </div>
 </nav>
 
 <div id="app"></div>
-
-
-<section>
-<div class="wrap">
-<div class="sources">
-<h3>Sources</h3>
-<ol>
-<li>Constitutional Growth Delay. StatPearls. National Center for Biotechnology Information (NCBI) Bookshelf. <a href="https://www.ncbi.nlm.nih.gov/books/NBK539780/" target="_blank" rel="noopener">ncbi.nlm.nih.gov/books/NBK539780</a></li>
-<li>Wit JM, Clayton PE, Rogol AD, Savage MO, Saenger PH, Cohen P. Idiopathic short stature: management and growth hormone treatment. Growth Horm IGF Res. 2008;18(2):111-135.</li>
-</ol>
-</div>
-</div>
-</section>
 
 <footer>
   <div class="wrap">
@@ -363,258 +250,198 @@ h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
 
 <script>
 (function(){
-const app = document.getElementById('app');
-let a = {};
-try { a = JSON.parse(localStorage.getItem('gpAnswers') || '{}'); } catch(e) {}
+  const app = document.getElementById('app');
+  let a = {};
+  try { a = JSON.parse(localStorage.getItem('gpAnswers') || '{}'); } catch(e) {}
 
-const hasAny = a && (a.q_age || a.q_h_ft || a.q_h_in || a.q_uncertain);
-if (!hasAny) {
-app.innerHTML = `
-<header class="hero"><div class="wrap">
-<div class="eyebrow">Growth Check</div>
-<h1>No answers found.</h1>
-<p>Start the Growth Check to see your results here.</p>
-</div></header>
-<section><div class="wrap"><div class="fallback">
-<p><a href="/growth-check/" class="btn">Start Your Growth Check</a></p>
-</div></div></section>`;
-return;
-}
+  const hasAny = a && (a.sonAge != null || a.sonHeightInches > 0 || a.pubertyTiming);
+  if (!hasAny) {
+    app.innerHTML = `
+      <header class="hero"><div class="wrap">
+        <div class="eyebrow">Growth Check</div>
+        <h1>No answers found.</h1>
+        <p>Start the Growth Check to see your results here.</p>
+      </div></header>
+      <section><div class="wrap"><div class="fallback">
+        <p><a href="/growth-check/" class="btn">Start Your Growth Check</a></p>
+      </div></div></section>`;
+    return;
+  }
 
-// --- Personalization helpers ---
-const rawName = (a.sonName || a.q_sonName || '').trim();
-function escapeHtml(s) {
-  return String(s).replace(/[&<>"']/g, function(c){
-    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
-  });
-}
-const name = escapeHtml(rawName);
-const namePoss = name ? name + "&#39;s" : "your son&#39;s";
-const nameDisp = name || 'your son';
-const nameCap = name || 'Your Son';
-const namePossCap = name ? name + "&#39;s" : "Your Son&#39;s";
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+  function fmtIn(totalIn) {
+    if (!totalIn || totalIn <= 0 || isNaN(totalIn)) return '';
+    const f = Math.floor(totalIn / 12);
+    const i = Math.round(totalIn - f * 12);
+    return f + '&#39;' + i + '&quot;';
+  }
 
-// sonLove clean map
-const loveMap = {
-  'His kindness': 'kindness',
-  'His sense of humor': 'sense of humor',
-  'His determination': 'determination',
-  'His quiet confidence': 'quiet confidence',
-  'The way he takes care of others': 'the way he takes care of others'
-};
-let loveClean = '';
-const loveRaw = (a.sonLove || '').trim();
-const loveOther = (a.q_sonLove_other || '').trim();
-if (a.q_sonLove === 'other') {
-  loveClean = loveOther; // may be blank
-} else if (loveRaw && loveMap[loveRaw]) {
-  loveClean = loveMap[loveRaw];
-} else if (loveRaw) {
-  loveClean = loveRaw.replace(/^His /i, '').replace(/^The /i, 'the ');
-}
+  const name = (a.sonName || '').trim();
+  const nameOr = name || 'Your son';
+  const heHim = 'him';
+  const hisHer = name ? name + "'s" : "your son's";
 
-// momHope clean map
-const hopeMap = {
-  'That he grows into himself': 'grows into himself',
-  'That he stops comparing himself to peers': 'stops comparing himself to peers',
-  'That he feels confident going into his teen years': 'feels confident going into his teen years',
-  'That we know we did everything we could': 'gets everything he needs from you'
-};
-let hopeClean = '';
-const hopeRaw = (a.momHope || '').trim();
-const hopeOther = (a.q_momHope_other || '').trim();
-if (a.q_momHope === 'other') {
-  hopeClean = hopeOther;
-} else if (hopeRaw && hopeMap[hopeRaw]) {
-  hopeClean = hopeMap[hopeRaw];
-} else if (hopeRaw) {
-  hopeClean = hopeRaw.replace(/^That he /i, '').replace(/^That we /i, '');
-}
+  const curIn = Number(a.sonHeightInches) || 0;
+  const momIn = Number(a.momHeightInches) || 0;
+  const dadIn = Number(a.dadHeightInches) || 0;
 
-// --- Existing calculations ---
-function ftIn(ft, inch) {
-const f = parseFloat(ft) || 0;
-const i = parseFloat(inch) || 0;
-return f * 12 + i;
-}
-function fmtIn(totalIn) {
-if (totalIn <= 0 || isNaN(totalIn)) return '';
-const f = Math.floor(totalIn / 12);
-const i = Math.round(totalIn - f * 12);
-return f + '&#39;' + i + '&quot;';
-}
-function dateDiffYears(d1, d2) {
-if (!d1 || !d2) return null;
-const t1 = new Date(d1).getTime();
-const t2 = new Date(d2).getTime();
-if (isNaN(t1) || isNaN(t2)) return null;
-return (t2 - t1) / (1000 * 60 * 60 * 24 * 365.25);
-}
+  // Mid-parental for a boy: ((mom_in + 5) + dad_in) / 2, +/- 4 in
+  let mpBand = null;
+  if (momIn >= 40 && dadIn >= 40) {
+    const mid = ((momIn + 5) + dadIn) / 2;
+    mpBand = { low: mid - 4, high: mid + 4, mid };
+  }
 
-const curIn = ftIn(a.q_h_ft, a.q_h_in);
-const priorIn = ftIn(a.q_h2_ft, a.q_h2_in);
-const momIn = ftIn(a.q_mom_ft, a.q_mom_in);
-const dadIn = ftIn(a.q_dad_ft, a.q_dad_in);
+  const triggers = Array.isArray(a.attentionTriggers) ? a.attentionTriggers : [];
+  const pt = a.pubertyTiming;
+  const love = a.sonLove;
 
-let velocity = null;
-if (priorIn > 0 && a.q_h_date && a.q_h2_date) {
-const years = dateDiffYears(a.q_h2_date, a.q_h_date);
-if (years && years > 0.05) {
-velocity = ((curIn - priorIn) / years).toFixed(1);
-}
-}
+  // Priority logic
+  let priority;
+  if (pt === 'later' && (triggers.includes('sports') || triggers.includes('peer'))) {
+    priority = {
+      key: 'monitoring',
+      title: 'Monitoring',
+      lead: 'Watch, track, and know when the pattern justifies action.',
+      body: [
+        'The combination you described (development tracking later than peers, and the noticing showing up in ' + (triggers.includes('sports') && triggers.includes('peer') ? 'both sports and peer comparison' : (triggers.includes('sports') ? 'sports settings' : 'peer comparison')) + ') is a real signal, and it deserves a real system. Not a spreadsheet you look at once. A rhythm.',
+        'What that looks like: a consistent measurement every three to six months, same conditions each time. A note on where he sits in his own curve, not just where he sits on the chart. And a clear internal threshold for when the trend is worth a pediatrician conversation rather than a wait-and-see.',
+        'You are not being paranoid. You are building the record that lets you act with confidence if the moment comes.'
+      ]
+    };
+  } else if (triggers.includes('pediatrician') || triggers.includes('family')) {
+    priority = {
+      key: 'medical',
+      title: 'Medical clarity',
+      lead: 'Understand whether specialist evaluation is warranted, and what to ask.',
+      body: [
+        (triggers.includes('pediatrician') ? 'A pediatrician has already flagged something.' : 'Family history is meaningful clinical context.') + ' That moves this from a general question into a specific one, and specific questions get better answers.',
+        'What that looks like: request a printed copy of his growth chart, come to the next visit with prepared questions about velocity and bone age, and ask directly whether a referral to a pediatric endocrinologist is reasonable. You are not asking for a diagnosis. You are asking whether the picture warrants a specialist read.',
+        'Bring context, not conclusions. Your job in the room is to make sure the right questions get asked.'
+      ]
+    };
+  } else if (triggers.includes('confidence')) {
+    priority = {
+      key: 'confidence',
+      title: 'Confidence support',
+      lead: 'Give him the words and the framing he needs to navigate this stage with intact self-worth.',
+      body: [
+        'When his own confidence is what pulled you in, the medical piece is not what he needs from you first. He needs to feel seen without feeling fixed.',
+        'What that looks like: name what he is feeling before you problem-solve it. Talk about what his body can do, not what it measures. Keep your language matter-of-fact, because he will learn how to talk about his body from how you talk about it. And when he brings a hard moment home, sit with it before you try to reframe it.',
+        'This is the work that shapes the man he becomes, regardless of what the growth chart eventually shows.'
+      ]
+    };
+  } else {
+    priority = {
+      key: 'monitoring',
+      title: 'Monitoring',
+      lead: 'Watch, track, and know when the pattern justifies action.',
+      body: [
+        'You are early enough in this that the most valuable thing you can do is build a real record, so future-you has something to work with.',
+        'What that looks like: a consistent measurement every three to six months in the same conditions, a note on where he sits in his own curve rather than just the chart, and a clear internal threshold for when the trend is worth a pediatrician conversation.',
+        'This is not a wait-and-worry stance. It is a wait-and-see stance with the evidence in hand.'
+      ]
+    };
+  }
 
-let mpBand = null;
-if (momIn >= 40 && dadIn >= 40) {
-const mid = ((momIn + 5) + dadIn) / 2;
-mpBand = { low: mid - 4, high: mid + 4, mid };
-}
+  // Constitutional delay note
+  let cdgpNote = '';
+  if (pt === 'later' && (triggers.includes('sports') || triggers.includes('confidence') || triggers.includes('peer'))) {
+    cdgpNote = `
+      <div class="band">
+        <strong>A note on late development.</strong>
+        <p style="margin-top:0.5rem; margin-bottom: 0; color: var(--sage-900);">
+        Constitutional growth delay is a common, often benign pattern where boys enter puberty later than peers and complete growth on a delayed timeline. A pediatric endocrinologist can help evaluate whether that pattern fits. See the
+        <a href="https://www.endocrine.org/patient-engagement/endocrine-library/short-stature-in-children" target="_blank" rel="noopener">Endocrine Society patient guide</a> for context.
+        </p>
+      </div>`;
+  }
 
-const pillars = {
-monitor: {
-title: 'Monitor',
-body: 'Watch the trend, not the number. Get consistent measurements (every 3 to 6 months, ideally same time of day, no shoes). Note if he tracks along his own curve or crosses lines downward. A single low percentile is context; a sustained downward drift is a signal worth a pediatrician conversation.'
-},
-act: {
-title: 'Act',
-body: 'A pediatrician visit is reasonable any time you are worried. Bring a printed growth chart and ask about a bone age X-ray. If you want a specialist read, ask about a referral to a pediatric endocrinologist. Come with questions, not conclusions.'
-},
-support: {
-title: 'Support',
-body: 'How you talk about his body is how he will learn to talk about it. Keep language neutral and matter-of-fact. Focus on what his body can do, not what it measures. Notice when size is affecting confidence and address it directly, not by minimizing it.'
-}
-};
+  // Personalization: quiet reference to what she loves about him
+  const loveMap = {
+    kindness: 'his kindness',
+    humor: 'his sense of humor',
+    determination: 'his determination',
+    confidence: 'his quiet confidence',
+    caring: 'how he cares for others',
+    other: (a.sonLoveOther || '').trim()
+  };
+  const loveText = loveMap[love] || '';
 
-if (a.q_pubTiming === 'later') {
-pillars.monitor.body += ' Because you noted his development is tracking later than peers, keep an especially close eye on velocity between measurements.';
-}
-if (a.q_prompted === 'sports' || a.q_impact === 'sports' || a.q_impact === 'both') {
-pillars.support.body += ' Since sports is part of the picture, name the frustration when he brings it up. Do not rush to fix it.';
-}
-if (a.q_prompted === 'pediatrician') {
-pillars.act.body += ' Because a pediatrician already flagged something, request the growth chart in advance and prepare specific questions to bring.';
-}
-if (a.q_prompted === 'family') {
-pillars.act.body += ' Family history is meaningful context. Bring it up explicitly at the visit.';
-}
-if (a.q_impact === 'confidence' || a.q_impact === 'both') {
-pillars.support.body += ' The confidence work is not separate from the medical work. Both matter, and they run in parallel.';
-}
+  const introLine = name
+    ? "Here is what we can see about " + esc(name) + " from your answers."
+    : "Here is what we can see about your son from your answers.";
 
-const primary = a.q_uncertain || 'monitor';
-const order = [primary].concat(['monitor','act','support'].filter(k => k !== primary));
+  const emotionalBeat = loveText
+    ? `<p style="margin-top:0.5rem; font-style: italic; color: var(--sage-700);">You told us what you love most is ${esc(loveText)}. Hold onto that. It is the ground this whole conversation stands on.</p>`
+    : '';
 
-let cdgpNote = '';
-if (a.q_pubTiming === 'later' && (a.q_impact === 'sports' || a.q_impact === 'confidence' || a.q_impact === 'both' || a.q_prompted === 'sports')) {
-cdgpNote = `
-<div class="band">
-<strong>A note on late development.</strong>
-<p style="margin-top:0.5rem; margin-bottom: 0; color: var(--sage-900);">
-Constitutional growth delay is a common, often benign pattern where boys enter puberty later than peers and complete growth on a delayed timeline. It is a pattern a pediatric endocrinologist can help evaluate. See the
-<a href="https://www.endocrine.org/patient-engagement/endocrine-library/short-stature-in-children" target="_blank" rel="noopener">Endocrine Society patient guide</a> for context.
-</p>
-</div>`;
-}
+  const curDisp = curIn > 0 ? fmtIn(curIn) : '';
+  const momDisp = momIn > 0 ? fmtIn(momIn) : '';
+  const dadDisp = dadIn > 0 ? fmtIn(dadIn) : '';
+  const mpDisp = mpBand ? (fmtIn(mpBand.low) + ' to ' + fmtIn(mpBand.high)) : '';
 
-let curDisp = curIn > 0 ? fmtIn(curIn) : '';
-let priorDisp = priorIn > 0 ? fmtIn(priorIn) : '';
-let mpDisp = mpBand ? (fmtIn(mpBand.low) + ' to ' + fmtIn(mpBand.high)) : '';
+  const priorityHeading = name
+    ? "What " + esc(name) + " Needs Most from You"
+    : "What Your Son Needs Most from You";
 
-// --- New personalized reveal ---
-const revealParts = [];
-revealParts.push('<p class="r-insight" style="margin-bottom:1rem;">Here&#39;s what we noticed about ' + nameDisp + '.</p>');
-if (loveClean) {
-  revealParts.push('<p class="r-insight" style="margin-bottom:1rem;">You told us you love his ' + escapeHtml(loveClean) + '. That&#39;s the trait that will carry him through this.</p>');
-}
-if (hopeClean) {
-  revealParts.push('<p class="r-insight" style="margin-bottom:1rem;">You hope ' + nameDisp + ' ' + escapeHtml(hopeClean) + '. Based on what you shared, here&#39;s what that path looks like.</p>');
-}
+  const html = `
+    <header class="hero">
+      <div class="wrap">
+        <div class="eyebrow">${name ? esc(name) + "'s" : "Your"} Growth Check</div>
+        <h1>${introLine}</h1>
+        <p>This is context to help you think, not a diagnosis. Save your results and share them with your pediatrician if it is useful.</p>
+        ${emotionalBeat}
+      </div>
+    </header>
 
-// Data-driven context sentence (existing pickReveal logic, personalized)
-function pickContext() {
-if (a.q_pubTiming === 'later') {
-return "His timing sits later than peers, and that pattern is more common than most parents realize (about 1 in 5 to 1 in 6 boys<sup>1</sup>). Doctors have a name for it, constitutional growth delay, and it usually resolves on its own. What you&#39;re describing lines up with a story a lot of families end up telling in the rearview.";
-}
-if (velocity !== null && parseFloat(velocity) >= 2.0) {
-return "His growth rate works out to about " + velocity + " inches a year, which is a healthy pace for his age. Combined with the family range you gave, the raw percentile is not telling the whole story. Where he is headed matters more than where he is today.";
-}
-const concernMap = {
-sports: "Sports is one of the top reasons parents book a first growth conversation with a pediatrician. You are not overreacting. Being smaller during the years when teams start to matter is real, and it is worth taking seriously without treating it as a medical problem yet.",
-family: "Family history is one of the strongest signals in the whole picture, and it is the first thing a pediatric endocrinologist asks about. You are bringing up the exact thing that matters most.",
-pediatrician: "Your pediatrician already flagged something, which means you are ahead of a lot of parents who are still guessing. That flag is worth following, not fearing.",
-peer: "Peer comparison is what brings most parents to a growth question in the first place. Noticing early gives you options that families who wait do not have."
-};
-return concernMap[a.q_prompted] || "What brought you here is something a lot of parents wrestle with quietly. Naming it matters, and putting the data in one place is the first real move.";
-}
-revealParts.push('<p class="r-insight" style="margin-bottom:1.5rem;">' + pickContext() + '</p>');
+    <section>
+      <div class="wrap">
+        <div class="panel">
+          <h2>Growth context</h2>
+          <div class="datarow"><span class="k">Age</span><span class="v">${a.sonAge != null && a.sonAge !== '' ? esc(a.sonAge) + ' yrs' : '-'}</span></div>
+          <div class="datarow"><span class="k">Current height</span><span class="v">${curDisp || '-'}</span></div>
+          <div class="datarow"><span class="k">Mom's height</span><span class="v">${momDisp || '-'}</span></div>
+          <div class="datarow"><span class="k">Dad's height</span><span class="v">${dadDisp || '-'}</span></div>
+          ${mpDisp ? `<div class="datarow"><span class="k">Family-context range</span><span class="v">${mpDisp}</span></div>` : ''}
+          ${mpDisp ? `<div class="band"><strong>What the range means.</strong><p style="margin-top:0.5rem; margin-bottom:0; color: var(--sage-900);">This is context, not a prediction. It is a rough family window based on parent heights (a common rule of thumb: mother's height plus five, plus father's height, divided by two, then plus or minus four inches). His actual adult height depends on many factors and can land anywhere in or near this range.</p></div>` : ''}
+          ${cdgpNote}
+        </div>
 
-const revealHtml = `
-<div class="reveal-panel">
-<div class="r-eyebrow">Your Growth Check reveal</div>
-<h2>${namePossCap} Growth Path starts here.</h2>
-${revealParts.join('')}
-<a href="#growth-details" class="reveal-cta">See the full Growth Path</a>
-</div>`;
+        <div class="panel">
+          <h2>${priorityHeading}</h2>
+          <div class="priority">
+            <span class="label">Your priority right now</span>
+            <h3>${esc(priority.title)}</h3>
+            <p><strong style="color: var(--sage-900);">${esc(priority.lead)}</strong></p>
+            ${priority.body.map(p => `<p>${p}</p>`).join('')}
+          </div>
+        </div>
 
-const html = `
-<header class="hero">
-<div class="wrap">
-<div class="eyebrow">Your Growth Check</div>
-<h1>Here is what we can see from your answers.</h1>
-<p>This is context to help you think, not a diagnosis. Save your results and share them with your pediatrician if it is useful.</p>
-</div>
-</header>
+        <div class="panel">
+          <h2>${name ? esc(name) + "'s" : 'Your'} Growth Path</h2>
+          <p>Members get the tools that turn a snapshot into a plan you can actually use.</p>
+          <div class="tiles">
+            <div class="tile"><h4>Living growth record</h4><p>Log measurements over time and see the shape of his curve.</p></div>
+            <div class="tile"><h4>Personalized what-to-monitor plan</h4><p>Clear signals to watch for, matched to his age and stage.</p></div>
+            <div class="tile"><h4>Pediatrician appointment prep</h4><p>Printable growth chart, questions to ask, red flags to name.</p></div>
+            <div class="tile"><h4>Confidence and communication guides</h4><p>What to say at 8, 12, 16. The week he sits the bench.</p></div>
+            <div class="tile"><h4>Evidence-based resource library</h4><p>Reviewed reading on late bloomers, bone age, and more.</p></div>
+            <div class="tile"><h4>Weekly guidance emails</h4><p>Short, useful, and never a supplement pitch.</p></div>
+          </div>
 
-<section>
-<div class="wrap">
-${revealHtml}
-<div class="panel" id="growth-details">
-<h2>${namePossCap} Growth Context</h2>
-<div class="datarow"><span class="k">Age</span><span class="v">${a.q_age ? a.q_age + ' yrs' : '-'}</span></div>
-<div class="datarow"><span class="k">Current height</span><span class="v">${curDisp || '-'}${a.q_h_date ? ' &middot; ' + a.q_h_date : ''}</span></div>
-${priorDisp ? `<div class="datarow"><span class="k">Prior height</span><span class="v">${priorDisp}${a.q_h2_date ? ' &middot; ' + a.q_h2_date : ''}</span></div>` : ''}
-${velocity !== null ? `<div class="datarow"><span class="k">Growth velocity</span><span class="v">${velocity} in / year</span></div>` : ''}
-${mpDisp ? `<div class="datarow"><span class="k">Family-context range</span><span class="v">${mpDisp}</span></div>` : ''}
-${mpDisp ? `<div class="band"><strong>What the range means.</strong><p style="margin-top:0.5rem; margin-bottom:0; color: var(--sage-900);">This is context, not a prediction. It is a rough family window based on parent heights (a common rule of thumb: mother&#39;s height plus five, plus father&#39;s height, divided by two, then plus or minus four inches). His actual adult height depends on many factors and can land anywhere in or near this range.</p></div>` : ''}
-${cdgpNote}
-</div>
+          <div class="cta-card">
+            <h2>Become a Founding Member</h2>
+            <p>Keep your founding rate as long as your membership stays active. Cancel anytime.</p>
+            <div class="trust">Every claim reviewed. No supplements. No fake diagnoses.</div>
+            <a href="/join/" class="btn">Become a Founding Member for $19/month</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
 
-<div class="panel">
-<h2>What ${nameCap} Needs Most from You</h2>
-<p>Based on your answers, here is the order that fits your situation right now.</p>
-<div class="pillars">
-${order.map((k, idx) => `
-<div class="pillar${idx === 0 ? ' primary' : ''}">
-<h3>${pillars[k].title}${idx === 0 ? '<span class="tag">Start here</span>' : ''}</h3>
-<p>${pillars[k].body}</p>
-</div>`).join('')}
-</div>
-</div>
-
-<div class="panel">
-<h2>${namePossCap} Growth Path</h2>
-<p>Members get the tools that turn a snapshot into a plan you can actually use.</p>
-<div class="tiles">
-<div class="tile"><h4>Living growth record</h4><p>Log measurements over time and see the shape of his curve.</p></div>
-<div class="tile"><h4>Personalized what-to-monitor plan</h4><p>Clear signals to watch for, matched to his age and stage.</p></div>
-<div class="tile"><h4>Pediatrician appointment prep</h4><p>Printable growth chart, questions to ask, red flags to name.</p></div>
-<div class="tile"><h4>Confidence and communication guides</h4><p>What to say at 8, 12, 16. The week he sits the bench.</p></div>
-<div class="tile"><h4>Evidence-based resource library</h4><p>Reviewed reading on late bloomers, bone age, and more.</p></div>
-<div class="tile"><h4>Weekly guidance emails</h4><p>Short, useful, and never a supplement pitch.</p></div>
-</div>
-
-<div class="cta-card">
-<h2>Become a Founding Member</h2>
-<p>Keep your founding rate as long as your membership stays active. Cancel anytime.</p>
-<div class="trust">Every claim reviewed. No supplements. No fake diagnoses.</div>
-<a href="/join/" class="btn">Become a Founding Member for $19/month</a>
-</div>
-</div>
-</div>
-</section>
-`;
-
-app.innerHTML = html;
+  app.innerHTML = html;
 })();
 </script>
 </body>
