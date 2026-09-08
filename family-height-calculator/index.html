@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Family Height Calculator: How Tall Will My Son Be? | The Growth Path</title>
+<meta name="description" content="Free family height calculator (mid-parental height). Enter both parents' heights, get a predicted adult height range for boys. Uses the standard clinical formula." />
+<link rel="canonical" href="https://thegrowthpath.app/family-height-calculator/" />
+<meta name="robots" content="index, follow" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Family Height Calculator for Boys" />
+<meta property="og:description" content="Mid-parental height formula. Predicted adult height range from both parents' heights. Free." />
+<meta property="og:url" content="https://thegrowthpath.app/family-height-calculator/" />
+<meta property="og:site_name" content="The Growth Path" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FLQ59P8X51"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-FLQ59P8X51', { 'send_page_view': true });
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Family Height Calculator (Mid-Parental Height) for Boys",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any",
+  "description": "Predict a boy's adult height range using the mid-parental height formula.",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "url": "https://thegrowthpath.app/family-height-calculator/"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --sage-50:#f4f7f2; --sage-100:#e6ede1; --sage-300:#b8c9ac;
+  --sage-500:#7d9b73; --sage-700:#4f6a4a; --sage-900:#2b3a29;
+  --terra-300:#e8b39a; --terra-500:#cf7955; --terra-700:#a15837;
+  --cream:#fbf7f1; --ink:#2a2723; --ink-soft:#5a5651; --line:#e5ded2;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:'Inter', system-ui, sans-serif;
+  background:var(--cream); color:var(--ink);
+  line-height:1.65; font-size:17px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap { max-width:720px; margin:0 auto; padding:1.5rem 1.25rem 4rem; }
+.brand { font-family:'Fraunces',Georgia,serif; font-size:1.15rem; color:var(--sage-900); text-decoration:none; display:block; margin-bottom:1.5rem; }
+.eyebrow { color:var(--terra-700); font-size:0.78rem; letter-spacing:0.09em; text-transform:uppercase; font-weight:600; margin-bottom:0.75rem; }
+h1 { font-family:'Fraunces',Georgia,serif; color:var(--sage-900); font-weight:500; font-size:2.1rem; line-height:1.15; letter-spacing:-0.015em; margin-bottom:0.85rem; }
+h2 { font-family:'Fraunces',Georgia,serif; color:var(--sage-900); font-weight:500; font-size:1.45rem; line-height:1.25; margin:2rem 0 0.75rem; }
+h3 { font-family:'Fraunces',Georgia,serif; color:var(--sage-900); font-weight:500; font-size:1.15rem; margin:1.25rem 0 0.5rem; }
+p { margin-bottom:1rem; }
+p.lede { color:var(--ink-soft); font-size:1.05rem; margin-bottom:1.5rem; }
+.calc-card { background:white; border:1px solid var(--line); border-radius:14px; padding:1.75rem 1.5rem; margin:1rem 0 1.5rem; box-shadow:0 2px 12px rgba(0,0,0,0.04); }
+.calc-card h2 { margin-top:0; }
+.input-group { margin-bottom:1.25rem; }
+.input-group label { display:block; font-size:0.88rem; color:var(--ink-soft); font-weight:600; margin-bottom:0.4rem; }
+.input-row { display:flex; gap:0.5rem; align-items:stretch; }
+.input-row input { flex:1; padding:0.85rem 1rem; border:1px solid var(--line); border-radius:8px; font-size:1rem; background:white; color:var(--ink); font-family:inherit; min-width:0; }
+.input-row .unit-label { display:flex; align-items:center; padding:0 1rem; color:var(--ink-soft); font-size:0.92rem; background:var(--sage-50); border:1px solid var(--line); border-radius:8px; white-space:nowrap; }
+.unit-toggle { display:inline-flex; margin:0 0 1rem; border:1px solid var(--line); border-radius:8px; padding:3px; background:var(--sage-50); }
+.unit-toggle button { padding:0.45rem 1rem; font-size:0.85rem; background:transparent; border:none; border-radius:6px; color:var(--ink-soft); cursor:pointer; font-family:inherit; }
+.unit-toggle button.on { background:white; color:var(--sage-900); font-weight:600; }
+button.primary { width:100%; padding:1rem 1.5rem; background:var(--terra-500); color:white; border:none; border-radius:10px; font-size:1.02rem; font-weight:600; cursor:pointer; font-family:inherit; transition:background 0.15s ease; margin-top:0.5rem; }
+button.primary:hover, button.primary:active { background:var(--terra-700); }
+.result { display:none; margin-top:1.5rem; }
+.result.on { display:block; animation:fadeIn 0.3s ease; }
+@keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+.big-number { font-family:'Fraunces',Georgia,serif; font-size:2.4rem; font-weight:500; color:var(--sage-700); line-height:1.1; margin-bottom:0.4rem; }
+.range-display { background:var(--sage-50); border-radius:10px; padding:1.25rem; margin:1rem 0; }
+.range-display .row { display:flex; justify-content:space-between; padding:0.4rem 0; border-bottom:1px solid var(--line); }
+.range-display .row:last-child { border-bottom:none; }
+.range-display .row .label { color:var(--ink-soft); font-size:0.92rem; }
+.range-display .row .value { font-family:'Fraunces',Georgia,serif; color:var(--sage-900); font-weight:500; }
+.next-step-card { background:var(--sage-50); border:1px solid var(--sage-300); border-radius:12px; padding:1.5rem; margin:1.5rem 0; }
+.next-step-card h3 { margin-top:0; }
+.next-step-card p { color:var(--ink-soft); }
+.next-step-card a.cta { display:inline-block; margin-top:0.75rem; padding:0.85rem 1.35rem; background:var(--sage-700); color:white; border-radius:8px; text-decoration:none; font-weight:600; font-size:0.98rem; transition:background 0.15s ease; }
+.next-step-card a.cta:hover { background:var(--sage-900); }
+.error { color:var(--terra-700); font-size:0.88rem; margin-top:0.5rem; min-height:1.1rem; }
+.faq details { border-bottom:1px solid var(--line); padding:1rem 0; }
+.faq summary { cursor:pointer; font-weight:600; color:var(--sage-900); font-size:1rem; padding-right:1.5rem; position:relative; list-style:none; }
+.faq summary::-webkit-details-marker { display:none; }
+.faq summary::after { content:"+"; position:absolute; right:0; top:0; color:var(--terra-500); font-size:1.3rem; }
+.faq details[open] summary::after { content:"−"; }
+.faq details p { margin-top:0.75rem; color:var(--ink-soft); font-size:0.98rem; }
+.disclaimer { color:var(--ink-soft); font-size:0.82rem; line-height:1.5; margin-top:2.5rem; padding:1.25rem 0; border-top:1px solid var(--line); }
+.source-note { font-size:0.85rem; color:var(--ink-soft); padding:0.75rem 1rem; background:var(--cream); border-left:3px solid var(--sage-500); border-radius:4px; margin:0.5rem 0 1.25rem; }
+@media (max-width:400px) { h1 { font-size:1.75rem; } .big-number { font-size:2rem; } }
+</style>
+</head>
+<body>
+
+<main class="wrap">
+  <a class="brand" href="/">The Growth Path</a>
+
+  <div class="eyebrow">Free Calculator · Mid-Parental Height</div>
+  <h1>Family Height Calculator for Boys</h1>
+  <p class="lede">Enter both parents' heights. Get a predicted adult height range for your son, using the standard mid-parental height formula pediatricians use.</p>
+
+  <div class="calc-card">
+    <h2>Both parents' heights</h2>
+    <p style="color:var(--ink-soft); font-size:0.95rem; margin-bottom:1rem;">Approximate is fine.</p>
+
+    <div class="input-group">
+      <label>Mother's height</label>
+      <div class="unit-toggle" role="radiogroup" aria-label="Mother unit">
+        <button type="button" class="on" data-mom="imperial">Feet / Inches</button>
+        <button type="button" data-mom="metric">Centimeters</button>
+      </div>
+      <div id="momImperial">
+        <div class="input-row">
+          <input type="number" id="momFt" inputmode="numeric" min="3" max="7" placeholder="Feet" aria-label="Mother feet" />
+          <span class="unit-label">ft</span>
+          <input type="number" id="momIn" inputmode="numeric" min="0" max="11.99" step="0.5" placeholder="Inches" aria-label="Mother inches" />
+          <span class="unit-label">in</span>
+        </div>
+      </div>
+      <div id="momMetric" style="display:none">
+        <div class="input-row">
+          <input type="number" id="momCm" inputmode="numeric" min="120" max="200" step="0.5" placeholder="Height" aria-label="Mother centimeters" />
+          <span class="unit-label">cm</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label>Father's height</label>
+      <div class="unit-toggle" role="radiogroup" aria-label="Father unit">
+        <button type="button" class="on" data-dad="imperial">Feet / Inches</button>
+        <button type="button" data-dad="metric">Centimeters</button>
+      </div>
+      <div id="dadImperial">
+        <div class="input-row">
+          <input type="number" id="dadFt" inputmode="numeric" min="3" max="8" placeholder="Feet" aria-label="Father feet" />
+          <span class="unit-label">ft</span>
+          <input type="number" id="dadIn" inputmode="numeric" min="0" max="11.99" step="0.5" placeholder="Inches" aria-label="Father inches" />
+          <span class="unit-label">in</span>
+        </div>
+      </div>
+      <div id="dadMetric" style="display:none">
+        <div class="input-row">
+          <input type="number" id="dadCm" inputmode="numeric" min="130" max="220" step="0.5" placeholder="Height" aria-label="Father centimeters" />
+          <span class="unit-label">cm</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="error" id="err"></div>
+    <button class="primary" id="calcBtn">Calculate Target Height Range</button>
+
+    <div class="result" id="result">
+      <h3 style="margin-top:1.75rem;">Estimated adult height</h3>
+      <div class="big-number"><span id="rMid"></span></div>
+      <p style="color:var(--ink-soft); font-size:0.95rem;">Midpoint of the estimated range</p>
+
+      <div class="range-display">
+        <div class="row"><span class="label">Lower end of range</span><span class="value" id="rLow"></span></div>
+        <div class="row"><span class="label">Midpoint</span><span class="value" id="rMid2"></span></div>
+        <div class="row"><span class="label">Upper end of range</span><span class="value" id="rHigh"></span></div>
+      </div>
+
+      <p style="font-size:0.92rem; color:var(--ink-soft);">This is a statistical estimate using the mid-parental height formula with a &plusmn;8.5&nbsp;cm (&plusmn;3.3&nbsp;in) confidence range. Real outcomes span an even wider window because puberty timing, nutrition, sleep, and genetic recombination all matter.</p>
+
+      <div class="next-step-card">
+        <h3>Family height is only half the picture.</h3>
+        <p>How your son is tracking on the growth curve right now — combined with family history — is what actually tells you what to watch. Get the full read in 3 minutes, free.</p>
+        <a class="cta" href="/growth-check/?utm_source=family-calc&amp;utm_medium=cta" id="ctaGrowthCheck">Take the Growth Check →</a>
+      </div>
+    </div>
+  </div>
+
+  <h2>How the mid-parental height formula works</h2>
+  <p>The mid-parental height formula is the most widely used clinical estimate for a child's adult height. It uses only two inputs: both biological parents' heights.</p>
+
+  <div class="source-note">
+    <strong>For boys:</strong> <em>(Father's height + Mother's height + 13&nbsp;cm) &divide; 2</em><br />
+    (Or, in inches: <em>(Father's + Mother's + 5&nbsp;in) &divide; 2</em>)<br /><br />
+    The formula adjusts for the average height difference between adult men and women. The typical confidence range is &plusmn;8.5&nbsp;cm (&plusmn;3.3&nbsp;in), meaning about two thirds of children fall within that window.
+  </div>
+
+  <h3>Why family height is the strongest single signal</h3>
+  <p>Genetics accounts for about 80% of the variation in adult height. Parents' heights are the closest proxy for that genetic contribution — closer than any other single input. Studies of twins and family trees consistently confirm this.</p>
+  <p>That said, the mid-parental estimate is a <em>range</em>, not a guarantee. About one in three children ends up outside the &plusmn;8.5&nbsp;cm window, and the range doesn't account for nutrition, illness, growth-timing differences, or genetic variation between siblings.</p>
+
+  <h3>What this calculator doesn't tell you</h3>
+  <p>It doesn't tell you where your son is <em>right now</em> on the growth curve. A boy tracking well below his mid-parental target at age 11 may catch up later, or may need a closer look. That trend — measured over time — is more diagnostic than any single prediction. The <a href="/height-percentile-calculator/">height percentile calculator</a> shows you where he sits today; the <a href="/growth-check/">Growth Check</a> puts both together.</p>
+
+  <h2>Frequently asked questions</h2>
+  <div class="faq">
+    <details>
+      <summary>How accurate is the mid-parental height formula?</summary>
+      <p>The &plusmn;8.5&nbsp;cm range captures roughly 68% of children (one standard deviation). About 95% of children fall within &plusmn;17&nbsp;cm (&plusmn;6.7&nbsp;in). So it's a useful ballpark, not a prediction. Pediatricians use it as one data point among several — not on its own.</p>
+    </details>
+    <details>
+      <summary>What if the parents are unusually tall or short?</summary>
+      <p>The formula still works, but the confidence range widens. Genetic variation is greater at the extremes, and children of very tall or very short parents are more likely to end up closer to the population mean (a phenomenon called regression to the mean).</p>
+    </details>
+    <details>
+      <summary>Does the mother's or father's height matter more for a boy?</summary>
+      <p>Roughly equally. The formula weights both parents' heights the same and adds a fixed offset (13&nbsp;cm for boys) to account for the average adult male-female height difference.</p>
+    </details>
+    <details>
+      <summary>Should we use step-parent or adoptive parent heights?</summary>
+      <p>No. Use biological parents' heights whenever possible. If one biological parent's height is unknown, the formula will be less reliable — a rough workaround is to use the population average (about 5'9" for U.S. men, 5'4" for U.S. women), but be aware the confidence range widens substantially.</p>
+    </details>
+    <details>
+      <summary>My son is already outside the predicted range. What does that mean?</summary>
+      <p>It could mean nothing — the formula misses one in three kids by definition. It could also mean he's still growing into or out of his family's range as puberty timing plays out. Sustained tracking well below (or well above) family expectation over years is more meaningful than a snapshot. If you're concerned, that's a conversation to have with his pediatrician.</p>
+    </details>
+  </div>
+
+  <p class="disclaimer">
+    The family height calculator is parent education, not medical advice or diagnosis. The mid-parental height formula is a widely used clinical estimate but has a wide confidence range and does not predict any individual child's actual adult height. If you have concerns about your son's growth, talk to his pediatrician. &copy; 2026 The Growth Path.
+  </p>
+</main>
+
+<script>
+function ftInToCm(ft, i) { return (ft*12 + i) * 2.54; }
+function cmToDisplay(cm) {
+  const totIn = cm/2.54;
+  const ft = Math.floor(totIn/12);
+  const inches = Math.round((totIn - ft*12) * 10) / 10;
+  return `${ft}' ${inches.toFixed(1)}" (${cm.toFixed(1)} cm)`;
+}
+
+(function(){
+  const params = new URLSearchParams(location.search);
+  const utm = {};
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid'].forEach(k => {
+    const v = params.get(k); if (v) utm[k] = v;
+  });
+  if (Object.keys(utm).length) {
+    try { localStorage.setItem('tgp_utm', JSON.stringify(utm)); } catch(e){}
+  }
+})();
+
+function track(event, params) {
+  try { if (window.gtag) gtag('event', event, params||{}); } catch(e){}
+}
+track('calculator_view', { calc: 'family-height' });
+
+const state = { mom: 'imperial', dad: 'imperial' };
+
+document.querySelectorAll('.unit-toggle button').forEach(b => {
+  b.addEventListener('click', () => {
+    const parent = b.parentElement;
+    parent.querySelectorAll('button').forEach(x => x.classList.remove('on'));
+    b.classList.add('on');
+    const which = b.dataset.mom || b.dataset.dad;
+    const key = b.dataset.mom ? 'mom' : 'dad';
+    state[key] = which;
+    const prefix = key;
+    document.getElementById(prefix + 'Imperial').style.display = which === 'imperial' ? 'block' : 'none';
+    document.getElementById(prefix + 'Metric').style.display = which === 'metric' ? 'block' : 'none';
+  });
+});
+
+document.getElementById('calcBtn').addEventListener('click', () => {
+  const err = document.getElementById('err');
+  let momCm, dadCm;
+
+  if (state.mom === 'imperial') {
+    const ft = parseFloat(document.getElementById('momFt').value);
+    const inches = parseFloat(document.getElementById('momIn').value) || 0;
+    if (!ft || ft < 3 || ft > 7) { err.textContent = "Please enter mother's height."; return; }
+    momCm = ftInToCm(ft, inches);
+  } else {
+    momCm = parseFloat(document.getElementById('momCm').value);
+    if (!momCm || momCm < 120 || momCm > 200) { err.textContent = "Please enter mother's height."; return; }
+  }
+
+  if (state.dad === 'imperial') {
+    const ft = parseFloat(document.getElementById('dadFt').value);
+    const inches = parseFloat(document.getElementById('dadIn').value) || 0;
+    if (!ft || ft < 3 || ft > 8) { err.textContent = "Please enter father's height."; return; }
+    dadCm = ftInToCm(ft, inches);
+  } else {
+    dadCm = parseFloat(document.getElementById('dadCm').value);
+    if (!dadCm || dadCm < 130 || dadCm > 220) { err.textContent = "Please enter father's height."; return; }
+  }
+
+  err.textContent = '';
+
+  const mpMid = (dadCm + momCm + 13) / 2;
+  const mpLow = mpMid - 8.5;
+  const mpHigh = mpMid + 8.5;
+
+  document.getElementById('rMid').textContent = cmToDisplay(mpMid);
+  document.getElementById('rMid2').textContent = cmToDisplay(mpMid);
+  document.getElementById('rLow').textContent = cmToDisplay(mpLow);
+  document.getElementById('rHigh').textContent = cmToDisplay(mpHigh);
+
+  document.getElementById('result').classList.add('on');
+
+  track('calculator_complete', { calc: 'family-height', mid_cm: Math.round(mpMid) });
+
+  try {
+    const utm = JSON.parse(localStorage.getItem('tgp_utm') || '{}');
+    const cta = document.getElementById('ctaGrowthCheck');
+    let href = cta.getAttribute('href');
+    Object.entries(utm).forEach(([k,v]) => {
+      if (!href.includes(k+'=')) href += '&' + k + '=' + encodeURIComponent(v);
+    });
+    cta.setAttribute('href', href);
+  } catch(e){}
+});
+</script>
+
+</body>
+</html>
