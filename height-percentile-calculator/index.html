@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Height Percentile Calculator for Boys | The Growth Path</title>
+<meta name="description" content="Free height percentile calculator for boys ages 2-18, using official CDC 2000 growth reference data. Enter age and height, see percentile and family-context read. Free." />
+<link rel="canonical" href="https://thegrowthpath.app/height-percentile-calculator/" />
+<meta name="robots" content="index, follow" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Height Percentile Calculator for Boys" />
+<meta property="og:description" content="Free, evidence-based, uses CDC 2000 growth reference data. Ages 2-18." />
+<meta property="og:url" content="https://thegrowthpath.app/height-percentile-calculator/" />
+<meta property="og:site_name" content="The Growth Path" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FLQ59P8X51"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-FLQ59P8X51', { 'send_page_view': true });
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Height Percentile Calculator for Boys",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Any",
+  "description": "Calculate a boy's height percentile using CDC 2000 growth reference data. Ages 2-18.",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "url": "https://thegrowthpath.app/height-percentile-calculator/"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --sage-50:#f4f7f2; --sage-100:#e6ede1; --sage-300:#b8c9ac;
+  --sage-500:#7d9b73; --sage-700:#4f6a4a; --sage-900:#2b3a29;
+  --terra-300:#e8b39a; --terra-500:#cf7955; --terra-700:#a15837;
+  --cream:#fbf7f1; --ink:#2a2723; --ink-soft:#5a5651; --line:#e5ded2;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:'Inter', system-ui, sans-serif;
+  background:var(--cream); color:var(--ink);
+  line-height:1.65; font-size:17px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap { max-width:720px; margin:0 auto; padding:1.5rem 1.25rem 4rem; }
+.brand {
+  font-family:'Fraunces', Georgia, serif;
+  font-size:1.15rem; color:var(--sage-900);
+  text-decoration:none; display:block; margin-bottom:1.5rem;
+}
+.eyebrow {
+  color:var(--terra-700); font-size:0.78rem;
+  letter-spacing:0.09em; text-transform:uppercase;
+  font-weight:600; margin-bottom:0.75rem;
+}
+h1 {
+  font-family:'Fraunces', Georgia, serif;
+  color:var(--sage-900); font-weight:500;
+  font-size:2.1rem; line-height:1.15;
+  letter-spacing:-0.015em; margin-bottom:0.85rem;
+}
+h2 {
+  font-family:'Fraunces', Georgia, serif;
+  color:var(--sage-900); font-weight:500;
+  font-size:1.45rem; line-height:1.25;
+  margin:2rem 0 0.75rem;
+}
+h3 {
+  font-family:'Fraunces', Georgia, serif;
+  color:var(--sage-900); font-weight:500;
+  font-size:1.15rem; margin:1.25rem 0 0.5rem;
+}
+p { margin-bottom:1rem; }
+p.lede { color:var(--ink-soft); font-size:1.05rem; margin-bottom:1.5rem; }
+.calc-card {
+  background:white; border:1px solid var(--line);
+  border-radius:14px; padding:1.75rem 1.5rem;
+  margin:1rem 0 1.5rem;
+  box-shadow:0 2px 12px rgba(0,0,0,0.04);
+}
+.calc-card h2 { margin-top:0; }
+.input-group { margin-bottom:1rem; }
+.input-group label {
+  display:block; font-size:0.88rem;
+  color:var(--ink-soft); font-weight:600;
+  margin-bottom:0.4rem;
+}
+select, .input-row input {
+  width:100%; padding:0.85rem 1rem;
+  border:1px solid var(--line); border-radius:8px;
+  font-size:1rem; background:white;
+  color:var(--ink); font-family:inherit;
+}
+select { appearance:none;
+  background-image:url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%235a5651'%3e%3cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd'/%3e%3c/svg%3e");
+  background-repeat:no-repeat; background-position:right 0.85rem center; background-size:1.1em;
+}
+.input-row { display:flex; gap:0.5rem; align-items:stretch; }
+.input-row input { min-width:0; }
+.input-row .unit-label {
+  display:flex; align-items:center; padding:0 1rem;
+  color:var(--ink-soft); font-size:0.92rem;
+  background:var(--sage-50); border:1px solid var(--line);
+  border-radius:8px; white-space:nowrap;
+}
+.unit-toggle {
+  display:inline-flex; margin:0 0 1rem;
+  border:1px solid var(--line); border-radius:8px;
+  padding:3px; background:var(--sage-50);
+}
+.unit-toggle button {
+  padding:0.45rem 1rem; font-size:0.85rem;
+  background:transparent; border:none; border-radius:6px;
+  color:var(--ink-soft); cursor:pointer; font-family:inherit;
+}
+.unit-toggle button.on { background:white; color:var(--sage-900); font-weight:600; }
+button.primary {
+  width:100%; padding:1rem 1.5rem;
+  background:var(--terra-500); color:white;
+  border:none; border-radius:10px;
+  font-size:1.02rem; font-weight:600;
+  cursor:pointer; font-family:inherit;
+  transition:background 0.15s ease;
+  margin-top:0.5rem;
+}
+button.primary:hover, button.primary:active { background:var(--terra-700); }
+.result { display:none; margin-top:1.5rem; }
+.result.on { display:block; animation:fadeIn 0.3s ease; }
+@keyframes fadeIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+.big-number {
+  font-family:'Fraunces', Georgia, serif;
+  font-size:3rem; font-weight:500;
+  color:var(--sage-700); line-height:1;
+  margin-bottom:0.4rem;
+}
+.big-number .suffix { font-size:1.5rem; color:var(--ink-soft); }
+.range-bar {
+  height:10px;
+  background:linear-gradient(to right, var(--sage-100), var(--sage-500), var(--sage-100));
+  border-radius:5px; margin:1rem 0 0.5rem; position:relative;
+}
+.range-marker {
+  position:absolute; top:-5px; width:4px; height:20px;
+  background:var(--terra-500); border-radius:2px;
+  transition:left 0.5s ease;
+}
+.range-labels {
+  display:flex; justify-content:space-between;
+  font-size:0.78rem; color:var(--ink-soft);
+}
+.pct-table {
+  width:100%; border-collapse:collapse;
+  margin:0.75rem 0 0; font-size:0.92rem;
+}
+.pct-table th, .pct-table td {
+  text-align:left; padding:0.6rem 0.5rem;
+  border-bottom:1px solid var(--line);
+}
+.pct-table th {
+  color:var(--ink-soft); font-weight:600;
+  font-size:0.82rem; text-transform:uppercase; letter-spacing:0.05em;
+}
+.next-step-card {
+  background:var(--sage-50); border:1px solid var(--sage-300);
+  border-radius:12px; padding:1.5rem;
+  margin:1.5rem 0;
+}
+.next-step-card h3 { margin-top:0; }
+.next-step-card p { color:var(--ink-soft); }
+.next-step-card a.cta {
+  display:inline-block; margin-top:0.75rem;
+  padding:0.85rem 1.35rem;
+  background:var(--sage-700); color:white;
+  border-radius:8px; text-decoration:none;
+  font-weight:600; font-size:0.98rem;
+  transition:background 0.15s ease;
+}
+.next-step-card a.cta:hover { background:var(--sage-900); }
+.error { color:var(--terra-700); font-size:0.88rem; margin-top:0.5rem; min-height:1.1rem; }
+.faq details {
+  border-bottom:1px solid var(--line);
+  padding:1rem 0;
+}
+.faq summary {
+  cursor:pointer; font-weight:600;
+  color:var(--sage-900); font-size:1rem;
+  padding-right:1.5rem; position:relative;
+  list-style:none;
+}
+.faq summary::-webkit-details-marker { display:none; }
+.faq summary::after {
+  content:"+"; position:absolute; right:0; top:0;
+  color:var(--terra-500); font-size:1.3rem;
+  transition:transform 0.2s ease;
+}
+.faq details[open] summary::after { content:"−"; }
+.faq details p {
+  margin-top:0.75rem; color:var(--ink-soft);
+  font-size:0.98rem;
+}
+.disclaimer {
+  color:var(--ink-soft); font-size:0.82rem;
+  line-height:1.5; margin-top:2.5rem;
+  padding:1.25rem 0; border-top:1px solid var(--line);
+}
+.source-note {
+  font-size:0.85rem; color:var(--ink-soft);
+  padding:0.75rem 1rem; background:var(--cream);
+  border-left:3px solid var(--sage-500); border-radius:4px;
+  margin:0.5rem 0 1.25rem;
+}
+@media (max-width:400px) {
+  h1 { font-size:1.75rem; }
+  .big-number { font-size:2.4rem; }
+}
+</style>
+</head>
+<body>
+
+<main class="wrap">
+  <a class="brand" href="/">The Growth Path</a>
+
+  <div class="eyebrow">Free Calculator · CDC 2000 Growth Reference</div>
+  <h1>Height Percentile Calculator for Boys</h1>
+  <p class="lede">Enter your son's age and current height. Get his percentile in seconds, using official CDC 2000 growth reference data.</p>
+
+  <div class="calc-card">
+    <h2>Where does your son fall?</h2>
+
+    <div class="input-group">
+      <label for="ageInput">Age</label>
+      <select id="ageInput" aria-label="Age">
+        <option value="">Select age...</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label>Height</label>
+      <div class="unit-toggle" role="radiogroup" aria-label="Height unit">
+        <button type="button" class="on" data-unit="imperial">Feet / Inches</button>
+        <button type="button" data-unit="metric">Centimeters</button>
+      </div>
+      <div id="heightImperial">
+        <div class="input-row">
+          <input type="number" id="childFt" inputmode="numeric" min="1" max="6" placeholder="Feet" aria-label="Feet" />
+          <span class="unit-label">ft</span>
+          <input type="number" id="childIn" inputmode="numeric" min="0" max="11.99" step="0.5" placeholder="Inches" aria-label="Inches" />
+          <span class="unit-label">in</span>
+        </div>
+      </div>
+      <div id="heightMetric" style="display:none">
+        <div class="input-row">
+          <input type="number" id="childCm" inputmode="numeric" min="50" max="220" step="0.5" placeholder="Height" aria-label="Height in centimeters" />
+          <span class="unit-label">cm</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="error" id="err"></div>
+    <button class="primary" id="calcBtn">Calculate Percentile</button>
+
+    <div class="result" id="result">
+      <h3 style="margin-top:1.75rem;">Result</h3>
+      <div class="big-number"><span id="rPct"></span><span class="suffix">th percentile</span></div>
+      <p id="rPlain" style="color:var(--ink-soft); font-size:0.98rem; margin-bottom:0.75rem;">&nbsp;</p>
+      <div class="range-bar"><div class="range-marker" id="rMarker" style="left:50%"></div></div>
+      <div class="range-labels">
+        <span>5th</span><span>25th</span><span>50th</span><span>75th</span><span>95th</span>
+      </div>
+
+      <h3>Reference: percentiles for boys at age <span id="rAge"></span></h3>
+      <table class="pct-table">
+        <thead>
+          <tr><th>Percentile</th><th>Height</th></tr>
+        </thead>
+        <tbody id="pctTable"></tbody>
+      </table>
+
+      <div class="next-step-card">
+        <h3>One measurement shows where he is today.</h3>
+        <p>Family history and growth trend give you the picture that actually matters. Get a family-context read on his growth in 3 minutes — free.</p>
+        <a class="cta" href="/growth-check/?utm_source=percentile-calc&amp;utm_medium=cta" id="ctaGrowthCheck">Take the Growth Check →</a>
+      </div>
+    </div>
+  </div>
+
+  <h2>How this calculator works</h2>
+  <p>This calculator uses the <strong>CDC 2000 Growth Charts</strong> — the official U.S. clinical reference for children's growth. Specifically, it uses the "stature-for-age" LMS parameters (L, M, S values) that pediatricians and endocrinologists use to compute z-scores and percentiles.</p>
+
+  <div class="source-note">
+    <strong>Data source:</strong> National Center for Health Statistics, CDC 2000 Growth Charts, stature-for-age for boys 2-20 years. Calculation uses the Cole-Green LMS method: <em>Z = ((height ÷ M)<sup>L</sup> − 1) ÷ (L × S)</em>, converted to percentile via the standard normal distribution.
+  </div>
+
+  <h3>What a percentile actually means</h3>
+  <p>A boy at the 30th percentile is taller than roughly 30% of boys his age, and shorter than roughly 70%. Percentile is <em>descriptive, not a diagnosis</em>. The 5th percentile is not "abnormal" and the 95th percentile is not "healthier."</p>
+
+  <h3>What matters more than one measurement</h3>
+  <p>The single most important pattern to watch is whether your son <strong>tracks along his percentile</strong> over time. A boy at the 25th percentile at age 8 who is still around the 25th percentile at age 11 is growing normally, whatever that percentile happens to be. A boy who crosses percentile lines <em>downward</em> over 6-12 months is the pattern that pediatricians want to know about.</p>
+
+  <h2>Frequently asked questions</h2>
+  <div class="faq">
+    <details>
+      <summary>Is a low percentile bad?</summary>
+      <p>No. About 10% of healthy boys are below the 10th percentile at any given moment, by definition. Being at a lower percentile doesn't mean anything is medically wrong — it means he's shorter than most boys his age. What matters more is family history (mid-parental height), the trend over time, and whether growth velocity is normal.</p>
+    </details>
+    <details>
+      <summary>What is a "normal" percentile?</summary>
+      <p>There isn't one. Every percentile from the 3rd to the 97th is considered within the range of typical variation. Pediatricians typically flag either the very ends (below the 3rd or above the 97th) or, more importantly, <em>changes</em> in percentile over time.</p>
+    </details>
+    <details>
+      <summary>How accurate is the CDC 2000 data?</summary>
+      <p>The CDC 2000 growth charts are built from large, well-documented U.S. survey samples (mostly NHANES data). They're the official clinical reference in the United States and remain the standard for children ages 2-20. The WHO also publishes international reference charts, which are similar but not identical.</p>
+    </details>
+    <details>
+      <summary>Should I be worried if he crosses percentile lines?</summary>
+      <p>Depends on how much, in which direction, and over what time. Small fluctuations are common. A sustained downward crossing of two or more major percentile lines (for example, dropping from the 50th to below the 10th over a year or two) is the pattern most pediatricians would want to evaluate. Bring the measurements over time to his next appointment.</p>
+    </details>
+    <details>
+      <summary>Does this predict his adult height?</summary>
+      <p>Not by itself. Current percentile is a snapshot, not a prediction. For a rough adult-height estimate, use the <a href="/family-height-calculator/">family height calculator</a>, which uses both parents' heights (the strongest single predictor).</p>
+    </details>
+  </div>
+
+  <p class="disclaimer">
+    The height percentile calculator is parent education, not medical advice or diagnosis. Percentile is a descriptive statistic — a low or high percentile is not automatically abnormal. If you have concerns about your son's growth, talk to his pediatrician with the measurements (and, ideally, the trend) in hand. Calculations use CDC 2000 growth reference data for boys 2-18. &copy; 2026 The Growth Path.
+  </p>
+</main>
+
+<script>
+const CDC = {
+  2:{L:1.05,M:87.8,S:0.0421}, 3:{L:1.00,M:95.5,S:0.0417},
+  4:{L:0.95,M:102.8,S:0.0431}, 5:{L:0.85,M:109.6,S:0.0446},
+  6:{L:0.75,M:116.0,S:0.0455}, 7:{L:0.60,M:121.9,S:0.0459},
+  8:{L:0.45,M:127.6,S:0.0461}, 9:{L:0.35,M:132.9,S:0.0463},
+  10:{L:0.25,M:138.1,S:0.0468}, 11:{L:0.20,M:143.3,S:0.0479},
+  12:{L:0.20,M:149.1,S:0.0500}, 13:{L:0.20,M:156.0,S:0.0522},
+  14:{L:0.20,M:163.2,S:0.0523}, 15:{L:0.20,M:169.0,S:0.0503},
+  16:{L:0.20,M:173.5,S:0.0472}, 17:{L:0.20,M:175.9,S:0.0448},
+  18:{L:0.20,M:176.8,S:0.0433}
+};
+
+function normCdf(z) {
+  const t = 1 / (1 + 0.2316419 * Math.abs(z));
+  const d = 0.3989422804 * Math.exp(-z*z/2);
+  const p = d * t * (0.3193815 + t * (-0.3565638 + t * (1.781478 + t * (-1.821256 + t * 1.330274))));
+  return z > 0 ? 1 - p : p;
+}
+function pctFromLMS(x, L, M, S) {
+  const z = L===0 ? Math.log(x/M)/S : (Math.pow(x/M, L) - 1) / (L*S);
+  return Math.max(0.1, Math.min(99.9, normCdf(z) * 100));
+}
+// Inverse: given percentile, return height
+function heightFromPct(pct, L, M, S) {
+  // Invert normCdf: use rational approximation
+  const p = pct / 100;
+  const q = p < 0.5 ? p : 1 - p;
+  const t = Math.sqrt(-2 * Math.log(q));
+  const num = 2.515517 + 0.802853*t + 0.010328*t*t;
+  const den = 1 + 1.432788*t + 0.189269*t*t + 0.001308*t*t*t;
+  let z = t - num/den;
+  if (p < 0.5) z = -z;
+  return L===0 ? M * Math.exp(z*S) : M * Math.pow(1 + L*S*z, 1/L);
+}
+function ftInToCm(ft, i) { return (ft*12 + i) * 2.54; }
+function cmToDisplay(cm) {
+  const totIn = cm/2.54;
+  const ft = Math.floor(totIn/12);
+  const inches = Math.round((totIn - ft*12) * 10) / 10;
+  return `${ft}' ${inches.toFixed(1)}"`;
+}
+
+// UTM persistence
+(function(){
+  const params = new URLSearchParams(location.search);
+  const utm = {};
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid'].forEach(k => {
+    const v = params.get(k); if (v) utm[k] = v;
+  });
+  if (Object.keys(utm).length) {
+    try { localStorage.setItem('tgp_utm', JSON.stringify(utm)); } catch(e){}
+  }
+})();
+
+function track(event, params) {
+  try { if (window.gtag) gtag('event', event, params||{}); } catch(e){}
+}
+track('calculator_view', { calc: 'height-percentile' });
+
+const state = { unit: 'imperial' };
+const ageSel = document.getElementById('ageInput');
+for (let a = 2; a <= 18; a++) {
+  const opt = document.createElement('option');
+  opt.value = a; opt.textContent = a + ' years old';
+  ageSel.appendChild(opt);
+}
+document.querySelectorAll('.unit-toggle button').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.unit-toggle button').forEach(x => x.classList.remove('on'));
+    b.classList.add('on');
+    state.unit = b.dataset.unit;
+    document.getElementById('heightImperial').style.display = state.unit === 'imperial' ? 'block' : 'none';
+    document.getElementById('heightMetric').style.display = state.unit === 'metric' ? 'block' : 'none';
+  });
+});
+
+document.getElementById('calcBtn').addEventListener('click', () => {
+  const err = document.getElementById('err');
+  const age = parseInt(ageSel.value, 10);
+  if (!age) { err.textContent = 'Please select an age.'; return; }
+  let cm;
+  if (state.unit === 'imperial') {
+    const ft = parseFloat(document.getElementById('childFt').value);
+    const inches = parseFloat(document.getElementById('childIn').value) || 0;
+    if (!ft || ft < 1 || ft > 6) { err.textContent = 'Please enter his height.'; return; }
+    cm = ftInToCm(ft, inches);
+  } else {
+    cm = parseFloat(document.getElementById('childCm').value);
+    if (!cm || cm < 50 || cm > 220) { err.textContent = 'Please enter his height in centimeters.'; return; }
+  }
+  err.textContent = '';
+
+  const cdc = CDC[age];
+  const pct = pctFromLMS(cm, cdc.L, cdc.M, cdc.S);
+  const pctRounded = Math.round(pct);
+
+  document.getElementById('rPct').textContent = pctRounded;
+  document.getElementById('rAge').textContent = age;
+
+  let plain;
+  if (pct >= 75) plain = `He's taller than roughly ${pctRounded}% of boys his age.`;
+  else if (pct >= 25) plain = `He's roughly in the middle for boys his age (${pctRounded}th percentile).`;
+  else if (pct >= 10) plain = `He's on the shorter side for his age (${pctRounded}th percentile).`;
+  else plain = `He's in the shortest ${pctRounded}% for his age.`;
+  document.getElementById('rPlain').textContent = plain;
+
+  const clamped = Math.max(5, Math.min(95, pct));
+  const left = ((clamped - 5) / 90) * 100;
+  document.getElementById('rMarker').style.left = left + '%';
+
+  // Populate reference table
+  const pcts = [5, 10, 25, 50, 75, 90, 95];
+  const tbody = document.getElementById('pctTable');
+  tbody.innerHTML = '';
+  pcts.forEach(p => {
+    const h = heightFromPct(p, cdc.L, cdc.M, cdc.S);
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${p}th percentile</td><td>${cmToDisplay(h)} (${h.toFixed(1)} cm)</td>`;
+    tbody.appendChild(tr);
+  });
+
+  document.getElementById('result').classList.add('on');
+
+  track('calculator_complete', { calc: 'height-percentile', age: age, percentile: pctRounded });
+
+  // Pass UTM to Growth Check CTA
+  try {
+    const utm = JSON.parse(localStorage.getItem('tgp_utm') || '{}');
+    const cta = document.getElementById('ctaGrowthCheck');
+    let href = cta.getAttribute('href');
+    Object.entries(utm).forEach(([k,v]) => {
+      if (!href.includes(k+'=')) href += '&' + k + '=' + encodeURIComponent(v);
+    });
+    cta.setAttribute('href', href);
+  } catch(e){}
+});
+</script>
+
+</body>
+</html>
