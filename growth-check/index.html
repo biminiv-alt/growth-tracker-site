@@ -392,6 +392,12 @@ button.secondary {
       <div class="what-this-means" id="rInterpretation"></div>
     </div>
 
+    <div class="result-card" id="rRelatedCard" style="display:none;">
+      <h2 style="margin-top:0;">Read more</h2>
+      <p class="helper" style="margin-top:0;">Handpicked for your son's age and percentile.</p>
+      <ul id="rRelatedList" style="padding-left:1.25rem;margin:0.75rem 0 0;"></ul>
+    </div>
+
     <div class="next-steps">
       <h3>What's worth watching now</h3>
       <ul>
@@ -689,6 +695,31 @@ document.getElementById('emailForm').addEventListener('submit', (e) => {
   const clamped = Math.max(5, Math.min(95, r.percentile));
   const left = ((clamped - 5) / 90) * 100;
   document.getElementById('rMarker').style.left = `${left}%`;
+
+  // Related reading: age-specific + percentile-appropriate
+  const related = [];
+  const utm = 'utm_source=growth-check-results&utm_medium=cta';
+  if (state.age >= 10 && state.age <= 17) {
+    related.push({
+      href: `/average-height-${state.age}-year-old-boy/?${utm}`,
+      title: `Average height for a ${state.age}-year-old boy (full percentile table)`
+    });
+  }
+  if (r.percentile < 25) {
+    related.push({ href: `/height-percentile-calculator/?${utm}`, title: 'Height Percentile Calculator (check him at any age)' });
+    related.push({ href: `/family-height-calculator/?${utm}`, title: 'Family Height Calculator (see the adult-height target range in detail)' });
+  } else if (r.percentile > 75) {
+    related.push({ href: `/family-height-calculator/?${utm}`, title: 'Family Height Calculator (see if he is tracking ahead of family target)' });
+    related.push({ href: `/height-percentile-calculator/?${utm}`, title: 'Height Percentile Calculator (check him at any age)' });
+  } else {
+    related.push({ href: `/family-height-calculator/?${utm}`, title: 'Family Height Calculator (adult-height prediction from parents)' });
+    related.push({ href: `/height-percentile-calculator/?${utm}`, title: 'Height Percentile Calculator (check him at any age)' });
+  }
+  const listEl = document.getElementById('rRelatedList');
+  listEl.innerHTML = related.slice(0, 3).map(x =>
+    `<li style="margin-bottom:0.5rem;"><a href="${x.href}" style="color:var(--ink);text-decoration:underline;">${x.title}</a></li>`
+  ).join('');
+  document.getElementById('rRelatedCard').style.display = 'block';
 
   // Advance
   showScreen('results');
