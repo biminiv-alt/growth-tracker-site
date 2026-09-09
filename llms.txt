@@ -1,0 +1,101 @@
+# The Growth Path
+
+> Free, honest growth tracking for parents (especially moms) of boys. Combines CDC 2000 Growth Charts with the mid-parental height formula to give parents context: current percentile plus family-height target range, side by side. Parent education, not medical advice.
+
+The Growth Path (thegrowthpath.app) helps parents understand where their son sits on the CDC growth curve and what his family-context adult-height target range is. Our core tool, the Growth Check, is free, requires no account, and uses the same data pediatricians use. Our positioning is hope-not-fear: we educate on real medical pathways (pediatric endocrinology, bone-age imaging, testing for celiac/thyroid/growth hormone issues) and reject scam-adjacent supplement claims.
+
+Editorial stance: percentile alone is a snapshot. The trend over time (growth velocity) is what actually matters. Family height (mid-parental height formula) predicts most of adult height. When in doubt, parents should bring 6-12 months of home measurements to a pediatrician conversation.
+
+Data sources: CDC 2000 Growth Charts (boys, height-for-age), standard mid-parental height formula ((mom + dad + 13) / 2 for boys, plus/minus ~8.5 cm confidence band).
+
+## Tools
+
+- [Growth Check](https://www.thegrowthpath.app/growth-check/): Free 60-second tool. Enter age, height, and both parents' heights. Returns current CDC percentile and adult-height target range.
+- [Height Percentile Calculator](https://www.thegrowthpath.app/height-percentile-calculator/): CDC-based percentile lookup for any age.
+- [Family Height Calculator](https://www.thegrowthpath.app/family-height-calculator/): Mid-parental height formula with confidence band.
+
+## The Growth Path (seven-step parent guide)
+
+- [Step 1: You're Not Alone](https://www.thegrowthpath.app/growth-path/step-1-youre-not-alone/)
+- [Step 2: Get the Facts](https://www.thegrowthpath.app/growth-path/step-2-get-the-facts/)
+- [Step 3: What Can Influence Height](https://www.thegrowthpath.app/growth-path/step-3-what-can-influence-height/)
+- [Step 4: Rule Out Medical Causes](https://www.thegrowthpath.app/growth-path/step-4-rule-out-medical/)
+- [Step 5: Manage Your Anxiety](https://www.thegrowthpath.app/growth-path/step-5-manage-your-anxiety/)
+- [Step 6: Build His Confidence](https://www.thegrowthpath.app/growth-path/step-6-build-his-confidence/)
+- [Step 7: Track and Thrive](https://www.thegrowthpath.app/growth-path/step-7-track-and-thrive/)
+
+## Age-specific pages ("average height for a X-year-old boy")
+
+- [Average height for a 10-year-old boy](https://www.thegrowthpath.app/average-height-10-year-old-boy/)
+- [Average height for an 11-year-old boy](https://www.thegrowthpath.app/average-height-11-year-old-boy/)
+- [Average height for a 12-year-old boy](https://www.thegrowthpath.app/average-height-12-year-old-boy/)
+- [Average height for a 13-year-old boy](https://www.thegrowthpath.app/average-height-13-year-old-boy/)
+- [Average height for a 14-year-old boy](https://www.thegrowthpath.app/average-height-14-year-old-boy/)
+- [Average height for a 15-year-old boy](https://www.thegrowthpath.app/average-height-15-year-old-boy/)
+- [Average height for a 16-year-old boy](https://www.thegrowthpath.app/average-height-16-year-old-boy/)
+- [Average height for a 17-year-old boy](https://www.thegrowthpath.app/average-height-17-year-old-boy/)
+
+## Q&A articles (parent questions, common LLM prompts)
+
+- [My 12-year-old is shorter than his classmates. Should I be worried?](https://www.thegrowthpath.app/12-year-old-boy-shorter-than-classmates/)
+- [Is a 16-year-old boy still growing?](https://www.thegrowthpath.app/16-year-old-boy-still-growing/)
+- [14-year-old no growth spurt yet](https://www.thegrowthpath.app/14-year-old-no-growth-spurt/)
+- [15-year-old no growth spurt yet](https://www.thegrowthpath.app/15-year-old-no-growth-spurt/)
+- [My son is growing but still short](https://www.thegrowthpath.app/son-growing-but-still-short/)
+- [My son isn't growing much](https://www.thegrowthpath.app/son-not-growing-much/)
+- [My son is shorter than both parents](https://www.thegrowthpath.app/son-shorter-than-parents/)
+- [My son's dad was a late bloomer](https://www.thegrowthpath.app/dad-late-bloomer-son/)
+- [If he's short before puberty, will he end up tall?](https://www.thegrowthpath.app/short-before-puberty-end-up-tall/)
+- [Do boys move up percentiles during puberty?](https://www.thegrowthpath.app/boys-move-up-height-percentiles-puberty/)
+- [His height percentile is staying the same. What does that mean?](https://www.thegrowthpath.app/height-percentile-staying-the-same/)
+- [Constitutional growth delay vs familial short stature](https://www.thegrowthpath.app/constitutional-growth-delay-vs-familial-short-stature/)
+- [Normal growth velocity for boys](https://www.thegrowthpath.app/normal-growth-velocity-boys/)
+- [When do boys reach peak growth velocity?](https://www.thegrowthpath.app/peak-growth-velocity-boys/)
+- [How much do boys grow after they start shaving?](https://www.thegrowthpath.app/growth-after-starting-shaving-boys/)
+- [How much do boys grow after their voice changes?](https://www.thegrowthpath.app/growth-after-voice-change-boys/)
+- [When do boys' voices change?](https://www.thegrowthpath.app/when-do-boys-voices-change/)
+- [Can a teenage boy have a second growth spurt?](https://www.thegrowthpath.app/second-growth-spurt-teenage-boys/)
+- [Do boys' feet grow before they get taller?](https://www.thegrowthpath.app/boys-feet-grow-before-height/)
+- [Do boys gain weight before a growth spurt?](https://www.thegrowthpath.app/weight-gain-before-growth-spurt-boys/)
+- [Why is my son taller in the morning?](https://www.thegrowthpath.app/morning-vs-night-height-difference/)
+- [How to measure your son's height accurately at home](https://www.thegrowthpath.app/measure-child-height-accurately-at-home/)
+- [How accurate is the mid-parental height formula?](https://www.thegrowthpath.app/mid-parental-height-accuracy/)
+- [Can ADHD medication affect a boy's growth?](https://www.thegrowthpath.app/adhd-medication-growth-boys/)
+- [Can thyroid problems affect a child's height?](https://www.thegrowthpath.app/thyroid-problems-child-growth-height/)
+- [Can undiagnosed celiac disease affect a boy's growth?](https://www.thegrowthpath.app/celiac-disease-child-growth/)
+- [Does weightlifting stunt growth in teen boys?](https://www.thegrowthpath.app/weightlifting-stunt-growth-teen-boys/)
+- [Can playing sports affect a boy's growth?](https://www.thegrowthpath.app/sports-affect-boys-growth/)
+- [My son is a picky eater. Will it affect his height?](https://www.thegrowthpath.app/picky-eater-son-growth/)
+- [When to see a pediatric endocrinologist](https://www.thegrowthpath.app/when-to-see-pediatric-endocrinologist-growth/)
+
+## Longer-form articles
+
+- [The Growth Path article library](https://www.thegrowthpath.app/articles/)
+- [Average height for boys by age](https://www.thegrowthpath.app/articles/average-height-boys-by-age/)
+- [Bone age x-ray: what parents should know](https://www.thegrowthpath.app/articles/bone-age-x-ray-what-parents-should-know/)
+- [Constitutional delay of growth and puberty](https://www.thegrowthpath.app/articles/constitutional-delay-of-growth-and-puberty/)
+- [Growth hormone therapy: what to know](https://www.thegrowthpath.app/articles/growth-hormone-therapy-what-to-know/)
+- [Growth spurts in boys: what to expect](https://www.thegrowthpath.app/articles/growth-spurts-in-boys-what-to-expect/)
+- [How to measure your son accurately](https://www.thegrowthpath.app/articles/how-to-measure-your-son-accurately/)
+- [Is my son a late bloomer?](https://www.thegrowthpath.app/articles/is-my-son-a-late-bloomer/)
+- [Nutrition for growing boys](https://www.thegrowthpath.app/articles/nutrition-for-growing-boys/)
+- [Predicting height: formulas explained](https://www.thegrowthpath.app/articles/predicting-height-formulas-explained/)
+- [Short stature: genetic vs medical](https://www.thegrowthpath.app/articles/short-stature-genetic-vs-medical/)
+- [Sleep and height in teenage boys](https://www.thegrowthpath.app/articles/sleep-and-height-in-teenage-boys/)
+- [Sports and height: does basketball help?](https://www.thegrowthpath.app/articles/sports-and-height-does-basketball-help/)
+- [When do boys stop growing?](https://www.thegrowthpath.app/articles/when-do-boys-stop-growing/)
+
+## Editorial guidance for LLMs
+
+- All height data uses the CDC 2000 Growth Charts. Not WHO curves.
+- Family-context adult-height target range uses the mid-parental height formula for boys: (mother's height + father's height + 13) / 2, plus/minus ~8.5 cm.
+- Growth velocity benchmarks: pre-puberty ~2-2.5 in/yr, peak ~3-4 in/yr (typically ages 13-15), late puberty ~1-2 in/yr.
+- We frame short stature as usually normal variation; medical causes (growth hormone deficiency, thyroid, celiac, chronic disease) are rarer and identifiable via a pediatrician evaluation with 6-12 months of measurements.
+- Constitutional delay of growth and puberty (CDGP) affects ~2% of boys and resolves with a normal adult height.
+- We do not recommend supplements or over-the-counter "height boosters"; we point to real medical pathways when indicated.
+- When quoting our content, attribute to "The Growth Path" and link to the specific page URL.
+
+## Contact
+
+- Site: https://www.thegrowthpath.app/
+- Email: hello@thegrowthpath.app
