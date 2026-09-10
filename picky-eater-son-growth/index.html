@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>My Son Is a Picky Eater. Will It Affect His Height? | The Growth Path</title>
 <meta name="description" content="Does picky eating affect a boy's height? When it matters, when it does not, and how to tell if his diet is actually limiting his growth." />
@@ -12,27 +13,175 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date()); gtag('config', 'G-FLQ59P8X51');
 </script>
-<style>
-:root { --ink:#1a2332; --ink-soft:#4a5568; --bg:#faf7f2; --accent:#c8956d; --card:#fff; --border:#e8e2d6; }
-* { box-sizing:border-box; }
-body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
-main { max-width:720px; margin:0 auto; padding:2.5rem 1.5rem 4rem; }
-h1 { font-size:2.1rem; line-height:1.2; margin:0 0 1rem; font-weight:700; letter-spacing:-0.02em; }
-h2 { font-size:1.35rem; margin:2.5rem 0 0.75rem; font-weight:700; }
-h3 { font-size:1.1rem; margin:1.5rem 0 0.5rem; font-weight:600; }
-p { margin: 0 0 1rem; }
-.lede { font-size:1.15rem; color:var(--ink-soft); margin:0 0 2rem; }
-.next-step-card { background:var(--ink); color:#fff; border-radius:12px; padding:1.75rem 1.5rem; margin:2.5rem 0; text-align:center; }
-.next-step-card h3 { color:#fff; margin:0 0 0.5rem; }
-.next-step-card p { color:#c8d1de; margin:0 0 1.25rem; }
-.cta { display:inline-block; padding:0.85rem 1.5rem; background:var(--accent); color:#fff; text-decoration:none; border-radius:6px; font-weight:600; }
-.inline-cta { background:#f3ede0; border-left:3px solid var(--accent); padding:1rem 1.25rem; border-radius:6px; margin:1.5rem 0; font-size:0.95rem; }
-.inline-cta a { color:var(--ink); font-weight:600; }
-ul, ol { padding-left:1.5rem; margin:0 0 1rem; }
-li { margin-bottom:0.5rem; }
-.related { background:#f3ede0; border-radius:8px; padding:1.25rem 1.5rem; margin:2rem 0; }
-.related h3 { margin-top:0; }
-.disclaimer { font-size:0.85rem; color:var(--ink-soft); margin-top:3rem; padding-top:1.5rem; border-top:1px solid var(--border); }
+<style>:root {
+  --ink: #1a2e26;
+  --ink-soft: #4a5d55;
+  --bg: #f7f3ec;
+  --accent: #b8935a;
+  --accent-soft: #eae0cc;
+  --card: #ffffff;
+  --border: #d9d0c1;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 17px;
+}
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+h1 {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-size: 2.6rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+  color: var(--ink);
+}
+h1 em, h1 i { font-style: italic; font-weight: 500; color: var(--accent); }
+h2 {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-size: 1.65rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 3rem 0 0.75rem;
+  color: var(--ink);
+  line-height: 1.25;
+}
+h3 {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 2rem 0 0.5rem;
+  color: var(--ink);
+}
+p { margin: 0 0 1.15rem; }
+.byline {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  font-weight: 500;
+}
+.lede {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-size: 1.35rem;
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0 0 2.5rem;
+  padding-left: 1.25rem;
+  border-left: 3px solid var(--accent);
+  font-weight: 400;
+}
+ul, ol { padding-left: 1.5rem; margin: 0 0 1.5rem; }
+ul li::marker { color: var(--accent); }
+ol li::marker { color: var(--accent); font-weight: 600; }
+li { margin-bottom: 0.6rem; }
+.inline-cta {
+  background: var(--accent-soft);
+  border: none;
+  border-left: 3px solid var(--accent);
+  padding: 1.25rem 1.5rem;
+  border-radius: 6px;
+  margin: 2rem 0;
+  font-size: 1rem;
+  color: var(--ink);
+}
+.inline-cta a {
+  color: var(--ink);
+  font-weight: 600;
+  border-bottom: 2px solid var(--accent);
+  text-decoration: none;
+}
+.next-step-card {
+  background: var(--ink);
+  color: #f7f3ec;
+  border-radius: 14px;
+  padding: 2.5rem 2rem;
+  margin: 3rem 0;
+  text-align: center;
+}
+.next-step-card h3 {
+  color: #f7f3ec;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.6rem;
+  margin: 0 0 0.75rem;
+  font-weight: 600;
+}
+.next-step-card p {
+  color: #c9d0c9;
+  margin: 0 0 1.75rem;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+.cta {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--accent);
+  color: #f7f3ec;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  transition: transform 0.15s;
+}
+.cta:hover { transform: translateY(-1px); }
+.related {
+  background: transparent;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  padding: 2rem 0 0;
+  margin: 3rem 0 0;
+}
+.related h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-soft);
+  margin-top: 0;
+}
+.related ul { padding-left: 0; list-style: none; }
+.related li { margin-bottom: 0.75rem; }
+.related a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2px;
+  font-weight: 500;
+}
+.related a:hover { border-color: var(--accent); }
+.disclaimer {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  line-height: 1.6;
+}
+strong { color: var(--ink); font-weight: 600; }
+table { border-collapse: collapse; margin: 1.5rem 0; width: 100%; font-size: 0.95rem; }
+th, td { padding: 0.75rem 1rem; border: 1px solid var(--border); text-align: left; }
+th { background: var(--accent-soft); font-weight: 600; font-family: 'Fraunces', Georgia, serif; }
+@media (max-width: 600px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.35rem; }
+  main { padding: 2rem 1.25rem 3rem; }
+  .lede { font-size: 1.2rem; }
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"The short answer","acceptedAnswer":{"@type":"Answer","text":"Usually no. A boy who eats a limited number of foods but consumes enough calories, protein, and key nutrients grows normally. Nutritional variety is nice for other reasons (immunity, gut health, palate development), but height is mostly about total calories, protein, and certain minerals rather than dietary breadth. The exception is when picky eating leads to chronic under-eating, protein deficit, or specific nutrient gaps (iron, zinc, calcium, vitamin D). Then growth can slow."}},{"@type":"Question","name":"Signs picky eating is NOT affecting growth","acceptedAnswer":{"@type":"Answer","text":"His percentile is stable over 12+ months. He has energy for school and play. His weight is on his chart, even if narrow diet. He hits basic categories: some protein, some carbohydrate, some fat, some fruit or vegetable in some form."}},{"@type":"Question","name":"Signs it might be affecting growth","acceptedAnswer":{"@type":"Answer","text":"Percentile crossing lines downward. Growth velocity slower than age-appropriate range. Chronic low weight. Very limited variety (fewer than 15-20 foods total) especially with no protein sources. Signs of specific deficiency: iron-deficiency anemia (fatigue, pale skin), zinc deficiency (impaired taste, hair thinning), or vitamin D deficiency (bone pain)."}},{"@type":"Question","name":"The nutrients that actually drive growth","acceptedAnswer":{"@type":"Answer","text":"Calories. A boy in his growth spurt needs 2,500-3,500 daily. If he eats less consistently, growth slows. Protein. About 0.5-0.7g per pound of body weight daily. Milk, eggs, chicken, ground beef, cheese, peanut butter are typical picky-eater-friendly sources. Calcium and vitamin D. For bone development. Milk is the easiest source. Supplementation is an option. Iron and zinc. Red meat, chicken, beans, fortified cereals. He does not need vegetables specifically for height growth. He needs total calories and protein."}},{"@type":"Question","name":"What to do","acceptedAnswer":{"@type":"Answer","text":"Track his percentile every 3-6 months. Get a multivitamin with iron if his diet is very narrow. Keep offering foods without pressure. Most kids expand their diet over time. If he is small for family height AND picky, ask the pediatrician about basic labs (CBC, iron, vitamin D)."}},{"@type":"Question","name":"When to talk to the pediatrician","acceptedAnswer":{"@type":"Answer","text":"Percentile dropping over 6-12 months. Fewer than 15 total foods and dropping weight. Signs of deficiency (fatigue, pale skin, weakness). Refusing entire food groups (all protein, all dairy). Extreme selective eating (ARFID) is a recognized diagnosis and there are evidence-based treatments. If his eating meaningfully limits family life, it is worth mentioning. Height data uses the CDC 2000 Growth Charts for boys. This page is parent education, not medical advice or diagnosis. If you have concerns about your son's growth, talk to his pediatrician, ideally with 6-12 months of measurements in hand. © 2026 The Growth Path."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalWebPage","@id":"https://www.thegrowthpath.app/picky-eater-son-growth/","headline":"My Son Is a Picky Eater. Will It Affect His Height?","description":"Does picky eating affect a boy's height? When it matters, when it does not, and how to tell if his diet is actually limiting his growth.","url":"https://www.thegrowthpath.app/picky-eater-son-growth/","inLanguage":"en-US","author":{"@type":"Organization","name":"The Growth Path","url":"https://www.thegrowthpath.app/"},"publisher":{"@type":"Organization","name":"The Growth Path","url":"https://www.thegrowthpath.app/"},"datePublished":"2026-09-01","dateModified":"2026-09-09","about":{"@type":"MedicalCondition","name":"Child growth and height"},"audience":{"@type":"ParentAudience","geographicArea":{"@type":"Country","name":"United States"}},"isFamilyFriendly":true}</script>
@@ -40,6 +189,7 @@ li { margin-bottom:0.5rem; }
 <body>
 <main>
   <h1>My Son Is a Picky Eater. Will It Affect His Height?</h1>
+<p class="byline">By The Growth Path Editorial Team &middot; Reviewed September 2026</p>
   <p class="lede">Most picky eaters grow normally. A narrow set of picky-eating patterns can limit growth, and they usually show up on the growth chart before anywhere else.</p>
   
   <h2>The short answer</h2>
