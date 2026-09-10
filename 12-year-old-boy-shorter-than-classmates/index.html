@@ -12,34 +12,183 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date()); gtag('config', 'G-FLQ59P8X51');
 </script>
-<style>
-:root { --ink:#1a2332; --ink-soft:#4a5568; --bg:#faf7f2; --accent:#c8956d; --card:#fff; --border:#e8e2d6; }
-* { box-sizing:border-box; }
-body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--ink); line-height:1.65; }
-main { max-width:720px; margin:0 auto; padding:2.5rem 1.5rem 4rem; }
-h1 { font-size:2.1rem; line-height:1.2; margin:0 0 1rem; font-weight:700; letter-spacing:-0.02em; }
-h2 { font-size:1.35rem; margin:2.5rem 0 0.75rem; font-weight:700; }
-h3 { font-size:1.1rem; margin:1.5rem 0 0.5rem; font-weight:600; }
-p { margin: 0 0 1rem; }
-.lede { font-size:1.15rem; color:var(--ink-soft); margin:0 0 2rem; }
-.next-step-card { background:var(--ink); color:#fff; border-radius:12px; padding:1.75rem 1.5rem; margin:2.5rem 0; text-align:center; }
-.next-step-card h3 { color:#fff; margin:0 0 0.5rem; }
-.next-step-card p { color:#c8d1de; margin:0 0 1.25rem; }
-.cta { display:inline-block; padding:0.85rem 1.5rem; background:var(--accent); color:#fff; text-decoration:none; border-radius:6px; font-weight:600; }
-.inline-cta { background:#f3ede0; border-left:3px solid var(--accent); padding:1rem 1.25rem; border-radius:6px; margin:1.5rem 0; font-size:0.95rem; }
-.inline-cta a { color:var(--ink); font-weight:600; }
-ul, ol { padding-left:1.5rem; margin:0 0 1rem; }
-li { margin-bottom:0.5rem; }
-.related { background:#f3ede0; border-radius:8px; padding:1.25rem 1.5rem; margin:2rem 0; }
-.related h3 { margin-top:0; }
-.disclaimer { font-size:0.85rem; color:var(--ink-soft); margin-top:3rem; padding-top:1.5rem; border-top:1px solid var(--border); }
+<style>:root {
+  --ink: #1a2e26;
+  --ink-soft: #4a5d55;
+  --bg: #f7f3ec;
+  --accent: #b8935a;
+  --accent-soft: #eae0cc;
+  --card: #ffffff;
+  --border: #d9d0c1;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 17px;
+}
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+h1 {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-size: 2.6rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+  color: var(--ink);
+}
+h1 em, h1 i { font-style: italic; font-weight: 500; color: var(--accent); }
+h2 {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-size: 1.65rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 3rem 0 0.75rem;
+  color: var(--ink);
+  line-height: 1.25;
+}
+h3 {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 2rem 0 0.5rem;
+  color: var(--ink);
+}
+p { margin: 0 0 1.15rem; }
+.byline {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0 0 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  font-weight: 500;
+}
+.lede {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+  font-size: 1.35rem;
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0 0 2.5rem;
+  padding-left: 1.25rem;
+  border-left: 3px solid var(--accent);
+  font-weight: 400;
+}
+ul, ol { padding-left: 1.5rem; margin: 0 0 1.5rem; }
+ul li::marker { color: var(--accent); }
+ol li::marker { color: var(--accent); font-weight: 600; }
+li { margin-bottom: 0.6rem; }
+.inline-cta {
+  background: var(--accent-soft);
+  border: none;
+  border-left: 3px solid var(--accent);
+  padding: 1.25rem 1.5rem;
+  border-radius: 6px;
+  margin: 2rem 0;
+  font-size: 1rem;
+  color: var(--ink);
+}
+.inline-cta a {
+  color: var(--ink);
+  font-weight: 600;
+  border-bottom: 2px solid var(--accent);
+  text-decoration: none;
+}
+.next-step-card {
+  background: var(--ink);
+  color: #f7f3ec;
+  border-radius: 14px;
+  padding: 2.5rem 2rem;
+  margin: 3rem 0;
+  text-align: center;
+}
+.next-step-card h3 {
+  color: #f7f3ec;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.6rem;
+  margin: 0 0 0.75rem;
+  font-weight: 600;
+}
+.next-step-card p {
+  color: #c9d0c9;
+  margin: 0 0 1.75rem;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+.cta {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--accent);
+  color: #f7f3ec;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  transition: transform 0.15s;
+}
+.cta:hover { transform: translateY(-1px); }
+.related {
+  background: transparent;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  padding: 2rem 0 0;
+  margin: 3rem 0 0;
+}
+.related h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-soft);
+  margin-top: 0;
+}
+.related ul { padding-left: 0; list-style: none; }
+.related li { margin-bottom: 0.75rem; }
+.related a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2px;
+  font-weight: 500;
+}
+.related a:hover { border-color: var(--accent); }
+.disclaimer {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  line-height: 1.6;
+}
+strong { color: var(--ink); font-weight: 600; }
+table { border-collapse: collapse; margin: 1.5rem 0; width: 100%; font-size: 0.95rem; }
+th, td { padding: 0.75rem 1rem; border: 1px solid var(--border); text-align: left; }
+th { background: var(--accent-soft); font-weight: 600; font-family: 'Fraunces', Georgia, serif; }
+@media (max-width: 600px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.35rem; }
+  main { padding: 2rem 1.25rem 3rem; }
+  .lede { font-size: 1.2rem; }
+}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why 12 is peak variation","acceptedAnswer":{"@type":"Answer","text":"Boys can start puberty anywhere from 9 to 14. At 12, some classmates are already 12-18 months into their spurt and 4-6 inches ahead. Others have not started yet. Both are normal, and both usually reach similar adult heights. Comparing your son to a classmate is comparing him to a snapshot at a random point in a moving picture."}},{"@type":"Question","name":"The three questions that actually matter","acceptedAnswer":{"@type":"Answer","text":"Is he tracking? Staying near the same percentile line year over year is a healthy growth pattern, even on a low line. What raises questions is crossing percentile lines downward. Is his velocity in range? 2 to 2.5 inches per year pre-puberty, 3-4 inches during his spurt. Under those numbers is the flag. How tall is your family? Mid-parental height predicts adult height much better than his current percentile does. If family says he ends up around average, he probably will."}},{"@type":"Question","name":"When 12-and-shorter is worth a pediatrician visit","acceptedAnswer":{"@type":"Answer","text":"Height below the 3rd percentile with no family history to explain it. Percentile crossing lines downward over the last 6-12 months. Growth velocity under 2 inches in the last year. No signs of puberty by 14. At 12 alone this is normal."}},{"@type":"Question","name":"When it is just puberty timing","acceptedAnswer":{"@type":"Answer","text":"He has been tracking a low line consistently. Growth velocity is normal for age. Dad or an uncle also went through puberty late. He still shows no signs of puberty yet at 12 (common and benign)."}},{"@type":"Question","name":"What to do this month","acceptedAnswer":{"@type":"Answer","text":"Measure him at home. Same time of day, no shoes, wall + book. Pull his last year of pediatrician measurements. Calculate velocity for the last 12 months. If percentile is dropping OR velocity is low, bring both to his next well visit. If everything is tracking, keep measuring every 6 months. Height data uses the CDC 2000 Growth Charts for boys. This page is parent education, not medical advice or diagnosis. If you have concerns about your son's growth, talk to his pediatrician, ideally with 6-12 months of measurements in hand. © 2026 The Growth Path."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why 12 is peak variation","acceptedAnswer":{"@type":"Answer","text":"Boys can start puberty anywhere from 9 to 14. At 12, some classmates are already 12-18 months into their spurt and 4-6 inches ahead. Others have not started yet. Both are normal, and both usually reach similar adult heights. Comparing your son to a classmate is comparing him to a snapshot at a random point in a moving picture."}},{"@type":"Question","name":"The three questions that actually matter","acceptedAnswer":{"@type":"Answer","text":"Is he tracking? Staying near the same percentile line year over year is a healthy growth pattern, even on a low line. What raises questions is crossing percentile lines downward. Is his velocity in range? 2 to 2.5 inches per year pre-puberty, 3-4 inches during his spurt. Under those numbers is the flag. How tall is your family? Mid-parental height predicts adult height much better than his current percentile does. If family says he ends up around average, he probably will."}},{"@type":"Question","name":"When 12-and-shorter is worth a pediatrician visit","acceptedAnswer":{"@type":"Answer","text":"Height below the 3rd percentile with no family history to explain it. Percentile crossing lines downward over the last 6-12 months. Growth velocity under 2 inches in the last year. No signs of puberty by 14. At 12 alone this is normal."}},{"@type":"Question","name":"When it is just puberty timing","acceptedAnswer":{"@type":"Answer","text":"He has been tracking a low line consistently. Growth velocity is normal for age. Dad or an uncle also went through puberty late. He still shows no signs of puberty yet at 12 (common and benign)."}},{"@type":"Question","name":"What to do this month","acceptedAnswer":{"@type":"Answer","text":"Measure him at home. Same time of day, no shoes, wall + book. Pull his last year of pediatrician measurements. Calculate velocity for the last 12 months. If percentile is dropping OR velocity is low, bring both to his next well visit. If everything is tracking, keep measuring every 6 months. Height data uses the CDC 2000 Growth Charts for boys. This page is parent education, not medical advice or diagnosis. If you have concerns about your son's growth, talk to his pediatrician, ideally with 6-12 months of measurements in hand. Â© 2026 The Growth Path."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalWebPage","@id":"https://www.thegrowthpath.app/12-year-old-boy-shorter-than-classmates/","headline":"My 12-Year-Old Son Is Much Shorter Than His Classmates. Is That Normal?","description":"A 12-year-old boy shorter than his classmates is usually within normal variation, driven by puberty timing. Here is when it is fine and when it warrants a closer look.","url":"https://www.thegrowthpath.app/12-year-old-boy-shorter-than-classmates/","inLanguage":"en-US","author":{"@type":"Organization","name":"The Growth Path","url":"https://www.thegrowthpath.app/"},"publisher":{"@type":"Organization","name":"The Growth Path","url":"https://www.thegrowthpath.app/"},"datePublished":"2026-09-01","dateModified":"2026-09-09","about":{"@type":"MedicalCondition","name":"Child growth and height"},"audience":{"@type":"ParentAudience","geographicArea":{"@type":"Country","name":"United States"}},"isFamilyFriendly":true}</script>
-</head>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></head>
 <body>
 <main>
   <h1>My 12-Year-Old Son Is Much Shorter Than His Classmates. Is That Normal?</h1>
+<p class="byline">By The Growth Path Editorial Team &middot; Reviewed September 2026</p>
   <p class="lede">Usually yes. Twelve is the year puberty timing produces the widest height gap between boys the same age. Here is what actually matters and when a gap is worth a closer look.</p>
   
   <h2>Why 12 is peak variation</h2>
