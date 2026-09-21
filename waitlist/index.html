@@ -296,8 +296,10 @@ footer .fine { max-width: 500px; margin: 1rem auto 0; font-size: 11px; opacity: 
       <p class="sub">Free to join. No credit card. Unsubscribe anytime.</p>
 
       <form id="waitlist-form" class="waitlist" action="https://app.kit.com/forms/9896325/subscriptions" method="post" data-sv-form="9896325" data-uid="036b3596f7" data-format="inline" data-version="5">
-        <input type="hidden" name="fields[signup_source]" value="waitlist_page" />
-        <input type="hidden" name="fields[waitlist_position]" value="pending" />
+        <input type="hidden" name="fields[source]" value="waitlist_page" />
+        <input type="hidden" name="fields[utm_campaign]" value="waitlist" />
+        <input type="hidden" name="fields[utm_source]" value="thegrowthpath" />
+        <input type="hidden" name="fields[utm_medium]" value="site" />
         <input type="email" name="email_address" placeholder="Your email address" required autocomplete="email" />
         <button type="submit" id="waitlist-submit">Save my spot</button>
       </form>
