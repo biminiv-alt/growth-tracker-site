@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Worried About Your Son's Height? | The Growth Path</title>
-<meta name="description" content="Prepare for the pediatrician conversation about your son's growth. Free checklist and a $49 Growth Visit Prep Kit for parents of boys ages 8 to 13." />
+<title>The Growth Path | Everything he needs to grow. Everything you need to know.</title>
+<meta name="description" content="An app for moms worried about their son's height. Predict his adult height, build the daily habits that support his growth, and stop feeling brushed off at the pediatrician." />
 <link rel="canonical" href="https://www.thegrowthpath.app/" />
-<meta property="og:title" content="Worried About Your Son's Height? | The Growth Path" />
-<meta property="og:description" content="Free Growth Visit Checklist. Prepare the pediatrician conversation you actually want to have." />
+<meta property="og:title" content="The Growth Path" />
+<meta property="og:description" content="An app for moms worried about their son's height. Growth prediction, daily habits, and support built for the mom carrying this alone." />
 <meta property="og:url" content="https://www.thegrowthpath.app/" />
 <meta property="og:type" content="website" />
 <meta name="robots" content="index, follow" />
@@ -68,15 +68,15 @@ h1, h2, h3, h4 {
   line-height: 1.1;
   letter-spacing: -0.015em;
 }
-h1 { font-size: clamp(34px, 5vw, 56px); }
-h2 { font-size: clamp(26px, 3.5vw, 38px); }
+h1 { font-size: clamp(38px, 6vw, 64px); }
+h2 { font-size: clamp(28px, 3.5vw, 44px); }
 h3 { font-size: clamp(20px, 2.5vw, 24px); }
 p { margin-bottom: 1rem; color: var(--ink-soft); }
 a { color: var(--terra-700); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-.wrap { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
-.wrap-narrow { max-width: 680px; margin: 0 auto; padding: 0 1.5rem; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+.wrap-narrow { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
 
 /* Nav */
 nav.top {
@@ -89,445 +89,397 @@ nav.top {
   z-index: 10;
 }
 nav.top .inner { display: flex; justify-content: space-between; align-items: center; max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
-nav.top .brand {
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: 22px;
-  font-weight: 500;
-  color: var(--sage-900);
-}
+nav.top .brand { font-family: 'Fraunces', Georgia, serif; font-size: 22px; font-weight: 500; color: var(--sage-900); }
 nav.top .links { display: flex; gap: 1.75rem; align-items: center; }
 nav.top .links a { color: var(--sage-700); font-size: 15px; font-weight: 500; }
-nav.top .links a:hover { color: var(--terra-700); text-decoration: none; }
-nav.top .cta {
-  background: var(--sage-900);
-  color: var(--cream) !important;
-  padding: 0.55rem 1.1rem;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 500;
-}
+nav.top .cta { background: var(--sage-900); color: var(--cream) !important; padding: 0.55rem 1.1rem; border-radius: 999px; font-size: 14px; font-weight: 500; }
 
 /* Hero */
-.hero {
-  padding: 4rem 0 3rem;
-  background: linear-gradient(180deg, var(--cream-2) 0%, var(--cream) 100%);
-}
-.hero .kicker {
-  font-size: 12px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--terra-700);
-  font-weight: 600;
-  margin-bottom: 1.25rem;
-}
-.hero h1 { margin-bottom: 1.25rem; max-width: 20ch; }
+.hero { padding: 5rem 0 3.5rem; background: linear-gradient(180deg, var(--cream-2) 0%, var(--cream) 100%); }
+.hero .kicker { font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--terra-700); font-weight: 600; margin-bottom: 1.5rem; }
+.hero h1 { margin-bottom: 1.5rem; max-width: 18ch; }
 .hero h1 em { font-style: italic; color: var(--terra-700); font-weight: 400; }
-.hero p.lede {
-  font-size: 19px;
-  color: var(--sage-900);
-  margin-bottom: 2rem;
-  max-width: 34rem;
-  line-height: 1.55;
-}
-.hero .cta-row {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
-}
-.btn {
-  display: inline-block;
-  background: var(--terra-500);
-  color: white !important;
-  padding: 0.95rem 1.75rem;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 16px;
-  transition: background 0.15s ease;
-  border: none;
-  cursor: pointer;
-}
+.hero p.lede { font-size: 20px; color: var(--sage-900); margin-bottom: 2.25rem; max-width: 36rem; line-height: 1.5; }
+.hero .cta-row { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+.btn { display: inline-block; background: var(--terra-500); color: white !important; padding: 1rem 1.85rem; border-radius: 999px; font-weight: 600; font-size: 16px; transition: background 0.15s ease; border: none; cursor: pointer; }
 .btn:hover { background: var(--terra-700); text-decoration: none; }
-.btn.secondary {
-  background: transparent;
-  color: var(--sage-900) !important;
-  border: 1.5px solid var(--sage-700);
-}
+.btn.secondary { background: transparent; color: var(--sage-900) !important; border: 1.5px solid var(--sage-700); }
 .btn.secondary:hover { background: var(--sage-900); color: var(--cream) !important; }
-.btn.large { padding: 1.05rem 2rem; font-size: 17px; }
-.hero .supporting {
-  font-size: 14px;
-  color: var(--ink-mute);
-  margin-top: 0.5rem;
-}
+.btn.large { padding: 1.15rem 2.25rem; font-size: 17px; }
+.hero .supporting { font-size: 14px; color: var(--ink-mute); margin-top: 0.75rem; }
 
-/* Section base */
-section { padding: 3.5rem 0; }
-section h2 { margin-bottom: 1rem; }
-section p.section-lede { font-size: 18px; color: var(--sage-900); margin-bottom: 2rem; max-width: 40rem; }
-
-/* Checklist preview */
-.checklist-preview {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 2rem 2rem;
-  margin-top: 1.5rem;
-}
-.checklist-preview h3 { font-size: 22px; margin-bottom: 1rem; }
-.checklist-preview ol { list-style: none; padding: 0; }
-.checklist-preview li {
-  padding: 0.65rem 0;
-  border-bottom: 1px solid var(--line);
-  display: flex;
-  align-items: start;
-  gap: 0.75rem;
-  color: var(--ink);
-  font-size: 16px;
-}
-.checklist-preview li:last-child { border-bottom: none; }
-.checklist-preview li::before {
-  content: "";
-  width: 18px;
-  height: 18px;
-  border: 1.5px solid var(--sage-500);
-  border-radius: 4px;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-/* Sample brief */
-.sample-badge {
-  display: inline-block;
-  background: var(--terra-300);
-  color: var(--terra-700);
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  font-weight: 700;
-  padding: 0.25rem 0.6rem;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-}
-.sample-brief {
-  background: var(--card);
-  border: 1px dashed var(--sage-300);
-  border-radius: 16px;
-  padding: 2rem 2rem;
-  font-family: 'Inter', sans-serif;
-  color: var(--ink);
-}
-.sample-brief h4 { font-family: 'Fraunces', Georgia, serif; font-size: 20px; color: var(--sage-900); margin: 1.25rem 0 0.5rem; }
-.sample-brief h4:first-child { margin-top: 0; }
-.sample-brief p { color: var(--ink); font-size: 15px; margin-bottom: 0.5rem; }
-.sample-brief ul { margin: 0.5rem 0 1rem 1.25rem; color: var(--ink); }
-.sample-brief li { margin-bottom: 0.35rem; font-size: 15px; }
-
-/* Kit section */
-.kit {
-  background: var(--sage-100);
-  border-radius: 20px;
-  padding: 3rem 2.5rem;
-  margin-top: 2rem;
-}
-.kit .price {
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: 42px;
-  color: var(--sage-900);
-  font-weight: 500;
-  margin-bottom: 0.25rem;
-}
-.kit .price-note { font-size: 14px; color: var(--sage-700); margin-bottom: 1.5rem; }
-.kit ul.includes { list-style: none; padding: 0; margin: 1.5rem 0; }
-.kit ul.includes li {
-  padding: 0.55rem 0;
-  border-bottom: 1px solid var(--sage-300);
-  color: var(--sage-900);
-  display: flex;
-  gap: 0.75rem;
-  align-items: start;
-}
-.kit ul.includes li:last-child { border-bottom: none; }
-.kit ul.includes li strong { color: var(--sage-900); font-weight: 600; display: block; margin-bottom: 0.15rem; }
-.kit ul.includes li span.desc { color: var(--sage-700); font-size: 14px; }
-.kit ul.includes li::before {
-  content: "\2713";
-  color: var(--terra-500);
-  font-weight: 700;
-  font-size: 18px;
-  margin-top: -2px;
-}
-
-/* Founder */
-.founder {
-  background: var(--cream-2);
-  padding: 3rem 0;
-}
-.founder .card {
-  background: var(--card);
-  border-radius: 16px;
-  padding: 2rem;
-  border: 1px solid var(--line);
-}
-.founder .who {
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: 20px;
-  color: var(--sage-900);
-  margin-bottom: 0.75rem;
-}
-.founder p { font-size: 16px; color: var(--ink); }
-
-/* FAQ */
-.faq { padding: 3rem 0; }
-.faq-item {
-  border-bottom: 1px solid var(--line);
-  padding: 1.25rem 0;
-}
-.faq-item h3 {
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: 20px;
-  color: var(--sage-900);
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-}
-.faq-item p { color: var(--ink); font-size: 16px; margin-bottom: 0; }
-
-/* Footer */
-footer {
+/* Emotional lead-in strip */
+.emotion-strip {
   background: var(--sage-900);
   color: var(--sage-100);
-  padding: 3rem 0 2.5rem;
+  padding: 3rem 0;
   text-align: center;
 }
-footer .brand-footer {
+.emotion-strip .wrap-narrow { padding: 0 1.5rem; }
+.emotion-strip p {
   font-family: 'Fraunces', Georgia, serif;
-  font-size: 22px;
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.35;
   color: var(--cream);
-  margin-bottom: 1rem;
+  margin-bottom: 0;
+  font-style: italic;
+  font-weight: 400;
 }
-footer p { color: var(--sage-300); font-size: 14px; margin-bottom: 0.5rem; }
-footer a { color: var(--sage-100); font-weight: 500; }
-footer a:hover { color: var(--terra-300); text-decoration: none; }
-footer .links-row { margin: 1rem 0; }
-footer .links-row a { margin: 0 0.75rem; }
-footer .fine {
+.emotion-strip .attribution {
   margin-top: 1.5rem;
-  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-size: 14px;
   color: var(--sage-300);
-  opacity: 0.7;
-  max-width: 620px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.5;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
-@media (min-width: 720px) {
-  body { font-size: 18px; }
-  section { padding: 4.5rem 0; }
+/* Feature grid */
+.features { padding: 5rem 0; }
+.features .lead { text-align: center; margin-bottom: 3rem; }
+.features h2 { margin-bottom: 1rem; }
+.features .lead p { max-width: 40rem; margin: 0 auto; color: var(--sage-900); font-size: 18px; }
+.feature-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+@media (min-width: 720px) { .feature-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .feature-grid { grid-template-columns: repeat(3, 1fr); } }
+.feature-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.75rem 1.75rem 1.5rem;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
+.feature-card:hover { box-shadow: 0 4px 20px rgba(45, 58, 41, 0.08); transform: translateY(-2px); }
+.feature-card .icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: var(--sage-100); display: flex; align-items: center; justify-content: center;
+  font-size: 22px; margin-bottom: 1rem;
+}
+.feature-card h3 { font-size: 20px; margin-bottom: 0.5rem; color: var(--sage-900); font-weight: 500; }
+.feature-card p { color: var(--ink); font-size: 15px; margin-bottom: 0; line-height: 1.55; }
+
+/* Preview section */
+.preview { padding: 5rem 0; background: var(--cream-2); }
+.preview .lead { text-align: center; margin-bottom: 3rem; }
+.preview .lead p { max-width: 40rem; margin: 0 auto; color: var(--sage-900); font-size: 18px; }
+.preview-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+@media (min-width: 900px) { .preview-grid { grid-template-columns: repeat(3, 1fr); } }
+.preview-card {
+  background: var(--card); border-radius: 20px; padding: 2rem 1.75rem; text-align: center;
+  border: 1px solid var(--line);
+}
+.preview-card .phone-mock {
+  width: 100%; aspect-ratio: 9 / 16; max-width: 240px; margin: 0 auto 1.5rem;
+  background: linear-gradient(160deg, var(--sage-100), var(--sage-300));
+  border-radius: 24px; border: 8px solid var(--sage-900); position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--sage-900); font-family: 'Fraunces', Georgia, serif; font-size: 15px; padding: 1rem; line-height: 1.4;
+}
+.preview-card .phone-mock .mock-headline { font-size: 20px; font-weight: 500; color: var(--sage-900); margin-bottom: 0.5rem; }
+.preview-card .phone-mock .mock-stat { font-size: 42px; color: var(--terra-700); font-weight: 500; margin: 0.5rem 0; }
+.preview-card .phone-mock .mock-note { font-size: 12px; color: var(--sage-700); font-family: 'Inter', sans-serif; font-style: italic; }
+.preview-card h3 { font-size: 22px; color: var(--sage-900); margin-bottom: 0.75rem; font-weight: 500; }
+.preview-card p { color: var(--ink); font-size: 15px; margin-bottom: 0; line-height: 1.55; }
+
+/* Science section */
+.science { padding: 4.5rem 0; }
+.science .card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+  padding: 2.5rem 2rem; text-align: center;
+}
+.science h2 { margin-bottom: 1rem; }
+.science p { max-width: 40rem; margin: 0 auto 1.5rem; color: var(--sage-900); font-size: 17px; }
+.science .note { font-size: 13px; color: var(--ink-mute); margin-top: 1.5rem; }
+
+/* How it works */
+.how { padding: 5rem 0; background: var(--sage-100); }
+.how .lead { text-align: center; margin-bottom: 3rem; }
+.how .lead p { color: var(--sage-900); font-size: 18px; }
+.how-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+@media (min-width: 720px) { .how-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .how-grid { grid-template-columns: repeat(4, 1fr); } }
+.step-card {
+  background: var(--card); border-radius: 16px; padding: 1.75rem 1.5rem; border: 1px solid var(--line);
+}
+.step-card .num {
+  font-family: 'Fraunces', Georgia, serif; font-size: 42px; color: var(--terra-500); font-weight: 500;
+  line-height: 1; margin-bottom: 0.75rem;
+}
+.step-card h3 { font-size: 20px; color: var(--sage-900); margin-bottom: 0.5rem; font-weight: 500; }
+.step-card p { color: var(--ink); font-size: 15px; margin-bottom: 0; line-height: 1.5; }
+
+/* Community */
+.community { padding: 5rem 0; }
+.community .lead { text-align: center; margin-bottom: 3rem; }
+.community .lead p { max-width: 40rem; margin: 0 auto; color: var(--sage-900); font-size: 18px; }
+.post-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+@media (min-width: 720px) { .post-grid { grid-template-columns: repeat(3, 1fr); } }
+.post-card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 1.5rem 1.5rem; }
+.post-card .head { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
+.post-card .avatar { width: 40px; height: 40px; border-radius: 999px; background: var(--sage-100); display: flex; align-items: center; justify-content: center; font-size: 18px; }
+.post-card .name { font-weight: 600; color: var(--sage-900); font-size: 15px; }
+.post-card .time { color: var(--ink-mute); font-size: 13px; }
+.post-card .body { color: var(--ink); font-size: 15px; line-height: 1.55; margin-bottom: 0.75rem; }
+.post-card .meta { display: flex; gap: 1rem; font-size: 13px; color: var(--ink-mute); }
+.community .join-cta { text-align: center; margin-top: 2.5rem; }
+
+/* Final CTA */
+.final-cta {
+  background: linear-gradient(180deg, var(--sage-900) 0%, var(--sage-700) 100%);
+  color: var(--cream); padding: 5rem 0; text-align: center;
+}
+.final-cta h2 { color: var(--cream); margin-bottom: 1rem; font-size: clamp(30px, 4vw, 44px); }
+.final-cta p { color: var(--sage-100); font-size: 18px; margin-bottom: 2rem; max-width: 36rem; margin-left: auto; margin-right: auto; }
+.final-cta .btn { background: var(--terra-500); }
+.final-cta .btn:hover { background: var(--terra-300); color: var(--sage-900) !important; }
+.final-cta .fine { font-size: 13px; color: var(--sage-300); margin-top: 1rem; }
+
+/* Footer */
+footer { background: var(--sage-900); color: var(--sage-100); padding: 3rem 0 2.5rem; text-align: center; border-top: 1px solid var(--sage-700); }
+footer .brand-footer { font-family: 'Fraunces', Georgia, serif; font-size: 22px; color: var(--cream); margin-bottom: 0.75rem; }
+footer p { color: var(--sage-300); font-size: 14px; margin-bottom: 0.5rem; }
+footer a { color: var(--sage-100); font-weight: 500; }
+footer .links-row { margin: 1rem 0; }
+footer .links-row a { margin: 0 0.75rem; }
+footer .fine { margin-top: 1.5rem; font-size: 12px; color: var(--sage-300); opacity: 0.7; max-width: 620px; margin-left: auto; margin-right: auto; line-height: 1.5; }
+
+@media (min-width: 720px) { body { font-size: 18px; } }
 </style>
 </head>
 <body>
+
 <nav class="top">
   <div class="inner">
     <a href="/" style="text-decoration:none;"><div class="brand">The Growth Path</div></a>
     <div class="links">
       <a href="/articles/">Articles</a>
-      <a href="#kit" class="cta">See the Kit</a>
+      <a href="#waitlist" class="cta">Join the waitlist</a>
     </div>
   </div>
 </nav>
 
 <section class="hero">
   <div class="wrap">
-    <div class="kicker">For parents of boys ages 8 to 13</div>
-    <h1>Worried about your son's <em>height</em>? Know what to bring to the next conversation.</h1>
-    <p class="lede">When he is smaller than his classmates, "he'll probably catch up" can leave you with more questions than answers. The Growth Path helps you organize his growth history, understand what the pediatrician is looking for, and prepare the questions worth asking. Practical tools. Clear sources. No promises of extra inches.</p>
+    <div class="kicker">Built for moms of boys ages 8 to 14</div>
+    <h1>Everything he needs to grow. <em>Everything you need to know.</em></h1>
+    <p class="lede">Comprehensive tools and insights designed to help you support your son's growth. Predict his adult height. Build the daily habits that support it. Stop being the only person in the house carrying this worry.</p>
     <div class="cta-row">
-      <a href="#checklist" class="btn large">Get the free Growth Visit Checklist</a>
-      <a href="#kit" class="btn secondary large">See the $49 Kit</a>
+      <a href="#waitlist" class="btn large">Join the waitlist</a>
+      <a href="#how" class="btn secondary large">See how it works</a>
     </div>
-    <div class="supporting">Instant download. No credit card for the checklist. Unsubscribe anytime.</div>
+    <div class="supporting">Free to join. First 500 waitlist members get lifetime access at $9/mo.</div>
   </div>
 </section>
 
-<section id="checklist">
+<section class="emotion-strip">
   <div class="wrap-narrow">
-    <h2>The Free Growth Visit Checklist</h2>
-    <p class="section-lede">A one-page checklist to bring to your son's next pediatrician visit. It walks you through what to measure, what to ask, and what to record on the way home. Free. No paywall between you and the download.</p>
-    <div class="checklist-preview">
-      <h3>What's on the checklist</h3>
-      <ol>
-        <li>How to measure his height at home so it matches the clinic's number</li>
-        <li>The three data points to bring to every appointment</li>
-        <li>Six pediatrician questions worth prioritizing (from a bank of thirty)</li>
-        <li>What "percentile" and "growth velocity" actually mean, in one paragraph each</li>
-        <li>The one thing to record within an hour of leaving the appointment</li>
-        <li>Two questions to ask if his percentile has dropped since the last visit</li>
-      </ol>
-    </div>
-    <div style="margin-top: 2rem;">
-      <a href="/growth-check/" class="btn">Get the checklist now</a>
-      <div class="supporting" style="margin-top:0.75rem;">Enter your email, receive the checklist as a PDF. Nothing else asked.</div>
-    </div>
+    <p>"You watched him sit the bench again on Saturday. You saw the group photo where he was a head shorter than the boy next to him. You noticed the two girls who did not include him. And when you brought it up to the pediatrician, he said, he'll probably catch up."</p>
+    <div class="attribution">The mom this is built for</div>
   </div>
 </section>
 
-<section style="background: var(--cream-2);">
-  <div class="wrap-narrow">
-    <div class="sample-badge">Sample</div>
-    <h2 style="margin-bottom: 1rem;">What a pediatrician actually reads</h2>
-    <p class="section-lede">This is a sample of the one-page Appointment Brief included in the $49 Kit. Doctors read it in under 30 seconds. It changes the conversation from "he's tracking fine" to "here is exactly what I want to understand."</p>
-    <div class="sample-brief">
-      <h4>Chief concern</h4>
-      <p>I want to understand my son's growth pattern and know what, if anything, warrants further evaluation.</p>
-
-      <h4>The data</h4>
-      <ul>
-        <li>Height: 4'6" (54.0 in). BMI: 15.8.</li>
-        <li>Current CDC percentile for age and sex: 12th.</li>
-        <li>12-month growth velocity: 1.7 in.</li>
-        <li>Mid-parental target range: 5'6" to 6'0".</li>
-        <li>Family history of late puberty: yes (father).</li>
-      </ul>
-
-      <h4>The three questions I want to prioritize today</h4>
-      <ul>
-        <li>Does his 1.7-inch 12-month velocity fall within the normal range for a 10-year-old boy?</li>
-        <li>Given the family history and the gap between his current percentile and mid-parental prediction, would you consider a bone age X-ray?</li>
-        <li>At what percentile drop or velocity change would you refer to a pediatric endocrinologist?</li>
-      </ul>
-
-      <h4>What we have already tried</h4>
-      <ul>
-        <li>Consistent 9.5-hour sleep window since March.</li>
-        <li>No dietary restrictions. Eats well.</li>
-        <li>No prior specialist consults.</li>
-      </ul>
+<section class="features">
+  <div class="wrap">
+    <div class="lead">
+      <h2>Everything you need to help him grow</h2>
+      <p>The tools GoTall built for teens, rebuilt for the mom carrying the plan. Track it, predict it, act on it. Real data, real habits, real help.</p>
     </div>
-    <p style="margin-top: 1.5rem; color: var(--ink-mute); font-size: 14px;">This is sample data for illustration. The Kit generates the brief from your son's actual growth history that you fill in.</p>
-  </div>
-</section>
-
-<section id="kit">
-  <div class="wrap-narrow">
-    <h2>The Growth Visit Prep Kit</h2>
-    <p class="section-lede">For parents who want the full toolkit for the pediatrician conversation, not just the free checklist. Six designed documents, one download, one price.</p>
-    <div class="kit">
-      <div class="price">$49</div>
-      <div class="price-note">One-time. No subscription. No recurring charge.</div>
-
-      <ul class="includes">
-        <li>
-          <div>
-            <strong>Growth History Log</strong>
-            <span class="desc">A one-page tracker for the last 12 measurements, with the method notes that matter to pediatricians (barefoot, time of day, who measured).</span>
-          </div>
-        </li>
-        <li>
-          <div>
-            <strong>Appointment Brief template</strong>
-            <span class="desc">The one-page summary you hand the pediatrician at the start of the visit. Written in a format doctors read fast.</span>
-          </div>
-        </li>
-        <li>
-          <div>
-            <strong>Pediatrician Question Organizer</strong>
-            <span class="desc">Thirty vetted questions across six categories. Pick your priorities before you walk in.</span>
-          </div>
-        </li>
-        <li>
-          <div>
-            <strong>Growth Terms Glossary</strong>
-            <span class="desc">Every term you will hear at the appointment, defined in plain English, with a linked source.</span>
-          </div>
-        </li>
-        <li>
-          <div>
-            <strong>Age-appropriate conversation prompts</strong>
-            <span class="desc">What to say to him, by age band, without making it worse. What to say to your husband. Real scripts.</span>
-          </div>
-        </li>
-        <li>
-          <div>
-            <strong>Follow-up notes template</strong>
-            <span class="desc">What to record within an hour of the visit. So four months from now you remember what the pediatrician said, not just how you felt.</span>
-          </div>
-        </li>
-      </ul>
-
-      <div style="margin-top: 1.5rem; background: var(--card); border-radius: 12px; padding: 1.25rem 1.5rem; border: 1px solid var(--sage-300);">
-        <div style="font-family: 'Fraunces', Georgia, serif; color: var(--sage-900); font-size: 18px; margin-bottom: 0.5rem;">Kit launches Fall 2026</div>
-        <p style="color: var(--sage-700); font-size: 15px; margin-bottom: 1rem;">Waitlist opens now. Waitlist members get the Kit at <strong>$39</strong> (a $10 discount off the $49 launch price) plus the free checklist immediately.</p>
-        <a href="/growth-check/?source=waitlist" id="waitlist-cta" class="btn large" onclick="fbq('trackCustom','KitWaitlistClicked'); return true;">Join the waitlist</a>
-        <div class="supporting" style="margin-top: 0.75rem;">No credit card. Unsubscribe anytime. We will email you when the Kit is ready.</div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="icon">&#128200;</div>
+        <h3>Growth Predictor</h3>
+        <p>Your son's projected adult height, based on his current growth, your family's genetics, and his ethnicity. Uses CDC growth data. Updated every time you log a new measurement.</p>
       </div>
-
-      <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--sage-300); color: var(--sage-700); font-size: 14px;">
-        <strong style="color: var(--sage-900);">What the Kit does not do:</strong> It does not diagnose, recommend treatment, interpret medical tests, or promise added height. It organizes the conversation you are already having with your pediatrician.
+      <div class="feature-card">
+        <div class="icon">&#127869;</div>
+        <h3>Nutrition Tracker</h3>
+        <p>The five nutrients that actually matter for his growth (spoiler: not the ones on the supplement bottles). Track his week in under two minutes.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">&#128564;</div>
+        <h3>Sleep Tracker</h3>
+        <p>Peak growth hormone hits between 10pm and 2am. Track his real sleep window against what his body needs at his age. See the pattern before you lose another season to bad sleep.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">&#127947;</div>
+        <h3>Growth-Supporting Plan</h3>
+        <p>Daily activities, stretches, and habits shown to support natural growth. Built for a 10-minute-a-day cadence. Not a boot camp. Not a supplement stack. A plan a real family can follow.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">&#128105;</div>
+        <h3>Mom Community</h3>
+        <p>Every other mom watching her son sit the bench. This is the only place in your life where you do not have to caveat the worry.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">&#128202;</div>
+        <h3>Progress Tracking</h3>
+        <p>Every measurement plotted against CDC percentiles and his own trajectory. What his pediatrician will not say out loud, you will see in the chart.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="founder">
+<section class="preview">
+  <div class="wrap">
+    <div class="lead">
+      <h2>See The Growth Path in action</h2>
+      <p>A preview of the app experience. Built for a 3-minute check-in in the morning while you make his lunch.</p>
+    </div>
+    <div class="preview-grid">
+      <div class="preview-card">
+        <div class="phone-mock">
+          <div>
+            <div class="mock-headline">Projected adult height</div>
+            <div class="mock-stat">5' 10"</div>
+            <div class="mock-note">Range 5'7" to 6'1"<br/>Currently 8th percentile, tracking upward</div>
+          </div>
+        </div>
+        <h3>Project his adult height</h3>
+        <p>Real CDC data plus your family's genetics. See where he lands and how much room the model still gives him.</p>
+      </div>
+      <div class="preview-card">
+        <div class="phone-mock">
+          <div>
+            <div class="mock-headline">Today's plan</div>
+            <div style="text-align: left; font-family: 'Inter', sans-serif; font-size: 14px; color: var(--sage-900); line-height: 1.6; margin: 1rem 0;">
+              &#9633; 9.5 hours sleep tonight<br/>
+              &#9633; Protein at breakfast<br/>
+              &#9633; 5-minute posture stretch<br/>
+              &#9633; Log measurement (weekly)
+            </div>
+            <div class="mock-note">Streak: 12 days</div>
+          </div>
+        </div>
+        <h3>Personal plan for him</h3>
+        <p>A short daily habit list built for his age, sport, school schedule, and where he's currently tracking. You approve. He does.</p>
+      </div>
+      <div class="preview-card">
+        <div class="phone-mock">
+          <div>
+            <div class="mock-headline">Growth chart</div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 12px; margin: 1rem 0; color: var(--sage-900); text-align: left;">
+              <div style="height: 90px; background: linear-gradient(180deg, transparent 60%, var(--terra-300) 60%, var(--terra-300) 63%, transparent 63%); border-radius: 4px; position: relative;">
+                <div style="position: absolute; bottom: 20px; left: 10%; width: 4px; height: 4px; background: var(--terra-700); border-radius: 50%;"></div>
+                <div style="position: absolute; bottom: 26px; left: 30%; width: 4px; height: 4px; background: var(--terra-700); border-radius: 50%;"></div>
+                <div style="position: absolute; bottom: 34px; left: 50%; width: 4px; height: 4px; background: var(--terra-700); border-radius: 50%;"></div>
+                <div style="position: absolute; bottom: 45px; left: 70%; width: 6px; height: 6px; background: var(--terra-500); border-radius: 50%;"></div>
+                <div style="position: absolute; bottom: 60px; left: 90%; width: 6px; height: 6px; background: var(--terra-500); border-radius: 50%;"></div>
+              </div>
+              <div style="font-size: 11px; color: var(--sage-700); margin-top: 6px;">12 months of measurements</div>
+            </div>
+            <div class="mock-note">He gained 2.1" in the last year</div>
+          </div>
+        </div>
+        <h3>Track his progress</h3>
+        <p>Every measurement, every check-in, every question you brought to the pediatrician. All in one chart. Bring it to the next visit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="science">
   <div class="wrap-narrow">
-    <h2>Who built this</h2>
     <div class="card">
-      <div class="who">A parent, not a doctor.</div>
-      <p>The Growth Path was built by a parent who could not find these tools when he needed them for his own family. What you get is an organizer for the pediatrician conversation, grounded in the American Academy of Pediatrics and Endocrine Society guidance you can look up yourself. Every source is linked in the glossary. Every claim about medical practice is directly attributable to a professional society or peer-reviewed reference.</p>
-      <p style="margin-top: 1rem;">This is not medical advice. It is what one parent wishes he had at the appointment.</p>
+      <h2>Built on science. Informed by data.</h2>
+      <p>The Growth Path uses insights and recommendations grounded in guidance from the CDC, the American Academy of Pediatrics, and the Endocrine Society. Every prediction cites its method. Every recommendation cites its source. No promises of extra inches. No supplements. No shortcuts.</p>
+      <a href="https://www.cdc.gov/growthcharts/" class="btn secondary" target="_blank" rel="noopener">View CDC growth data</a>
+      <div class="note">The Growth Path is not affiliated with or endorsed by the CDC. All guidance is based on publicly available research. Not medical advice.</div>
     </div>
   </div>
 </section>
 
-<section class="faq">
+<section id="how" class="how">
+  <div class="wrap">
+    <div class="lead">
+      <h2>How it works</h2>
+      <p>Set it up in ten minutes. Take back the plan.</p>
+    </div>
+    <div class="how-grid">
+      <div class="step-card">
+        <div class="num">01</div>
+        <h3>Enter his data</h3>
+        <p>His age, his current height, both parents' heights, ethnicity. Ninety seconds. All of it stays private.</p>
+      </div>
+      <div class="step-card">
+        <div class="num">02</div>
+        <h3>See where he lands</h3>
+        <p>Get his projected adult height, his current CDC percentile, and the gap between where he is and where his family math predicts he goes.</p>
+      </div>
+      <div class="step-card">
+        <div class="num">03</div>
+        <h3>Follow his plan</h3>
+        <p>Daily nutrition, sleep, and posture habits calibrated to his age and his gap. Ten minutes a day. Nothing bought, nothing swallowed.</p>
+      </div>
+      <div class="step-card">
+        <div class="num">04</div>
+        <h3>Track and adjust</h3>
+        <p>Log a new measurement every 6 to 8 weeks. Watch the chart move. Bring it to the next pediatrician visit and end the "he'll probably catch up" conversation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="community">
+  <div class="wrap">
+    <div class="lead">
+      <h2>You are not the only one</h2>
+      <p>Every mom in this community is watching for the same signs. The bench, the group photo, the girls, the "he's fine" from the pediatrician. Come talk about it with people who are not going to tell you to stop worrying.</p>
+    </div>
+    <div class="post-grid">
+      <div class="post-card">
+        <div class="head">
+          <div class="avatar">&#129489;&#8205;&#128105;</div>
+          <div>
+            <div class="name">Rachel M.</div>
+            <div class="time">2h ago</div>
+          </div>
+        </div>
+        <p class="body">He came home from the birthday party and asked me if he was "the shortest one." I did not know what to say. Anyone else?</p>
+        <div class="meta"><span>24 replies</span><span>&#10084; 61</span></div>
+      </div>
+      <div class="post-card">
+        <div class="head">
+          <div class="avatar">&#128105;</div>
+          <div>
+            <div class="name">Sarah K.</div>
+            <div class="time">5h ago</div>
+          </div>
+        </div>
+        <p class="body">Three weeks on the sleep plan and he gained half an inch. I know this is not the app's promise but I am writing it down anyway.</p>
+        <div class="meta"><span>41 replies</span><span>&#10084; 128</span></div>
+      </div>
+      <div class="post-card">
+        <div class="head">
+          <div class="avatar">&#129489;</div>
+          <div>
+            <div class="name">Meg T.</div>
+            <div class="time">1d ago</div>
+          </div>
+        </div>
+        <p class="body">Brought the Growth Path chart to his pediatrician yesterday. First time in 4 years I did not feel brushed off. She actually looked at the data.</p>
+        <div class="meta"><span>35 replies</span><span>&#10084; 94</span></div>
+      </div>
+    </div>
+    <div class="join-cta">
+      <a href="#waitlist" class="btn">Join the community</a>
+    </div>
+  </div>
+</section>
+
+<section id="waitlist" class="final-cta">
   <div class="wrap-narrow">
-    <h2>Questions parents ask</h2>
-
-    <div class="faq-item">
-      <h3>How is the Kit delivered?</h3>
-      <p>Instant PDF download after checkout. Also emailed as a backup. Total download size is under 5 MB. Works on phone, tablet, or laptop. Print-friendly.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Who is this for?</h3>
-      <p>Parents of boys ages 8 to 13 who want to prepare for a pediatrician conversation about growth. If your son is a candidate for a bone age X-ray, an endocrinology referral, or a genuine "wait and watch" plan, the Kit organizes that conversation for you.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>What if my son is younger or older?</h3>
-      <p>The materials still work at 6 to 15. Some sections (the conversation prompts by age band) are specifically written for 8 to 13. If you want the Kit for a different age, email hello@thegrowthpath.app before purchase and we will tell you honestly whether it fits.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Do you keep or share my son's height data?</h3>
-      <p>No. The Kit is a PDF you fill in on your own device. Your son's measurements never touch our servers. We do not send children's health information to advertising or analytics platforms. See the privacy policy for the specifics.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>What if it does not help?</h3>
-      <p>Full refund within 30 days, no questions asked. Email hello@thegrowthpath.app.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Is this medical advice?</h3>
-      <p>No. The Kit is educational and organizational. It does not diagnose, recommend treatment, interpret medical tests, or promise a change in adult height. Every source is a public professional-society or peer-reviewed reference you can verify yourself.</p>
-    </div>
-
-    <div class="faq-item">
-      <h3>Are there recurring charges?</h3>
-      <p>No. The Kit is $49 once. There is no membership, no subscription, no auto-renewal, no upsell inside the Kit.</p>
-    </div>
-
+    <h2>Ready to stop feeling brushed off?</h2>
+    <p>Join the waitlist and be the first to use The Growth Path when it opens. Waitlist members get lifetime access at $9/mo (regular $19/mo). No credit card now.</p>
+    <a href="/growth-check/?source=waitlist_final" onclick="fbq('trackCustom','WaitlistFinalCTA');" class="btn large">Join the waitlist</a>
+    <div class="fine">Free. Unsubscribe anytime. We will email you the moment the app opens.</div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
     <div class="brand-footer">The Growth Path</div>
-    <p>Practical tools for parents. Clear sources. No promises of extra inches.</p>
+    <p>Everything he needs to grow. Everything you need to know.</p>
     <div class="links-row">
       <a href="/articles/">Articles</a>
       <a href="/growth-check/">Growth Check</a>
@@ -537,7 +489,7 @@ footer .fine {
       <a href="mailto:hello@thegrowthpath.app">Contact</a>
     </div>
     <div class="fine">
-      The Growth Path is educational and organizational content only. It is not medical advice, does not diagnose or treat conditions, and does not promise a change in adult height. Always consult a qualified pediatric provider about your child's growth. &copy; 2026 The Growth Path.
+      The Growth Path is educational content. It is not medical advice, does not diagnose or treat conditions, and does not promise a change in adult height. Always consult a qualified pediatric provider about your child's growth. &copy; 2026 The Growth Path.
     </div>
   </div>
 </footer>
