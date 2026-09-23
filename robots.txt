@@ -65,4 +65,4 @@ Allow: /
 User-agent: MistralAI-User
 Allow: /
 
-Sitemap: https://www.thegrowthpath.app/sitemap.xml
+Sitemap: https://thegrowthpath.app/sitemap.xml
