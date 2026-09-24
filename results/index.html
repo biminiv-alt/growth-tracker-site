@@ -524,25 +524,22 @@
 <p style="max-width:640px;margin:1.5rem auto 3rem;color:#8A8577;font-size:0.82rem;line-height:1.55;text-align:center;padding:0 1rem;">Growth charts contribute to an overall health picture and are not intended as a sole diagnostic instrument. Source: CDC. The Growth Path is not a substitute for medical advice.</p>
 <!-- /tgp-kit-intent-v1 -->
 
-<!-- tgp-fbq-results-v1 -->
+
+<!-- tgp-fbq-results-v2 -->
 <script>
 (function(){
-  if(typeof fbq!=='function') return;
-  var kitFired=false;
-  document.addEventListener('click', function(e){
-    var el = e.target.closest('#kit-intent button[type=submit], #kit-intent a');
+  if(typeof fbq !== 'function') return;
+  var kitFired = false;
+  document.addEventListener('click', function(ev){
+    var el = ev.target && ev.target.closest && ev.target.closest('a[href*="gumroad.com"], a[data-magnet="prep-kit-buy"]');
     if(el && !kitFired){
       kitFired = true;
-      try{ fbq('trackCustom','KitInterest',{content_name:'Prep Kit Waitlist'}); }catch(e){}
+      try{ fbq('trackCustom','KitInterest',{content_name:'Prep Kit'}); }catch(e){}
     }
-  }, true);
-  document.addEventListener('submit', function(e){
-    var f = e.target;
-    if(!f || f.id !== 'kit-intent' && !f.closest('#kit-intent')) return;
-    try{ fbq('track','CompleteRegistration',{content_name:'Prep Kit Waitlist'}); }catch(e){}
   }, true);
 })();
 </script>
-<!-- /tgp-fbq-results-v1 -->
+<!-- /tgp-fbq-results-v2 -->
+
 </body>
 </html>
