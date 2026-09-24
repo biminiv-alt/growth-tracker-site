@@ -364,8 +364,7 @@ footer .fine { max-width: 500px; margin: 1rem auto 0; font-size: 11px; opacity: 
     const formData = new FormData(form);
 
     // Fire tracking pixels
-    try { fbq('track', 'Lead', {content_name: 'TGP Waitlist'}); } catch(err) {}
-    try { fbq('trackCustom', 'WaitlistSignup'); } catch(err) {}
+    try { fbq('track', 'CompleteRegistration', { content_name: 'Prep Kit Waitlist' }); } catch(err) {}
     try { gtag('event', 'waitlist_signup', {method: 'kit_form'}); } catch(err) {}
 
     // POST to Kit
