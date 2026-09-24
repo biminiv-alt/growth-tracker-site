@@ -513,5 +513,40 @@
   app.innerHTML = html;
 })();
 </script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"8169c71f4b174d1a88ea5a5732671a6b"}'></script></body>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"8169c71f4b174d1a88ea5a5732671a6b"}'></script>
+<!-- tgp-kit-intent-v1 -->
+<section id="kit-intent" style="max-width:640px;margin:2.5rem auto;padding:1.75rem 1.5rem;background:#F7F4EE;border:1px solid #E5E1D8;border-radius:10px;text-align:center;">
+  <h2 style="font-family:'Fraunces',Georgia,serif;color:#1B4A3E;font-size:1.5rem;line-height:1.25;margin:0 0 0.6rem;font-weight:500;">Tell me when the $49 Visit Prep Kit is ready.</h2>
+  <p style="color:#5A6670;font-size:1rem;line-height:1.55;margin:0 0 1.1rem;">Six documents that turn his growth history, your questions, and your notes into something the pediatrician actually reads. The first 100 to sign up get founder pricing.</p>
+  <form action="https://app.kit.com/forms/9896325/subscriptions" method="post" data-sv-form="9896325" data-uid="kit-interest-tgp" target="_blank" style="display:flex;flex-wrap:wrap;gap:0.6rem;justify-content:center;">
+    <input type="hidden" name="fields[source]" value="prep-kit-interest">
+    <input type="email" name="email_address" placeholder="you@yourdomain.com" required autocomplete="email" style="flex:1 1 240px;min-width:220px;padding:0.75rem 0.9rem;font-size:1rem;border:1px solid #C9C3B5;border-radius:6px;background:#fff;color:#1B4A3E;box-sizing:border-box;">
+    <button type="submit" style="padding:0.75rem 1.25rem;font-size:1rem;font-weight:600;background:#1B4A3E;color:#fff;border:0;border-radius:6px;cursor:pointer;">Notify me</button>
+  </form>
+  <p style="color:#8A8577;font-size:0.8rem;margin:0.85rem 0 0;">One email when it opens. No spam.</p>
+</section>
+<p style="max-width:640px;margin:1.5rem auto 3rem;color:#8A8577;font-size:0.82rem;line-height:1.55;text-align:center;padding:0 1rem;">Growth charts contribute to an overall health picture and are not intended as a sole diagnostic instrument. Source: CDC. The Growth Path is not a substitute for medical advice.</p>
+<!-- /tgp-kit-intent-v1 -->
+
+<!-- tgp-fbq-results-v1 -->
+<script>
+(function(){
+  if(typeof fbq!=='function') return;
+  var kitFired=false;
+  document.addEventListener('click', function(e){
+    var el = e.target.closest('#kit-intent button[type=submit], #kit-intent a');
+    if(el && !kitFired){
+      kitFired = true;
+      try{ fbq('trackCustom','KitInterest',{content_name:'Prep Kit Waitlist'}); }catch(e){}
+    }
+  }, true);
+  document.addEventListener('submit', function(e){
+    var f = e.target;
+    if(!f || f.id !== 'kit-intent' && !f.closest('#kit-intent')) return;
+    try{ fbq('track','CompleteRegistration',{content_name:'Prep Kit Waitlist'}); }catch(e){}
+  }, true);
+})();
+</script>
+<!-- /tgp-fbq-results-v1 -->
+</body>
 </html>
