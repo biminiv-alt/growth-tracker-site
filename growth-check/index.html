@@ -202,7 +202,7 @@ button.secondary {
   position: relative; color: var(--ink-soft); font-size: 0.94rem;
 }
 .next-steps li::before {
-  content: "ÃÂ¢ÃÂÃÂ"; position: absolute; left: 0;
+  content: "ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ"; position: absolute; left: 0;
   color: var(--terra-500); font-weight: 600;
 }
 .disclaimer {
@@ -231,7 +231,7 @@ button.secondary {
 
   <!-- SCREEN 1: Age -->
   <section class="screen active" id="screen1">
-    <div class="eyebrow">The Growth Check ÃÂ· Step 1 of 5</div>
+    <div class="eyebrow">The Growth Check ÃÂÃÂ· Step 1 of 5</div>
     <p class="tgp-mgr-hook" style="max-width:640px;margin:0 auto 1.25rem;text-align:center;color:#5A6670;font-size:1rem;line-height:1.55;">A two-minute check for parents who want a clearer growth conversation. Get a CDC-based percentile, a family-context range, and what to track next.</p>
     <h1>How old is your son?</h1>
     <p class="lede">Family-context percentile is calibrated by age. Whole years is fine.</p>
@@ -245,7 +245,7 @@ button.secondary {
 
   <!-- SCREEN 2: Current height -->
   <section class="screen" id="screen2">
-    <div class="eyebrow">The Growth Check ÃÂ· Step 2 of 5</div>
+    <div class="eyebrow">The Growth Check ÃÂÃÂ· Step 2 of 5</div>
     <h1>How tall is he right now?</h1>
     <p class="lede">The most recent measurement you have is fine. Approximate is fine.</p>
 
@@ -276,7 +276,7 @@ button.secondary {
 
   <!-- SCREEN 3: Mother's height -->
   <section class="screen" id="screen3">
-    <div class="eyebrow">The Growth Check ÃÂ· Step 3 of 5</div>
+    <div class="eyebrow">The Growth Check ÃÂÃÂ· Step 3 of 5</div>
     <h1>How tall is his mother?</h1>
     <p class="lede">Family height is the single strongest signal about a boy's adult height. Approximate is fine.</p>
 
@@ -307,7 +307,7 @@ button.secondary {
 
   <!-- SCREEN 4: Father's height -->
   <section class="screen" id="screen4">
-    <div class="eyebrow">The Growth Check ÃÂ· Step 4 of 5</div>
+    <div class="eyebrow">The Growth Check ÃÂÃÂ· Step 4 of 5</div>
     <h1>How tall is his father?</h1>
     <p class="lede">Same idea. Family history rounds out the picture.</p>
 
@@ -338,7 +338,7 @@ button.secondary {
 
   <!-- SCREEN 5: Email -->
   <section class="screen" id="screen5">
-    <div class="eyebrow">The Growth Check ÃÂ· Step 5 of 5</div>
+    <div class="eyebrow">The Growth Check ÃÂÃÂ· Step 5 of 5</div>
     <h1>Where should we send it?</h1>
     <p class="lede">Your Growth Summary is ready. Enter your email to see the results and get our short, weekly note on growth in boys.</p>
 
@@ -382,7 +382,7 @@ button.secondary {
       <p class="helper" style="margin-top:0;">Based on both parents' heights, using the mid-parental height formula.</p>
       <div class="family-context">
         <h3>Predicted adult height range</h3>
-        <p class="target"><span id="rTargetLow"></span> ÃÂ¢ÃÂÃÂ <span id="rTargetHigh"></span></p>
+        <p class="target"><span id="rTargetLow"></span> ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ <span id="rTargetHigh"></span></p>
         <p>Midpoint: <strong><span id="rTargetMid"></span></strong></p>
         <p style="font-size:0.85rem;margin-top:0.5rem;">This is a statistical range. Real outcomes span a wider window because timing, nutrition, sleep, and genetic recombination all matter.</p>
       </div>
@@ -404,7 +404,7 @@ button.secondary {
       <ul>
         <li>Measure his height every 6 months in the same conditions (morning, no shoes, back against a wall).</li>
         <li>Watch the trend, not any single number. A boy staying near his percentile is normal.</li>
-        <li>Bring the trend ÃÂ¢ÃÂÃÂ not just today's measurement ÃÂ¢ÃÂÃÂ to his next pediatrician visit.</li>
+        <li>Bring the trend ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ not just today's measurement ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ to his next pediatrician visit.</li>
         <li>Sleep, nutrition, and physical activity influence growth. Genetics sets the ceiling.</li>
       </ul>
     </div>
@@ -414,14 +414,14 @@ button.secondary {
     </div>
 
     <p class="disclaimer">
-      The Growth Check is parent education, not medical advice or diagnosis. Percentile calculations use CDC 2000 growth reference data for boys 2-20. Predicted adult height range uses the mid-parental height formula ÃÂÃÂ± 8.5cm confidence interval. If you have concerns about your son's growth, talk to his pediatrician ÃÂ¢ÃÂÃÂ with the trend in hand. &copy; 2026 The Growth Path.
+      The Growth Check is parent education, not medical advice or diagnosis. Percentile calculations use CDC 2000 growth reference data for boys 2-20. Predicted adult height range uses the mid-parental height formula ÃÂÃÂÃÂÃÂ± 8.5cm confidence interval. If you have concerns about your son's growth, talk to his pediatrician ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ with the trend in hand. &copy; 2026 The Growth Path.
     </p>
   </section>
 
 </main>
 
 <script>
-// ---- CDC 2000 Growth Charts ÃÂ¢ÃÂÃÂ Boys, Stature-for-Age (annual granularity) ----
+// ---- CDC 2000 Growth Charts ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Boys, Stature-for-Age (annual granularity) ----
 // LMS values from CDC/NCHS statage.xls. Percentile via Z = ((X/M)^L - 1) / (L*S).
 const CDC = {
   2:  { L: 1.05, M: 87.8,  S: 0.0421 },
@@ -616,7 +616,7 @@ function computeResults() {
   const cdc = CDC[state.age];
   const percentile = percentileFromLMS(state.childCm, cdc.L, cdc.M, cdc.S);
 
-  // Mid-parental height for boys (cm): (father + mother + 13) / 2, ÃÂÃÂ±8.5 cm
+  // Mid-parental height for boys (cm): (father + mother + 13) / 2, ÃÂÃÂÃÂÃÂ±8.5 cm
   const mpMid = (state.dadCm + state.momCm + 13) / 2;
   const mpLow = mpMid - 8.5;
   const mpHigh = mpMid + 8.5;
@@ -630,22 +630,22 @@ function interpretation(pct, mpMid) {
 
   if (pct >= 75) {
     pctPlain = `He's taller than roughly ${pctRounded}% of boys his age.`;
-    meaning = `<p>Your son currently tracks in the upper range for boys his age. A boy staying near his percentile as he grows ÃÂ¢ÃÂÃÂ even if that percentile is high ÃÂ¢ÃÂÃÂ is the pattern to watch for. Deviations up or down over 6-12 months are what matter, not the specific number.</p>`;
+    meaning = `<p>Your son currently tracks in the upper range for boys his age. A boy staying near his percentile as he grows ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ even if that percentile is high ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ is the pattern to watch for. Deviations up or down over 6-12 months are what matter, not the specific number.</p>`;
   } else if (pct >= 25) {
     pctPlain = `He's roughly in the middle for boys his age (${pctRounded}th percentile).`;
     meaning = `<p>Your son currently tracks around the median for boys his age. This is the most common band and generally the least eventful. The pattern to watch: whether he continues to track along the same percentile line as he grows. A boy holding his percentile is a boy growing normally, whatever that percentile is.</p>`;
   } else if (pct >= 10) {
     pctPlain = `He's on the shorter side for his age (${pctRounded}th percentile).`;
-    meaning = `<p>Your son currently tracks in the shorter band for boys his age. This is <em>not</em> automatically a red flag. Many boys stay at their percentile through childhood and reach a normal adult height. What matters more is whether he's <em>tracking</em> ÃÂ¢ÃÂÃÂ staying near the same percentile line over time ÃÂ¢ÃÂÃÂ versus <em>crossing</em> percentile lines downward. The mid-parental target below is often the better long-term signal.</p>`;
+    meaning = `<p>Your son currently tracks in the shorter band for boys his age. This is <em>not</em> automatically a red flag. Many boys stay at their percentile through childhood and reach a normal adult height. What matters more is whether he's <em>tracking</em> ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ staying near the same percentile line over time ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ versus <em>crossing</em> percentile lines downward. The mid-parental target below is often the better long-term signal.</p>`;
   } else {
     pctPlain = `He's in the shortest ${pctRounded}% for his age.`;
-    meaning = `<p>Your son currently tracks in the shortest band for boys his age. This alone doesn't mean anything is wrong ÃÂ¢ÃÂÃÂ some boys grow into the lower percentile and stay there normally. But this <em>is</em> the band where doctors typically recommend closer tracking. The next steps below matter more here than at any other percentile. If he's also crossing percentile lines downward, that's the signal to raise it with his pediatrician sooner rather than later.</p>`;
+    meaning = `<p>Your son currently tracks in the shortest band for boys his age. This alone doesn't mean anything is wrong ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ some boys grow into the lower percentile and stay there normally. But this <em>is</em> the band where doctors typically recommend closer tracking. The next steps below matter more here than at any other percentile. If he's also crossing percentile lines downward, that's the signal to raise it with his pediatrician sooner rather than later.</p>`;
   }
 
   return { pctPlain, meaning };
 }
 
-// ---- Email submit (Screen 5 ÃÂ¢ÃÂÃÂ Results) ----
+// ---- Email submit (Screen 5 ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Results) ----
 document.getElementById('emailForm').addEventListener('submit', (e) => {
   e.preventDefault();
   const err = document.getElementById('err5');
@@ -664,7 +664,7 @@ document.getElementById('emailForm').addEventListener('submit', (e) => {
   // Fill hidden fields for Kit
   document.getElementById('fieldAge').value = state.age;
   document.getElementById('fieldPct').value = pctRounded;
-  document.getElementById('fieldTarget').value = `${targetLowIn} ÃÂ¢ÃÂÃÂ ${targetHighIn}`;
+  document.getElementById('fieldTarget').value = `${targetLowIn} ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ ${targetHighIn}`;
 
   // Preserve UTM as source
   const src = state.utm.utm_source ? `${state.utm.utm_source}-${state.utm.utm_campaign || ''}` : 'growth-check-direct';
@@ -676,10 +676,10 @@ document.getElementById('emailForm').addEventListener('submit', (e) => {
 
   // Submit to Kit in the background via fetch (avoid navigation)
   const formData = new FormData(e.target);
-  fetch(e.target.action, {
+  fetch('https://api.convertkit.com/v3/forms/9896325/subscribe', {
     method: 'POST',
-    body: formData,
-    mode: 'no-cors'
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({api_key: '9JSd-76ZSveD4nbFfGu8ow', email: email, fields: {age: state.age, percentile: pctRounded, target_range: targetLowIn + ' to ' + targetHighIn}})
   }).catch(() => {});
 
   // Populate results
