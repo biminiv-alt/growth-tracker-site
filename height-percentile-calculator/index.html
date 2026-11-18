@@ -203,7 +203,7 @@ button.primary:hover, button.primary:active { background:var(--terra-700); }
   color:var(--terra-500); font-size:1.3rem;
   transition:transform 0.2s ease;
 }
-.faq details[open] summary::after { content:"â"; }
+.faq details[open] summary::after { content:"−"; }
 .faq details p {
   margin-top:0.75rem; color:var(--ink-soft);
   font-size:0.98rem;
@@ -304,7 +304,7 @@ fbq('init', '1284057693733197');fbq('track', 'PageView');
   <p>This calculator uses the <strong>CDC 2000 Growth Charts</strong> ,  the official U.S. clinical reference for children's growth. Specifically, it uses the "stature-for-age" LMS parameters (L, M, S values) that pediatricians and endocrinologists use to compute z-scores and percentiles.</p>
 
   <div class="source-note">
-    <strong>Data source:</strong> National Center for Health Statistics, CDC 2000 Growth Charts, stature-for-age for boys 2-20 years. Calculation uses the Cole-Green LMS method: <em>Z = ((height Ã· M)<sup>L</sup> â 1) Ã· (L Ã S)</em>, converted to percentile via the standard normal distribution.
+    <strong>Data source:</strong> National Center for Health Statistics, CDC 2000 Growth Charts, stature-for-age for boys 2-20 years. Calculation uses the Cole-Green LMS method: <em>Z = ((height ÷ M)<sup>L</sup> − 1) ÷ (L × S)</em>, converted to percentile via the standard normal distribution.
   </div>
 
   <h3>What a percentile actually means</h3>

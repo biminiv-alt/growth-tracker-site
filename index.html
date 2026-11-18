@@ -13,7 +13,7 @@
 <meta name="robots" content="index, follow" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FLQ59P8X51"></script>
@@ -89,10 +89,10 @@ nav.top {
   z-index: 10;
 }
 nav.top .inner { display: flex; justify-content: space-between; align-items: center; max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
-nav.top .brand { font-family: 'Fraunces', Georgia, serif; font-size: 22px; font-weight: 500; color: var(--sage-900); }
+nav.top .brand { white-space: nowrap; font-family: 'Fraunces', Georgia, serif; font-size: 22px; font-weight: 500; color: var(--sage-900); }
 nav.top .links { display: flex; gap: 1.75rem; align-items: center; }
 nav.top .links a { color: var(--sage-700); font-size: 15px; font-weight: 500; }
-nav.top .cta { background: var(--sage-900); color: var(--cream) !important; padding: 0.55rem 1.1rem; border-radius: 999px; font-size: 14px; font-weight: 500; }
+nav.top .cta { white-space: nowrap; background: var(--sage-900); color: var(--cream) !important; padding: 0.55rem 1.1rem; border-radius: 999px; font-size: 14px; font-weight: 500; }
 
 /* Hero */
 .hero { padding: 5rem 0 3.5rem; background: linear-gradient(180deg, var(--cream-2) 0%, var(--cream) 100%); }
@@ -245,6 +245,7 @@ footer .links-row a { margin: 0 0.75rem; }
 footer .fine { margin-top: 1.5rem; font-size: 12px; color: var(--sage-300); opacity: 0.7; max-width: 620px; margin-left: auto; margin-right: auto; line-height: 1.5; }
 
 @media (min-width: 720px) { body { font-size: 18px; } }
+@media (max-width: 520px) { nav.top .brand { font-size: 19px; } nav.top .links { gap: 1rem; } nav.top .cta { padding: 0.5rem 0.9rem; font-size: 13px; } }
 </style>
 </head>
 <body>
@@ -262,7 +263,7 @@ footer .fine { margin-top: 1.5rem; font-size: 12px; color: var(--sage-300); opac
 <section class="hero">
   <div class="wrap">
     <div class="kicker">Built for moms of boys ages 8 to 16</div>
-    <h1>He might just be a late bloomer. <em>You deserve more than "heÃÂ¢ÃÂÃÂll probably catch up."</em></h1>
+    <h1>He might just be a late bloomer. <em>You deserve more than "he’ll probably catch up."</em></h1>
     <p class="lede">Get a quick, personal read on his percentile, his family-adjusted height range, and what to watch next. Two minutes. No account.</p>
     <div class="cta-row">
       <a href="/growth-check/" class="btn large">Take the free 2-minute Growth Check</a>
