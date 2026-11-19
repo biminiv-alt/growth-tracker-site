@@ -164,13 +164,21 @@ footer .fine{margin-top:1rem;font-size:12px;color:var(--sage-300);opacity:0.7;ma
 
 <h2>The one thing to do this week</h2>
 
-<p>Run the <a href="/growth-check/">Growth Check</a>. It plots his current CDC percentile and his mid-parental prediction on the same view. Sixty seconds. No email needed to see the number.</p>
+<p>Run the <a href="/growth-check/">Growth Check</a>. It plots his current CDC percentile and his mid-parental prediction on the same view. Two minutes, no account.</p>
 </article>
   <div class="cta-box">
     <h3>Run his numbers</h3>
-    <p>The Growth Check plots his current CDC percentile and his family-height prediction on the same view. Free, no signup wall.</p>
+    <p>The Growth Check plots his current CDC percentile and his family-height prediction on the same view. Free, no account needed.</p>
     <a href="/growth-check/" class="btn">Take the Growth Check</a>
   </div>
+<!-- tgp-kit-link-v1 -->
+<aside class="kit-link" style="max-width:680px;margin:1.5rem auto;padding:1.25rem 1.35rem;background:#F7F4EE;border:1px solid #E5E1D8;border-radius:12px;box-sizing:border-box;">
+  <p style="margin:0 0 0.4rem;font-weight:600;color:#1B4A3E;font-size:1.02rem;">Pediatrician visit coming up?</p>
+  <p style="margin:0 0 0.9rem;color:#5A6670;font-size:0.95rem;line-height:1.55;">The $49 Growth Visit Prep Kit is six printable documents that turn his growth history, your questions and your notes into something the pediatrician actually reads. Instant PDF download, 30-day money-back guarantee.</p>
+  <a href="https://thegrowthpathapp.gumroad.com/l/growth-visit-prep-kit" data-magnet="prep-kit-buy" data-src="how-tall-will-my-son-be" style="display:inline-block;padding:0.65rem 1.2rem;background:#1B4A3E;color:#fff;border-radius:999px;text-decoration:none;font-weight:600;font-size:0.95rem;">See the Prep Kit</a>
+</aside>
+<!-- /tgp-kit-link-v1 -->
+
   <div class="related">
     <h4>Read next</h4>
     <ul>
@@ -192,5 +200,12 @@ footer .fine{margin-top:1rem;font-size:12px;color:var(--sage-300);opacity:0.7;ma
     <div class="fine">Educational content only. Not medical advice. Always consult a qualified pediatric provider about your child's growth. &copy; 2026 The Growth Path.</div>
   </div>
 </footer>
+<!-- tgp-fbq-kit-click-v1 -->
+<script>
+document.addEventListener('click', function(ev){
+  var el = ev.target && ev.target.closest && ev.target.closest('a[data-magnet="prep-kit-buy"]');
+  if(el && typeof fbq === 'function'){ try{ fbq('trackCustom','KitInterest',{content_name:'Prep Kit', source: el.getAttribute('data-src')||''}); }catch(e){} }
+}, true);
+</script>
 </body>
 </html>

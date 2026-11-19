@@ -144,6 +144,14 @@ fbq('init', '1284057693733197');fbq('track', 'PageView');
       <p>Take the free 2-minute Growth Check. See his CDC percentile and his family-adjusted adult height range side by side, plus what to watch next.</p>
       <a class="btn" href="/growth-check/?utm_source=article-nutrition-for-growing-boys&amp;utm_medium=cta">Take the free Growth Check</a>
     </div>
+<!-- tgp-kit-link-v1 -->
+<aside class="kit-link" style="max-width:680px;margin:1.5rem auto;padding:1.25rem 1.35rem;background:#F7F4EE;border:1px solid #E5E1D8;border-radius:12px;box-sizing:border-box;">
+  <p style="margin:0 0 0.4rem;font-weight:600;color:#1B4A3E;font-size:1.02rem;">Pediatrician visit coming up?</p>
+  <p style="margin:0 0 0.9rem;color:#5A6670;font-size:0.95rem;line-height:1.55;">The $49 Growth Visit Prep Kit is six printable documents that turn his growth history, your questions and your notes into something the pediatrician actually reads. Instant PDF download, 30-day money-back guarantee.</p>
+  <a href="https://thegrowthpathapp.gumroad.com/l/growth-visit-prep-kit" data-magnet="prep-kit-buy" data-src="nutrition-for-growing-boys" style="display:inline-block;padding:0.65rem 1.2rem;background:#1B4A3E;color:#fff;border-radius:999px;text-decoration:none;font-weight:600;font-size:0.95rem;">See the Prep Kit</a>
+</aside>
+<!-- /tgp-kit-link-v1 -->
+
   </div>
 </article>
 <div class="wrap-out">
@@ -156,5 +164,12 @@ fbq('init', '1284057693733197');fbq('track', 'PageView');
     </div>
   </div>
 </footer>
+<!-- tgp-fbq-kit-click-v1 -->
+<script>
+document.addEventListener('click', function(ev){
+  var el = ev.target && ev.target.closest && ev.target.closest('a[data-magnet="prep-kit-buy"]');
+  if(el && typeof fbq === 'function'){ try{ fbq('trackCustom','KitInterest',{content_name:'Prep Kit', source: el.getAttribute('data-src')||''}); }catch(e){} }
+}, true);
+</script>
 </body>
 </html>
