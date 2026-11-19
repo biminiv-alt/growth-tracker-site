@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://thegrowthpath.app/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://thegrowthpath.app/growth-check/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://thegrowthpath.app/height-percentile-calculator/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://thegrowthpath.app/family-height-calculator/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://thegrowthpath.app/articles/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
@@ -74,4 +73,16 @@
   <url><loc>https://thegrowthpath.app/vitamin-d-deficiency-child-growth/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thegrowthpath.app/son-growth-slowed-what-to-track/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://thegrowthpath.app/about/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thegrowthpath.app/growth-path/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thegrowthpath.app/faq/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thegrowthpath.app/glossary/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thegrowthpath.app/data/height-percentiles-boys/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thegrowthpath.app/articles/how-tall-will-my-son-be/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thegrowthpath.app/articles/is-my-son-short-for-his-age/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thegrowthpath.app/articles/mid-parental-height-formula/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thegrowthpath.app/articles/should-i-worry-about-sons-height/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thegrowthpath.app/articles/signs-of-late-bloomer-boy/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thegrowthpath.app/articles/when-to-see-pediatric-endocrinologist/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thegrowthpath.app/privacy/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thegrowthpath.app/terms/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

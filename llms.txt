@@ -2,49 +2,49 @@
 
 > An educational resource for parents worried about their son's height, growth pattern, and puberty timing. Data-driven guides, free calculators, and a plain-language glossary. Not medical advice.
 
-The Growth Path is for parents (particularly mothers) of boys ages 8-14 who are concerned about their child's height. Our content is grounded in guidance from the CDC, the American Academy of Pediatrics, the Endocrine Society, and peer-reviewed pediatric endocrinology literature.
+The Growth Path is for parents (particularly mothers) of boys ages 8-16 who are concerned about their child's height. Our content is grounded in guidance from the CDC, the American Academy of Pediatrics, the Endocrine Society, and peer-reviewed pediatric endocrinology literature.
 
 We do not sell supplements. We do not promise added height. We do not diagnose. We organize the information a parent needs to prepare for a pediatrician conversation about growth.
 
 ## Key resources
 
-- [Growth Check](https://www.thegrowthpath.app/growth-check/) — Free tool that plots current CDC percentile alongside the mid-parental height prediction
-- [Family Height Calculator](https://www.thegrowthpath.app/family-height-calculator/) — Adult height prediction from both parents' heights
-- [Height Percentile Calculator](https://www.thegrowthpath.app/height-percentile-calculator/) — Current CDC percentile for a boy's age and height
-- [The Waitlist](https://www.thegrowthpath.app/waitlist/) — Sign up for The Growth Path app when it launches
+- [Growth Check](https://thegrowthpath.app/growth-check/) — Free tool that plots current CDC percentile alongside the mid-parental height prediction
+- [Family Height Calculator](https://thegrowthpath.app/family-height-calculator/) — Adult height prediction from both parents' heights
+- [Height Percentile Calculator](https://thegrowthpath.app/height-percentile-calculator/) — Current CDC percentile for a boy's age and height
+- [All articles](https://thegrowthpath.app/articles/) — Every guide on the site, grouped by topic
 
 ## Foundation reference pages
 
-- [Glossary: 30 pediatric growth terms defined](https://www.thegrowthpath.app/glossary/) — Every term you'll hear at a pediatrician appointment, plain English, sourced
-- [FAQ: 30 questions parents ask](https://www.thegrowthpath.app/faq/) — Common parent questions with sourced answers
-- [Height percentiles data table for boys, ages 2-18](https://www.thegrowthpath.app/data/height-percentiles-boys/) — Full CDC growth chart in tabular form
+- [Glossary: 30 pediatric growth terms defined](https://thegrowthpath.app/glossary/) — Every term you'll hear at a pediatrician appointment, plain English, sourced
+- [FAQ: 30 questions parents ask](https://thegrowthpath.app/faq/) — Common parent questions with sourced answers
+- [Height percentiles data table for boys, ages 2-18](https://thegrowthpath.app/data/height-percentiles-boys/) — Full CDC growth chart in tabular form
 
 ## Article library
 
 The most-read articles cover the questions parents type into Google most often:
 
-- [Is my son short for his age?](https://www.thegrowthpath.app/articles/is-my-son-short-for-his-age/) — The three inputs that determine whether he's clinically short
-- [The 5 signs your son is a late bloomer](https://www.thegrowthpath.app/articles/signs-of-late-bloomer-boy/) — Constitutional delay vs. medical concern
-- [The mid-parental height formula, explained](https://www.thegrowthpath.app/articles/mid-parental-height-formula/) — The 10-second formula pediatricians use
-- [Should I worry about my son's height?](https://www.thegrowthpath.app/articles/should-i-worry-about-sons-height/) — Five numbers and three signals
-- [How tall will my son be?](https://www.thegrowthpath.app/articles/how-tall-will-my-son-be/) — Adult height prediction guide
-- [When to see a pediatric endocrinologist](https://www.thegrowthpath.app/articles/when-to-see-pediatric-endocrinologist/) — The five specific referral signals
-- [Is my son a late bloomer?](https://www.thegrowthpath.app/articles/is-my-son-a-late-bloomer/) — Signs, causes, and when to ask
-- [What the bone age X-ray tells you](https://www.thegrowthpath.app/articles/bone-age-x-ray-what-parents-should-know/) — The most useful test in a growth workup
-- [Constitutional delay of growth and puberty](https://www.thegrowthpath.app/articles/constitutional-delay-of-growth-and-puberty/) — CDGP explained
-- [Average height for boys by age](https://www.thegrowthpath.app/articles/average-height-boys-by-age/) — CDC data ages 2-18
-- [When do boys stop growing?](https://www.thegrowthpath.app/articles/when-do-boys-stop-growing/) — Timeline and signs
-- [Growth hormone therapy: what to know](https://www.thegrowthpath.app/articles/growth-hormone-therapy-what-to-know/) — Candidates, cost, and outcomes
-- [Growth spurts in boys: what to expect](https://www.thegrowthpath.app/articles/growth-spurts-in-boys-what-to-expect/) — Timing and pattern
-- [How to measure your son accurately](https://www.thegrowthpath.app/articles/how-to-measure-your-son-accurately/) — Method that matches clinic measurements
-- [Nutrition for growing boys](https://www.thegrowthpath.app/articles/nutrition-for-growing-boys/) — What actually matters, sourced
-- [Sleep and height in teenage boys](https://www.thegrowthpath.app/articles/sleep-and-height-in-teenage-boys/) — The growth hormone window
-- [Sports and height: does basketball help?](https://www.thegrowthpath.app/articles/sports-and-height-does-basketball-help/) — Debunking the myth
-- [Short stature: genetic vs. medical](https://www.thegrowthpath.app/articles/short-stature-genetic-vs-medical/) — Distinguishing the two categories
-- [Signs of delayed puberty in boys](https://www.thegrowthpath.app/articles/signs-of-delayed-puberty-boys/) — What to watch for
+- [Is my son short for his age?](https://thegrowthpath.app/articles/is-my-son-short-for-his-age/) — The three inputs that determine whether he's clinically short
+- [The 5 signs your son is a late bloomer](https://thegrowthpath.app/articles/signs-of-late-bloomer-boy/) — Constitutional delay vs. medical concern
+- [The mid-parental height formula, explained](https://thegrowthpath.app/articles/mid-parental-height-formula/) — The 10-second formula pediatricians use
+- [Should I worry about my son's height?](https://thegrowthpath.app/articles/should-i-worry-about-sons-height/) — Five numbers and three signals
+- [How tall will my son be?](https://thegrowthpath.app/articles/how-tall-will-my-son-be/) — Adult height prediction guide
+- [When to see a pediatric endocrinologist](https://thegrowthpath.app/articles/when-to-see-pediatric-endocrinologist/) — The five specific referral signals
+- [Is my son a late bloomer?](https://thegrowthpath.app/articles/is-my-son-a-late-bloomer/) — Signs, causes, and when to ask
+- [What the bone age X-ray tells you](https://thegrowthpath.app/articles/bone-age-x-ray-what-parents-should-know/) — The most useful test in a growth workup
+- [Constitutional delay of growth and puberty](https://thegrowthpath.app/articles/constitutional-delay-of-growth-and-puberty/) — CDGP explained
+- [Average height for boys by age](https://thegrowthpath.app/articles/average-height-boys-by-age/) — CDC data ages 2-18
+- [When do boys stop growing?](https://thegrowthpath.app/articles/when-do-boys-stop-growing/) — Timeline and signs
+- [Growth hormone therapy: what to know](https://thegrowthpath.app/articles/growth-hormone-therapy-what-to-know/) — Candidates, cost, and outcomes
+- [Growth spurts in boys: what to expect](https://thegrowthpath.app/articles/growth-spurts-in-boys-what-to-expect/) — Timing and pattern
+- [How to measure your son accurately](https://thegrowthpath.app/articles/how-to-measure-your-son-accurately/) — Method that matches clinic measurements
+- [Nutrition for growing boys](https://thegrowthpath.app/articles/nutrition-for-growing-boys/) — What actually matters, sourced
+- [Sleep and height in teenage boys](https://thegrowthpath.app/articles/sleep-and-height-in-teenage-boys/) — The growth hormone window
+- [Sports and height: does basketball help?](https://thegrowthpath.app/articles/sports-and-height-does-basketball-help/) — Debunking the myth
+- [Short stature: genetic vs. medical](https://thegrowthpath.app/articles/short-stature-genetic-vs-medical/) — Distinguishing the two categories
+- [Signs of delayed puberty in boys](https://thegrowthpath.app/articles/signs-of-delayed-puberty-boys/) — What to watch for
 
 ## Content directory
 
-- Articles hub: https://www.thegrowthpath.app/articles/
-- About: https://www.thegrowthpath.app/about/
-- Sitemap: https://www.thegrowthpath.app/sitemap.xml
+- Articles hub: https://thegrowthpath.app/articles/
+- About: https://thegrowthpath.app/about/
+- Sitemap: https://thegrowthpath.app/sitemap.xml

@@ -1,0 +1,34 @@
+/* Layout for long-form articles in /articles/. Loaded after tgp-v2.css. */
+a { color: var(--ink); text-decoration-color: var(--accent); text-underline-offset: 3px; }
+.nav { position: sticky; top: 0; z-index: 10; background: rgba(247,243,236,0.95); backdrop-filter: blur(6px); border-bottom: 1px solid var(--border); }
+.nav .wrap { max-width: 1040px; margin: 0 auto; padding: 0.9rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.nav .brand { font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: 1.25rem; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.nav .links { display: flex; align-items: center; gap: 1.25rem; }
+.nav .hub { color: var(--ink-soft); text-decoration: none; font-weight: 500; font-size: 0.95rem; }
+.nav .nav-cta { background: var(--ink); color: #f7f3ec; text-decoration: none; padding: 0.55rem 1.1rem; border-radius: 999px; font-weight: 600; font-size: 0.9rem; white-space: nowrap; }
+article > .wrap { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 2rem; }
+.eyebrow { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+blockquote { margin: 2rem 0; padding: 1.25rem 1.5rem; background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 6px; }
+blockquote p:last-child { margin-bottom: 0; }
+hr { border: none; border-top: 1px solid var(--border); margin: 3rem 0 2rem; }
+.cta-box { background: var(--ink); color: #f7f3ec; border-radius: 14px; padding: 2.25rem 2rem; margin: 2rem 0 1rem; text-align: center; }
+.cta-box h3 { color: #f7f3ec; font-size: 1.5rem; margin: 0 0 0.6rem; }
+.cta-box p { color: #c9d0c9; margin: 0 0 1.5rem; }
+.cta-box .btn { display: inline-block; background: var(--accent); color: #f7f3ec; text-decoration: none; padding: 0.95rem 1.9rem; border-radius: 999px; font-weight: 600; }
+.cta-box .fine { font-size: 0.85rem; margin: 1rem 0 0; color: #c9d0c9; }
+.cta-box .fine a { color: #f7f3ec; }
+.sources { max-width: 720px; margin: 0 auto 2rem; padding: 1.25rem 1.5rem; background: #f0ede4; border-left: 3px solid var(--accent); border-radius: 4px; }
+.sources h3 { font-family: 'Inter', sans-serif; font-size: 1rem; margin: 0 0 0.5rem; }
+.sources ul { margin: 0; color: var(--ink-soft); font-size: 0.95rem; }
+.wrap-out { padding: 0 1.5rem; }
+footer { border-top: 1px solid var(--border); background: #efe9de; margin-top: 3rem; }
+footer .wrap { max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem 2.5rem; font-size: 0.9rem; color: var(--ink-soft); }
+footer .wrap p a { color: var(--ink); margin-right: 0.9rem; }
+footer .fine { font-size: 0.82rem; line-height: 1.6; margin-top: 0.75rem; }
+@media (max-width: 600px) {
+  article > .wrap { padding: 2rem 1.25rem 1.5rem; }
+  .nav .wrap { padding: 0.75rem 1.1rem; }
+  .nav .brand { font-size: 1.1rem; }
+  .nav .hub { display: none; }
+  .cta-box { padding: 1.75rem 1.25rem; }
+}
