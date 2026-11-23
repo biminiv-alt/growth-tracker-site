@@ -741,7 +741,7 @@ document.getElementById('emailForm').addEventListener('submit', (e) => {
   document.getElementById('rRelatedCard').style.display = 'block';
 
   // tgp-share-v1: fill share card
-  (function(){
+  try{ (function(){
     function ord(n){ var v=n%100; if(v>=11&&v<=13) return n+'th'; return n+(['th','st','nd','rd'][n%10]||'th'); }
     var base='https://thegrowthpath.app/growth-check/?utm_source=share&utm_campaign=results-dad&utm_medium=';
     var summary='I ran our son\'s height through the Growth Check. At ' + state.age + ' he is at the ' + ord(pctRounded) + ' percentile for height on the CDC charts, and his adult-height target from our two heights is ' + targetLowIn + ' to ' + targetHighIn + '.';
@@ -752,7 +752,7 @@ document.getElementById('emailForm').addEventListener('submit', (e) => {
     box.setAttribute('data-text','A free 2-minute check of where a boy\'s height stands for his age, using CDC growth charts.');
     box.setAttribute('data-url-native','https://thegrowthpath.app/growth-check/?utm_source=share&utm_medium=native&utm_campaign=results-friend');
     if(!box.getAttribute('data-wired') && window.tgpShareWire){ window.tgpShareWire(box); box.setAttribute('data-wired','1'); }
-  })();
+  })(); }catch(shareErr){}
 
   // Advance
   showScreen('results');
