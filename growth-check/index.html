@@ -393,6 +393,16 @@ button.secondary {
       <div class="what-this-means" id="rInterpretation"></div>
     </div>
 
+    <!-- tgp-share-v1 -->
+    <div class="result-card tgp-share" id="rShareCard" data-kind="results" data-id="growth-check-results" data-title="The Growth Check">
+      <h2 style="margin-top:0;">Send this to his dad</h2>
+      <p style="margin:0 0 1rem;color:var(--ink-soft);">Two parents looking at the same numbers makes the next pediatrician visit easier. This sends a short summary and a link, nothing else.</p>
+      <a data-share="sms" id="rShareSms" href="#" style="display:inline-block;margin:0 .4rem .5rem 0;padding:.6rem 1.05rem;border-radius:999px;border:1px solid #1B4A3E;background:#1B4A3E;color:#fff;font:600 .93rem Inter,system-ui,sans-serif;text-decoration:none;cursor:pointer;">Text it to him</a><a data-share="email" id="rShareEmail" href="#" style="display:inline-block;margin:0 .4rem .5rem 0;padding:.6rem 1.05rem;border-radius:999px;border:1px solid #1B4A3E;background:#fff;color:#1B4A3E;font:600 .93rem Inter,system-ui,sans-serif;text-decoration:none;cursor:pointer;">Email it</a><button type="button" data-share="copy" id="rShareCopy" style="display:inline-block;margin:0 .4rem .5rem 0;padding:.6rem 1.05rem;border-radius:999px;border:1px solid #1B4A3E;background:#fff;color:#1B4A3E;font:600 .93rem Inter,system-ui,sans-serif;text-decoration:none;cursor:pointer;">Copy summary</button>
+      <p style="margin:1rem 0 .6rem;padding-top:1rem;border-top:1px solid var(--line);font-size:.95rem;color:var(--ink-soft);">Know another parent wondering about their son? Share the free Growth Check (no results included).</p>
+      <button type="button" data-share="native" id="rShareNative" style="display:inline-block;margin:0 .4rem .5rem 0;padding:.6rem 1.05rem;border-radius:999px;border:1px solid #1B4A3E;background:#fff;color:#1B4A3E;font:600 .93rem Inter,system-ui,sans-serif;text-decoration:none;cursor:pointer;display:none;">Share the Growth Check</button><button type="button" data-share="copy" id="rShareCopyLink" data-copy="https://thegrowthpath.app/growth-check/?utm_source=share&amp;utm_medium=copy&amp;utm_campaign=results-friend" style="display:inline-block;margin:0 .4rem .5rem 0;padding:.6rem 1.05rem;border-radius:999px;border:1px solid #1B4A3E;background:#fff;color:#1B4A3E;font:600 .93rem Inter,system-ui,sans-serif;text-decoration:none;cursor:pointer;">Copy link</button>
+    </div>
+    <!-- /tgp-share-v1 -->
+
     <div class="result-card" id="rRelatedCard" style="display:none;">
       <h2 style="margin-top:0;">Read more</h2>
       <p class="helper" style="margin-top:0;">Handpicked for your son's age and percentile.</p>
@@ -730,6 +740,20 @@ document.getElementById('emailForm').addEventListener('submit', (e) => {
   ).join('');
   document.getElementById('rRelatedCard').style.display = 'block';
 
+  // tgp-share-v1: fill share card
+  (function(){
+    function ord(n){ var v=n%100; if(v>=11&&v<=13) return n+'th'; return n+(['th','st','nd','rd'][n%10]||'th'); }
+    var base='https://thegrowthpath.app/growth-check/?utm_source=share&utm_campaign=results-dad&utm_medium=';
+    var summary='I ran our son\'s height through the Growth Check. At ' + state.age + ' he is at the ' + ord(pctRounded) + ' percentile for height on the CDC charts, and his adult-height target from our two heights is ' + targetLowIn + ' to ' + targetHighIn + '.';
+    var box=document.getElementById('rShareCard');
+    document.getElementById('rShareSms').href='sms:?&body='+encodeURIComponent(summary+' Takes 2 minutes if you want to look: '+base+'sms');
+    document.getElementById('rShareEmail').href='mailto:?subject='+encodeURIComponent('Our son\'s Growth Check')+'&body='+encodeURIComponent(summary+'\n\nTakes 2 minutes if you want to look:\n'+base+'email');
+    document.getElementById('rShareCopy').setAttribute('data-copy', summary+' '+base+'copy');
+    box.setAttribute('data-text','A free 2-minute check of where a boy\'s height stands for his age, using CDC growth charts.');
+    box.setAttribute('data-url-native','https://thegrowthpath.app/growth-check/?utm_source=share&utm_medium=native&utm_campaign=results-friend');
+    if(!box.getAttribute('data-wired') && window.tgpShareWire){ window.tgpShareWire(box); box.setAttribute('data-wired','1'); }
+  })();
+
   // Advance
   showScreen('results');
 });
@@ -765,5 +789,6 @@ document.addEventListener('click', function(ev){
   if(el && typeof fbq === 'function'){ try{ fbq('trackCustom','KitInterest',{content_name:'Prep Kit', source: el.getAttribute('data-src')||''}); }catch(e){} }
 }, true);
 </script>
+<script src="/assets/tgp-share.js"></script>
 </body>
 </html>
