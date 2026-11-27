@@ -28,7 +28,8 @@
   '.tgpe p{margin:0 0 .7rem;font-size:.95rem;color:#43525A}'+
   '.tgpe .row{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}'+
   '.tgpe select,.tgpe input{font:inherit;font-size:16px;padding:.55rem .6rem;border:1px solid #C9D3CE;border-radius:9px;background:#fff;color:#1a2e26;box-sizing:border-box}'+
-  '.tgpe input{width:4.2rem;flex:none}.tgpe select{flex:1 1 8.5rem;min-width:0}.tgpe .go{flex:1 0 5rem}'+
+  '.tgpe input{width:4.6rem}'+
+  '@media (max-width:560px){.tgpe .row select{flex:1 1 100%}.tgpe .row input{flex:1 1 0;width:auto;min-width:0}.tgpe .row .go{flex:1 1 0}}'+
   '.tgpe button,.tgpe .btn{font:inherit;font-size:.95rem;font-weight:600;padding:.6rem 1.05rem;border-radius:9px;border:0;background:#1B4A3E;color:#fff;cursor:pointer;text-decoration:none;display:inline-block}'+
   '.tgpe .ghost{background:#fff;color:#1B4A3E;border:1px solid #1B4A3E}'+
   '.tgpe .res{display:none;margin-top:.9rem;padding-top:.9rem;border-top:1px solid #D9E3DE}'+
