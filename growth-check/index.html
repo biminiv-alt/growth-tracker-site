@@ -690,6 +690,7 @@ document.getElementById('emailForm').addEventListener('submit', (e) => {
 
   // Fire tracking
   track('quiz_complete', { age: state.age, percentile: pctRounded });
+  try { localStorage.setItem('tgp_last_check', JSON.stringify({age: state.age, cm: Math.round(state.childCm*10)/10, p: Math.round(r.percentile*10)/10, t: Date.now()})); } catch(e){} // tgp-engage-v1
   track('email_capture', { source: src });
 
   // Submit to Kit in the background via fetch (avoid navigation)
@@ -760,6 +761,18 @@ document.getElementById('emailForm').addEventListener('submit', (e) => {
 
 // Init
 track('landing', { path: '/growth-check/' });
+// tgp-prefill-v1: quick check on guides hands over age + height so the parent starts at step 3
+(function(){ try {
+  var q = new URLSearchParams(location.search);
+  var a = parseInt(q.get('age'), 10), f = parseInt(q.get('ft'), 10), i = parseFloat(q.get('in'));
+  if (!(a >= 2 && a <= 18)) return;
+  ageSel.value = String(a); document.getElementById('next1').click();
+  if (f >= 3 && f <= 7 && i >= 0 && i < 12) {
+    document.getElementById('childFt').value = f; document.getElementById('childIn').value = i;
+    document.getElementById('next2').click();
+    track('quiz_prefill', { age: a });
+  }
+} catch(e){} })();
 </script>
 
 
