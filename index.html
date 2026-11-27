@@ -256,12 +256,13 @@ footer .fine { margin-top: 1.5rem; font-size: 12px; color: var(--sage-300); opac
 @media (max-width: 440px) { nav.top .inner { padding: 0 1rem; } nav.top .brand { font-size: 17px; } nav.top .links a:not(.cta) { display: none; } }
 </style>
 </head>
-<body>
+<body data-tgpe-page="home">
 
 <nav class="top">
   <div class="inner">
     <a href="/" style="text-decoration:none;"><div class="brand">The Growth Path</div></a>
     <div class="links">
+      <a href="/is-my-son-short-height-check/">Height check</a>
       <a href="/articles/">Articles</a>
       <a href="/growth-check/" class="cta">Take the Growth Check</a>
     </div>
@@ -272,7 +273,11 @@ footer .fine { margin-top: 1.5rem; font-size: 12px; color: var(--sage-300); opac
   <div class="wrap">
     <div class="kicker">Built for moms of boys ages 8 to 16</div>
     <h1>He might just be a late bloomer. <em>You deserve more than "he’ll probably catch up."</em></h1>
-    <p class="lede">Get a quick, personal read on his percentile, his family-adjusted height range, and what to watch next. Two minutes. No account.</p>
+    <p class="lede">Start with his age and height. You will see where he sits on the CDC growth chart in a second. Nothing leaves your browser.</p>
+    <!-- tgp-home-qc-v1 -->
+    <div class="home-qc" style="max-width:40rem;margin:0 0 2rem;"><div data-tgpe-qc-anchor></div></div>
+    <p style="margin:-1rem 0 1.75rem;font-size:15px;">Or try a checklist: <a href="/growth-spurt-checklist-boys/" style="color:var(--terra-700);font-weight:500;">is his growth spurt coming?</a> &middot; <a href="/late-bloomer-checklist-boys/" style="color:var(--terra-700);font-weight:500;">is he a late bloomer?</a></p>
+    <!-- /tgp-home-qc-v1 -->
     <div class="cta-row">
       <a href="/growth-check/" class="btn large">Take the free 2-minute Growth Check</a>
       <a href="#how" class="btn secondary large">See how it works</a>
@@ -432,5 +437,6 @@ footer .fine { margin-top: 1.5rem; font-size: 12px; color: var(--sage-300); opac
     </div>
   </div>
 </footer>
+<script src="/assets/tgp-engage.js?v=5" defer></script>
 </body>
 </html>

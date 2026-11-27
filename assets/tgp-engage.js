@@ -95,7 +95,7 @@
   function quickCheck(){
     if (document.querySelector('input[type="number"], #calcBtn, .tgpe')) return; // page already has a tool
     var main=document.querySelector('main')||document.body;
-    var anchor=main.querySelector('.inline-cta');
+    var anchor=document.querySelector('[data-tgpe-qc-anchor]')||main.querySelector('.inline-cta');
     if(!anchor){ var h2=main.querySelectorAll('h2'); anchor = h2.length>1 ? h2[1].previousElementSibling : (main.querySelector('.lede')||h2[0]); }
     if(!anchor) return;
 
@@ -201,12 +201,14 @@
         return ['Not enough to tell yet','The key is steady growth. Measure him now and again in three months, and ask dad’s side when they grew.']; } }
   };
   function checklist(){
-    var key=null; for (var k in LISTS){ if (LISTS[k].pages.indexOf(path)>=0) key=k; }
+    var key=null, anc=document.querySelector('[data-tgpe-cl-anchor]');
+    if (anc && LISTS[anc.getAttribute('data-tgpe-cl-anchor')]) key=anc.getAttribute('data-tgpe-cl-anchor');
+    else { anc=null; for (var k in LISTS){ if (LISTS[k].pages.indexOf(path)>=0) key=k; } }
     if (!key) return;
     var L=LISTS[key], SK='tgp_cl_'+key, saved=[]; try{ saved=JSON.parse(localStorage.getItem(SK)||'[]')||[]; }catch(e){}
     var h2s=[].slice.call(document.querySelectorAll('main h2, article h2, h2')), at=null;
     for (var i=0;i<h2s.length;i++){ if (L.before.test(h2s[i].textContent)) { at=h2s[i]; break; } }
-    if (!at && h2s.length>2) at=h2s[2]; if (!at) return;
+    if (!at && h2s.length>2) at=h2s[2]; if (anc) at=anc; if (!at) return;
     function box(it){ return '<label><input type="checkbox" value="'+it[0]+'"'+(saved.indexOf(it[0])>=0?' checked':'')+'><span>'+it[1]+'</span></label>'; }
     var html='<h3>'+L.title+'</h3><p>'+L.intro+'</p>'+L.items.map(box).join('')+
       (L.flags?'<p class="grp">Any of these?</p>'+L.flags.map(box).join(''):'')+
@@ -263,6 +265,6 @@
     bar.querySelector('button.x').addEventListener('click',function(){ closed=true; bar.classList.remove('on'); try{ localStorage.setItem(SK,String(Date.now())); }catch(e){} ev('sticky_close',{page:path}); });
   }
 
-  function init(){ try{ addCss(); checklist(); quickCheck(); feedback(); readSignal(); stickyBar(); }catch(e){} }
+  function init(){ try{ var home=document.body.getAttribute('data-tgpe-page')==='home'; addCss(); checklist(); quickCheck(); if(!home){ feedback(); stickyBar(); } readSignal(); }catch(e){} }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
 })();
