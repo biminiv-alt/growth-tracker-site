@@ -45,6 +45,9 @@
   '.tgpe-fb{max-width:680px;margin:1.5rem auto;text-align:center;font-family:Inter,system-ui,sans-serif;color:#1a2e26}'+
   '.tgpe-fb button{font:inherit;font-size:.92rem;padding:.45rem 1rem;margin:0 .25rem;border-radius:999px;border:1px solid #C9D3CE;background:#fff;color:#1B4A3E;cursor:pointer}'+
   '.tgpe-fb p{margin:.4rem 0;font-size:.95rem}.tgpe-fb ul{list-style:none;padding:0;margin:.5rem 0}.tgpe-fb li{margin:.35rem 0}.tgpe-fb a{color:#1B4A3E}'+
+  '.tgpe-cl label{display:flex;gap:.55rem;align-items:flex-start;padding:.45rem .1rem;font-size:.95rem;color:#1a2e26;cursor:pointer;border-bottom:1px solid #E3EBE7}'+
+  '.tgpe-cl label:last-of-type{border-bottom:0}.tgpe-cl input[type=checkbox]{width:1.15rem;height:1.15rem;margin:.15rem 0 0;flex:0 0 auto;accent-color:#1B4A3E}'+
+  '.tgpe-cl .grp{font-weight:600;font-size:.88rem;color:#6B777E;margin:.8rem 0 .1rem;text-transform:uppercase;letter-spacing:.03em}'+
   '.tgpe-sb{display:none}'+
   '@media (max-width:700px){.tgpe-sb{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:9990;align-items:center;gap:.6rem;padding:.6rem .75rem calc(.6rem + env(safe-area-inset-bottom));background:#1B4A3E;color:#fff;font-family:Inter,system-ui,sans-serif;font-size:.9rem;line-height:1.3;box-shadow:0 -2px 10px rgba(0,0,0,.18);transform:translateY(110%);transition:transform .25s ease}'+
   '.tgpe-sb.on{transform:none}.tgpe-sb .t{flex:1 1 auto;min-width:0}.tgpe-sb .t b{display:block;font-size:.95rem}'+
@@ -179,6 +182,57 @@
     window.addEventListener('scroll',chk,{passive:true}); setInterval(chk,10000);
   }
 
+  /* ---------- Tick-box checklists on key guides (tgp-checklist-v1). Wording follows each guide. ---------- */
+  var LISTS = {
+    spurt: { pages:['/signs-growth-spurt-coming-boys/','/articles/growth-spurts-in-boys-what-to-expect/'], before:/usual order|how to track/i,
+      title:'Which signs have you noticed?', intro:'Tick what you have seen in the last few months.',
+      items:[['feet','His feet have grown a lot (new shoe sizes)'],['hungry','He is always hungry'],['fill','He has filled out a little'],['odor','Body odor or oily skin'],['hair','First pubic or underarm hair'],['sleep','He sleeps more and later'],['clumsy','He is clumsier, or has leg aches at night'],['voice','His voice has started to crack']],
+      result:function(t){ var n=t.length;
+        if (t.indexOf('voice')>=0 || n>=5) return ['He may be in or near his fastest growth','Voice change usually overlaps with the peak, when many boys grow 3 to 4 inches in a year. Measure him now so you can see it happen.'];
+        if (n>=2) return ['Looks like puberty may be under way','The fastest growth usually comes about 1.5 to 2 years after the first signs, most often between 13 and 15. A measurement now gives you a starting point.'];
+        return ['Probably not started yet','The first signs most moms notice are bigger feet, a bigger appetite and body odor. Before puberty, boys grow about 2 to 2.5 inches a year. Measure him now so you have a baseline.']; } },
+    bloomer: { pages:['/articles/signs-of-late-bloomer-boy/','/articles/is-my-son-a-late-bloomer/'], before:/might not|not just|what to (actually )?do/i,
+      title:'Does this sound like him?', intro:'Tick each one that fits. Nothing is saved anywhere except this browser.',
+      items:[['steady','He is shorter than his friends but still growing about 2 to 2.5 inches a year'],['family','Dad, an uncle or a grandfather grew late'],['math','Family-height math says he should end up average or taller'],['bone','A bone age X-ray read younger than his real age']],
+      flags:[['slow','He has grown under 2 inches in the last year, before puberty'],['drop','He has been dropping percentile lines over time'],['none14','He is past 14 with no signs of puberty']],
+      result:function(t){
+        if (t.indexOf('slow')>=0||t.indexOf('drop')>=0||t.indexOf('none14')>=0) return ['Worth raising with his pediatrician','The guide lists these as signs to ask about a pediatric endocrinologist referral rather than wait and see.','doc'];
+        if (t.length>=2) return ['That matches the late bloomer pattern','Short but growing normally, often with a family history. The Growth Check uses both parents’ heights to show where he is likely headed.'];
+        return ['Not enough to tell yet','The key is steady growth. Measure him now and again in three months, and ask dad’s side when they grew.']; } }
+  };
+  function checklist(){
+    var key=null; for (var k in LISTS){ if (LISTS[k].pages.indexOf(path)>=0) key=k; }
+    if (!key) return;
+    var L=LISTS[key], SK='tgp_cl_'+key, saved=[]; try{ saved=JSON.parse(localStorage.getItem(SK)||'[]')||[]; }catch(e){}
+    var h2s=[].slice.call(document.querySelectorAll('main h2, article h2, h2')), at=null;
+    for (var i=0;i<h2s.length;i++){ if (L.before.test(h2s[i].textContent)) { at=h2s[i]; break; } }
+    if (!at && h2s.length>2) at=h2s[2]; if (!at) return;
+    function box(it){ return '<label><input type="checkbox" value="'+it[0]+'"'+(saved.indexOf(it[0])>=0?' checked':'')+'><span>'+it[1]+'</span></label>'; }
+    var html='<h3>'+L.title+'</h3><p>'+L.intro+'</p>'+L.items.map(box).join('')+
+      (L.flags?'<p class="grp">Any of these?</p>'+L.flags.map(box).join(''):'')+
+      '<div class="row" style="margin-top:.8rem"><button type="button" class="go">See what it means</button></div><div class="res"></div>';
+    var root=el('div',{'class':'tgpe tgpe-cl','data-tgpe-cl':key},html);
+    at.parentNode.insertBefore(root, at);
+    var seen=false; if('IntersectionObserver' in window){ var io=new IntersectionObserver(function(e){ if(e[0].isIntersecting&&!seen){ seen=true; ev('checklist_view',{list:key,page:path}); io.disconnect(); } }); io.observe(root); }
+    function ticks(){ return [].slice.call(root.querySelectorAll('input:checked')).map(function(x){return x.value;}); }
+    function show(track){
+      var t=ticks(); try{ localStorage.setItem(SK, JSON.stringify(t)); }catch(e){}
+      var r=L.result(t), out=root.querySelector('.res');
+      var last=load(), q='';
+      if (last && last.age && last.cm){ var tot=last.cm/2.54, f=Math.floor(tot/12), n=Math.round(tot-f*12); if(n>=12){f++;n=0;} q='age='+last.age+'&ft='+f+'&in='+n+'&'; }
+      var gc='/growth-check/?'+q+'utm_source=checklist-'+key+'&utm_medium=onsite&utm_content='+encodeURIComponent(path);
+      out.innerHTML='<p class="big" style="font-size:1.2rem">'+r[0]+'</p><p>'+r[1]+'</p>'+
+        (r[2]==='doc'?'<p><a href="/when-to-see-pediatric-endocrinologist-growth/">When to see a pediatric endocrinologist about growth</a></p>':'')+
+        '<p><a class="btn" data-tgpe="clgc" href="'+gc+'">Take the free Growth Check</a></p>'+reminderHtml()+
+        '<p class="small">Parent education, not medical advice. If you are worried, ask his pediatrician.</p>';
+      out.classList.add('on'); wireReminder(out);
+      out.querySelector('[data-tgpe="clgc"]').addEventListener('click',function(){ ev('checklist_to_growth_check',{list:key,page:path}); });
+      if (track) ev('checklist_complete',{list:key,page:path,ticked:t.length,result:r[0]});
+    }
+    root.querySelector('button.go').addEventListener('click',function(){ show(true); });
+    if (saved.length) show(false);
+  }
+
   /* ---------- Phone sticky Growth Check bar (tgp-sticky-v1) ---------- */
   function stickyBar(){
     if (!window.matchMedia || !window.matchMedia('(max-width:700px)').matches) return;
@@ -209,6 +263,6 @@
     bar.querySelector('button.x').addEventListener('click',function(){ closed=true; bar.classList.remove('on'); try{ localStorage.setItem(SK,String(Date.now())); }catch(e){} ev('sticky_close',{page:path}); });
   }
 
-  function init(){ try{ addCss(); quickCheck(); feedback(); readSignal(); stickyBar(); }catch(e){} }
+  function init(){ try{ addCss(); checklist(); quickCheck(); feedback(); readSignal(); stickyBar(); }catch(e){} }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
 })();
