@@ -28,7 +28,7 @@
   '.tgpe p{margin:0 0 .7rem;font-size:.95rem;color:#43525A}'+
   '.tgpe .row{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}'+
   '.tgpe select,.tgpe input{font:inherit;font-size:16px;padding:.55rem .6rem;border:1px solid #C9D3CE;border-radius:9px;background:#fff;color:#1a2e26;box-sizing:border-box}'+
-  '.tgpe input{width:4.6rem}'+
+  '.tgpe input{width:4.2rem;flex:none}.tgpe select{flex:1 1 8.5rem;min-width:0}.tgpe .go{flex:1 0 5rem}'+
   '.tgpe button,.tgpe .btn{font:inherit;font-size:.95rem;font-weight:600;padding:.6rem 1.05rem;border-radius:9px;border:0;background:#1B4A3E;color:#fff;cursor:pointer;text-decoration:none;display:inline-block}'+
   '.tgpe .ghost{background:#fff;color:#1B4A3E;border:1px solid #1B4A3E}'+
   '.tgpe .res{display:none;margin-top:.9rem;padding-top:.9rem;border-top:1px solid #D9E3DE}'+
@@ -113,10 +113,11 @@
       err.textContent='';
       var cm=(f*12+i)*2.54, p=pct(cm,age), pr=Math.round(p);
       var msg;
-      if(p>=75) msg='He is taller than about '+pr+' of every 100 boys his age.';
-      else if(p>=25) msg='He is right in the normal middle range for his age.';
-      else if(p>=10) msg='He is on the shorter side, still well within the normal range.';
-      else if(p>=3) msg='He is shorter than most boys his age. That is very often a late bloomer, or a boy who is short like his family. The Growth Check adds both parents’ heights to tell which.';
+      var q=pr;
+      if(q>=75) msg='He is taller than about '+pr+' of every 100 boys his age.';
+      else if(q>=25) msg='He is right in the normal middle range for his age.';
+      else if(q>=10) msg='He is on the shorter side, still well within the normal range.';
+      else if(q>=3) msg='He is shorter than most boys his age. That is very often a late bloomer, or a boy who is short like his family. The Growth Check adds both parents’ heights to tell which.';
       else msg='He is below the 3rd percentile. That is worth mentioning to his pediatrician, especially if he has dropped percentiles over time.';
       var change='';
       if(prev && prev.age<=age && Date.now()-prev.t>45*86400000){
@@ -126,8 +127,8 @@
       var links='<ul>'+
         '<li><a href="/growth-check/?age='+age+'&ft='+f+'&in='+i+'&utm_source=quick-check&utm_medium=onsite&utm_content='+encodeURIComponent(path)+'" data-tgpe="gc">See his likely adult height range with both parents’ heights</a> (2 minutes, his numbers already filled in)</li>'+
         '<li><a href="/average-height-'+age+'-year-old-boy/">Full height chart for '+age+'-year-old boys</a></li>'+
-        (p<25?'<li><a href="/articles/is-my-son-a-late-bloomer/">Is he a late bloomer? The signs to look for</a></li>':'<li><a href="/articles/how-tall-will-my-son-be/">How tall will he be? The 3 ways to estimate it</a></li>')+
-        (p<3?'<li><a href="/when-to-see-pediatric-endocrinologist-growth/">When to ask about a growth specialist</a></li>':'')+
+        (q<25?'<li><a href="/articles/is-my-son-a-late-bloomer/">Is he a late bloomer? The signs to look for</a></li>':'<li><a href="/articles/how-tall-will-my-son-be/">How tall will he be? The 3 ways to estimate it</a></li>')+
+        (q<3?'<li><a href="/when-to-see-pediatric-endocrinologist-growth/">When to ask about a growth specialist</a></li>':'')+
         '</ul>';
       var res=box.querySelector('.res');
       res.innerHTML='<p class="big">'+ord(pr)+' percentile</p><p style="margin:0">'+ftin(cm)+' at age '+age+'. '+msg+'</p>'+
