@@ -44,7 +44,12 @@
   '.tgpe .small{font-size:.8rem;color:#6B777E;margin:.6rem 0 0}'+
   '.tgpe-fb{max-width:680px;margin:1.5rem auto;text-align:center;font-family:Inter,system-ui,sans-serif;color:#1a2e26}'+
   '.tgpe-fb button{font:inherit;font-size:.92rem;padding:.45rem 1rem;margin:0 .25rem;border-radius:999px;border:1px solid #C9D3CE;background:#fff;color:#1B4A3E;cursor:pointer}'+
-  '.tgpe-fb p{margin:.4rem 0;font-size:.95rem}.tgpe-fb ul{list-style:none;padding:0;margin:.5rem 0}.tgpe-fb li{margin:.35rem 0}.tgpe-fb a{color:#1B4A3E}';
+  '.tgpe-fb p{margin:.4rem 0;font-size:.95rem}.tgpe-fb ul{list-style:none;padding:0;margin:.5rem 0}.tgpe-fb li{margin:.35rem 0}.tgpe-fb a{color:#1B4A3E}'+
+  '.tgpe-sb{display:none}'+
+  '@media (max-width:700px){.tgpe-sb{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:9990;align-items:center;gap:.6rem;padding:.6rem .75rem calc(.6rem + env(safe-area-inset-bottom));background:#1B4A3E;color:#fff;font-family:Inter,system-ui,sans-serif;font-size:.9rem;line-height:1.3;box-shadow:0 -2px 10px rgba(0,0,0,.18);transform:translateY(110%);transition:transform .25s ease}'+
+  '.tgpe-sb.on{transform:none}.tgpe-sb .t{flex:1 1 auto;min-width:0}.tgpe-sb .t b{display:block;font-size:.95rem}'+
+  '.tgpe-sb a.go{flex:0 0 auto;background:#fff;color:#1B4A3E;font-weight:700;text-decoration:none;padding:.55rem .85rem;border-radius:9px;font-size:.9rem;white-space:nowrap}'+
+  '.tgpe-sb button.x{flex:0 0 auto;background:transparent;border:0;color:#fff;opacity:.8;font-size:1.3rem;line-height:1;padding:.2rem .3rem;cursor:pointer}}';
 
   function addCss(){ var s=el('style',{'data-tgpe':'1'}); s.textContent=css; document.head.appendChild(s); }
 
@@ -174,6 +179,36 @@
     window.addEventListener('scroll',chk,{passive:true}); setInterval(chk,10000);
   }
 
-  function init(){ try{ addCss(); quickCheck(); feedback(); readSignal(); }catch(e){} }
+  /* ---------- Phone sticky Growth Check bar (tgp-sticky-v1) ---------- */
+  function stickyBar(){
+    if (!window.matchMedia || !window.matchMedia('(max-width:700px)').matches) return;
+    var SK='tgp_sticky_closed';
+    try{ var c=+localStorage.getItem(SK)||0; if(c && Date.now()-c < 3*864e5) return; }catch(e){}
+    var last=load(), href, txt;
+    if (last && last.age && last.cm){
+      var tot=last.cm/2.54, f=Math.floor(tot/12), i=Math.round(tot-f*12); if(i>=12){f++;i=0;}
+      href='/growth-check/?age='+last.age+'&ft='+f+'&in='+i+'&utm_source=sticky&utm_medium=onsite&utm_content='+encodeURIComponent(path);
+      txt='<b>See his likely adult height</b>His numbers are already filled in';
+    } else {
+      href='/growth-check/?utm_source=sticky&utm_medium=onsite&utm_content='+encodeURIComponent(path);
+      txt='<b>Is he on track for his age?</b>Free 2-minute Growth Check';
+    }
+    var bar=el('div',{'class':'tgpe-sb','role':'complementary','aria-label':'Growth Check'},
+      '<span class="t">'+txt+'</span><a class="go" href="'+href+'">Check now</a><button class="x" type="button" aria-label="Close">&times;</button>');
+    document.body.appendChild(bar);
+    var shown=false, closed=false, t0=Date.now();
+    function inView(sel){ var n=document.querySelectorAll(sel); for(var k=0;k<n.length;k++){ var r=n[k].getBoundingClientRect(); if(r.bottom>0 && r.top<window.innerHeight) return true; } return false; }
+    function upd(){
+      if(closed) return;
+      var h=document.documentElement, y=window.scrollY, H=Math.max(1,h.scrollHeight-window.innerHeight), frac=y/H;
+      var want = y>500 && frac<0.92 && (Date.now()-t0>8000 || frac>0.25) && !inView('.tgpe, .inline-cta, .tgp-kit-link, form, input:focus, footer');
+      if(want!==shown){ shown=want; bar.classList.toggle('on',want); if(want && !bar.__seen){ bar.__seen=1; ev('sticky_view',{page:path}); } }
+    }
+    window.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd); setInterval(upd,2000);
+    bar.querySelector('a.go').addEventListener('click',function(){ ev('sticky_click',{page:path, saved: last?1:0}); });
+    bar.querySelector('button.x').addEventListener('click',function(){ closed=true; bar.classList.remove('on'); try{ localStorage.setItem(SK,String(Date.now())); }catch(e){} ev('sticky_close',{page:path}); });
+  }
+
+  function init(){ try{ addCss(); quickCheck(); feedback(); readSignal(); stickyBar(); }catch(e){} }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
 })();
